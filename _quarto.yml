@@ -10,6 +10,7 @@ format:
     highlight-style: arrow
     fontsize: 1.5em
     code-line-numbers: false
+    link-external-newwindow: true
 code-link: true
 execute:
   echo: true

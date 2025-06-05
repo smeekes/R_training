@@ -36,6 +36,13 @@ $btn-code-copy-color-active: $UMorangered;
 
 
 /*-- scss:rules --*/
+h1, h3, h6 {
+  color: $UMdblue;
+}
+
+h2, h4, h5 {
+  color: $UMlblue;
+}
 
 .reveal .custom-title {
   position: absolute;

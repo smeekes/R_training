@@ -1,10 +1,14 @@
 ---
 title: "SBE R Training"
+format:
+  html:
+    theme: [cosmo, theme.scss]
 ---
-
 
 Welcome to the homepage of the SBE R training! Here you will find the slides for the sessions.
 
-### Sessions
-
 [Session 1](Session1.qmd)
+
+Further sessions will follow later.
+
+[About the Training](about.qmd)

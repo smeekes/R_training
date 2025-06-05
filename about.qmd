@@ -1,9 +1,62 @@
 ---
-title: "About"
+title: "About the SBE R Training"
+format:
+  html:
+    theme: [cosmo, theme.scss]
 ---
 
-About this site
+#### The R training team:
 
-```{r}
-1 + 1
-```
+- [Nalan Basturk](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk)
+
+- [Tobias Hartl](https://tobiashartl.github.io/)
+
+- [Martin Schumann](https://sites.google.com/site/martinschumannecon/home)
+
+- [Stephan Smeekes](https://stephansmeekes.com)
+
+- [Ines Wilms](https://sites.google.com/view/iwilms)
+
+#### SBE R Training
+The purpose of this course is to provide a gentle introduction to R suitable for academic staff members. The main target group is teachers and researchers who teach or use some form of data analysis / statistics in their courses, but are unfamiliar with R, for example because they have been using software like SPSS, Excel or Stata for their statistical analysis. 
+
+What should you not expect from this training?
+- Basic statistical training. Participants are expected to have a basic understanding of statistics.
+- Advanced use of R that requires substantial programming. While we may touch upon this briefly depending on the interests of the participants, more advanced treatment is outside the scope of the training.
+
+#### Philosophy of the sessions
+We have scheduled five hands-on sessions of two hours. The sessions are interactive, guided by two of the trainers, with plenty of opportunity for asking questions and further interactions. No preparation is needed outside of these sessions. The focus will be on understanding the language conceptually, rather than covering a wide range of statistical tools. 
+
+#### Content of the Sessions
+There will be 5 sessions of two hours. Below is the tentative plan for the sessions.
+
+1. **Tuesday June 10, 13:30-15:30: Installing R**</br>
+The first session will discuss how to get R up and running. We will cover the actual installation of R and RStudio on different operating systems. Next, we will cover the basics to get R working, specifically, how to use the console and writing scripts.
+
+2. **Thursday June 12, 13:30-15:30: R Objects**</br>
+Using different types of objects is at the heart of R. This session will go into the different type of objects that users encounter, such as vectors, lists and data frames. 
+
+3. **Monday June 16, 13:30-15:30: Using Functions and Packages**</br>
+When using R as a statistical tool rather than a programming language, proper use of built-in functions and packages is key. This session will cover how to use general functions, explain the way arguments should be entered, and how output objects should be interpreted. We discuss the philosophy of R’s object-oriented system, and show how operations can be performed on different type of objects. We also go into the package management system.
+
+4. **Wednesday June 18, 10:30-12:30: Input, Output and Graphics**</br>
+In the session, we will focus on how to load data into R from different types of sources. We also discuss how to export results from an analysis from R to other programs. Finally, we cover how to make professional figures and plots using R’s graphical capabilities.
+
+5. **Friday June 20, 10:30-12:30: Data Manipulation and (Regression) Analysis**</br>
+The first part of the session will focus on typical manipulations of data stats that may be needed as preprocessing steps before a statistical analysis. The second part of the session we will apply some basic statistical analysis tools. We focus on the linear regression model, the workhorse of empirical economic research. To enable practitioners to efficiently estimate the linear regression model in R, we cover objects of class formula and OLS estimation via the lm() command.
+
+#### Optional Topics
+Depending on the progress and interests of the participants, we have 2 optional more advanced topics, that can be integrated into the sessions:
+
+- **Advanced Graphics:** This topic covers more advanced use of R’s graphics capabilities such as the ggplot2 package.
+
+- **Flow Control:** Often we want to execute certain commands conditionally and / or repeatedly. This requires conditional evaluation and loops, which are covered under the topic of flow control.
+
+#### Preparation – First Meeting
+
+No preparation is needed; all that we ask is that participants bring a laptop on which they can install and use R. There is no need to install things in advance, we will guide you through installation during the first session.
+
+#### Preparation – Missed Meetings
+
+For people attending all sessions, no preparation is needed between the sessions. For people missing sessions, we strongly recommend going through the material on your own, as sessions build up consecutively. As we are still finetuning the content, we cannot promise to have the sessions complete and available more than a day before each session. If this is a problem, please contact us directly to see what we can do.
+
