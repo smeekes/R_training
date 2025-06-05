@@ -1,11 +1,10 @@
 ---
-title: "R_training"
+title: "SBE R Training"
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Welcome to the homepage of the SBE R training! Here you will find the slides for the sessions.
 
-```{r}
-1 + 1
-```
+### Sessions
+
+[Session 1](Session1.qmd)
