@@ -6,17 +6,17 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
-<meta name="author" content="">
-<title>Introduction to R</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
+
+  <meta name="author" content="">
+  <title>Introduction to R</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -29,8 +29,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -41,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -94,13 +95,13 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-583737715ad91b45aa8f803ec5bac169.css">
-<link rel="stylesheet" href="custom.css">
-<link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-2b17e36b362874a7ddd65dc1c420b444.css">
+  <link rel="stylesheet" href="custom.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -192,13 +193,16 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Introduction to R</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Introduction to R</h1>
   <p class="subtitle">Session 1</p>
 
 <div class="quarto-title-authors">
 </div>
 
-</section><section id="session-overview" class="title-slide slide level1 center"><h1>Session Overview</h1>
+</section>
+<section id="session-overview" class="title-slide slide level1 center">
+<h1>Session Overview</h1>
 <ol type="1">
 <li><a href="#/R-team">R Training Team</a></li>
 <li><a href="#/what-is-R">What is R?</a></li>
@@ -209,9 +213,16 @@
 <li><a href="#/open-Rstudio">First Steps in RStudio</a></li>
 <li><a href="#/R-script">R Script</a></li>
 <li><a href="#/R-packages">R Package Management System</a></li>
-</ol></section><section><section id="R-team" class="title-slide slide level1 center"><h1>R Training Team</h1>
+</ol>
+</section>
 
-</section><section id="r-training-team" class="slide level2"><h2>R Training Team</h2>
+<section>
+<section id="R-team" class="title-slide slide level1 center">
+<h1>R Training Team</h1>
+
+</section>
+<section id="r-training-team" class="slide level2">
+<h2>R Training Team</h2>
 <ul>
 <li>Nalan Bastürk</li>
 <li>Tobias Hartl</li>
@@ -220,83 +231,124 @@
 <li>Ines Wilms</li>
 </ul>
 <p>All are econometricians at the Department of Quantitative Economics, and have many years of experience in R.</p>
-</section><section id="tobias-hartl" class="slide level2"><h2>Tobias Hartl</h2>
+</section>
+<section id="tobias-hartl" class="slide level2">
+<h2>Tobias Hartl</h2>
 <ul>
 <li>Assistant Professor at QE</li>
 <li>Research interests: econometrics, state space and factor models, long memory, macro- and climate econometrics</li>
 <li>Contact: tobias.hartl@maastrichtuniversity.nl</li>
 <li><a href="https://tobiashartl.github.io/">website</a></li>
-</ul></section><section id="martin-schumann" class="slide level2"><h2>Martin Schumann</h2>
+</ul>
+</section>
+<section id="martin-schumann" class="slide level2">
+<h2>Martin Schumann</h2>
 <ul>
 <li>Assistant Professor at QE</li>
 <li>Research interests: panel data, nonlinear models, difference-in-differences, network data, innovation</li>
 <li>Contact: m.schumann@maastrichtuniversity.nl</li>
 <li><a href="https://sites.google.com/site/martinschumannecon/home">website</a></li>
-</ul></section><section id="ines-wilms" class="slide level2"><h2>Ines Wilms</h2>
+</ul>
+</section>
+<section id="ines-wilms" class="slide level2">
+<h2>Ines Wilms</h2>
 <ul>
 <li>Associate Professor at QE</li>
 <li>Research interests: econometrics, time series, high-dimensional statisics, forecasting, outlier robustness</li>
 <li>Contact: i.wilms@maastrichtuniversity.nl</li>
 <li><a href="https://sites.google.com/view/iwilms">website</a></li>
-</ul></section></section><section><section id="what-is-R" class="title-slide slide level1 center"><h1>What is R?</h1>
+</ul>
+</section></section>
+<section>
+<section id="what-is-R" class="title-slide slide level1 center">
+<h1>What is R?</h1>
 
-</section><section id="what-is-r" class="slide level2"><h2>What is R?</h2>
+</section>
+<section id="what-is-r" class="slide level2">
+<h2>What is R?</h2>
 <p><strong>R</strong></p>
 <ul>
 <li>is an open-source statistical programming language.</li>
 <li>available for most operating systems</li>
 <li>helps users analyze, visualize, and model data—from simple summaries to complex data analysis</li>
-<li>is extremely popular in statistics and data science, see <a href="http://r4stats.com/articles/popularity/">this article</a>
-</li>
+<li>is extremely popular in statistics and data science, see <a href="http://r4stats.com/articles/popularity/">this article</a></li>
 <li>includes thousands of packages (add-ons) that can be used for specialized tasks without a deep understanding of the language and programming skills</li>
 <li>allows for extensive programming, making it also suitable for advanced or case-specific applications of statistical methods</li>
 </ul>
 <p>The combination of the latter two aspects sets <strong>R</strong> apart and makes it useful for everything ranging from standard ‘basic’ statistical analysis to the development of new methods.</p>
 <p>The homepage of <strong>R</strong> is <a href="www.r-project.org">www.r-project.org</a> from which you can install <strong>R</strong> and access manuals that provide detailed information about installing and using <strong>R</strong>.</p>
-</section></section><section><section id="install-R" class="title-slide slide level1 center"><h1>Installing R</h1>
+</section></section>
+<section>
+<section id="install-R" class="title-slide slide level1 center">
+<h1>Installing R</h1>
 
-</section><section id="r-installation" class="slide level2"><h2>R Installation</h2>
+</section>
+<section id="r-installation" class="slide level2">
+<h2>R Installation</h2>
 <p>To install <strong>R</strong>, go to the Comprehensive R Archive Network <a href="https://cran.r-project.org/">CRAN</a>. At the time of writing, it looks as follows:</p>
 
-<img data-src="figures/website-R-1.png" class="r-stretch"></section><section id="r-installation-1" class="slide level2"><h2>R Installation</h2>
+<img data-src="figures/website-R-1.png" class="r-stretch"></section>
+<section id="r-installation-1" class="slide level2">
+<h2>R Installation</h2>
 <p>To download, for instance, <strong>R</strong> for Windows, you arrive at the following page:</p>
 
-<img data-src="figures/website-R-2.png" class="r-stretch"></section><section id="r-installation-2" class="slide level2"><h2>R Installation</h2>
+<img data-src="figures/website-R-2.png" class="r-stretch"></section>
+<section id="r-installation-2" class="slide level2">
+<h2>R Installation</h2>
 <p>Now download the latest version of <strong>R</strong> (version 4.5.0 at the time of writing):</p>
 
-<img data-src="figures/website-R-3.png" class="r-stretch"></section><section id="r-installation-3" class="slide level2"><h2>R Installation</h2>
+<img data-src="figures/website-R-3.png" class="r-stretch"></section>
+<section id="r-installation-3" class="slide level2">
+<h2>R Installation</h2>
 <p>Start the download process:</p>
 
-<img data-src="figures/download-R-1.png" class="r-stretch"></section><section id="r-installation-4" class="slide level2"><h2>R Installation</h2>
+<img data-src="figures/download-R-1.png" class="r-stretch"></section>
+<section id="r-installation-4" class="slide level2">
+<h2>R Installation</h2>
 <p>Continue the download process:</p>
 
-<img data-src="figures/download-R-2.png" class="r-stretch"></section><section id="r-installation-5" class="slide level2"><h2>R Installation</h2>
+<img data-src="figures/download-R-2.png" class="r-stretch"></section>
+<section id="r-installation-5" class="slide level2">
+<h2>R Installation</h2>
 <p>Download completed:</p>
 
-<img data-src="figures/download-R-3.png" class="r-stretch"></section></section><section><section id="open-R" class="title-slide slide level1 center"><h1>First Steps in R</h1>
+<img data-src="figures/download-R-3.png" class="r-stretch"></section></section>
+<section>
+<section id="open-R" class="title-slide slide level1 center">
+<h1>First Steps in R</h1>
 
-</section><section id="opening-r" class="slide level2"><h2>Opening R</h2>
+</section>
+<section id="opening-r" class="slide level2">
+<h2>Opening R</h2>
 <p>Open <strong>R</strong>, you should see the following:</p>
 
-<img data-src="figures/open-R-1.png" class="r-stretch"></section><section id="opening-r-1" class="slide level2"><h2>Opening R</h2>
+<img data-src="figures/open-R-1.png" class="r-stretch"></section>
+<section id="opening-r-1" class="slide level2">
+<h2>Opening R</h2>
 <p>The program window provides some basic information on <strong>R</strong> and the installed version.</p>
 <p>Check your version of <strong>R</strong>!</p>
 
-<img data-src="figures/open-R-2.png" class="r-stretch"></section><section id="r-console" class="slide level2"><h2>R Console</h2>
+<img data-src="figures/open-R-2.png" class="r-stretch"></section>
+<section id="r-console" class="slide level2">
+<h2>R Console</h2>
 <p>The <strong>R</strong> Console can be used to directly give in commands and display output:</p>
 
-<img data-src="figures/R-console-1.png" class="r-stretch"></section><section id="r-prompt" class="slide level2"><h2>R Prompt</h2>
+<img data-src="figures/R-console-1.png" class="r-stretch"></section>
+<section id="r-prompt" class="slide level2">
+<h2>R Prompt</h2>
 <p>Under the default information, you can see the <strong>R</strong> prompt, through which <strong>R</strong> indicates that it is ready to execute a new command.</p>
 
-<img data-src="figures/R-console-2.png" class="r-stretch"></section><section id="executing-your-first-command" class="slide level2"><h2>Executing your first command</h2>
+<img data-src="figures/R-console-2.png" class="r-stretch"></section>
+<section id="executing-your-first-command" class="slide level2">
+<h2>Executing your first command</h2>
 <p>Start by using <strong>R</strong> as a simple calculator, try to enter after the <strong>R</strong> prompt:</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">2</span><span class="op">+</span><span class="fl">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>and hit <em>enter</em>.</p>
 <p>You will see that <strong>R</strong> directly returns the output in the <strong>R</strong> console next to the ‘[1]’:</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">2</span><span class="op">+</span><span class="fl">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
@@ -307,7 +359,9 @@
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>R</strong> will return the <em>+</em> symbol, thereby letting you know that you forgot to type something. You can either complete the command and then hit <em>enter</em> or exit the incomplete command via the <em>esc</em> button.</p>
-</section><section id="exercise-1.1" class="slide level2"><h2>Exercise 1.1</h2>
+</section>
+<section id="exercise-1.1" class="slide level2">
+<h2>Exercise 1.1</h2>
 <p>Enter the following expressions, one by one, in <strong>R</strong> and hit <em>enter</em> to see how <strong>R</strong> evaluates them:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span><span class="dv">4</span></span>
@@ -320,12 +374,19 @@
 <span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>pi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="from-r-to-rstudio" class="slide level2"><h2>From R to Rstudio</h2>
+</section>
+<section id="from-r-to-rstudio" class="slide level2">
+<h2>From R to Rstudio</h2>
 <p>After taking your first steps in <strong>R</strong>, you might not be impressed by the design of the user interface and the way the software is used.</p>
 <p>There are various user interfaces that work on top of plain <strong>R</strong> to make it more user friendly. A very popular one is <strong>RStudio</strong>.</p>
-</section></section><section><section id="what-is-RStudio" class="title-slide slide level1 center"><h1>What is RStudio?</h1>
+</section></section>
+<section>
+<section id="what-is-RStudio" class="title-slide slide level1 center">
+<h1>What is RStudio?</h1>
 
-</section><section id="what-is-rstudio" class="slide level2"><h2>What is RStudio?</h2>
+</section>
+<section id="what-is-rstudio" class="slide level2">
+<h2>What is RStudio?</h2>
 <p><strong>RStudio</strong></p>
 <ul>
 <li><p>is an Integrated Development Environment (IDE) for <strong>R</strong></p></li>
@@ -333,23 +394,39 @@
 <li><p>makes it easier to write code, analyze data, create visuals, access documentation and manage projects</p></li>
 </ul>
 <p>Its homepage is <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a></p>
-</section></section><section><section id="install-RStudio" class="title-slide slide level1 center"><h1>Installing RStudio</h1>
+</section></section>
+<section>
+<section id="install-RStudio" class="title-slide slide level1 center">
+<h1>Installing RStudio</h1>
 
-</section><section id="rstudio-installation" class="slide level2"><h2>RStudio Installation</h2>
+</section>
+<section id="rstudio-installation" class="slide level2">
+<h2>RStudio Installation</h2>
 <p>To download <strong>RStudio</strong>, go to its <a href="https://posit.co/download/rstudio-desktop/">download</a> page. At the time of writing, it looks as follows:</p>
 
-<img data-src="figures/website-RStudio-1.png" class="r-stretch"></section><section id="rstudio-installation-1" class="slide level2"><h2>RStudio Installation</h2>
+<img data-src="figures/website-RStudio-1.png" class="r-stretch"></section>
+<section id="rstudio-installation-1" class="slide level2">
+<h2>RStudio Installation</h2>
 <p>Start the download process:</p>
 
-<img data-src="figures/download-RStudio-1.png" class="r-stretch"></section></section><section><section id="open-RStudio" class="title-slide slide level1 center"><h1>First Steps in RStudio</h1>
+<img data-src="figures/download-RStudio-1.png" class="r-stretch"></section></section>
+<section>
+<section id="open-RStudio" class="title-slide slide level1 center">
+<h1>First Steps in RStudio</h1>
 
-</section><section id="opening-rstudio" class="slide level2"><h2>Opening RStudio</h2>
+</section>
+<section id="opening-rstudio" class="slide level2">
+<h2>Opening RStudio</h2>
 <p>Open <strong>RStudio</strong>, you should see the following:</p>
 
-<img data-src="figures/open-RStudio-1.png" class="r-stretch"></section><section id="opening-rstudio-1" class="slide level2"><h2>Opening RStudio</h2>
+<img data-src="figures/open-RStudio-1.png" class="r-stretch"></section>
+<section id="opening-rstudio-1" class="slide level2">
+<h2>Opening RStudio</h2>
 <p>You will recognize the <strong>R</strong> Console and see that <strong>RStudio</strong> is ready to receive input:</p>
 
-<img data-src="figures/open-RStudio-2.png" class="r-stretch"></section><section id="exercise-1.2" class="slide level2"><h2>Exercise 1.2</h2>
+<img data-src="figures/open-RStudio-2.png" class="r-stretch"></section>
+<section id="exercise-1.2" class="slide level2">
+<h2>Exercise 1.2</h2>
 <p>Re-execute the commands you executed before in <strong>R</strong> now in the <strong>R</strong> Console of <strong>RStudio</strong>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span><span class="dv">4</span></span>
@@ -363,21 +440,30 @@
 <span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a>pi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The console in <strong>RStudio</strong> behaves exactly the same as the plain <strong>R</strong> window!</p>
-</section><section id="structure-in-rstudio" class="slide level2"><h2>Structure in RStudio</h2>
+</section>
+<section id="structure-in-rstudio" class="slide level2">
+<h2>Structure in RStudio</h2>
 <p>But <strong>RStudio</strong> has much more to offer than plain <strong>R</strong>!</p>
 <p><strong>RStudio</strong> (unlike <strong>R</strong>) is structured in different windows. You should currently see 3 windows:</p>
 <ul>
 <li>Left: <strong>R</strong> console</li>
 <li>Top right: Display of objects in the global environment</li>
 <li>Bottom right: Files, plots, packages, help, etc.</li>
-</ul></section><section id="rstudio-windows" class="slide level2"><h2>RStudio Windows</h2>
+</ul>
+</section>
+<section id="rstudio-windows" class="slide level2">
+<h2>RStudio Windows</h2>
 <p>The 3 main windows (aka panes) in <strong>RStudio</strong>:</p>
 
-<img data-src="figures/open-RStudio-3.png" class="r-stretch"></section><section id="rstudio-menu-bar" class="slide level2"><h2>RStudio Menu Bar</h2>
+<img data-src="figures/open-RStudio-3.png" class="r-stretch"></section>
+<section id="rstudio-menu-bar" class="slide level2">
+<h2>RStudio Menu Bar</h2>
 <p><strong>RStudio</strong> also has a Menu bar at the top:</p>
 
 <img data-src="figures/open-RStudio-4.png" class="r-stretch"><p>The usefulness of these windows and menu bar in <strong>RStudio</strong> will become clear throughout this training.</p>
-</section><section id="exercise-1.3" class="slide level2"><h2>Exercise 1.3</h2>
+</section>
+<section id="exercise-1.3" class="slide level2">
+<h2>Exercise 1.3</h2>
 <p>Explore the following quick tricks that the console in <strong>RStudio</strong> offers. After the prompt:</p>
 <ul>
 <li>press the <em>ctrl</em> button on Windows, or the <em>command</em> on Mac together with the arrow key <em>↑</em>. What do you see?</li>
@@ -387,12 +473,19 @@
 <li>start to write sq and then hit the tabulator (tab) key <em>⇆</em> right after without an additional space. What do you see?</li>
 </ul>
 <p>It should present you with a list of suggested commands together with a short description. You can then use the <em>↑</em> and <em>↓</em> arrow keys to navigate through them. Which one is the relevant one to compute the square root of a number? Choose the appropriate function, then hit <em>enter</em> to compute the square root of 100.</p>
-</section><section id="need-for-r-scripts" class="slide level2"><h2>Need for R Scripts</h2>
+</section>
+<section id="need-for-r-scripts" class="slide level2">
+<h2>Need for R Scripts</h2>
 <p>Suppose you want to continue your work tomorrow. If you would now close <strong>RStudio</strong>, all of your work would be gone!</p>
 <p>To avoid this problem, we will not give commands directly in the <strong>R</strong> console, but save them in an <strong>R</strong> Script.</p>
-</section></section><section><section id="R-script" class="title-slide slide level1 center"><h1>R Script</h1>
+</section></section>
+<section>
+<section id="R-script" class="title-slide slide level1 center">
+<h1>R Script</h1>
 
-</section><section id="what-is-an-r-script" class="slide level2"><h2>What is an R Script?</h2>
+</section>
+<section id="what-is-an-r-script" class="slide level2">
+<h2>What is an R Script?</h2>
 <p>While many simple calculations can be done using the command line, as soon as things get more complicated, scripts should be used.</p>
 <p>An <strong>R</strong> Script</p>
 <ul>
@@ -402,21 +495,32 @@
 <li><p>can be saved as a .R file</p></li>
 <li><p>allows you to automate and reproduce your work, allowing you to run the same analysis without having to redo each step manually again</p></li>
 <li><p>makes your work organized, shareable and transparent!</p></li>
-</ul></section><section id="creating-an-r-script" class="slide level2"><h2>Creating an R Script</h2>
+</ul>
+</section>
+<section id="creating-an-r-script" class="slide level2">
+<h2>Creating an R Script</h2>
 <p>Creating an <strong>R</strong> Script is easy.</p>
 <p>Using the menu bar, go to <em>File</em>, <em>New File</em>, <em>R Script</em>:</p>
 
 <img data-src="figures/R-script-1.png" class="r-stretch"><p>Alternatively, you could have used the shortcut <em>ctrl+shift+N</em> on Windows or <em>command+shift+N</em> on Mac.</p>
-</section><section id="structure-in-rstudio-1" class="slide level2"><h2>Structure in RStudio</h2>
+</section>
+<section id="structure-in-rstudio-1" class="slide level2">
+<h2>Structure in RStudio</h2>
 <p>RStudio now displays 4 windows, with the <strong>R</strong> Script currently displayed in the top left:</p>
 
-<img data-src="figures/R-script-2.png" class="r-stretch"></section><section id="r-script" class="slide level2"><h2>R Script</h2>
+<img data-src="figures/R-script-2.png" class="r-stretch"></section>
+<section id="r-script" class="slide level2">
+<h2>R Script</h2>
 <p>Currently the <strong>R</strong> Script is Untitled, we should give it a name.</p>
 
-<img data-src="figures/R-script-3.png" class="r-stretch"></section><section id="exercise-1.4" class="slide level2"><h2>Exercise 1.4</h2>
+<img data-src="figures/R-script-3.png" class="r-stretch"></section>
+<section id="exercise-1.4" class="slide level2">
+<h2>Exercise 1.4</h2>
 <p>Give your R Script a name and save it. Go to <em>File</em>, <em>Save As…</em>:</p>
 
-<img data-src="figures/R-script-4.png" class="r-stretch"></section><section id="r-working-directory" class="slide level2"><h2>R Working Directory</h2>
+<img data-src="figures/R-script-4.png" class="r-stretch"></section>
+<section id="r-working-directory" class="slide level2">
+<h2>R Working Directory</h2>
 <p>Before we start working in our R Script, let us first set the working directory in <strong>R</strong>.</p>
 <p>The working directory is the location on your computer where <strong>R</strong> will read and save files. Go to <em>Session</em>, <em>Set Working Directory</em>. Two convenient options are:</p>
 <ul>
@@ -424,18 +528,22 @@
 <li><p><em>To Source File Location</em>: Set the working directory to the directory where your <strong>R</strong> Script (the source file) is saved</p></li>
 </ul>
 
-<img data-src="figures/R-script-5.png" class="r-stretch"></section><section id="r-working-directory-1" class="slide level2"><h2>R Working Directory</h2>
+<img data-src="figures/R-script-5.png" class="r-stretch"></section>
+<section id="r-working-directory-1" class="slide level2">
+<h2>R Working Directory</h2>
 <p>Select the option to set the working directory to the source file location. You will see that a command automatically pops up in the R console, something like:</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"C:/Rtraining"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Rtraining"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can use this command directly next time. Mind the usage of the <em>/</em> when specifying the path of your working directory!</p>
 <p>You can also include comment lines in your <strong>R</strong> script. These start with the symbol <em>#</em> and allow you to document your code. For instance:</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Setting my working directory</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"C:/Rtraining"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Setting my working directory</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Rtraining"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="exercise-1.5" class="slide level2"><h2>Exercise 1.5</h2>
+</section>
+<section id="exercise-1.5" class="slide level2">
+<h2>Exercise 1.5</h2>
 <p>Copy some of the commands you previously executed into your <strong>R</strong> Script.</p>
 <p>Execute a specific line</p>
 <ul>
@@ -444,23 +552,35 @@
 </ul>
 
 <img data-src="figures/R-script-6.png" class="r-stretch"><p>You can execute multiple lines by highlighting them all and doing one of the above. Try this.</p>
-</section><section id="exercise-1.6" class="slide level2"><h2>Exercise 1.6</h2>
+</section>
+<section id="exercise-1.6" class="slide level2">
+<h2>Exercise 1.6</h2>
 <p>You can adjust the sizes and positioning of the windows (panes) according to your liking.</p>
 <p>Go to <em>Tools</em>, <em>Global Options…</em> and then select <em>Pane Layout</em> from which you can adjust the positioning of each of the 4 panes by selecting them from the drop-down menus</p>
 
 <img data-src="figures/R-script-7.png" class="r-stretch"><p>Experiment with a different positioning and re-adjust according to your liking.</p>
-</section></section><section><section id="R-packages" class="title-slide slide level1 center"><h1>R Package Management System</h1>
+</section></section>
+<section>
+<section id="R-packages" class="title-slide slide level1 center">
+<h1>R Package Management System</h1>
 
-</section><section id="r-package-management-system" class="slide level2"><h2>R Package Management System</h2>
+</section>
+<section id="r-package-management-system" class="slide level2">
+<h2>R Package Management System</h2>
 <p>Until now, we have explored some basic functionality in <strong>R</strong>. But much of the functionality of <strong>R</strong> is extended by its big and active community.</p>
 <p>These extensions are called <strong>R</strong> packages</p>
-</section><section id="what-are-r-packages" class="slide level2"><h2>What are R packages?</h2>
+</section>
+<section id="what-are-r-packages" class="slide level2">
+<h2>What are R packages?</h2>
 <p><strong>R</strong> packages</p>
 <ul>
 <li><p>are constantly developed and adjusted by the large user community making many state-of-the-art methods quickly available</p></li>
 <li><p>can be installed for just about everything you want to do in statistics and data science</p></li>
 <li><p>offer pre-defined functions which makes it possible to use <strong>R</strong> without a deep understanding of the language and programming skills.</p></li>
-</ul></section><section id="overview-of-r-packages" class="slide level2"><h2>Overview of R packages</h2>
+</ul>
+</section>
+<section id="overview-of-r-packages" class="slide level2">
+<h2>Overview of R packages</h2>
 <p>The standard distribution of <strong>R</strong> comes already with a number of packages.</p>
 <p>A list of the currently installed packages can be obtained from the <em>Packages</em> window in the bottom right window below</p>
 
@@ -468,14 +588,30 @@
 
 
 </section></section>
-</div>
+    </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
 
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="site_libs/revealjs/plugin/notes/notes.js"></script><script src="site_libs/revealjs/plugin/search/search.js"></script><script src="site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -666,7 +802,9 @@
           RevealZoom
         ]
       });
-    </script><script>
+    </script>
+    
+    <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -701,191 +839,175 @@
         }
 
       })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/smeekes\.github\.io\/R_training\/");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
-      }
-    });
     </script>
 
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/smeekes\.github\.io\/R_training\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
 
 </body></html>
