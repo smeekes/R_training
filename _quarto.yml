@@ -1,3 +1,6 @@
+project: 
+  type: website
+
 format:
   revealjs:
     theme: [default, theme.scss]
