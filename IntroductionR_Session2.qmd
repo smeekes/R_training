@@ -1,0 +1,478 @@
+---
+title: "Introduction to R"
+subtitle: "Session 2"
+author: ""
+filters:
+  - diagram
+diagram:
+  engine:
+    tikz:
+      header-includes:
+        - '\usepackage{adjustbox,xcolor}'
+        - '\usetikzlibrary{arrows, shapes}'
+        - '\definecolor{UMdblue}{RGB}{0,28,61}'
+        - '\definecolor{UMlblue}{RGB}{0,162,219}'
+        - '\definecolor{UMorangered}{RGB}{232,78,16}'
+        - '\definecolor{UMorange}{RGB}{243,148,37}'
+        - '\definecolor{UMred}{RGB}{174,11,18}'
+---
+
+
+# Session Overview
+
+1.  [Objects](#objects)
+2.	[Vectors](#vectors)
+3.  [Matrices](#matrices)
+4.	[Lists](#lists)
+5.	[Data frames](#dataframes)
+
+
+## Objects {#objects}
+- In R, **everything is an object**.
+- Objects have a name that is assigned with `<-` (recommended) or `=`.
+- Names have to start with a letter and include only letters,   numbers, and characters such as “.” and “_”.
+- R is  **case sensitive:** $\Rightarrow Name\neq name$!
+
+- Objects can store vectors, matrices, lists, data frames, functions...
+
+```{r}
+# generate object x (no output):
+x <- 5
+# display log(x)
+log(x)
+
+```
+```{r, error=TRUE}
+# object X is not defined => error message 
+X
+```
+
+## Vectors {#vectors}
+
+- Vectors can store multiple types of information (e.g., numbers or "characters").
+- To define a 3-dimensional vector named "vec", use `vec<- c(value1,value2,value3)`.
+- Operators and functions can be applied to vectors, which means they are applied to **each of the elements individually**.
+```{r, eval=TRUE}
+# define vector named 'vec'
+vec<-c(1,2,3)
+# take the square root of 'vec' and store the result in 'sqrt_vec'
+sqrt_vec=sqrt(vec)
+# display sqrt_vec
+print(sqrt_vec)
+```
+
+## Vectors - some helpful shortcuts
+- R has built-in functions that generate sequences (useful for loops or plots, among other things). 
+- We can also repeat elements using `rep()`.
+```{r, eval=TRUE}
+# generate sequence 5,6,...,10
+5:10
+# generate sequence from 1 to 10 in steps of 0.5
+seq(from=1,to=5,by=0.5)
+#generate 4-dimensional vector of ones
+rep(1,4)
+```
+## Order matters!
+- **Be aware of the order of operations!**
+- compare the following:
+```{r, eval=TRUE}
+1+2:3^2 # '^2' evaluated before ':', only then '+1' is evaluated
+1+2:3*4 # first ':', then '*4', then '+1'
+# use brackets to avoid confusion or mistakes
+(1+2):(3*4)
+```
+## Summarizing vectors
+- R has built-in functions to summarize the information stored in vectors.
+- Remark: R is very good at generating random numbers!
+```{r, eval=TRUE}
+# Example: generate 100 random draws from a normal distribution with mean 1
+# and standard deviation 2
+norm.vec=rnorm(n=100,mean=1,sd=2)
+# get mean 
+mean(norm.vec)
+# get standard deviation 
+sd(norm.vec)
+# get maximum
+max(norm.vec)
+
+```
+
+## Exercise 2.1: generating and summarizing vectors
+- draw 50 random numbers from a normal distribution with mean `0`
+  and variance `1`. Store your results in the object `norm.vec`.
+- calculate the mean and standard deviation of `norm.vec`.
+- use `rep()` to repeat each element of `norm.vec` 3 times.
+  Store the result in the object `norm.vec.rep`.
+- Is `mean(norm.vec.rep^2)` equal to `mean(norm.vec.rep)^2`?
+
+```{r, eval=FALSE,error=TRUE,echo=FALSE}
+norm.vec<-rnorm(50,mean=0,sd=1)
+mean(norm.vec)
+sd(norm.vec)
+norm.vec.rep=rep(norm.vec,each=10)
+mean(norm.vec.rep^2)# first squares elements, then takes mean.
+mean(norm.vec.rep)^2# first takes mean, then squares the result.
+# Not the same!
+```
+
+
+## logical operators
+
+- logical operators can be either `TRUE` or `FALSE`.
+- Extremely useful for conditional statements, e.g. `if(condition is TRUE){do this}else{do that}`.
+- We can check if two objects are equal by `==`, different by `!=` or compare them with `<` and `>`.
+- We can combine logical statements with "AND" `&` and "OR" `|`
+```{r, eval=TRUE}
+# define  objects 
+obj1<-1
+obj2<-2
+obj3<-1 # same value as obj1
+obj1==obj2 # false statement
+obj1!=obj2 # true statement
+obj1==obj2 & obj1==obj3 # FALSE AND TRUE => FALSE
+obj1==obj2 | obj1==obj3 # FALSE OR TRUE => TRUE
+
+```
+
+---
+
+- We can also use logical operators in vectors.
+- the AND and OR operators `&` and `|` are then applied element-wise.
+```{r, eval=TRUE}
+vec2=1:5 # defines vector vec2=(1,2,3,4,5)
+vec2==3  # =FALSE if element is not 3, =TRUE if element is 3
+vec2>=2&vec2<5 # Only TRUE for elements >=2 and <5
+vec2>=2|vec2<5 # TRUE for all elements since either >=2 or <5
+```
+
+
+## Characters 
+- Vectors can also store characters.
+- characters are enclosed in `""`or `''`.
+```{r, eval=TRUE,error=TRUE}
+# define a vector of 2 cities
+cities<-c('Maastricht', "Amsterdam",'Rotterdam')
+print(cities)
+```
+
+## Exercise 2.2: type coersion
+- R tries to make objects comparable by coercing one object into the type of another.
+- This can sometimes be handy, but sometimes it leads to unforeseen errors (e.g., when loading new data).
+To illustrate this, do the following:
+	- compare the character `"1"` to the numeric `1`.
+	- try computing the sum of `"1"` and `"2"`.
+	- try computing the sum of `as.numeric("1")` and `as.numeric("2")`. What happened?
+	- create a mixed vector containing the numeric `1` and the character `"2"`. Of which type are the elements of the vector?
+```{r, eval=FALSE,error=TRUE,echo=FALSE}
+"1"==1 
+# yields TRUE: R coerces "1" to numeric 1.
+"1"+1 
+# yields error: cannot add character and numeric.
+as.numeric("1")+as.numeric("2") # yields 3
+# combine characters and numbers => numbers turn into characters
+mix<-c(1,"2")
+print(mix)
+# now that numbers are converted to characters, numerical operations
+# produce an error
+mix+1
+```
+
+
+## factors
+- Many variables are qualitative rather than quantitative.
+- While they are often coded using numbers, they don't have a numerical meaning.
+- Examples: gender, nationality...
+- Can also be ordinal, i.e., the outcomes can be ranked (e.g., "bad", "meh", "great").
+
+```{r, eval=TRUE}
+x<- c(1,3,3,2,1,3)
+xf<-factor(x,labels=c("bad","ok","good"))# no ranking
+xf
+# now with ranking
+xf.ordered<-factor(x,labels=c("bad","ok","good"),ordered=TRUE)
+xf.ordered
+```
+
+
+## Names
+- You can give the elements of your vector names either directly or using the `names()` command.
+- This is very useful for accessing elements (see nect slide)
+```{r, eval=TRUE,error=TRUE}
+avg_temp<-c(Maastricht=14.2, Amsterdam=13.4,Rotterdam=13.7)
+print(avg_temp) # names appear on top of elements
+names(avg_temp) # returns names of elements
+# Alternatively, we can define data and names separately
+temp<-c(14.2,13.4,13.7)
+names(temp)<-cities # recall that we have defined "cities" earlier!
+print(temp)
+```
+## Accessing elements
+- One can access the elements of a vector either by name or position.
+```{r, eval=TRUE,error=TRUE}
+# return the second element of "avg_temp" defined before
+avg_temp[2] 
+# return the element corresponding to "Maastricht"
+avg_temp["Maastricht"]
+# trying to access a non-existing element yields "NA"
+# ( for "not available"), i.e. a missing value
+avg_temp[4]
+```
+
+---
+
+- By using the minus sign `[-k]`, we can get the vector except for the $k$-th element.
+- We can also add elements to an existing vector.
+```{r, eval=TRUE,error=TRUE}
+# get the vector except for the third element
+avg_temp[-3]
+# now add another city to avg_temp
+avg_temp["Tilburg" ]<- 14.7
+# now the fourth element is defined!
+avg_temp[4]
+```
+
+## More on NA, NaN, Inf
+- `NA` ("not available") indicates missing values. 
+- Anything combined with `NA` yields `NA`.
+- `NaN`("not a number") indicates the result of a mathematically  undefined operation.
+```{r, eval=TRUE,error=TRUE}
+#define another vector
+vec3=c(-1.2,NA,0)
+# combine avg_temp and vec3
+vec4=c(avg_temp,vec3) 
+# divide elements by 0; notice the different outcomes
+vec4/0 
+```
+
+## Matrices {#matrices}
+- We can create a matrix with `m` rows directly using `matrix(vector,nrow=m)`.
+
+```{r, eval=TRUE,error=TRUE}
+# create matrix with 3 rows; fill numbers by row
+mat1<-matrix(1:12,nrow=3,byrow=TRUE) # by default, R fills matrices by column
+mat1
+```
+
+---
+
+- We can also combine vectors of the same length by row with `rbind(v1,v2,...)` or by column by `cbind(v1,v2,...)`.
+```{r, eval=TRUE,error=TRUE}
+# create vectors v1, v2 and v3 and combine them for same result
+v1<-1:4
+v2<-5:8
+v3<-9:12
+mat2<-rbind(v1,v2,v3)
+mat2
+```
+
+
+## Matrix indexing
+- We can give the rows and columns names using `rownames()` and `colnames()`.
+```{r, eval=TRUE,error=TRUE}
+# assign names to columns
+colnames(mat1)<-c("col1","col2","col3","col4")
+mat1
+# assign names to rows
+rownames(mat1)<-c("row1","row2","row3")
+mat1
+```
+## Accessing elements
+
+- We can access single elements by `[rownumber,colnumber]`, the `k`-th row by `[k,]` and the `k`-th column by `[,k]`.
+```{r, eval=TRUE,error=TRUE}
+# get element in second row in third column
+mat1[2,3]
+# get second row
+mat1[2,]
+# get third column
+mat1[,3]
+```
+
+---
+
+- If rows/columns have names, we can also use those.
+- Using vectors, we can also create more complicated subsets of matrices.
+```{r, eval=TRUE,error=TRUE}
+# get sub-matrix using vectors
+mat1[c(2,3),c(1:3)]
+# get second row using names (recall definition of mat2)
+mat2["v2",]
+
+```
+
+## Exercise 2.3: creating matrices, accessing elements
+1. Create the 3x3 identity matrix "by hand". To do so:
+	a) create 3 vectors of with zeros and ones in the appropriate spots.
+	b) use `rbind()` or `cbind()` to combine them into the identity matrix.
+	c) store the identity matrix as the object "I_mat".
+	d) R makes your life easy: type `diag(3)` in your console.
+
+2. Replicate the following Excel-matrix:
+
+![](figures/excel-screenshot.png){width=50%}
+
+<br>
+3. Get the data for April and my by
+  - including only the first and second row
+  - excluding the third row
+  - using the names
+	
+```{r, eval=FALSE,error=TRUE,echo=FALSE}
+# Solution:
+# 1.
+row1=c(1,0,0)
+row2=c(0,1,0)
+row3=c(0,0,1)
+I_mat=rbind(row1,row2,row3)
+diag(3)
+# 2.
+mat=matrix(c(12.3,14.7,27.7,11.2,13.5,15.8),nrow=3)
+rownames(mat)=c("April","May","June")
+colnames(mat)=c("Maastricht","Eindhoven")
+mat
+
+``` 
+
+---
+
+```{r, eval=FALSE,error=TRUE,echo=FALSE}
+# 3.
+mat[c(1,2),] # include first and second row
+mat[-3,] # exclude third row
+mat[c("April","May"),]
+```
+## Bonus: Matrix algebra 
+- R can do matrix "regular" algebra, and even lets you do operations that are not well-defined mathematically. 
+
+- `t(A)` is the transpose of the matrix `A`.
+```{r, eval=TRUE,error=TRUE}
+# define matrix containing normal data
+data.vec=rnorm(9,mean=0,sd=1)
+A=matrix(data.vec,nrow=3) 
+A # return A
+t(A) # return the transpose
+```
+
+---
+
+- `solve(A)` returns the inverse of an invertible matrix.
+```{r, eval=TRUE,error=TRUE}
+solve(A) # return the inverse of A
+```
+
+---
+
+- `*`does element-wise multiplication.
+- `%*%` does matrix multiplication .
+```{r, eval=TRUE,error=TRUE}
+# element-wise multiplication
+A*solve(A) # NOT the identity matrix
+# matrix multiplication
+A%*%solve(A) 
+# yields the identity (up to a small error due to the
+# numerical computation of the inverse)
+```
+
+
+## Lists {#lists}
+- A `list` is a generic collection of objects.
+- Unlike vectors, the components can have different types (e.g., numeric and character).
+- Many functions output lists, so knowing how to access elements is very useful.
+- Generate a list with `mylist<- list(name1=component1, name2=component2,...)`.
+```{r, eval=TRUE,error=TRUE}
+mylist=list(num.vec=1:3,city="Maastricht") 
+print(mylist)
+```
+
+---
+
+- Get names of the components with `names(mylist)`.
+- You can access components with the `$` (dollar sign) operator, e.g., `mylist$name1`,  or by position with `[[]]`.
+```{r, eval=TRUE,error=TRUE}
+mylist$city
+mylist[[2]] # same result
+```
+
+## Data frames {#dataframes}
+- `data frames` are simply data sets in R terminology.
+- So-called `data files` can contain multiple data sets.
+- We can create a data frame by `data.frame()` or transform a matrix `mat` into a data frame by `as.data.frame(mat)`.
+- Many functions (e.g. `lm()` for regressions) need a data frame as input (see later sessions).
+```{r, eval=TRUE,error=TRUE}
+# generate a data frame
+ID<- 1:4
+hourly_wage<- rnorm(n=4,mean=20,sd=1) # create 4 draws from N(20,1)
+city<- c("Maastricht","Eindhoven","Amsterdam",NA)
+dats<- data.frame(ID,hourly_wage,city) # add new variable
+dats
+```
+
+---
+
+- As with lists, we can access variables using the `$` operator.
+- We can also add new variables using the `$` operator.
+-  `View()` opens a data-viewer. Very useful (but difficult to demonstrate on these slides).
+```{r, eval=TRUE,error=TRUE}
+dats$city # "city" is NA for ID 4.
+dats$city[4]<-'Tilburg' # assign city to ID 4
+dats$educ<- c(12,21,9,10)
+dats
+```
+
+---
+
+- Using `subset(data_frame,condition)`, we can easily get a subset of the original data frame where `condition` is `TRUE`.
+```{r, eval=TRUE,error=TRUE}
+# only keep individuals with at least 10 years of education
+sub_dats=subset(dats,educ>10)
+sub_dats
+```
+
+## Exercise 2.4
+- Create your own data frame:
+	- create a vector `ID` that contains the sequence 1,2,...,100.
+	- create a vector `income` that contains 100 random draws from N(10,1).
+	- create a dummy `female` that is 1 for `ID=1,...,50` and 0 otherwise. (hint: you can achieve this by using `rep()` twice and combining two vectors with `c()`)
+	- collect the variables in a data frame `my_df`.
+	- inspect your data with `View(my_df)`
+	- bonus: create a subset `sub_my_df` that contains only individuals with income larger than 10.
+	
+	
+```{r, eval=FALSE,error=TRUE,echo=FALSE}
+# Solution:
+ID=1:100
+income=rnorm(n=100,mean=10,sd=1)
+female=c(rep(1,50),rep(0,50))
+my_df=data.frame(ID,income,female)
+my_df
+View(my_df)
+sub_my_df=subset(my_df,income>10)
+View(sub_my_df)
+```
+
+
+## Bonus: teaching regression with R
+- To give students a feeling for the behavior of the least squares estimator,
+it can be very useful to use simulated data.
+- This allows teachers to visualize the effects of various quantities of interest, e.g.,
+sample size, variation in the observed and unobserved variables, or omitted variables.
+```{r, eval=TRUE,error=TRUE}
+n<-100 # set the sample size
+X<-rnorm(n,mean=1,sd=2)# define the observed covariate X
+epsilon<-rnorm(n,mean=0,sd=1) # define the model error
+beta0<-1 # define true intercept
+beta1<-2 # define true slope
+Y=beta0+beta1*X+epsilon # generate Y according to a linear model
+# recall the formula in a bivariate model
+beta1.hat=cov(X,Y)/var(X)
+beta0.hat=mean(Y)-beta1.hat*mean(X)
+# print estimators
+beta0.hat
+beta1.hat
+```
+# Bonus exercise: simulate!
+- Repeat the previous simulation, but
+	- change the sample size
+	- change the mean of `X`. What is the effect on `beta1.hat`?
+	- change the mean of `epsilon`. What is the effect on `beta0.hat`?
+	- change the variance of `X` and `epsilon`. What is the effect?

@@ -1,0 +1,102 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+
+$UMdblue:    #001C3D !default;
+$UMlblue:  #00A2DB !default;
+$UMorangered:  #E84E10 !default;
+$UMred:     #AE0B12 !default;
+$UMorange:  #F39425 !default;
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #ecf0f1 !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #b4bcc2 !default;
+$gray-600: #95a5a6 !default;
+$gray-700: #7b8a8b !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$link-color: $UMlblue;
+$presentation-heading-color: $UMlblue;
+$presentation-title-slide-text-align: "left";
+$presentation-subtitle-slide-text-align: "left";
+$code-block-font-size: 1em;
+$code-color: $UMdblue;
+$code-bg: mix($white, $UMdblue, 95);
+$code-block-bg: mix($white, $UMdblue, 90);
+$code-annotation-higlight-color: $UMorange;
+$presentation-h2-font-size: 1.4em;
+$btn-code-copy-color: $UMorange;
+$btn-code-copy-color-active: $UMorangered;
+
+
+/*-- scss:rules --*/
+
+.reveal .custom-title {
+  position: absolute;
+  color: $UMlblue;
+  font-size: 3em;
+  text-align: right;
+  right: 20px;
+  top: -00px;
+}
+
+.reveal .custom-author {
+  position: absolute;
+  font-size: 1.4em;
+  text-align: right;
+  right: 20px;
+  top: 300px;
+}
+
+.reveal .custom-twitter a {
+  position: absolute;
+  color: #1DA1F2;
+  font-size: 1.3em;
+  text-align: right;
+  right: 20px;
+  top: 470px;
+}
+
+.reveal .custom-url a {
+  position: absolute;
+  color: $UMlblue;
+  font-size: 1.5em;
+  text-align: right;
+  right: 20px;
+  top: 570px;
+}
+
+details>summary {
+  font-size: 0.75em;
+}
+
+.small {
+  font-size: 0.75em;
+}
+
+.reveal .slide .in-out {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 1em;
+  background: #E8E8E8;
+  font-family: $font-family-monospace;
+  font-size: 0.6em;
+}
+
+
+.reveal .slide .goal {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 1em;
+  background: #ccddeb;
+}
