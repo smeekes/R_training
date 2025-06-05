@@ -5,3 +5,5 @@
 R_training.Rproj
 /.quarto/
 /_site/
+.DS_Store
+/_freeze/
