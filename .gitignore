@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 R_training.Rproj
+/.quarto/
+/_site/
