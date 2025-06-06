@@ -11,6 +11,7 @@ format:
     fontsize: 1.5em
     code-line-numbers: false
     link-external-newwindow: true
+    embed-resources: true
 code-link: true
 execute:
   echo: true
