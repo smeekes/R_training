@@ -53,11 +53,16 @@ This session has two goals:
 
 ## Using the correct directory to get input / output of the R session
 
-<!-- TODO -->
-<!-- there is stuff about this in session 1 and session 3. Maybe you can copy that? Some repetition is good. Please don't remove it from those sessions without discussing.
--->
+- Recall: To set the working directory to the folder where your current R script is located, you can simply use:
 ```{r, eval=FALSE}
-library('this.path')
+library(this.path)
+setwd(dirname(this.path()))
+```
+
+- Recall: We could also explicitly make the function call from the library:
+```{r, eval=FALSE}
+library(this.path)
+setwd(dirname(this.path::this.path()))
 ```
 
 ## Types of input or data that can be loaded in R
@@ -131,7 +136,7 @@ Advice for option 1 (cont'd):
 library(readxl)
 climate <- read_excel("data/climate.xlsx")
 ```
-<!-- View(climate) does not work on Mac! I am not sure about the participants, but it does for sure not work in quarto! -->
+  - You can view the data by clicking on it in the `Environment' at the top-right of the workspace. 
 
 ## General way of importing and exporting of other data formats
 
@@ -158,9 +163,14 @@ import("data/dataus.csv")
 - `save()` saves objects as an `.RData` file.
 - `save.image()` saves a selection of objects as an `.RData` file.
 
-## Exercise: 
-- Save your current workspace using function `save.image()`
-<!-- TODO: add solution and help file options -->
+## Exercise 4.1: 
+- Save your current workspace using function `save.image()'.
+- Save only one variable in the workspace using function `save()'.
+- Make a list of two variables from `data_short', and save this list using function `save'.
+<!-- save.image('myoutput.Rdata') -->
+<!-- save(climate, 'myclimatedata.Rdata') -->
+<!-- myoutput <- list(data_short$NAME, data_short$LATITUTE) -->
+<!-- save(myoutput, 'myclimatedata.Rdata') -->
 
 ## R Base Graphics
 
@@ -192,11 +202,7 @@ Notice that function `plot()` calls methods.
 
 It will perform different operations depending on the class of the passed object.
 
-<!--
-TODO Check if this is a repetition from Session 3.
--->
-
-```{r, eval=FALSE}
+```{r}
 ols_result <- lm(MAX~YEAR, data = data_short)
 plot(ols_result)
 ```
@@ -217,24 +223,6 @@ dev.off()
 plot(data_short$MAX, type = "l") ## Lines
 points(data_short$MAX)
 ```
-
-## Exercise: plot president approval ratings
-
-The dataset `presidents` contains US president approval ratings on a quarterly basis from 1945 to 1974. To visualise these approval ratings, we can use the `plot()` function. First, make a basic plot, then customise the plot in the following ways
-
-1. The title of the X-axis should say 'Year', the title of the Y-axis 'Approval Rating'.
-
-2. Make the line blue. (Hint: specifying the colour literally as `"blue"` works, also note the cool effects in RStudio!)
-
-3. Make the tick marks appear on the inside of the figure rather than the outside. Even better, change the tick marks into grid lines. (This one is tricky!)
-
-You will need to consult the help file for this exercise; see this therefrom more as an exercise in how to navigate R's help system, than an exercise in plotting (which we will cover in more detail later).
-
-You may want to ask ChatGPT for help and then try to see if you could also have gotten the same answer yourself; it may not always give you the most straightforward answer though!
-
-<!-- plot(presidents, xlab = "Year", ylab = "approval rating", col="blue", tck=0.05) -->
-
-<!-- Copied from Stephan -->
 
 ## Customizing Graphics
 **Overview**: Frequently used arguments in graphic functions. See `?par` for all graphical options
@@ -270,6 +258,51 @@ You may want to ask ChatGPT for help and then try to see if you could also have 
 
 ---
 
+## Exercise 4.2: plot maximum temperatures for Maastricht
+
+We want to visualize the daily maximum temperatures in the climate data 'data_short' specifically for Maastricht. First, make a basic plot of variable and `MAX' then customise the plot in the following ways:
+
+1. The title of the X-axis should say 'Year', the title of the Y-axis 'Maximum Temperature'.
+
+2. Make the plot a line plot with a blue line. (Hint: specifying the colour literally as `"blue"` works)
+
+3. Make the tick marks appear on the inside of the figure rather than the outside. 
+
+4. Calculate the average temperature. 
+
+5. Add a horizontal line with the average maximum temperature
+
+You will need to consult the help file for this exercise; see this therefrom more as an exercise in how to navigate R's help system, than an exercise in plotting (which we will cover in more detail later).
+
+You may want to ask ChatGPT for help and then try to see if you could also have gotten the same answer yourself; it may not always give you the most straightforward answer though!
+
+<!-- ind <- data_short[,3] == "MAASTRICHT" -->
+<!-- data_Maas <- data_short[ind,]  -->
+<!-- plot(data_Maas$MAX, type = 'l', col = 'blue', tck = 0.05) -->
+<!-- mean_max <- mean(data_Maas$MAX) -->
+<!-- abline(h = mean_max) -->
+
+## Exercise 4.3: Use other packages for plots
+
+- Make the same plot in R using package `ggplot2'
+- You may want to use ChatGBT since the syntax of `ggplot2' is quite different from what we covered so far.
+
+<!-- library(ggplot2) -->
+<!-- ind <- data_short[,3] == "MAASTRICHT" -->
+<!-- data_Maas <- data_short[ind,]  -->
+<!-- # Add an index to identify each observation -->
+<!-- data_Maas$index <- 1:nrow(data_Maas) -->
+<!-- mean_max <- mean(data_Maas$MAX) -->
+<!-- # Line plot: index vs. mpg -->
+<!-- ggplot(data_Maas, aes(x = index, y = MAX)) + -->
+<!--   geom_line(color = "steelblue", size = 1) + -->
+<!--   geom_point(color = "steelblue") + -->
+<!--   geom_hline(yintercept = mean_max, color = "red", linetype = "dashed", size = 1)  -->
+<!--   labs(title = "Max temp. in Maastricht", -->
+<!--        x = "Observation Index", -->
+<!--        y = "Max temperature")  -->
+
+
 ## Manually saving R plots
 
  - Use the plot functions without creating a graph.
@@ -295,19 +328,21 @@ jpeg("outputs/plot_data_short.jpeg")
 plot(x = data_short$YEAR, y = data_short$MAX)   
 dev.off()
 ```
-## Exercise: Get help from chatgbt about plotting
 
-- Make an example scatter plot in R.
-- Change the axis names of the plot.
-- Add a horizontal line to the plot.
-- Add text to the plot.
+## Exercise 4.4: Make a continuous plot of maximum temperatures in Maastricht
 
-## Exercise: Use other packages for figures
+- In this exercise we want to visualise the data over time as if data are gradually becoming available.
+- Select a starting sample of the data for Maastricht. 
+- Make a for loop to get increasing windows of the data.
+- Expand your plot with new data within the for loop.
 
-- Make the same scatter plot in R using package ggplot2
-- You can get help from chatgbt.
-
-<!-- Todo: make the question better and include solution -->
-TODO ggplot as extra slides from Tobias
-
-TODO refer back to lists
+<!-- # Create plot window -->
+<!-- plot(1:1000, data_Maas$MAX[1:100], xlim = c(1, nrow(data_Maas)), ylim = range(data_Maas$MAX),
+     xlab = "Time", ylab = "Value", main = "Adding Data Over Time", type = 'l') -->
+<!-- # Gradually add points -->
+<!-- ind <- data_short[,3] == "MAASTRICHT" -->
+<!-- data_Maas <- data_short[ind,]  -->
+<!-- for (i in 1001:nrow(data_Maas)) { -->
+<!--   lines(1:i, data_Maas$MAX[1:i], col = "steelblue") -->
+<!--   Sys.sleep(0.05)  # Pause to simulate "gradual" effect -->
+<!-- } -->
