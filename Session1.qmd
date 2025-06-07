@@ -90,30 +90,51 @@ To install **R**, go to the Comprehensive R Archive Network [CRAN](https://cran.
 ![](figures/website-R-1.png)
 
 
-## R Installation
+## R Installation on Windows
 To download, for instance, **R** for Windows, you arrive at the following page:
 
 ![](figures/website-R-2.png)
 
-## R Installation
+## R Installation on Windows
 Now download the latest version of **R** (version 4.5.0 at the time of writing):
 
 ![](figures/website-R-3.png)
 
-## R Installation
+## R Installation on Windows
 Start the download process:
 
 ![](figures/download-R-1.png)
 
-## R Installation
+## R Installation on Windows
 Continue the download process:
 
 ![](figures/download-R-2.png)
 
-## R Installation
+## R Installation on Windows
 Download completed:
 
 ![](figures/download-R-3.png)
+
+## R Installation on Mac
+
+Choose the right version for your Mac:
+
+![](figures/RprojMac)
+
+## R Installation on Mac
+
+Download the installation file and open it:
+
+![](figures/RinstallMac1)
+
+## R Installation on Mac
+
+Simply click continue everywhere, the default installation is fine.
+
+- When asked, enter your password and accept the license agreement.
+
+![](figures/RinstallMac2)
+
 
 # First Steps in R {#open-R}
 
@@ -149,25 +170,25 @@ Start by using **R** as a simple calculator, try to enter after the **R** prompt
 ```{r, eval=FALSE}
 2+3
 ```
-and hit <em>enter</em>.
+and hit *enter*.
 
 You will see that **R** directly returns the output in the **R** console next to the '[1]': 
 ```{r}
 2+3
 ```
 
-If you want to re-execute your previous command, use the arrow key <em>↑</em>. To make changes to a command, you can use the <em>←, →</em> arrows and re-execute. To move to the next command, use the  <em>↓</em> arrow.
+If you want to re-execute your previous command, use the arrow key *↑*. To make changes to a command, you can use the *←, →* arrows and re-execute. To move to the next command, use the  *↓* arrow.
 
 Finally, when **R** receives an incomplete expression such as 
 ```{r, eval=FALSE}
 2+
 ```
-**R** will return the <em>+</em> symbol, thereby letting you know that you forgot to type something. You can either complete the command and then hit <em>enter</em> or exit the incomplete command via the <em>esc</em> button.
+**R** will return the *+* symbol, thereby letting you know that you forgot to type something. You can either complete the command and then hit *enter* or exit the incomplete command via the *esc* button.
 
 
 ## Exercise 1.1
 
-Enter the following expressions, one by one, in **R** and hit <em>enter</em> to see how **R** evaluates them:
+Enter the following expressions, one by one, in **R** and hit *enter* to see how **R** evaluates them:
 
 ```{r, eval=FALSE}
 2 + 3*4
@@ -204,16 +225,27 @@ Its homepage is [https://posit.co/download/rstudio-desktop/](https://posit.co/do
 
 # Installing RStudio {#install-RStudio}
 
-## RStudio Installation
+## RStudio Installation on Windows
 
 To download **RStudio**, go to its [download](https://posit.co/download/rstudio-desktop/) page. At the time of writing, it looks as follows:
 
 ![](figures/website-RStudio-1.png)
 
-## RStudio Installation
+## RStudio Installation on Windows
 Start the download process:
 
 ![](figures/download-RStudio-1.png)
+
+## RStudio Installation on Mac
+If you open the (same) [download](https://posit.co/download/rstudio-desktop/) page on Mac, you directly see the download button for Mac:
+
+![](figures/RStudioMac1.png)
+
+## RStudio Installation on Mac
+Open the downloaded RStudio dmg file, and drag the RStudio icon into the applications folder:
+
+![](figures/RStudioMac2.png)
+
 
 # First Steps in RStudio {#open-RStudio}
 
@@ -277,14 +309,14 @@ The usefulness of these windows and menu bar in **RStudio** will become clear th
  
 Explore the following quick tricks that the console in **RStudio** offers. After the prompt:
 
-- press the <em>ctrl</em> button on Windows, or the <em>command</em> on Mac together with the arrow key <em>↑</em>. What do you see?
+- press the *ctrl* button on Windows, or the *command* on Mac together with the arrow key *↑*. What do you see?
 
-It should give you a list of all previously executed commands. You can then use the <em>↑</em> and <em>↓</em> arrow keys to directly move to a certain command to repeat or correct it. 
+It should give you a list of all previously executed commands. You can then use the *↑* and *↓* arrow keys to directly move to a certain command to repeat or correct it. 
 
-- start to write sq and then hit the tabulator (tab) key <em>⇆</em>
+- start to write sq and then hit the tabulator (tab) key *⇆*
 right after without an additional space. What do you see?
 
-It should present you with a list of suggested commands together with a short description. You can then use the <em>↑</em> and <em>↓</em> arrow keys to navigate through them. Which one is the relevant one to compute the square root of a number? Choose the appropriate function, then hit <em>enter</em> to compute the square root of 100. 
+It should present you with a list of suggested commands together with a short description. You can then use the *↑* and *↓* arrow keys to navigate through them. Which one is the relevant one to compute the square root of a number? Choose the appropriate function, then hit *enter* to compute the square root of 100. 
 
 ## Need for R Scripts
 Suppose you want to continue your work tomorrow. If you would now close **RStudio**, all of your work would be gone!
@@ -363,10 +395,10 @@ Select the option to set the working directory to the source file location. You 
 setwd("C:/Rtraining")
 ```
 
-You can use this command directly next time. Mind the usage of the  <em>/</em> when specifying the path of your working directory!
+You can use this command directly next time. Mind the usage of the  */* when specifying the path of your working directory!
 
 
-You can also include comment lines in your **R** script. These start with the symbol <em>#</em> and allow you to document your code. For instance:
+You can also include comment lines in your **R** script. These start with the symbol *#* and allow you to document your code. For instance:
 
 ```{r, eval=FALSE}
 # Setting my working directory
@@ -379,9 +411,9 @@ Copy some of the commands you previously executed into your **R** Script.
 
 Execute a specific line
 
--  by pressing the <em>Run</em> button to execute the line on which your cursor is currently located
+-  by pressing the *Run* button to execute the line on which your cursor is currently located
 
-- by using <em>ctrl+enter</em> on Windows or <em>command+enter</em>  on Mac to execute the line on which your cursor is currently located
+- by using *ctrl+enter* on Windows or *command+enter*  on Mac to execute the line on which your cursor is currently located
 
 ![](figures/R-script-6.png)
 
@@ -392,7 +424,7 @@ You can execute multiple lines by highlighting them all and doing one of the abo
 ## Exercise 1.6
 You can adjust the sizes and positioning of the windows (panes) according to your liking. 
 
-Go to <em>Tools</em>, <em>Global Options...</em> and then select <em>Pane Layout</em> from which you can adjust the positioning of each of the 4 panes by selecting them from the drop-down menus
+Go to *Tools*, *Global Options...* and then select *Pane Layout* from which you can adjust the positioning of each of the 4 panes by selecting them from the drop-down menus
 
 ![](figures/R-script-7.png)
 
@@ -421,7 +453,7 @@ These extensions are called **R** packages
 
 The standard distribution of **R** comes already with a number of packages. 
 
-A list of the currently installed packages can be obtained from the <em>Packages</em> window in the bottom right window below
+A list of the currently installed packages can be obtained from the *Packages* window in the bottom right window below
 
 ![](figures/R-package-1.png)
 
