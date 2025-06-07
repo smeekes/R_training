@@ -18,7 +18,7 @@ execute:
   freeze: auto
   
 website: 
-  title: "SBE R Training"
+  title: ""
   navbar:
     tools:
     - icon: github
