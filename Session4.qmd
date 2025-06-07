@@ -159,7 +159,7 @@ import("data/climate.dta")
 
 ## Loading csv files
 ```{r eval=FALSE}
-import("data/dataus.csv")
+import("data/climate.csv")
 ```
 
 ## Outputs

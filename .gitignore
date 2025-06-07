@@ -5,7 +5,7 @@
 R_training.Rproj
 /.quarto/
 /_site/
-.DS_Store
+**/.DS_Store
 /Session1_files/
 /Session2_files/
 /Session3_files/
