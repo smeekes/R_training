@@ -16,3 +16,29 @@ code-link: true
 execute:
   echo: true
   freeze: auto
+  
+website: 
+  title: "SBE R Training"
+  navbar:
+    tools:
+    - icon: github
+      href: https://github.com/smeekes/R_training
+    background: primary
+    foreground: light
+    logo: "figures/wlogoUM.png"
+    logo-href: "https://www.maastrichtuniversity.nl/"
+    left:
+      - href: index.qmd
+        text: "Home"
+      - text: "About"
+        menu: 
+          - text: "About the Training"
+            href: about.qmd
+          - text: "About the Team"
+            href: about-team.qmd
+
+      - text: Sessions
+        menu: 
+          - text: "Session 1"
+            href: Session1.qmd
+            target: _blank

@@ -21,7 +21,21 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
-$link-color: $UMlblue;
+$primary:       $UMdblue !default;
+$secondary:     $UMlblue !default;
+$success:       $UMlblue !default;
+$info:          $UMlblue !default;
+$warning:       $UMorangered !default;
+$danger:        $UMred !default;
+$light:         mix($UMlblue, $white, 10) !default;
+$dark:          mix($UMlblue, $black, 60)  !default;
+
+$link-color: $success !default;
+
+$link-decoration: none !default;
+
+$callout-color-note: $UMlblue;
+
 $presentation-heading-color: $UMlblue;
 $presentation-title-slide-text-align: "left";
 $presentation-subtitle-slide-text-align: "left";

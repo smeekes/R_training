@@ -3,32 +3,26 @@ title: "About the SBE R Training"
 format:
   html:
     theme: [cosmo, theme.scss]
+    toc: true
+    toc-depth: 4
+    toc-expand: true
 ---
 
-#### The R training team:
+### Purpose
 
-- [Nalan Basturk](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk)
+#### What to Expect
 
-- [Tobias Hartl](https://tobiashartl.github.io/)
-
-- [Martin Schumann](https://sites.google.com/site/martinschumannecon/home)
-
-- [Stephan Smeekes](https://stephansmeekes.com)
-
-- [Ines Wilms](https://sites.google.com/view/iwilms)
-
-#### SBE R Training
 The purpose of this course is to provide a gentle introduction to R suitable for academic staff members. The main target group is teachers and researchers who teach or use some form of data analysis / statistics in their courses, but are unfamiliar with R, for example because they have been using software like SPSS, Excel or Stata for their statistical analysis. 
 
-What should you not expect from this training?
-- Basic statistical training. Participants are expected to have a basic understanding of statistics.
-- Advanced use of R that requires substantial programming. While we may touch upon this briefly depending on the interests of the participants, more advanced treatment is outside the scope of the training.
+#### What Not to Expect
 
-#### Philosophy of the sessions
-We have scheduled five hands-on sessions of two hours. The sessions are interactive, guided by two of the trainers, with plenty of opportunity for asking questions and further interactions. No preparation is needed outside of these sessions. The focus will be on understanding the language conceptually, rather than covering a wide range of statistical tools. 
+- **Basic statistical training.** Participants are expected to have a basic understanding of statistics.
+- **Advanced use of R that requires substantial programming.** While we may touch upon this briefly depending on the interests of the participants, more advanced treatment is outside the scope of the training.
 
-#### Content of the Sessions
-There will be 5 sessions of two hours. Below is the tentative plan for the sessions.
+### Sessions
+We have scheduled 5 hands-on sessions of 2 hours each. The sessions are interactive, guided by two of the trainers, with plenty of opportunity for asking questions and further interactions. No preparation is needed outside of these sessions. The focus will be on understanding the language conceptually, rather than covering a wide range of statistical tools. 
+
+#### Content
 
 1. **Tuesday June 10, 13:30-15:30: Installing R**</br>
 The first session will discuss how to get R up and running. We will cover the actual installation of R and RStudio on different operating systems. Next, we will cover the basics to get R working, specifically, how to use the console and writing scripts.
@@ -52,11 +46,13 @@ Depending on the progress and interests of the participants, we have 2 optional 
 
 - **Flow Control:** Often we want to execute certain commands conditionally and / or repeatedly. This requires conditional evaluation and loops, which are covered under the topic of flow control.
 
-#### Preparation – First Meeting
+### Preparation
+
+#### First Meeting
 
 No preparation is needed; all that we ask is that participants bring a laptop on which they can install and use R. There is no need to install things in advance, we will guide you through installation during the first session.
 
-#### Preparation – Missed Meetings
+#### Missed Meetings
 
 For people attending all sessions, no preparation is needed between the sessions. For people missing sessions, we strongly recommend going through the material on your own, as sessions build up consecutively. As we are still finetuning the content, we cannot promise to have the sessions complete and available more than a day before each session. If this is a problem, please contact us directly to see what we can do.
 

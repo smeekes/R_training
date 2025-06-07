@@ -19,7 +19,7 @@ diagram:
 
 # Session Overview
 
-1.  [R Training Team](#R-team)
+1.  [SBE R Training](#R-team)
 2.  [What is R?](#what-is-R)
 3.  [Installing R](#install-R)
 4.	[First Steps in R](#open-R)
@@ -42,26 +42,73 @@ diagram:
 All are econometricians at the Department of Quantitative Economics, and have many years of experience in R.
 
 
-## Tobias Hartl
+## R Training Team: Tobias Hartl
 
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/tobias.png){width=50%}
+:::
+
+::: {.column width="60%"}
 - Assistant Professor at QE
 - Research interests: econometrics, state space and factor models, long memory, macro- and climate econometrics
-- Contact: tobias.hartl@maastrichtuniversity.nl
-- [website](https://tobiashartl.github.io/)
+- [Website](https://tobiashartl.github.io/)
+- Not physically present at sessions due to parental leave
+:::
 
-## Martin Schumann
+::::
+
+## R Training Team: Martin Schumann
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/martin.jpg){width=50%}
+:::
+
+::: {.column width="60%"}
 
 - Assistant Professor at QE
 - Research interests: panel data, nonlinear models, difference-in-differences, network data, innovation
-- Contact: m.schumann@maastrichtuniversity.nl
-- [website](https://sites.google.com/site/martinschumannecon/home)
+- [Website](https://sites.google.com/site/martinschumannecon/home)
+- Sessions 1 and 2
+:::
 
-## Ines Wilms
+::::
 
+
+## R Training Team: Ines Wilms
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/ines.jpg){width=50%}
+:::
+
+::: {.column width="60%"}
 - Associate Professor at QE
 - Research interests: econometrics, time series, high-dimensional statisics, forecasting,  outlier robustness
-- Contact: i.wilms@maastrichtuniversity.nl
-- [website](https://sites.google.com/view/iwilms)
+- [Website](https://sites.google.com/view/iwilms)
+- Sessions 1, 3 and 5
+:::
+
+::::
+
+## SBE R Training
+
+- **R** is being used more and more in SBE teaching; master programmes use **R** extensively, bachelor programs are moving towards it.
+
+- Very useful for statistical analysis in research as well.
+
+- Big step to transition from "menu-based" software like SPSS to "script-based" software like **R**.
+  + Note: once familiar with **R**, step to transition to other similar software, like Python or Julia is much smaller.
+
+- Request by Education Institute to set up training to make the transition easier.
+
+<!-- - For participants with a UTQ: participation in the training can be used as CPD hours. -->
+
+- First official edition of the training; your feedback will be crucial for improvements!
 
 # What is R? {#what-is-R}
 

@@ -3,12 +3,18 @@ title: "SBE R Training"
 format:
   html:
     theme: [cosmo, theme.scss]
+
+copyright: "Maastricht University School of Business and Economics & R Training Coordination Team"
+
+license: "Nothing in this publication may be reproduced and/or made public by means of printing, offset, photocopy or microfilm or in any digital, electronic, optical or any other form without the prior written permission of the owner of the copyright."
 ---
 
-Welcome to the homepage of the SBE R training! Here you will find the slides for the sessions.
+Welcome to the homepage of the SBE R training! Here you will find the slides for the sessions, and any additional files needed (such as datasets). You can also find some information about the team organising the training as well as the purpose of the training.
 
-[Session 1](Session1.qmd)
+### Sessions
+- [Session 1](Session1.qmd){target="_blank"}
 
 Further sessions will follow later.
 
+### About the Training
 [About the Training](about.qmd)

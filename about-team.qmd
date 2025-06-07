@@ -1,0 +1,107 @@
+---
+title: "R Training Coordination Team"
+format:
+  html:
+    theme: [cosmo, theme.scss]
+    link-external-newwindow: true
+    link-external-icon: true
+    toc: true
+    toc-depth: 4
+    toc-expand: true
+---
+
+- [Nalan Basturk](about-team.qmd#nalan)
+
+- [Tobias Hartl](about-team.qmd#tobias)
+
+- [Martin Schumann](about-team.qmd#martin)
+
+- [Stephan Smeekes](about-team.qmd#stephan)
+
+- [Ines Wilms](about-team.qmd#ines)
+
+All are econometricians at the Department of Quantitative Economics, and have many years of experience in R.
+
+#### Nalan Bastürk {#nalan}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/nalan.jpg){width=60%}
+
+:::
+
+::: {.column width="60%"}
+- Associate Professor at QE
+- Research interests: econometrics, Bayesian statisics, financial econometrics
+- [Website](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk)
+:::
+
+::::
+
+#### Tobias Hartl {#tobias}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/tobias.png){width=60%}
+:::
+
+::: {.column width="60%"}
+- Assistant Professor at QE
+- Research interests: econometrics, state space and factor models, long memory, macro- and climate econometrics
+- [Website](https://tobiashartl.github.io/)
+:::
+
+::::
+
+
+#### Martin Schumann {#martin}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/martin.jpg){width=60%}
+:::
+
+::: {.column width="60%"}
+
+- Assistant Professor at QE
+- Research interests: panel data, nonlinear models, difference-in-differences, network data, innovation
+- [Website](https://sites.google.com/site/martinschumannecon/home)
+:::
+
+::::
+
+#### Stephan Smeekes {#stephan}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/stephan.jpg){width=60%}
+
+:::
+
+::: {.column width="60%"}
+- Professor of Econometrics at QE
+- Research interests: econometrics, time series, high-dimensional statisics, bootstrap, macro- and climate econometrics 
+- [Website](https://stephansmeekes.com)
+:::
+
+::::
+
+#### Ines Wilms {#ines}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/ines.jpg){width=60%}
+:::
+
+::: {.column width="60%"}
+- Associate Professor at QE
+- Research interests: econometrics, time series, high-dimensional statisics, forecasting,  outlier robustness
+- [Website](https://sites.google.com/view/iwilms)
+:::
+
+::::

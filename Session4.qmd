@@ -17,12 +17,50 @@ diagram:
         - '\definecolor{UMred}{RGB}{174,11,18}'
 ---
 
-## Inputs, outputs, graphics in R
-This session has two goals:
+## Session Overview
 
-  - Understanding inputs and outputs of your R session
-  - Understanding the working of plots/graphs.
-  
+1.  [Inputs and Outputs](#io)
+2.	[Graphics](#graphics)
+3.  [Bonus: Advanced Graphics with ggplot](#ggplot)
+
+## Today 
+
+#### Nalan Bastürk
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/nalan.jpg){width=50%}
+
+:::
+
+::: {.column width="60%"}
+- Associate Professor at QE
+- Research interests: econometrics, Bayesian statisics, financial econometrics
+- [Website](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk)
+- Sessions 4 and 5
+:::
+
+::::
+
+#### Stephan Smeekes
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/stephan.jpg){width=50%}
+
+:::
+
+::: {.column width="60%"}
+- Professor of Econometrics at QE
+- Research interests: econometrics, time series, high-dimensional statisics, bootstrap, macro- and climate econometrics 
+- [Website](https://stephansmeekes.com)
+- Sessions 2, 3 and 4
+:::
+
+::::
+
 ## Inputs and outputs of your R session
   - Common inputs / outputs of an R session are datasets or R scripts.
   - For this meeting we focus on datasets as inputs to the R session, loading data and saving data.

@@ -26,8 +26,47 @@ diagram:
 4.	[Lists](#lists)
 5.	[Data frames](#dataframes)
 
+## R Training Team Today
 
-## Objects {#objects}
+#### Martin Schumann
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/martin.jpg){width=50%}
+:::
+
+::: {.column width="60%"}
+
+- Assistant Professor at QE
+- Research interests: panel data, nonlinear models, difference-in-differences, network data, innovation
+- [Website](https://sites.google.com/site/martinschumannecon/home)
+- Sessions 1 and 2
+:::
+
+::::
+
+#### Stephan Smeekes
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/stephan.jpg){width=50%}
+
+:::
+
+::: {.column width="60%"}
+- Professor of Econometrics at QE
+- Research interests: econometrics, time series, high-dimensional statisics, bootstrap, macro- and climate econometrics 
+- [Website](https://stephansmeekes.com)
+- Sessions 2, 3 and 4
+:::
+
+::::
+
+# Objects {#objects}
+
+## Objects
 - In R, **everything is an object**.
 - Objects have a name that is assigned with `<-` (recommended) or `=`.
 - Names have to start with a letter and include only letters,   numbers, and characters such as “.” and “_”.
@@ -47,16 +86,18 @@ log(x)
 X
 ```
 
-## Vectors {#vectors}
+# Vectors {#vectors}
+
+## Vectors
 
 - Vectors can store multiple types of information (e.g., numbers or "characters").
-- To define a 3-dimensional vector named "vec", use `vec<- c(value1,value2,value3)`.
+- To define a 3-dimensional vector named "vec", use `vec <- c(value1, value2, value3)`.
 - Operators and functions can be applied to vectors, which means they are applied to **each of the elements individually**.
 ```{r, eval=TRUE}
 # define vector named 'vec'
-vec<-c(1,2,3)
+vec <- c(1, 2, 3)
 # take the square root of 'vec' and store the result in 'sqrt_vec'
-sqrt_vec=sqrt(vec)
+sqrt_vec <- sqrt(vec)
 # display sqrt_vec
 print(sqrt_vec)
 ```
@@ -68,9 +109,9 @@ print(sqrt_vec)
 # generate sequence 5,6,...,10
 5:10
 # generate sequence from 1 to 10 in steps of 0.5
-seq(from=1,to=5,by=0.5)
+seq(from = 1, to = 5, by = 0.5)
 #generate 4-dimensional vector of ones
-rep(1,4)
+rep(1, 4)
 ```
 ## Order matters!
 - **Be aware of the order of operations!**
@@ -83,11 +124,11 @@ rep(1,4)
 ```
 ## Summarizing vectors
 - R has built-in functions to summarize the information stored in vectors.
-- Remark: R is very good at generating random numbers!
+- Remark: R is very good at generating random numbers! (Such functions are studied in more detail in the next session.)
 ```{r, eval=TRUE}
 # Example: generate 100 random draws from a normal distribution with mean 1
 # and standard deviation 2
-norm.vec=rnorm(n=100,mean=1,sd=2)
+norm.vec <- rnorm(n = 100, mean = 1, sd = 2)
 # get mean 
 mean(norm.vec)
 # get standard deviation 
@@ -106,10 +147,10 @@ max(norm.vec)
 - Is `mean(norm.vec.rep^2)` equal to `mean(norm.vec.rep)^2`?
 
 ```{r, eval=FALSE,error=TRUE,echo=FALSE}
-norm.vec<-rnorm(50,mean=0,sd=1)
+norm.vec <- rnorm(50, mean = 0, sd = 1)
 mean(norm.vec)
 sd(norm.vec)
-norm.vec.rep=rep(norm.vec,each=10)
+norm.vec.rep <- rep(norm.vec, each = 10)
 mean(norm.vec.rep^2)# first squares elements, then takes mean.
 mean(norm.vec.rep)^2# first takes mean, then squares the result.
 # Not the same!
@@ -124,14 +165,13 @@ mean(norm.vec.rep)^2# first takes mean, then squares the result.
 - We can combine logical statements with "AND" `&` and "OR" `|`
 ```{r, eval=TRUE}
 # define  objects 
-obj1<-1
-obj2<-2
-obj3<-1 # same value as obj1
-obj1==obj2 # false statement
-obj1!=obj2 # true statement
-obj1==obj2 & obj1==obj3 # FALSE AND TRUE => FALSE
-obj1==obj2 | obj1==obj3 # FALSE OR TRUE => TRUE
-
+obj1 <- 1
+obj2 <- 2
+obj3 <- 1 # same value as obj1
+obj1 == obj2 # false statement
+obj1 != obj2 # true statement
+obj1 == obj2 & obj1 == obj3 # FALSE AND TRUE => FALSE
+obj1 == obj2 | obj1 == obj3 # FALSE OR TRUE => TRUE
 ```
 
 ---
@@ -139,10 +179,10 @@ obj1==obj2 | obj1==obj3 # FALSE OR TRUE => TRUE
 - We can also use logical operators in vectors.
 - the AND and OR operators `&` and `|` are then applied element-wise.
 ```{r, eval=TRUE}
-vec2=1:5 # defines vector vec2=(1,2,3,4,5)
-vec2==3  # =FALSE if element is not 3, =TRUE if element is 3
-vec2>=2&vec2<5 # Only TRUE for elements >=2 and <5
-vec2>=2|vec2<5 # TRUE for all elements since either >=2 or <5
+vec2 <- 1:5 # defines vector vec2=(1,2,3,4,5)
+vec2 == 3  # =FALSE if element is not 3, =TRUE if element is 3
+vec2 >= 2 & vec2 < 5 # Only TRUE for elements >=2 and <5
+vec2 >= 2 | vec2 < 5 # TRUE for all elements since either >=2 or <5
 ```
 
 
@@ -151,7 +191,7 @@ vec2>=2|vec2<5 # TRUE for all elements since either >=2 or <5
 - characters are enclosed in `""`or `''`.
 ```{r, eval=TRUE,error=TRUE}
 # define a vector of 2 cities
-cities<-c('Maastricht', "Amsterdam",'Rotterdam')
+cities <- c('Maastricht', "Amsterdam",'Rotterdam')
 print(cities)
 ```
 
@@ -164,17 +204,17 @@ To illustrate this, do the following:
 	- try computing the sum of `as.numeric("1")` and `as.numeric("2")`. What happened?
 	- create a mixed vector containing the numeric `1` and the character `"2"`. Of which type are the elements of the vector?
 ```{r, eval=FALSE,error=TRUE,echo=FALSE}
-"1"==1 
+"1" == 1 
 # yields TRUE: R coerces "1" to numeric 1.
-"1"+1 
+"1" + 1 
 # yields error: cannot add character and numeric.
-as.numeric("1")+as.numeric("2") # yields 3
+as.numeric("1") + as.numeric("2") # yields 3
 # combine characters and numbers => numbers turn into characters
-mix<-c(1,"2")
+mix <- c(1, "2")
 print(mix)
 # now that numbers are converted to characters, numerical operations
 # produce an error
-mix+1
+mix + 1
 ```
 
 
@@ -185,11 +225,11 @@ mix+1
 - Can also be ordinal, i.e., the outcomes can be ranked (e.g., "bad", "meh", "great").
 
 ```{r, eval=TRUE}
-x<- c(1,3,3,2,1,3)
-xf<-factor(x,labels=c("bad","ok","good"))# no ranking
+x <- c(1, 3, 3, 2, 1, 3)
+xf <- factor(x, labels = c("bad", "ok", "good"))# no ranking
 xf
 # now with ranking
-xf.ordered<-factor(x,labels=c("bad","ok","good"),ordered=TRUE)
+xf.ordered <- factor(x, labels = c("bad", "ok", "good"), ordered = TRUE)
 xf.ordered
 ```
 
@@ -198,12 +238,12 @@ xf.ordered
 - You can give the elements of your vector names either directly or using the `names()` command.
 - This is very useful for accessing elements (see nect slide)
 ```{r, eval=TRUE,error=TRUE}
-avg_temp<-c(Maastricht=14.2, Amsterdam=13.4,Rotterdam=13.7)
+avg_temp <- c(Maastricht = 14.2, Amsterdam = 13.4, Rotterdam = 13.7)
 print(avg_temp) # names appear on top of elements
 names(avg_temp) # returns names of elements
 # Alternatively, we can define data and names separately
-temp<-c(14.2,13.4,13.7)
-names(temp)<-cities # recall that we have defined "cities" earlier!
+temp <- c(14.2, 13.4, 13.7)
+names(temp) <- cities # recall that we have defined "cities" earlier!
 print(temp)
 ```
 ## Accessing elements
@@ -226,7 +266,7 @@ avg_temp[4]
 # get the vector except for the third element
 avg_temp[-3]
 # now add another city to avg_temp
-avg_temp["Tilburg" ]<- 14.7
+avg_temp["Tilburg"] <- 14.7
 # now the fourth element is defined!
 avg_temp[4]
 ```
@@ -237,19 +277,20 @@ avg_temp[4]
 - `NaN`("not a number") indicates the result of a mathematically  undefined operation.
 ```{r, eval=TRUE,error=TRUE}
 #define another vector
-vec3=c(-1.2,NA,0)
+vec3 <- c(-1.2, NA, 0)
 # combine avg_temp and vec3
-vec4=c(avg_temp,vec3) 
+vec4 <- c(avg_temp, vec3) 
 # divide elements by 0; notice the different outcomes
-vec4/0 
+vec4 / 0 
 ```
 
-## Matrices {#matrices}
+# Matrices {#matrices}
+## Matrices
 - We can create a matrix with `m` rows directly using `matrix(vector,nrow=m)`.
 
 ```{r, eval=TRUE,error=TRUE}
 # create matrix with 3 rows; fill numbers by row
-mat1<-matrix(1:12,nrow=3,byrow=TRUE) # by default, R fills matrices by column
+mat1 <- matrix(1:12, nrow = 3, byrow = TRUE) # by default, R fills matrices by column
 mat1
 ```
 
@@ -258,10 +299,10 @@ mat1
 - We can also combine vectors of the same length by row with `rbind(v1,v2,...)` or by column by `cbind(v1,v2,...)`.
 ```{r, eval=TRUE,error=TRUE}
 # create vectors v1, v2 and v3 and combine them for same result
-v1<-1:4
-v2<-5:8
-v3<-9:12
-mat2<-rbind(v1,v2,v3)
+v1 <- 1:4
+v2 <- 5:8
+v3 <- 9:12
+mat2 <- rbind(v1, v2, v3)
 mat2
 ```
 
@@ -270,10 +311,10 @@ mat2
 - We can give the rows and columns names using `rownames()` and `colnames()`.
 ```{r, eval=TRUE,error=TRUE}
 # assign names to columns
-colnames(mat1)<-c("col1","col2","col3","col4")
+colnames(mat1) <- c("col1", "col2", "col3", "col4")
 mat1
 # assign names to rows
-rownames(mat1)<-c("row1","row2","row3")
+rownames(mat1) <- c("row1","row2","row3")
 mat1
 ```
 ## Accessing elements
@@ -297,7 +338,6 @@ mat1[,3]
 mat1[c(2,3),c(1:3)]
 # get second row using names (recall definition of mat2)
 mat2["v2",]
-
 ```
 
 ## Exercise 2.3: creating matrices, accessing elements
@@ -312,7 +352,7 @@ mat2["v2",]
 ![](figures/excel-screenshot.png){width=50%}
 
 <br>
-3. Get the data for April and my by
+3. Get the data for April and May by
   - including only the first and second row
   - excluding the third row
   - using the names
@@ -320,35 +360,35 @@ mat2["v2",]
 ```{r, eval=FALSE,error=TRUE,echo=FALSE}
 # Solution:
 # 1.
-row1=c(1,0,0)
-row2=c(0,1,0)
-row3=c(0,0,1)
-I_mat=rbind(row1,row2,row3)
+row1 <- c(1, 0, 0)
+row2 <- c(0, 1, 0)
+row3 <- c(0, 0, 1)
+I_mat <- rbind(row1, row2, row3)
 diag(3)
 # 2.
-mat=matrix(c(12.3,14.7,27.7,11.2,13.5,15.8),nrow=3)
-rownames(mat)=c("April","May","June")
-colnames(mat)=c("Maastricht","Eindhoven")
+mat <- matrix(c(12.3, 14.7, 27.7, 11.2, 13.5, 15.8), nrow = 3)
+rownames(mat) <- c("April", "May", "June")
+colnames(mat) <- c("Maastricht", "Eindhoven")
 mat
-
 ``` 
 
 ---
 
 ```{r, eval=FALSE,error=TRUE,echo=FALSE}
 # 3.
-mat[c(1,2),] # include first and second row
+mat[c(1, 2),] # include first and second row
 mat[-3,] # exclude third row
-mat[c("April","May"),]
+mat[c("April", "May"),]
 ```
+
 ## Bonus: Matrix algebra 
 - R can do matrix "regular" algebra, and even lets you do operations that are not well-defined mathematically. 
 
 - `t(A)` is the transpose of the matrix `A`.
 ```{r, eval=TRUE,error=TRUE}
 # define matrix containing normal data
-data.vec=rnorm(9,mean=0,sd=1)
-A=matrix(data.vec,nrow=3) 
+data.vec <- rnorm(9, mean = 0, sd = 1)
+A <- matrix(data.vec, nrow = 3)
 A # return A
 t(A) # return the transpose
 ```
@@ -366,21 +406,23 @@ solve(A) # return the inverse of A
 - `%*%` does matrix multiplication .
 ```{r, eval=TRUE,error=TRUE}
 # element-wise multiplication
-A*solve(A) # NOT the identity matrix
+A * solve(A) # NOT the identity matrix
 # matrix multiplication
-A%*%solve(A) 
+A %*% solve(A) 
 # yields the identity (up to a small error due to the
 # numerical computation of the inverse)
 ```
 
 
-## Lists {#lists}
+# Lists {#lists}
+
+## Lists
 - A `list` is a generic collection of objects.
 - Unlike vectors, the components can have different types (e.g., numeric and character).
 - Many functions output lists, so knowing how to access elements is very useful.
 - Generate a list with `mylist<- list(name1=component1, name2=component2,...)`.
 ```{r, eval=TRUE,error=TRUE}
-mylist=list(num.vec=1:3,city="Maastricht") 
+mylist <- list(num.vec = 1:3, city = "Maastricht") 
 print(mylist)
 ```
 
@@ -393,17 +435,19 @@ mylist$city
 mylist[[2]] # same result
 ```
 
-## Data frames {#dataframes}
+# Data frames {#dataframes}
+
+## Data frames
 - `data frames` are simply data sets in R terminology.
 - So-called `data files` can contain multiple data sets.
 - We can create a data frame by `data.frame()` or transform a matrix `mat` into a data frame by `as.data.frame(mat)`.
 - Many functions (e.g. `lm()` for regressions) need a data frame as input (see later sessions).
 ```{r, eval=TRUE,error=TRUE}
 # generate a data frame
-ID<- 1:4
-hourly_wage<- rnorm(n=4,mean=20,sd=1) # create 4 draws from N(20,1)
-city<- c("Maastricht","Eindhoven","Amsterdam",NA)
-dats<- data.frame(ID,hourly_wage,city) # add new variable
+ID <- 1:4
+hourly_wage <- rnorm(n = 4, mean = 20, sd = 1) # create 4 draws from N(20,1)
+city <- c("Maastricht", "Eindhoven", "Amsterdam", NA)
+dats <- data.frame(ID, hourly_wage, city) # add new variable
 dats
 ```
 
@@ -414,8 +458,8 @@ dats
 -  `View()` opens a data-viewer. Very useful (but difficult to demonstrate on these slides).
 ```{r, eval=TRUE,error=TRUE}
 dats$city # "city" is NA for ID 4.
-dats$city[4]<-'Tilburg' # assign city to ID 4
-dats$educ<- c(12,21,9,10)
+dats$city[4] <- 'Tilburg' # assign city to ID 4
+dats$educ <- c(12, 21, 9, 10)
 dats
 ```
 
@@ -424,7 +468,7 @@ dats
 - Using `subset(data_frame,condition)`, we can easily get a subset of the original data frame where `condition` is `TRUE`.
 ```{r, eval=TRUE,error=TRUE}
 # only keep individuals with at least 10 years of education
-sub_dats=subset(dats,educ>10)
+sub_dats <- subset(dats, educ > 10)
 sub_dats
 ```
 
@@ -440,13 +484,13 @@ sub_dats
 	
 ```{r, eval=FALSE,error=TRUE,echo=FALSE}
 # Solution:
-ID=1:100
-income=rnorm(n=100,mean=10,sd=1)
-female=c(rep(1,50),rep(0,50))
-my_df=data.frame(ID,income,female)
+ID <- 1:100
+income <- rnorm(n = 100, mean = 10, sd = 1)
+female <- c(rep(1, 50), rep(0, 50))
+my_df <- data.frame(ID, income, female)
 my_df
 View(my_df)
-sub_my_df=subset(my_df,income>10)
+sub_my_df <- subset(my_df, income > 10)
 View(sub_my_df)
 ```
 
@@ -457,15 +501,15 @@ it can be very useful to use simulated data.
 - This allows teachers to visualize the effects of various quantities of interest, e.g.,
 sample size, variation in the observed and unobserved variables, or omitted variables.
 ```{r, eval=TRUE,error=TRUE}
-n<-100 # set the sample size
-X<-rnorm(n,mean=1,sd=2)# define the observed covariate X
-epsilon<-rnorm(n,mean=0,sd=1) # define the model error
-beta0<-1 # define true intercept
-beta1<-2 # define true slope
-Y=beta0+beta1*X+epsilon # generate Y according to a linear model
+n <- 100 # set the sample size
+X <- rnorm(n, mean = 1, sd = 2)# define the observed covariate X
+epsilon <- rnorm(n, mean = 0, sd = 1) # define the model error
+beta0 <- 1 # define true intercept
+beta1 <- 2 # define true slope
+Y <- beta0 + beta1 * X + epsilon # generate Y according to a linear model
 # recall the formula in a bivariate model
-beta1.hat=cov(X,Y)/var(X)
-beta0.hat=mean(Y)-beta1.hat*mean(X)
+beta1.hat <- cov(X,Y) / var(X)
+beta0.hat <- mean(Y) - beta1.hat * mean(X)
 # print estimators
 beta0.hat
 beta1.hat
