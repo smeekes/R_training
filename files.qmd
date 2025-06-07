@@ -15,7 +15,7 @@ On this page, you can find additional files that are needed or useful in the fiv
 ### Datasets
 Here you can find the data sets that are used in the sessions.
 
-::: {.callout-caution}
+::: {.callout-important}
 ## Where to Store Datasets
 The R code provided in the sessions assumes that datasets are stored in a folder called '*data*' located within your working directory.
 :::
