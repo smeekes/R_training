@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the SBE R Training",
+    "section": "",
+    "text": "The R training team:\n\nNalan Basturk\nTobias Hartl\nMartin Schumann\nStephan Smeekes\nInes Wilms\n\n\n\nSBE R Training\nThe purpose of this course is to provide a gentle introduction to R suitable for academic staff members. The main target group is teachers and researchers who teach or use some form of data analysis / statistics in their courses, but are unfamiliar with R, for example because they have been using software like SPSS, Excel or Stata for their statistical analysis.\nWhat should you not expect from this training? - Basic statistical training. Participants are expected to have a basic understanding of statistics. - Advanced use of R that requires substantial programming. While we may touch upon this briefly depending on the interests of the participants, more advanced treatment is outside the scope of the training.\n\n\nPhilosophy of the sessions\nWe have scheduled five hands-on sessions of two hours. The sessions are interactive, guided by two of the trainers, with plenty of opportunity for asking questions and further interactions. No preparation is needed outside of these sessions. The focus will be on understanding the language conceptually, rather than covering a wide range of statistical tools.\n\n\nContent of the Sessions\nThere will be 5 sessions of two hours. Below is the tentative plan for the sessions.\n\nTuesday June 10, 13:30-15:30: Installing R The first session will discuss how to get R up and running. We will cover the actual installation of R and RStudio on different operating systems. Next, we will cover the basics to get R working, specifically, how to use the console and writing scripts.\nThursday June 12, 13:30-15:30: R Objects Using different types of objects is at the heart of R. This session will go into the different type of objects that users encounter, such as vectors, lists and data frames.\nMonday June 16, 13:30-15:30: Using Functions and Packages When using R as a statistical tool rather than a programming language, proper use of built-in functions and packages is key. This session will cover how to use general functions, explain the way arguments should be entered, and how output objects should be interpreted. We discuss the philosophy of R’s object-oriented system, and show how operations can be performed on different type of objects. We also go into the package management system.\nWednesday June 18, 10:30-12:30: Input, Output and Graphics In the session, we will focus on how to load data into R from different types of sources. We also discuss how to export results from an analysis from R to other programs. Finally, we cover how to make professional figures and plots using R’s graphical capabilities.\nFriday June 20, 10:30-12:30: Data Manipulation and (Regression) Analysis The first part of the session will focus on typical manipulations of data stats that may be needed as preprocessing steps before a statistical analysis. The second part of the session we will apply some basic statistical analysis tools. We focus on the linear regression model, the workhorse of empirical economic research. To enable practitioners to efficiently estimate the linear regression model in R, we cover objects of class formula and OLS estimation via the lm() command.\n\n\n\nOptional Topics\nDepending on the progress and interests of the participants, we have 2 optional more advanced topics, that can be integrated into the sessions:\n\nAdvanced Graphics: This topic covers more advanced use of R’s graphics capabilities such as the ggplot2 package.\nFlow Control: Often we want to execute certain commands conditionally and / or repeatedly. This requires conditional evaluation and loops, which are covered under the topic of flow control.\n\n\n\nPreparation – First Meeting\nNo preparation is needed; all that we ask is that participants bring a laptop on which they can install and use R. There is no need to install things in advance, we will guide you through installation during the first session.\n\n\nPreparation – Missed Meetings\nFor people attending all sessions, no preparation is needed between the sessions. For people missing sessions, we strongly recommend going through the material on your own, as sessions build up consecutively. As we are still finetuning the content, we cannot promise to have the sessions complete and available more than a day before each session. If this is a problem, please contact us directly to see what we can do."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "SBE R Training",
@@ -151,14 +158,14 @@
     "href": "Session3.html#useful-functions-summary-descriptive-statistics",
     "title": "Introduction to R",
     "section": "Useful functions: summary / descriptive statistics",
-    "text": "Useful functions: summary / descriptive statistics\n\noften you want to have a quick look at your data. Here are some useful functions for this purpose:\nFor (numerical) vectors:\n\n\n\n\nFunction\nDescription\n\n\n\n\nlength(v)\nNumber of elements in \\(v\\)\n\n\nmax(v)\nLargest value in \\(v\\)\n\n\nmin(v)\nSmallest value in \\(v\\)\n\n\nsum(v)\nSum of the elements of \\(v\\)\n\n\nprod(v)\nProduct of the elements of \\(v\\)\n\n\nmean(v)\nmean of the elements of \\(v\\)!\n\n\nsd(v)\nStandard deviation of the elements of \\(v\\)"
+    "text": "Useful functions: summary / descriptive statistics\n\noften you want to have a quick look at your data. Here are some useful functions for this purpose:\nFor (numerical) vectors:\n\n\n\nFunction\nDescription\n\n\n\nlength(v)\nNumber of elements in \\(v\\)\n\n\n\nmax(v)\nLargest value in \\(v\\)\n\n\n\nmin(v)\nSmallest value in \\(v\\)\n\n\n\nsum(v)\nSum of the elements of \\(v\\)\n\n\n\nprod(v)\nProduct of the elements of \\(v\\)\n\n\n\nmean(v)\nmean of the elements of \\(v\\)!\n\n\nsd(v)\nStandard deviation of the elements of \\(v\\)"
   },
   {
     "objectID": "Session3.html#useful-functions-summary-descriptive-statistics-1",
     "href": "Session3.html#useful-functions-summary-descriptive-statistics-1",
     "title": "Introduction to R",
     "section": "Useful functions: summary / descriptive statistics",
-    "text": "Useful functions: summary / descriptive statistics\n\nOften you want to have a quick look at your data. Here are some useful functions for this purpose:\nFor matrices and data frames:\n\n\n\n\nFunction\nDescription\n\n\n\n\nnrow(D)\nNumber of rows in \\(D\\)\n\n\nncol(D)\nNumber of columns in \\(D\\)\n\n\nhead(D)\nDisplays the first few rows of \\(D\\)\n\n\ntail(D)\nDisplays the last few rows of \\(D\\)\n\n\nsummary(D)\nGives a summary of \\(D\\)\n\n\n\n\nFor numerical matrices and data frames:\n\n\n\n\nFunction\nDescription\n\n\n\n\ncolSums(D)\nSum of the elements in each column of \\(D\\)\n\n\nrowSums(D)\nSum of the elements in each row of \\(D\\)\n\n\ncolMeans(D)\nMean of the elements in each column of \\(D\\)\n\n\nrowMeans(D)\nMean of the elements in each row of \\(D\\)"
+    "text": "Useful functions: summary / descriptive statistics\n\nOften you want to have a quick look at your data. Here are some useful functions for this purpose:\nFor matrices and data frames:\n\n\n\nFunction\nDescription\n\n\n\nnrow(D)\nNumber of rows in \\(D\\)\n\n\n\nncol(D)\nNumber of columns in \\(D\\)\n\n\n\nhead(D)\nDisplays the first few rows of \\(D\\)\n\n\n\ntail(D)\nDisplays the last few rows of \\(D\\)\n\n\n\nsummary(D)\nGives a summary of \\(D\\)\n\n\n\n\n\nFor numerical matrices and data frames:\n\n\n\nFunction\nDescription\n\n\n\ncolSums(D)\nSum of the elements in each column of \\(D\\)\n\n\n\nrowSums(D)\nSum of the elements in each row of \\(D\\)\n\n\n\ncolMeans(D)\nMean of the elements in each column of \\(D\\)\n\n\n\nrowMeans(D)\nMean of the elements in each row of \\(D\\)"
   },
   {
     "objectID": "Session3.html#structure-of-functions",
@@ -193,7 +200,7 @@
     "href": "Session3.html#why-create-your-own-functions",
     "title": "Introduction to R",
     "section": "Why create your own functions?",
-    "text": "Why create your own functions?\n\nYou can perfectly get around R without ever creating your own functions.\nBut there are good reasons to do so:\n\nEasy if you need the same code repetitively;\nDecreases the probability of making mistakes, as you only need to write that piece of code once;\nYou can use your functions in different script later on.\n\nCreating functions is a basic skill well worth investing in.\nNote: make sure to first execute the lines containing your function before you use it (and execute again after an update to the code)."
+    "text": "Why create your own functions?\n\nYou can perfectly get around R without ever creating your own functions.\n\nBut there are good reasons to do so:\n\nEasy if you need the same code repetitively;\nDecreases the probability of making mistakes, as you only need to write that piece of code once;\nYou can use your functions in different script later on.\n\n\nCreating functions is a basic skill well worth investing in.\nNote: make sure to first execute the lines containing your function before you use it (and execute again after an update to the code)."
   },
   {
     "objectID": "Session3.html#exercise-3.3-create-your-own-function",
@@ -263,7 +270,7 @@
     "href": "Session3.html#r-packages",
     "title": "Introduction to R",
     "section": "R packages",
-    "text": "R packages\n\nUntil now, we have explored some basic functionality in R. But much of the functionality of R is extended by its big and active community.\nThese extensions are called R packages.\nOne of R’s defining features is the richness of its package management system:\n\nPackages are constantly developed and adjusted by the large user community making many state-of-the-art methods quickly available\nPackages can be installed for just about everything you want to do in statistics and data science\nPackages offer pre-defined functions which makes it possible to use R without a deep understanding of the language and programming skills."
+    "text": "R packages\n\nUntil now, we have explored some basic functionality in R. But much of the functionality of R is extended by its big and active community.\nThese extensions are called R packages.\n\nOne of R’s defining features is the richness of its package management system:\n\nPackages are constantly developed and adjusted by the large user community making many state-of-the-art methods quickly available\nPackages can be installed for just about everything you want to do in statistics and data science\nPackages offer pre-defined functions which makes it possible to use R without a deep understanding of the language and programming skills."
   },
   {
     "objectID": "Session3.html#overview-of-r-packages",
@@ -312,14 +319,14 @@
     "href": "Session3.html#finding-good-packages",
     "title": "Introduction to R",
     "section": "Finding good packages",
-    "text": "Finding good packages\n\nSometimes packages come recommended in books or articles.\nIf not, do a Google or ChatGPT search: ‘R package for reading Excel’; top search results are typically the most popular packages.\nUnsure about the quality? Some advice:\n\nConsider the authors. Are they respected academics? Or have a good track record of developing packages? These are good signs.\nRead the manuals / help files. Do they make sense? Are they written by someone who understands the important aspects of the methods?\nInstall and try them, and see if they match your expectations."
+    "text": "Finding good packages\n\nSometimes packages come recommended in books or articles.\nIf not, do a Google or ChatGPT search: ‘R package for reading Excel’; top search results are typically the most popular packages.\n\nUnsure about the quality? Some advice:\n\nConsider the authors. Are they respected academics? Or have a good track record of developing packages? These are good signs.\nRead the manuals / help files. Do they make sense? Are they written by someone who understands the important aspects of the methods?\nInstall and try them, and see if they match your expectations."
   },
   {
     "objectID": "Session3.html#more-about-packages",
     "href": "Session3.html#more-about-packages",
     "title": "Introduction to R",
     "section": "More about packages",
-    "text": "More about packages\n\nMost of the time you need not need to be bothered by understanding the deeper meanings of the package, and you can just install it directly. But in case you do want to have a look, here are some things you can pay attention to.\n‘Official’ packages are hosted on the Comprehensive R Archive Network (CRAN).\nThe package homepage can be found as https://cran.r-project.org/package=package_name\nYou can find the same info after installing a package by clicking on the package name, then on ‘DESCRIPTION file’.\nImportant fields:\n\nMaintainer & Author: especially helpful for specialised packages, for which you expect the authors to be experts in the field.\nURL: Is there dedicated documentation? What is the quality of the documentation (often correlates with the quality of the package)?\nImports, Depends & LinkingTo: the packages needed to make the package work (installation is normally taken care of automatically).\nSuggests: packages that are not necessarily needed for using the package, but are needed for specific functionalities."
+    "text": "More about packages\n\nMost of the time you need not need to be bothered by understanding the deeper meanings of the package, and you can just install it directly. But in case you do want to have a look, here are some things you can pay attention to.\n‘Official’ packages are hosted on the Comprehensive R Archive Network (CRAN).\nThe package homepage can be found as https://cran.r-project.org/package=package_name\nYou can find the same info after installing a package by clicking on the package name, then on ‘DESCRIPTION file’.\n\nImportant fields:\n\n\nMaintainer & Author: especially helpful for specialised packages, for which you expect the authors to be experts in the field.\n\nURL: Is there dedicated documentation? What is the quality of the documentation (often correlates with the quality of the package)?\n\nImports, Depends & LinkingTo: the packages needed to make the package work (installation is normally taken care of automatically).\n\nSuggests: packages that are not necessarily needed for using the package, but are needed for specific functionalities."
   },
   {
     "objectID": "Session3.html#checking-out-the-bootur-package",
@@ -382,7 +389,7 @@
     "href": "Session3.html#flow-control",
     "title": "Introduction to R",
     "section": "Flow Control",
-    "text": "Flow Control\n\nOften, expressions (calculations, estimations, simulations, plots…) should only be executed under certain conditions and/or repeated multiple times.\nIn such cases, we need:\n\nConditional execution (if, else)\nLoops (for, while)"
+    "text": "Flow Control\n\nOften, expressions (calculations, estimations, simulations, plots…) should only be executed under certain conditions and/or repeated multiple times.\n\nIn such cases, we need:\n\nConditional execution (if, else)\nLoops (for, while)"
   },
   {
     "objectID": "Session3.html#conditional-execution",
@@ -403,7 +410,7 @@
     "href": "Session3.html#conditional-execution-with-multipe-options",
     "title": "Introduction to R",
     "section": "Conditional Execution with Multipe Options",
-    "text": "Conditional Execution with Multipe Options\n\nThere may be more than two cases to consider, for example: \\[f(x) = \\cases{0 \\text{ for  } x \\leq 5\\\\\n              4 \\text{ for  } 0&lt; x \\leq 5\\\\\n              6 \\text{ otherwise.}}\\]\n\n\nstepfunction &lt;- function(x){\n  if ( x &lt;= 0 ) {\n      0\n  } else if (x &lt;= 5 ) {\n      4\n  } else {\n      6\n  }\n}"
+    "text": "Conditional Execution with Multipe Options\n\nThere may be more than two cases to consider, for example: \\[f(x) = \\cases{0 \\text{ for  } x \\leq 5\\\\\n              4 \\text{ for  } 0&lt; x \\leq 5\\\\\n              6 \\text{ otherwise.}}\\]\n\n\n\nstepfunction &lt;- function(x){\n  if ( x &lt;= 0 ) {\n      0\n  } else if (x &lt;= 5 ) {\n      4\n  } else {\n      6\n  }\n}"
   },
   {
     "objectID": "Session3.html#conditional-execution-per-element",
@@ -448,6 +455,454 @@
     "text": "Exercise 3.9: Impute Missing Values\n\nWrite a function that checks for every element of a vector whether it is a missing value. If a missing value is found, it is to be imputed as the average of the value before it and the value after it.\nIf the first value in the vector is missing, it should get the value of the second element. If the last value is missing, it should get the value of the preceding element.\nTo keep things simple, we assume that there are never two consecutive missing values, search that only the rules are both have to be programmed.\nAlthough there are many ways to create such a function, we focus on using a for loop and if statements.\nTest your function on the following vector:\n\n\nc(NA, 2, 3, NA, 5, NA)"
   },
   {
+    "objectID": "Session5.html#data-manipulation",
+    "href": "Session5.html#data-manipulation",
+    "title": "Introduction to R",
+    "section": "Data Manipulation",
+    "text": "Data Manipulation\nIn the last session, we learned how to load data of various sources into R.\nToday’s first part will be about how to manipulate data in R. Importantly, we will learn how to\n\nselect certain variables from a data\nsubset a data set\nrecode and rename certain variables\n\nWe will work with fictive data set of student grades. Let us start by loading the data:\n\ndata_grades &lt;- read.table(\"data/grades.csv\", \n                       header = TRUE, sep = \",\", stringsAsFactors = FALSE)"
+  },
+  {
+    "objectID": "Session5.html#selecting-variables",
+    "href": "Session5.html#selecting-variables",
+    "title": "Introduction to R",
+    "section": "Selecting Variables",
+    "text": "Selecting Variables\nWe begin with selecting interesting variables from a data set. For our grades data set, we want to preserve information about ID, Name, and Exam_Score, and drop all other information.\nVariables can be selected by name, after which we inspect the first and last three rows in the data set:\n\ndata &lt;- data_grades[, c(\"ID\", \"Name\", \"Exam_Score\")] \nhead(data, 3)\n\n      ID                Name Exam_Score\n1 i40333 Hyden-Terry, Dakota         55\n2 i41204     Polson, Destiny         82\n3 i41428       al-Azad, Nuha         52\n\ntail(data, 3)\n\n        ID             Name Exam_Score\n40 i198051      Nies, Tyler         62\n41 i198310 Montano, Marquez         72\n42 i198859  Nyberg, Bich Sa         91"
+  },
+  {
+    "objectID": "Session5.html#selecting-variables-1",
+    "href": "Session5.html#selecting-variables-1",
+    "title": "Introduction to R",
+    "section": "Selecting Variables",
+    "text": "Selecting Variables\nOr by variable indexes\n\ndata1 &lt;- data_grades[, c(1, 2, 7)] \n\nthough this is not that convenient unless you know the column numbers of the variables you want to select.\nA more convenient alternative is to use the following function:\n\ndata2 &lt;- subset(data_grades, select = c(ID, Name, Exam_Score))\n\nThe objects data, data1 and data2 are all identical so you can use your preferred way of working!"
+  },
+  {
+    "objectID": "Session5.html#subsetting-rows",
+    "href": "Session5.html#subsetting-rows",
+    "title": "Introduction to R",
+    "section": "Subsetting Rows",
+    "text": "Subsetting Rows\nNext, we want to subset the data set, i.e. preserve interesting rows while removing the others.\nFor the grades data set, we might be interested in information about students in tutorial group 1:\n\n# select tutorial 1 students only\ndata_tutorial1 &lt;- data_grades[data_grades$Tutorial == 1, ]\n\nor alternatively:\n\ndata_tutorial1 &lt;- subset(data_grades, Tutorial == 1)\n\nSubsetting also works using characters. For instance, to retrieve only information for females:\n\n# select female students only\ndata_females &lt;- data_grades[data_grades$Gender == 'Female', ]\n\nInspect your new data sets!"
+  },
+  {
+    "objectID": "Session5.html#exercise-5.1",
+    "href": "Session5.html#exercise-5.1",
+    "title": "Introduction to R",
+    "section": "Exercise 5.1",
+    "text": "Exercise 5.1\nUse the grades data set.\n\nGenerate a data set that contains information about the student ID, student name, their tutorial group, participation grade and their exam score.\nReduce the data set to only display information of students in tutorial group 4\nFurther reduce the data set to only display information of students in tutorial group 4 with an exam score of more than 80. How many such students are there? Hint: You can use a logical operator when subsetting!"
+  },
+  {
+    "objectID": "Session5.html#transforming-variables",
+    "href": "Session5.html#transforming-variables",
+    "title": "Introduction to R",
+    "section": "Transforming Variables",
+    "text": "Transforming Variables\nLet us continue with further data manipulations. The variable tutorial is currently an integer:\n\nclass(data_grades$Tutorial)\n\n[1] \"integer\"\n\n\nbut it should be a factor (a categorical variable). This can be easily changed in R:\n\ndata_grades$Tutorial &lt;- as.factor(data_grades$Tutorial)\n\nafter which you can inspect its new class:\n\nclass(data_grades$Tutorial)\n\n[1] \"factor\""
+  },
+  {
+    "objectID": "Session5.html#transforming-variables-1",
+    "href": "Session5.html#transforming-variables-1",
+    "title": "Introduction to R",
+    "section": "Transforming Variables",
+    "text": "Transforming Variables\nWhen inspecting the variable itself, R now mentions the different levels of the factors:\n\ndata_grades$Tutorial\n\n [1] 2 3 4 2 1 4 3 1 1 3 4 2 4 4 3 1 3 4 1 2 1 1 3 1 3 3 2 3 2 1 4 4 4 2 3 2 2 4\n[39] 4 2 1 3\nLevels: 1 2 3 4\n\n\nwhich you can also directly retreive via:\n\nlevels(data_grades$Tutorial)\n\n[1] \"1\" \"2\" \"3\" \"4\""
+  },
+  {
+    "objectID": "Session5.html#adding-variables",
+    "href": "Session5.html#adding-variables",
+    "title": "Introduction to R",
+    "section": "Adding Variables",
+    "text": "Adding Variables\nSometimes we want to add a variable to an existing data set.\nFor instance, we want to add the exam score on 10 instead of 100. To add a new variable, use the $ operator and specify a new variable name:\n\ndata_grades$Exam_Score_10 &lt;- data_grades$Exam_Score/10 \n\nhead(data_grades[, c(\"Exam_Score\", \"Exam_Score_10\")], 3)\n\n  Exam_Score Exam_Score_10\n1         55           5.5\n2         82           8.2\n3         52           5.2"
+  },
+  {
+    "objectID": "Session5.html#exercise-5.2",
+    "href": "Session5.html#exercise-5.2",
+    "title": "Introduction to R",
+    "section": "Exercise 5.2",
+    "text": "Exercise 5.2\n\nWhat is the class of the variable Tutor? Transform it into a factor. How many tutors are there?\nAdd a new variable to compute the final score of each student, which is the weighted average of their participation grade (20%) and their exam score (80%)\nRetrieve the final score of the students in tutorial group 2. Obtain summary statistics of their final scores.\nWhat is the lowest and the highest score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function."
+  },
+  {
+    "objectID": "Session4.html#inputs-outputs-graphics-in-r",
+    "href": "Session4.html#inputs-outputs-graphics-in-r",
+    "title": "Introduction to R",
+    "section": "Inputs, outputs, graphics in R",
+    "text": "Inputs, outputs, graphics in R\nThis session has two goals:\n\nUnderstanding inputs and outputs of your R session\nUnderstanding the working of plots/graphs."
+  },
+  {
+    "objectID": "Session4.html#inputs-and-outputs-of-your-r-session",
+    "href": "Session4.html#inputs-and-outputs-of-your-r-session",
+    "title": "Introduction to R",
+    "section": "Inputs and outputs of your R session",
+    "text": "Inputs and outputs of your R session\n\nCommon inputs / outputs of an R session are datasets or R scripts.\nFor this meeting we focus on datasets as inputs to the R session, loading data and saving data.\nThe file format (csv, Rdata, xls, stata …) and directory of the files are important keep in mind.\nWe will go over a few options, potential issues, and how to avoid the need to type in a long directory name when managing the input and output of the R session."
+  },
+  {
+    "objectID": "Session4.html#working-directories-and-r-projects",
+    "href": "Session4.html#working-directories-and-r-projects",
+    "title": "Introduction to R",
+    "section": "Working directories and R projects",
+    "text": "Working directories and R projects\n\nWhenever we provide R with a file name, it can include the full path on the computer.\nAn alternative is to work on a specified directory.\nAnother alternative is to work within a ‘project’ that all paths are visible to the project scripts.\nIf we do not provide any path, R will use the current “working directory” for reading or writing files. It can be obtained by the command\n\n\n  getwd()"
+  },
+  {
+    "objectID": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session",
+    "href": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session",
+    "title": "Introduction to R",
+    "section": "Using the correct directory to get input / output of the R session",
+    "text": "Using the correct directory to get input / output of the R session\n\nNavigating through the menus in RStudio is easy, (click and go) but requires using the menu every time the user runs the code.\n\nGo to Session -&gt; Set Working Directory. Two convenient options are:\n\nChoose Directory…: Choose the directory yourself\nTo Source File Location: Set the working directory to the directory where your R Script (the source file) is saved"
+  },
+  {
+    "objectID": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-1",
+    "href": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-1",
+    "title": "Introduction to R",
+    "section": "Using the correct directory to get input / output of the R session",
+    "text": "Using the correct directory to get input / output of the R session\n\nAn alternative is to use function setwd() at the beginning of your script. This line then has to be changed when the code runs in another machine.\n\n\n setwd(\"~/ownCloud (2)/Teaching/Rprogramming_UM/Rprogramming_UM\")"
+  },
+  {
+    "objectID": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-2",
+    "href": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-2",
+    "title": "Introduction to R",
+    "section": "Using the correct directory to get input / output of the R session",
+    "text": "Using the correct directory to get input / output of the R session\n\nRecall: To set the working directory to the folder where your current R script is located, you can simply use:\n\n\nlibrary(this.path)\nsetwd(here()))\n\n\nRecall: We could also explicitly make the function call from the library:\n\n\nsetwd(this.path::here()))"
+  },
+  {
+    "objectID": "Session4.html#types-of-input-or-data-that-can-be-loaded-in-r",
+    "href": "Session4.html#types-of-input-or-data-that-can-be-loaded-in-r",
+    "title": "Introduction to R",
+    "section": "Types of input or data that can be loaded in R",
+    "text": "Types of input or data that can be loaded in R\nR interacts with files in several ways.\n\nYou can load, save, import, or export a data file.\nYou can save a generated figure as a graphics file or store regression tables as text, spreadsheet, or LATEX tables.\nYou can load, save the full workspace (environment) you are working with to follow up another time.\n\nDatasets can come in different formats.\n\nRdata files: Files that can directly\nOther file formats (SPSS csv, xls, …) are also possible to load in R. This often requires the use of packages"
+  },
+  {
+    "objectID": "Session4.html#loading-rdata-files",
+    "href": "Session4.html#loading-rdata-files",
+    "title": "Introduction to R",
+    "section": "Loading Rdata files",
+    "text": "Loading Rdata files\n\nRdata files are specific to R file formats.\nThey can store a single object or several objects.\nThese files are the easiest to manage as input or output in R, since they don’t require library calls."
+  },
+  {
+    "objectID": "Session4.html#load-climate-data-from-rdata-format",
+    "href": "Session4.html#load-climate-data-from-rdata-format",
+    "title": "Introduction to R",
+    "section": "Load climate data from RData format:",
+    "text": "Load climate data from RData format:\n\nload function is used to load data in Rdata format.\nload function loads all objects in the input Rdata file.\n\n\nload(\"data/climate_Maas_Eind.Rdata\")\nprint(summary(data_short))\n\n       X             STNID               NAME               CTRY          \n Min.   : 87132   Length:2896        Length:2896        Length:2896       \n 1st Qu.: 88219   Class :character   Class :character   Class :character  \n Median : 92226   Mode  :character   Mode  :character   Mode  :character  \n Mean   : 93638                                                           \n 3rd Qu.: 96234                                                           \n Max.   :100154                                                           \n COUNTRY_NAME          ISO2C              ISO3C              LATITUDE    \n Length:2896        Length:2896        Length:2896        Min.   :50.91  \n Class :character   Class :character   Class :character   1st Qu.:50.91  \n Mode  :character   Mode  :character   Mode  :character   Median :51.18  \n                                                          Mean   :51.18  \n                                                          3rd Qu.:51.45  \n                                                          Max.   :51.45  \n   LONGITUDE       ELEVATION          BEGIN               END          \n Min.   :5.375   Min.   : 22.55   Min.   :19490101   Min.   :20240909  \n 1st Qu.:5.375   1st Qu.: 22.55   1st Qu.:19490101   1st Qu.:20240909  \n Median :5.572   Median : 68.42   Median :19490101   Median :20240909  \n Mean   :5.572   Mean   : 68.42   Mean   :19490101   Mean   :20240909  \n 3rd Qu.:5.770   3rd Qu.:114.30   3rd Qu.:19490101   3rd Qu.:20240909  \n Max.   :5.770   Max.   :114.30   Max.   :19490101   Max.   :20240909  \n   YEARMODA              YEAR          MONTH             DAY       \n Length:2896        Min.   :2021   Min.   : 1.000   Min.   : 1.00  \n Class :character   1st Qu.:2021   1st Qu.: 4.000   1st Qu.: 8.00  \n Mode  :character   Median :2022   Median : 7.000   Median :16.00  \n                    Mean   :2022   Mean   : 6.523   Mean   :15.71  \n                    3rd Qu.:2023   3rd Qu.:10.000   3rd Qu.:23.00  \n                    Max.   :2024   Max.   :12.000   Max.   :31.00  \n      YDAY             TEMP       TEMP_ATTRIBUTES DEWP_ATTRIBUTES\n Min.   :  1.00   Min.   :-8.50   Min.   : 7.00   Min.   : 7.00  \n 1st Qu.: 92.75   1st Qu.: 6.90   1st Qu.:24.00   1st Qu.:24.00  \n Median :183.00   Median :11.45   Median :24.00   Median :24.00  \n Mean   :183.10   Mean   :11.69   Mean   :23.88   Mean   :23.88  \n 3rd Qu.:274.00   3rd Qu.:16.80   3rd Qu.:24.00   3rd Qu.:24.00  \n Max.   :366.00   Max.   :30.00   Max.   :24.00   Max.   :24.00  \n SLP_ATTRIBUTES     STP_ATTRIBUTES     VISIB_ATTRIBUTES WDSP_ATTRIBUTES\n Min.   : 0.00000   Min.   : 0.00000   Min.   : 7.00    Min.   : 7.00  \n 1st Qu.: 0.00000   1st Qu.: 0.00000   1st Qu.:24.00    1st Qu.:24.00  \n Median : 0.00000   Median : 0.00000   Median :24.00    Median :24.00  \n Mean   : 0.03729   Mean   : 0.03729   Mean   :23.87    Mean   :23.88  \n 3rd Qu.: 0.00000   3rd Qu.: 0.00000   3rd Qu.:24.00    3rd Qu.:24.00  \n Max.   :13.00000   Max.   :13.00000   Max.   :24.00    Max.   :24.00  \n      MAX            I_FOG        I_RAIN_DRIZZLE     I_SNOW_ICE     \n Min.   :-5.00   Min.   :0.0000   Min.   :0.0000   Min.   :0.00000  \n 1st Qu.:10.20   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.00000  \n Median :16.00   Median :0.0000   Median :1.0000   Median :0.00000  \n Mean   :15.94   Mean   :0.1381   Mean   :0.6454   Mean   :0.04385  \n 3rd Qu.:22.00   3rd Qu.:0.0000   3rd Qu.:1.0000   3rd Qu.:0.00000  \n Max.   :39.50   Max.   :1.0000   Max.   :1.0000   Max.   :1.00000  \n     I_HAIL           I_THUNDER       I_TORNADO_FUNNEL       ES       \n Min.   :0.000000   Min.   :0.00000   Min.   :0        Min.   :0.300  \n 1st Qu.:0.000000   1st Qu.:0.00000   1st Qu.:0        1st Qu.:1.000  \n Median :0.000000   Median :0.00000   Median :0        Median :1.350  \n Mean   :0.004489   Mean   :0.07562   Mean   :0        Mean   :1.478  \n 3rd Qu.:0.000000   3rd Qu.:0.00000   3rd Qu.:0        3rd Qu.:1.900  \n Max.   :1.000000   Max.   :1.00000   Max.   :0        Max.   :4.200"
+  },
+  {
+    "objectID": "Session4.html#load-climate-data-from-rdata-format-1",
+    "href": "Session4.html#load-climate-data-from-rdata-format-1",
+    "title": "Introduction to R",
+    "section": "Load climate data from RData format:",
+    "text": "Load climate data from RData format:\n\nYou can assign the loaded data to a new variable\n\n\ndata &lt;- load(\"data/climate_Maas_Eind.Rdata\")"
+  },
+  {
+    "objectID": "Session4.html#loading-other-formats-of-data-in-r",
+    "href": "Session4.html#loading-other-formats-of-data-in-r",
+    "title": "Introduction to R",
+    "section": "Loading other formats of data in R",
+    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio is the easiest (click and go) but requires using the menu every time the user runs the code."
+  },
+  {
+    "objectID": "Session4.html#loading-other-formats-of-data-in-r-1",
+    "href": "Session4.html#loading-other-formats-of-data-in-r-1",
+    "title": "Introduction to R",
+    "section": "Loading other formats of data in R",
+    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio (cont’d)"
+  },
+  {
+    "objectID": "Session4.html#loading-other-formats-of-data-in-r-2",
+    "href": "Session4.html#loading-other-formats-of-data-in-r-2",
+    "title": "Introduction to R",
+    "section": "Loading other formats of data in R",
+    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio (cont’d)"
+  },
+  {
+    "objectID": "Session4.html#loading-other-formats-of-data-in-r-3",
+    "href": "Session4.html#loading-other-formats-of-data-in-r-3",
+    "title": "Introduction to R",
+    "section": "Loading other formats of data in R",
+    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio (cont’d)"
+  },
+  {
+    "objectID": "Session4.html#loading-other-formats-of-data-in-r-4",
+    "href": "Session4.html#loading-other-formats-of-data-in-r-4",
+    "title": "Introduction to R",
+    "section": "Loading other formats of data in R",
+    "text": "Loading other formats of data in R\nAdvice for option 1:\n\nCopy the command that appears after loading the data from the menus."
+  },
+  {
+    "objectID": "Session4.html#loading-other-formats-of-data-in-r-5",
+    "href": "Session4.html#loading-other-formats-of-data-in-r-5",
+    "title": "Introduction to R",
+    "section": "Loading other formats of data in R",
+    "text": "Loading other formats of data in R\nAdvice for option 1 (cont’d):\n\nPaste the command on top of your script.\nThis way, next time you do not need the menu navigation.\n\n\nlibrary(readxl)\nclimate &lt;- read_excel(\"data/climate.xlsx\")\n\n\nYou can view the data by clicking on it in the `Environment’ at the top-right of the workspace."
+  },
+  {
+    "objectID": "Session4.html#general-way-of-importing-and-exporting-of-other-data-formats",
+    "href": "Session4.html#general-way-of-importing-and-exporting-of-other-data-formats",
+    "title": "Introduction to R",
+    "section": "General way of importing and exporting of other data formats",
+    "text": "General way of importing and exporting of other data formats\n\nUsing the correct libraries for different data formats can be tedious.\nR package rio is very convenient for data import and export. It figures out the type of data format from the file name extension, e.g. .csv for CSV, .dta for Stata, or *.sav for SPSS data sets\nFor a complete list of supported formats, see help(rio).\nIt calls an appropriate package to do the actual importing or exporting."
+  },
+  {
+    "objectID": "Session4.html#loading-spss-and-other-file-types",
+    "href": "Session4.html#loading-spss-and-other-file-types",
+    "title": "Introduction to R",
+    "section": "Loading SPSS and other file types",
+    "text": "Loading SPSS and other file types\n\nlibrary('rio')\nimport(\"data/climate.dta\")"
+  },
+  {
+    "objectID": "Session4.html#loading-csv-files",
+    "href": "Session4.html#loading-csv-files",
+    "title": "Introduction to R",
+    "section": "Loading csv files",
+    "text": "Loading csv files\n\nimport(\"data/climate.csv\")"
+  },
+  {
+    "objectID": "Session4.html#outputs",
+    "href": "Session4.html#outputs",
+    "title": "Introduction to R",
+    "section": "Outputs",
+    "text": "Outputs\n\nOutputs work very similarly to the inputs above.\nThe most relevant outputs formats are the R output formats.\n\nsave() saves objects as an .RData file.\n\nsave.image() saves a selection of objects as an .RData file."
+  },
+  {
+    "objectID": "Session4.html#exercise-4.1-saving-data",
+    "href": "Session4.html#exercise-4.1-saving-data",
+    "title": "Introduction to R",
+    "section": "Exercise 4.1: Saving data",
+    "text": "Exercise 4.1: Saving data\n\nSave your current workspace using function save.image().\nSave only one variable in the workspace using function save().\nMake a list of two variables from data_short, and save this list using function save."
+  },
+  {
+    "objectID": "Session4.html#r-base-graphics",
+    "href": "Session4.html#r-base-graphics",
+    "title": "Introduction to R",
+    "section": "R Base Graphics",
+    "text": "R Base Graphics\n\nWe will cover R base graphics.\nOther alternatives include `ggplot2’…\n\nTo create plots with R’s standard graphics package, there are high-level and low-level plotting functions.\n\n\nHigh-level functions generate a new graphic (and open a device).\n\nLow-level functions add elements to an existing graphic."
+  },
+  {
+    "objectID": "Session4.html#simple-plots",
+    "href": "Session4.html#simple-plots",
+    "title": "Introduction to R",
+    "section": "Simple plots",
+    "text": "Simple plots\n\nplot(data_short$MAX)     ## Plotting a single variable\n\n\n\n\n\n\nplot(x = data_short$YEAR, y = data_short$MAX)     ## Scatter plot"
+  },
+  {
+    "objectID": "Session4.html#multiple-plots",
+    "href": "Session4.html#multiple-plots",
+    "title": "Introduction to R",
+    "section": "Multiple plots",
+    "text": "Multiple plots\n\npar(mfrow = c(1,2)) # multiple plots in a row\nplot(data_short$MAX)     ## Plotting a single variable\nplot(x = data_short$YEAR, y = data_short$MAX)     ## Scatter plot"
+  },
+  {
+    "objectID": "Session4.html#functions-calling-methods",
+    "href": "Session4.html#functions-calling-methods",
+    "title": "Introduction to R",
+    "section": "Functions calling methods",
+    "text": "Functions calling methods\nNotice that function plot() calls methods.\nIt will perform different operations depending on the class of the passed object. (We study the lm() function in detail in the next session!)\n\nols_result &lt;- lm(MAX~YEAR, data = data_short)\nplot(ols_result)"
+  },
+  {
+    "objectID": "Session4.html#creating-and-saving-a-graph",
+    "href": "Session4.html#creating-and-saving-a-graph",
+    "title": "Introduction to R",
+    "section": "Creating and saving a graph",
+    "text": "Creating and saving a graph\n\npdf(\"outputs/plot_data_short.pdf\")                  \nhist(data_short$MAX, breaks = 20)\ndev.off()"
+  },
+  {
+    "objectID": "Session4.html#customizing-graphics",
+    "href": "Session4.html#customizing-graphics",
+    "title": "Introduction to R",
+    "section": "Customizing Graphics",
+    "text": "Customizing Graphics\n\nAdding points to an existing plot\nFunction `dev.off()’is called after all the plotting, to save the file and return control to the screen.\n\n\nplot(data_short$MAX, type = \"l\") ## Lines\npoints(data_short$MAX)"
+  },
+  {
+    "objectID": "Session4.html#customizing-graphics-1",
+    "href": "Session4.html#customizing-graphics-1",
+    "title": "Introduction to R",
+    "section": "Customizing Graphics",
+    "text": "Customizing Graphics\n\nThe plot() function takes several many arguments that can change the layout of the plots. See ?par for all graphical options; there are many!\n\nSome examples:\n\n\ncol: color of lines / points\n\nlty, lwd: Line type and thickness\n\npch: Point type (1-16)\n\nmain, sub: Title, subtitle\n\nxlab, ylab: x and y axis labels\n\nlog, xlog and ylog for logarithmic scales\n\nxlim, ylim: x and y axis limits (for overriding R’s default choices)\n\nmfcol, mfrow: Multiple plots in one graphics window (column-wise/row-wise)"
+  },
+  {
+    "objectID": "Session4.html#low-level-graphic-functions",
+    "href": "Session4.html#low-level-graphic-functions",
+    "title": "Introduction to R",
+    "section": "Low-Level Graphic Functions",
+    "text": "Low-Level Graphic Functions\n\n\nlines: Draw lines\n\nabline: Quickly add horizontal, vertical lines, and lines using equation \\(y = bx + a\\)\n\n\npoints: Add points\n\narrows: Add arrows"
+  },
+  {
+    "objectID": "Session4.html#exercise-4.2-plot-maximum-temperatures-for-maastricht",
+    "href": "Session4.html#exercise-4.2-plot-maximum-temperatures-for-maastricht",
+    "title": "Introduction to R",
+    "section": "Exercise 4.2: Plot maximum temperatures for Maastricht",
+    "text": "Exercise 4.2: Plot maximum temperatures for Maastricht\nWe want to visualize the daily maximum temperatures in the climate data data_short specifically for Maastricht. First, make a basic plot of variable and MAX then customise the plot in the following ways:\n\nThe title of the X-axis should say ‘Year’, the title of the Y-axis ‘Maximum Temperature’.\nMake the plot a line plot with a blue line. (Hint: specifying the colour literally as \"blue\" works)\nMake the tick marks appear on the inside of the figure rather than the outside.\nCalculate the average temperature.\nAdd a horizontal line with the average maximum temperature\n\nYou will need to consult the help file for this exercise; see this therefrom more as an exercise in how to navigate R’s help system, than an exercise in plotting (which we will cover in more detail later).\nYou may want to ask ChatGPT for help and then try to see if you could also have gotten the same answer yourself; it may not always give you the most straightforward answer though!"
+  },
+  {
+    "objectID": "Session4.html#manually-saving-r-plots",
+    "href": "Session4.html#manually-saving-r-plots",
+    "title": "Introduction to R",
+    "section": "Manually saving R plots",
+    "text": "Manually saving R plots\n\nUse the plot functions without creating a graph.\nUse the `plots’ area to save image manually.\n\n\nplot(x = data_short$YEAR, y = data_short$MAX)"
+  },
+  {
+    "objectID": "Session4.html#different-plot-types",
+    "href": "Session4.html#different-plot-types",
+    "title": "Introduction to R",
+    "section": "Different plot types",
+    "text": "Different plot types\nYou can manually save graphs of several formats.\nBest practice is to save a graph through a device such as pdf or similar:\n\n\npdf(): Adobe PDF (easily integrated into LaTeX).\n\nsvg(): Scalable Vector Graphics (commonly used on websites).\n\npng(), jpeg(), tiff(), bmp(): Various bitmap formats.\n\n\njpeg(\"outputs/plot_data_short.jpeg\")                  \nplot(x = data_short$YEAR, y = data_short$MAX)   \ndev.off()"
+  },
+  {
+    "objectID": "Session4.html#exercise-4.3-use-other-packages-for-plots",
+    "href": "Session4.html#exercise-4.3-use-other-packages-for-plots",
+    "title": "Introduction to R",
+    "section": "Exercise 4.3: Use other packages for plots",
+    "text": "Exercise 4.3: Use other packages for plots\n\nMake the same plot in R using package `ggplot2’\nYou may want to use ChatGBT since the syntax of `ggplot2’ is quite different from what we covered so far."
+  },
+  {
+    "objectID": "Session2.html#objects",
+    "href": "Session2.html#objects",
+    "title": "Introduction to R",
+    "section": "Objects",
+    "text": "Objects\n\nIn R, everything is an object.\nObjects have a name that is assigned with &lt;- (recommended) or =.\nNames have to start with a letter and include only letters, numbers, and characters such as “.” and “_”.\nR is case sensitive: \\(\\Rightarrow Name\\neq name\\)!\nObjects can store vectors, matrices, lists, data frames, functions…\n\n\n# generate object x (no output):\nx &lt;- 5\n# display log(x)\nlog(x)\n\n[1] 1.609438\n\n\n\n# object X is not defined =&gt; error message \nX\n\nError: object 'X' not found"
+  },
+  {
+    "objectID": "Session2.html#vectors",
+    "href": "Session2.html#vectors",
+    "title": "Introduction to R",
+    "section": "Vectors",
+    "text": "Vectors\n\nVectors can store multiple types of information (e.g., numbers or “characters”).\nTo define a 3-dimensional vector named “vec”, use vec&lt;- c(value1,value2,value3).\nOperators and functions can be applied to vectors, which means they are applied to each of the elements individually.\n\n\n# define vector named 'vec'\nvec&lt;-c(1,2,3)\n# take the square root of 'vec' and store the result in 'sqrt_vec'\nsqrt_vec=sqrt(vec)\n# display sqrt_vec\nprint(sqrt_vec)\n\n[1] 1.000000 1.414214 1.732051"
+  },
+  {
+    "objectID": "Session2.html#vectors---some-helpful-shortcuts",
+    "href": "Session2.html#vectors---some-helpful-shortcuts",
+    "title": "Introduction to R",
+    "section": "Vectors - some helpful shortcuts",
+    "text": "Vectors - some helpful shortcuts\n\nR has built-in functions that generate sequences (useful for loops or plots, among other things).\nWe can also repeat elements using rep().\n\n\n# generate sequence 5,6,...,10\n5:10\n\n[1]  5  6  7  8  9 10\n\n# generate sequence from 1 to 10 in steps of 0.5\nseq(from=1,to=5,by=0.5)\n\n[1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0\n\n#generate 4-dimensional vector of ones\nrep(1,4)\n\n[1] 1 1 1 1"
+  },
+  {
+    "objectID": "Session2.html#order-matters",
+    "href": "Session2.html#order-matters",
+    "title": "Introduction to R",
+    "section": "Order matters!",
+    "text": "Order matters!\n\nBe aware of the order of operations!\ncompare the following:\n\n\n1+2:3^2 # '^2' evaluated before ':', only then '+1' is evaluated\n\n[1]  3  4  5  6  7  8  9 10\n\n1+2:3*4 # first ':', then '*4', then '+1'\n\n[1]  9 13\n\n# use brackets to avoid confusion or mistakes\n(1+2):(3*4)\n\n [1]  3  4  5  6  7  8  9 10 11 12"
+  },
+  {
+    "objectID": "Session2.html#summarizing-vectors",
+    "href": "Session2.html#summarizing-vectors",
+    "title": "Introduction to R",
+    "section": "Summarizing vectors",
+    "text": "Summarizing vectors\n\nR has built-in functions to summarize the information stored in vectors.\nRemark: R is very good at generating random numbers!\n\n\n# Example: generate 100 random draws from a normal distribution with mean 1\n# and standard deviation 2\nnorm.vec=rnorm(n=100,mean=1,sd=2)\n# get mean \nmean(norm.vec)\n\n[1] 0.668907\n\n# get standard deviation \nsd(norm.vec)\n\n[1] 2.369886\n\n# get maximum\nmax(norm.vec)\n\n[1] 6.489345"
+  },
+  {
+    "objectID": "Session2.html#exercise-2.1-generating-and-summarizing-vectors",
+    "href": "Session2.html#exercise-2.1-generating-and-summarizing-vectors",
+    "title": "Introduction to R",
+    "section": "Exercise 2.1: generating and summarizing vectors",
+    "text": "Exercise 2.1: generating and summarizing vectors\n\ndraw 50 random numbers from a normal distribution with mean 0 and variance 1. Store your results in the object norm.vec.\ncalculate the mean and standard deviation of norm.vec.\nuse rep() to repeat each element of norm.vec 3 times. Store the result in the object norm.vec.rep.\nIs mean(norm.vec.rep^2) equal to mean(norm.vec.rep)^2?"
+  },
+  {
+    "objectID": "Session2.html#logical-operators",
+    "href": "Session2.html#logical-operators",
+    "title": "Introduction to R",
+    "section": "logical operators",
+    "text": "logical operators\n\nlogical operators can be either TRUE or FALSE.\nExtremely useful for conditional statements, e.g. if(condition is TRUE){do this}else{do that}.\nWe can check if two objects are equal by ==, different by != or compare them with &lt; and &gt;.\nWe can combine logical statements with “AND” & and “OR” |\n\n\n\n# define  objects \nobj1&lt;-1\nobj2&lt;-2\nobj3&lt;-1 # same value as obj1\nobj1==obj2 # false statement\n\n[1] FALSE\n\nobj1!=obj2 # true statement\n\n[1] TRUE\n\nobj1==obj2 & obj1==obj3 # FALSE AND TRUE =&gt; FALSE\n\n[1] FALSE\n\nobj1==obj2 | obj1==obj3 # FALSE OR TRUE =&gt; TRUE\n\n[1] TRUE"
+  },
+  {
+    "objectID": "Session2.html#characters",
+    "href": "Session2.html#characters",
+    "title": "Introduction to R",
+    "section": "Characters",
+    "text": "Characters\n\nVectors can also store characters.\ncharacters are enclosed in \"\"or ''.\n\n\n# define a vector of 2 cities\ncities&lt;-c('Maastricht', \"Amsterdam\",'Rotterdam')\nprint(cities)\n\n[1] \"Maastricht\" \"Amsterdam\"  \"Rotterdam\""
+  },
+  {
+    "objectID": "Session2.html#exercise-2.2-type-coersion",
+    "href": "Session2.html#exercise-2.2-type-coersion",
+    "title": "Introduction to R",
+    "section": "Exercise 2.2: type coersion",
+    "text": "Exercise 2.2: type coersion\n\nR tries to make objects comparable by coercing one object into the type of another.\nThis can sometimes be handy, but sometimes it leads to unforeseen errors (e.g., when loading new data). To illustrate this, do the following:\n\ncompare the character \"1\" to the numeric 1.\ntry computing the sum of \"1\" and \"2\".\ntry computing the sum of as.numeric(\"1\") and as.numeric(\"2\"). What happened?\ncreate a mixed vector containing the numeric 1 and the character \"2\". Of which type are the elements of the vector?"
+  },
+  {
+    "objectID": "Session2.html#factors",
+    "href": "Session2.html#factors",
+    "title": "Introduction to R",
+    "section": "factors",
+    "text": "factors\n\nMany variables are qualitative rather than quantitative.\nWhile they are often coded using numbers, they don’t have a numerical meaning.\nExamples: gender, nationality…\nCan also be ordinal, i.e., the outcomes can be ranked (e.g., “bad”, “meh”, “great”).\n\n\nx&lt;- c(1,3,3,2,1,3)\nxf&lt;-factor(x,labels=c(\"bad\",\"ok\",\"good\"))# no ranking\nxf\n\n[1] bad  good good ok   bad  good\nLevels: bad ok good\n\n# now with ranking\nxf.ordered&lt;-factor(x,labels=c(\"bad\",\"ok\",\"good\"),ordered=TRUE)\nxf.ordered\n\n[1] bad  good good ok   bad  good\nLevels: bad &lt; ok &lt; good"
+  },
+  {
+    "objectID": "Session2.html#names",
+    "href": "Session2.html#names",
+    "title": "Introduction to R",
+    "section": "Names",
+    "text": "Names\n\nYou can give the elements of your vector names either directly or using the names() command.\nThis is very useful for accessing elements (see nect slide)\n\n\navg_temp&lt;-c(Maastricht=14.2, Amsterdam=13.4,Rotterdam=13.7)\nprint(avg_temp) # names appear on top of elements\n\nMaastricht  Amsterdam  Rotterdam \n      14.2       13.4       13.7 \n\nnames(avg_temp) # returns names of elements\n\n[1] \"Maastricht\" \"Amsterdam\"  \"Rotterdam\" \n\n# Alternatively, we can define data and names separately\ntemp&lt;-c(14.2,13.4,13.7)\nnames(temp)&lt;-cities # recall that we have defined \"cities\" earlier!\nprint(temp)\n\nMaastricht  Amsterdam  Rotterdam \n      14.2       13.4       13.7"
+  },
+  {
+    "objectID": "Session2.html#accessing-elements",
+    "href": "Session2.html#accessing-elements",
+    "title": "Introduction to R",
+    "section": "Accessing elements",
+    "text": "Accessing elements\n\nOne can access the elements of a vector either by name or position.\n\n\n# return the second element of \"avg_temp\" defined before\navg_temp[2] \n\nAmsterdam \n     13.4 \n\n# return the element corresponding to \"Maastricht\"\navg_temp[\"Maastricht\"]\n\nMaastricht \n      14.2 \n\n# trying to access a non-existing element yields \"NA\"\n# ( for \"not available\"), i.e. a missing value\navg_temp[4]\n\n&lt;NA&gt; \n  NA"
+  },
+  {
+    "objectID": "Session2.html#more-on-na-nan-inf",
+    "href": "Session2.html#more-on-na-nan-inf",
+    "title": "Introduction to R",
+    "section": "More on NA, NaN, Inf",
+    "text": "More on NA, NaN, Inf\n\n\nNA (“not available”) indicates missing values.\nAnything combined with NA yields NA.\n\nNaN(“not a number”) indicates the result of a mathematically undefined operation.\n\n\n#define another vector\nvec3=c(-1.2,NA,0)\n# combine avg_temp and vec3\nvec4=c(avg_temp,vec3) \n# divide elements by 0; notice the different outcomes\nvec4/0 \n\nMaastricht  Amsterdam  Rotterdam    Tilburg                                  \n       Inf        Inf        Inf        Inf       -Inf         NA        NaN"
+  },
+  {
+    "objectID": "Session2.html#matrices",
+    "href": "Session2.html#matrices",
+    "title": "Introduction to R",
+    "section": "Matrices",
+    "text": "Matrices\n\nWe can create a matrix with m rows directly using matrix(vector,nrow=m).\n\n\n# create matrix with 3 rows; fill numbers by row\nmat1&lt;-matrix(1:12,nrow=3,byrow=TRUE) # by default, R fills matrices by column\nmat1\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12"
+  },
+  {
+    "objectID": "Session2.html#matrix-indexing",
+    "href": "Session2.html#matrix-indexing",
+    "title": "Introduction to R",
+    "section": "Matrix indexing",
+    "text": "Matrix indexing\n\nWe can give the rows and columns names using rownames() and colnames().\n\n\n# assign names to columns\ncolnames(mat1)&lt;-c(\"col1\",\"col2\",\"col3\",\"col4\")\nmat1\n\n     col1 col2 col3 col4\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12\n\n# assign names to rows\nrownames(mat1)&lt;-c(\"row1\",\"row2\",\"row3\")\nmat1\n\n     col1 col2 col3 col4\nrow1    1    2    3    4\nrow2    5    6    7    8\nrow3    9   10   11   12"
+  },
+  {
+    "objectID": "Session2.html#accessing-elements-1",
+    "href": "Session2.html#accessing-elements-1",
+    "title": "Introduction to R",
+    "section": "Accessing elements",
+    "text": "Accessing elements\n\nWe can access single elements by [rownumber,colnumber], the k-th row by [k,] and the k-th column by [,k].\n\n\n# get element in second row in third column\nmat1[2,3]\n\n[1] 7\n\n# get second row\nmat1[2,]\n\ncol1 col2 col3 col4 \n   5    6    7    8 \n\n# get third column\nmat1[,3]\n\nrow1 row2 row3 \n   3    7   11"
+  },
+  {
+    "objectID": "Session2.html#exercise-2.3-creating-matrices-accessing-elements",
+    "href": "Session2.html#exercise-2.3-creating-matrices-accessing-elements",
+    "title": "Introduction to R",
+    "section": "Exercise 2.3: creating matrices, accessing elements",
+    "text": "Exercise 2.3: creating matrices, accessing elements\n\nCreate the 3x3 identity matrix “by hand”. To do so:\n\ncreate 3 vectors of with zeros and ones in the appropriate spots.\nuse rbind() or cbind() to combine them into the identity matrix.\nstore the identity matrix as the object “I_mat”.\nR makes your life easy: type diag(3) in your console.\n\n\nReplicate the following Excel-matrix:\n\n\n 3. Get the data for April and my by - including only the first and second row - excluding the third row - using the names"
+  },
+  {
+    "objectID": "Session2.html#bonus-matrix-algebra",
+    "href": "Session2.html#bonus-matrix-algebra",
+    "title": "Introduction to R",
+    "section": "Bonus: Matrix algebra",
+    "text": "Bonus: Matrix algebra\n\nR can do matrix “regular” algebra, and even lets you do operations that are not well-defined mathematically.\nt(A) is the transpose of the matrix A.\n\n\n# define matrix containing normal data\ndata.vec=rnorm(9,mean=0,sd=1)\nA=matrix(data.vec,nrow=3) \nA # return A\n\n           [,1]        [,2]       [,3]\n[1,]  0.8807706  0.41372677 -0.1457003\n[2,]  0.4884171  0.06009566 -1.2945056\n[3,] -1.5180278 -0.91082111  0.3670665\n\nt(A) # return the transpose\n\n           [,1]        [,2]       [,3]\n[1,]  0.8807706  0.48841711 -1.5180278\n[2,]  0.4137268  0.06009566 -0.9108211\n[3,] -0.1457003 -1.29450557  0.3670665"
+  },
+  {
+    "objectID": "Session2.html#lists",
+    "href": "Session2.html#lists",
+    "title": "Introduction to R",
+    "section": "Lists",
+    "text": "Lists\n\nA list is a generic collection of objects.\nUnlike vectors, the components can have different types (e.g., numeric and character).\nMany functions output lists, so knowing how to access elements is very useful.\nGenerate a list with mylist&lt;- list(name1=component1, name2=component2,...).\n\n\nmylist=list(num.vec=1:3,city=\"Maastricht\") \nprint(mylist)\n\n$num.vec\n[1] 1 2 3\n\n$city\n[1] \"Maastricht\""
+  },
+  {
+    "objectID": "Session2.html#dataframes",
+    "href": "Session2.html#dataframes",
+    "title": "Introduction to R",
+    "section": "Data frames",
+    "text": "Data frames\n\n\ndata frames are simply data sets in R terminology.\nSo-called data files can contain multiple data sets.\nWe can create a data frame by data.frame() or transform a matrix mat into a data frame by as.data.frame(mat).\nMany functions (e.g. lm() for regressions) need a data frame as input (see later sessions).\n\n\n# generate a data frame\nID&lt;- 1:4\nhourly_wage&lt;- rnorm(n=4,mean=20,sd=1) # create 4 draws from N(20,1)\ncity&lt;- c(\"Maastricht\",\"Eindhoven\",\"Amsterdam\",NA)\ndats&lt;- data.frame(ID,hourly_wage,city) # add new variable\ndats\n\n  ID hourly_wage       city\n1  1    20.94597 Maastricht\n2  2    20.44233  Eindhoven\n3  3    19.36928  Amsterdam\n4  4    20.13608       &lt;NA&gt;"
+  },
+  {
+    "objectID": "Session2.html#exercise-2.4",
+    "href": "Session2.html#exercise-2.4",
+    "title": "Introduction to R",
+    "section": "Exercise 2.4",
+    "text": "Exercise 2.4\n\nCreate your own data frame:\n\ncreate a vector ID that contains the sequence 1,2,…,100.\ncreate a vector income that contains 100 random draws from N(10,1).\ncreate a dummy female that is 1 for ID=1,...,50 and 0 otherwise. (hint: you can achieve this by using rep() twice and combining two vectors with c())\ncollect the variables in a data frame my_df.\ninspect your data with View(my_df)\n\nbonus: create a subset sub_my_df that contains only individuals with income larger than 10."
+  },
+  {
+    "objectID": "Session2.html#bonus-teaching-regression-with-r",
+    "href": "Session2.html#bonus-teaching-regression-with-r",
+    "title": "Introduction to R",
+    "section": "Bonus: teaching regression with R",
+    "text": "Bonus: teaching regression with R\n\nTo give students a feeling for the behavior of the least squares estimator, it can be very useful to use simulated data.\nThis allows teachers to visualize the effects of various quantities of interest, e.g., sample size, variation in the observed and unobserved variables, or omitted variables.\n\n\nn&lt;-100 # set the sample size\nX&lt;-rnorm(n,mean=1,sd=2)# define the observed covariate X\nepsilon&lt;-rnorm(n,mean=0,sd=1) # define the model error\nbeta0&lt;-1 # define true intercept\nbeta1&lt;-2 # define true slope\nY=beta0+beta1*X+epsilon # generate Y according to a linear model\n# recall the formula in a bivariate model\nbeta1.hat=cov(X,Y)/var(X)\nbeta0.hat=mean(Y)-beta1.hat*mean(X)\n# print estimators\nbeta0.hat\n\n[1] 1.229584\n\nbeta1.hat\n\n[1] 1.963515"
+  },
+  {
     "objectID": "Session1.html#r-training-team",
     "href": "Session1.html#r-training-team",
     "title": "Introduction to R",
@@ -480,7 +935,7 @@
     "href": "Session1.html#what-is-r",
     "title": "Introduction to R",
     "section": "What is R?",
-    "text": "What is R?\nR\n\nis an open-source statistical programming language.\navailable for most operating systems\nhelps users analyze, visualize, and model data—from simple summaries to complex data analysis\nis extremely popular in statistics and data science, see this article\nincludes thousands of packages (add-ons) that can be used for specialized tasks without a deep understanding of the language and programming skills\nallows for extensive programming, making it also suitable for advanced or case-specific applications of statistical methods\n\nThe combination of the latter two aspects sets R apart and makes it useful for everything ranging from standard ‘basic’ statistical analysis to the development of new methods.\nThe homepage of R is www.r-project.org from which you can install R and access manuals that provide detailed information about installing and using R."
+    "text": "What is R?\nR\n\nis an open-source statistical programming language.\navailable for most operating systems\nhelps users analyze, visualize, and model data—from simple summaries to complex data analysis\nis extremely popular in statistics and data science, see this article\n\nincludes thousands of packages (add-ons) that can be used for specialized tasks without a deep understanding of the language and programming skills\nallows for extensive programming, making it also suitable for advanced or case-specific applications of statistical methods\n\nThe combination of the latter two aspects sets R apart and makes it useful for everything ranging from standard ‘basic’ statistical analysis to the development of new methods.\nThe homepage of R is www.r-project.org from which you can install R and access manuals that provide detailed information about installing and using R."
   },
   {
     "objectID": "Session1.html#r-installation",
@@ -768,460 +1223,5 @@
     "title": "Introduction to R",
     "section": "Overview of R packages",
     "text": "Overview of R packages\nThe standard distribution of R comes already with a number of packages.\nA list of the currently installed packages can be obtained from the Packages window in the bottom right window below\n\nYou can install new packages depending on your needs. We will explore R packages in the upcoming sessions!"
-  },
-  {
-    "objectID": "Session5.html#data-manipulation",
-    "href": "Session5.html#data-manipulation",
-    "title": "Introduction to R",
-    "section": "Data Manipulation",
-    "text": "Data Manipulation\nIn the last session, we learned how to load data of various sources into R.\nToday’s first part will be about how to manipulate data in R. Importantly, we will learn how to\n\nselect certain variables from a data\nsubset a data set\nrecode and rename certain variables\n\nWe will work with fictive data set of student grades. Let us start by loading the data:\n\ndata_grades &lt;- read.table(\"data/grades.csv\", \n                       header = TRUE, sep = \",\", stringsAsFactors = FALSE)"
-  },
-  {
-    "objectID": "Session5.html#selecting-variables",
-    "href": "Session5.html#selecting-variables",
-    "title": "Introduction to R",
-    "section": "Selecting Variables",
-    "text": "Selecting Variables\nWe begin with selecting interesting variables from a data set. For our grades data set, we want to preserve information about ID, Name, and Exam_Score, and drop all other information.\nVariables can be selected by name, after which we inspect the first and last three rows in the data set:\n\ndata &lt;- data_grades[, c(\"ID\", \"Name\", \"Exam_Score\")] \nhead(data, 3)\n\n      ID                Name Exam_Score\n1 i40333 Hyden-Terry, Dakota         55\n2 i41204     Polson, Destiny         82\n3 i41428       al-Azad, Nuha         52\n\ntail(data, 3)\n\n        ID             Name Exam_Score\n40 i198051      Nies, Tyler         62\n41 i198310 Montano, Marquez         72\n42 i198859  Nyberg, Bich Sa         91"
-  },
-  {
-    "objectID": "Session5.html#selecting-variables-1",
-    "href": "Session5.html#selecting-variables-1",
-    "title": "Introduction to R",
-    "section": "Selecting Variables",
-    "text": "Selecting Variables\nOr by variable indexes\n\ndata1 &lt;- data_grades[, c(1, 2, 7)] \n\nthough this is not that convenient unless you know the column numbers of the variables you want to select.\nA more convenient alternative is to use the following function:\n\ndata2 &lt;- subset(data_grades, select = c(ID, Name, Exam_Score))\n\nThe objects data, data1 and data2 are all identical so you can use your preferred way of working!"
-  },
-  {
-    "objectID": "Session5.html#subsetting-rows",
-    "href": "Session5.html#subsetting-rows",
-    "title": "Introduction to R",
-    "section": "Subsetting Rows",
-    "text": "Subsetting Rows\nNext, we want to subset the data set, i.e. preserve interesting rows while removing the others.\nFor the grades data set, we might be interested in information about students in tutorial group 1:\n\n# select tutorial 1 students only\ndata_tutorial1 &lt;- data_grades[data_grades$Tutorial == 1, ]\n\nor alternatively:\n\ndata_tutorial1 &lt;- subset(data_grades, Tutorial == 1)\n\nSubsetting also works using characters. For instance, to retrieve only information for females:\n\n# select female students only\ndata_females &lt;- data_grades[data_grades$Gender == 'Female', ]\n\nInspect your new data sets!"
-  },
-  {
-    "objectID": "Session5.html#exercise-5.1",
-    "href": "Session5.html#exercise-5.1",
-    "title": "Introduction to R",
-    "section": "Exercise 5.1",
-    "text": "Exercise 5.1\nUse the grades data set.\n\nGenerate a data set that contains information about the student ID, student name, their tutorial group, participation grade and their exam score.\nReduce the data set to only display information of students in tutorial group 4\nFurther reduce the data set to only display information of students in tutorial group 4 with an exam score of more than 80. How many such students are there? Hint: You can use a logical operator when subsetting!"
-  },
-  {
-    "objectID": "Session5.html#transforming-variables",
-    "href": "Session5.html#transforming-variables",
-    "title": "Introduction to R",
-    "section": "Transforming Variables",
-    "text": "Transforming Variables\nLet us continue with further data manipulations. The variable tutorial is currently an integer:\n\nclass(data_grades$Tutorial)\n\n[1] \"integer\"\n\n\nbut it should be a factor (a categorical variable). This can be easily changed in R:\n\ndata_grades$Tutorial &lt;- as.factor(data_grades$Tutorial)\n\nafter which you can inspect its new class:\n\nclass(data_grades$Tutorial)\n\n[1] \"factor\""
-  },
-  {
-    "objectID": "Session5.html#transforming-variables-1",
-    "href": "Session5.html#transforming-variables-1",
-    "title": "Introduction to R",
-    "section": "Transforming Variables",
-    "text": "Transforming Variables\nWhen inspecting the variable itself, R now mentions the different levels of the factors:\n\ndata_grades$Tutorial\n\n [1] 2 3 4 2 1 4 3 1 1 3 4 2 4 4 3 1 3 4 1 2 1 1 3 1 3 3 2 3 2 1 4 4 4 2 3 2 2 4\n[39] 4 2 1 3\nLevels: 1 2 3 4\n\n\nwhich you can also directly retreive via:\n\nlevels(data_grades$Tutorial)\n\n[1] \"1\" \"2\" \"3\" \"4\""
-  },
-  {
-    "objectID": "Session5.html#adding-variables",
-    "href": "Session5.html#adding-variables",
-    "title": "Introduction to R",
-    "section": "Adding Variables",
-    "text": "Adding Variables\nSometimes we want to add a variable to an existing data set.\nFor instance, we want to add the exam score on 10 instead of 100. To add a new variable, use the $ operator and specify a new variable name:\n\ndata_grades$Exam_Score_10 &lt;- data_grades$Exam_Score/10 \n\nhead(data_grades[, c(\"Exam_Score\", \"Exam_Score_10\")], 3)\n\n  Exam_Score Exam_Score_10\n1         55           5.5\n2         82           8.2\n3         52           5.2"
-  },
-  {
-    "objectID": "Session5.html#exercise-5.2",
-    "href": "Session5.html#exercise-5.2",
-    "title": "Introduction to R",
-    "section": "Exercise 5.2",
-    "text": "Exercise 5.2\n\nWhat is the class of the variable Tutor? Transform it into a factor. How many tutors are there?\nAdd a new variable to compute the final score of each student, which is the weighted average of their participation grade (20%) and their exam score (80%)\nRetrieve the final score of the students in tutorial group 2. Obtain summary statistics of their final scores.\nWhat is the lowest and the highest score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About the SBE R Training",
-    "section": "",
-    "text": "The R training team:\n\nNalan Basturk\nTobias Hartl\nMartin Schumann\nStephan Smeekes\nInes Wilms\n\n\n\nSBE R Training\nThe purpose of this course is to provide a gentle introduction to R suitable for academic staff members. The main target group is teachers and researchers who teach or use some form of data analysis / statistics in their courses, but are unfamiliar with R, for example because they have been using software like SPSS, Excel or Stata for their statistical analysis.\nWhat should you not expect from this training? - Basic statistical training. Participants are expected to have a basic understanding of statistics. - Advanced use of R that requires substantial programming. While we may touch upon this briefly depending on the interests of the participants, more advanced treatment is outside the scope of the training.\n\n\nPhilosophy of the sessions\nWe have scheduled five hands-on sessions of two hours. The sessions are interactive, guided by two of the trainers, with plenty of opportunity for asking questions and further interactions. No preparation is needed outside of these sessions. The focus will be on understanding the language conceptually, rather than covering a wide range of statistical tools.\n\n\nContent of the Sessions\nThere will be 5 sessions of two hours. Below is the tentative plan for the sessions.\n\nTuesday June 10, 13:30-15:30: Installing R The first session will discuss how to get R up and running. We will cover the actual installation of R and RStudio on different operating systems. Next, we will cover the basics to get R working, specifically, how to use the console and writing scripts.\nThursday June 12, 13:30-15:30: R Objects Using different types of objects is at the heart of R. This session will go into the different type of objects that users encounter, such as vectors, lists and data frames.\nMonday June 16, 13:30-15:30: Using Functions and Packages When using R as a statistical tool rather than a programming language, proper use of built-in functions and packages is key. This session will cover how to use general functions, explain the way arguments should be entered, and how output objects should be interpreted. We discuss the philosophy of R’s object-oriented system, and show how operations can be performed on different type of objects. We also go into the package management system.\nWednesday June 18, 10:30-12:30: Input, Output and Graphics In the session, we will focus on how to load data into R from different types of sources. We also discuss how to export results from an analysis from R to other programs. Finally, we cover how to make professional figures and plots using R’s graphical capabilities.\nFriday June 20, 10:30-12:30: Data Manipulation and (Regression) Analysis The first part of the session will focus on typical manipulations of data stats that may be needed as preprocessing steps before a statistical analysis. The second part of the session we will apply some basic statistical analysis tools. We focus on the linear regression model, the workhorse of empirical economic research. To enable practitioners to efficiently estimate the linear regression model in R, we cover objects of class formula and OLS estimation via the lm() command.\n\n\n\nOptional Topics\nDepending on the progress and interests of the participants, we have 2 optional more advanced topics, that can be integrated into the sessions:\n\nAdvanced Graphics: This topic covers more advanced use of R’s graphics capabilities such as the ggplot2 package.\nFlow Control: Often we want to execute certain commands conditionally and / or repeatedly. This requires conditional evaluation and loops, which are covered under the topic of flow control.\n\n\n\nPreparation – First Meeting\nNo preparation is needed; all that we ask is that participants bring a laptop on which they can install and use R. There is no need to install things in advance, we will guide you through installation during the first session.\n\n\nPreparation – Missed Meetings\nFor people attending all sessions, no preparation is needed between the sessions. For people missing sessions, we strongly recommend going through the material on your own, as sessions build up consecutively. As we are still finetuning the content, we cannot promise to have the sessions complete and available more than a day before each session. If this is a problem, please contact us directly to see what we can do."
-  },
-  {
-    "objectID": "Session4.html#inputs-outputs-graphics-in-r",
-    "href": "Session4.html#inputs-outputs-graphics-in-r",
-    "title": "Introduction to R",
-    "section": "Inputs, outputs, graphics in R",
-    "text": "Inputs, outputs, graphics in R\nThis session has two goals:\n\nUnderstanding inputs and outputs of your R session\nUnderstanding the working of plots/graphs."
-  },
-  {
-    "objectID": "Session4.html#inputs-and-outputs-of-your-r-session",
-    "href": "Session4.html#inputs-and-outputs-of-your-r-session",
-    "title": "Introduction to R",
-    "section": "Inputs and outputs of your R session",
-    "text": "Inputs and outputs of your R session\n\nCommon inputs / outputs of an R session are datasets or R scripts.\nFor this meeting we focus on datasets as inputs to the R session, loading data and saving data.\nThe file format (csv, Rdata, xls, stata …) and directory of the files are important keep in mind.\nWe will go over a few options, potential issues, and how to avoid the need to type in a long directory name when managing the input and output of the R session."
-  },
-  {
-    "objectID": "Session4.html#working-directories-and-r-projects",
-    "href": "Session4.html#working-directories-and-r-projects",
-    "title": "Introduction to R",
-    "section": "Working directories and R projects",
-    "text": "Working directories and R projects\n\nWhenever we provide R with a file name, it can include the full path on the computer.\nAn alternative is to work on a specified directory.\nAnother alternative is to work within a ‘project’ that all paths are visible to the project scripts.\nIf we do not provide any path, R will use the current “working directory” for reading or writing files. It can be obtained by the command\n\n\n  getwd()"
-  },
-  {
-    "objectID": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session",
-    "href": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session",
-    "title": "Introduction to R",
-    "section": "Using the correct directory to get input / output of the R session",
-    "text": "Using the correct directory to get input / output of the R session\n\nNavigating through the menus in RStudio is easy, (click and go) but requires using the menu every time the user runs the code.\nGo to Session -&gt; Set Working Directory. Two convenient options are:\n\nChoose Directory…: Choose the directory yourself\nTo Source File Location: Set the working directory to the directory where your R Script (the source file) is saved"
-  },
-  {
-    "objectID": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-1",
-    "href": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-1",
-    "title": "Introduction to R",
-    "section": "Using the correct directory to get input / output of the R session",
-    "text": "Using the correct directory to get input / output of the R session\n\nAn alternative is to use function setwd() at the beginning of your script. This line then has to be changed when the code runs in another machine.\n\n\n setwd(\"~/ownCloud (2)/Teaching/Rprogramming_UM/Rprogramming_UM\")"
-  },
-  {
-    "objectID": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-2",
-    "href": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-2",
-    "title": "Introduction to R",
-    "section": "Using the correct directory to get input / output of the R session",
-    "text": "Using the correct directory to get input / output of the R session\n\nRecall: To set the working directory to the folder where your current R script is located, you can simply use:\n\n\nlibrary(this.path)\nsetwd(here()))\n\n\nRecall: We could also explicitly make the function call from the library:\n\n\nsetwd(this.path::here()))"
-  },
-  {
-    "objectID": "Session4.html#types-of-input-or-data-that-can-be-loaded-in-r",
-    "href": "Session4.html#types-of-input-or-data-that-can-be-loaded-in-r",
-    "title": "Introduction to R",
-    "section": "Types of input or data that can be loaded in R",
-    "text": "Types of input or data that can be loaded in R\nR interacts with files in several ways.\n\nYou can load, save, import, or export a data file.\nYou can save a generated figure as a graphics file or store regression tables as text, spreadsheet, or LATEX tables.\nYou can load, save the full workspace (environment) you are working with to follow up another time.\n\nDatasets can come in different formats.\n\nRdata files: Files that can directly\nOther file formats (SPSS csv, xls, …) are also possible to load in R. This often requires the use of packages"
-  },
-  {
-    "objectID": "Session4.html#loading-rdata-files",
-    "href": "Session4.html#loading-rdata-files",
-    "title": "Introduction to R",
-    "section": "Loading Rdata files",
-    "text": "Loading Rdata files\n\nRdata files are specific to R file formats.\nThey can store a single object or several objects.\nThese files are the easiest to manage as input or output in R, since they don’t require library calls."
-  },
-  {
-    "objectID": "Session4.html#load-climate-data-from-rdata-format",
-    "href": "Session4.html#load-climate-data-from-rdata-format",
-    "title": "Introduction to R",
-    "section": "Load climate data from RData format:",
-    "text": "Load climate data from RData format:\n\nload function is used to load data in Rdata format.\nload function loads all objects in the input Rdata file.\n\n\nload(\"data/climate_Maas_Eind.Rdata\")\nprint(summary(data_short))\n\n       X             STNID               NAME               CTRY          \n Min.   : 87132   Length:2896        Length:2896        Length:2896       \n 1st Qu.: 88219   Class :character   Class :character   Class :character  \n Median : 92226   Mode  :character   Mode  :character   Mode  :character  \n Mean   : 93638                                                           \n 3rd Qu.: 96234                                                           \n Max.   :100154                                                           \n COUNTRY_NAME          ISO2C              ISO3C              LATITUDE    \n Length:2896        Length:2896        Length:2896        Min.   :50.91  \n Class :character   Class :character   Class :character   1st Qu.:50.91  \n Mode  :character   Mode  :character   Mode  :character   Median :51.18  \n                                                          Mean   :51.18  \n                                                          3rd Qu.:51.45  \n                                                          Max.   :51.45  \n   LONGITUDE       ELEVATION          BEGIN               END          \n Min.   :5.375   Min.   : 22.55   Min.   :19490101   Min.   :20240909  \n 1st Qu.:5.375   1st Qu.: 22.55   1st Qu.:19490101   1st Qu.:20240909  \n Median :5.572   Median : 68.42   Median :19490101   Median :20240909  \n Mean   :5.572   Mean   : 68.42   Mean   :19490101   Mean   :20240909  \n 3rd Qu.:5.770   3rd Qu.:114.30   3rd Qu.:19490101   3rd Qu.:20240909  \n Max.   :5.770   Max.   :114.30   Max.   :19490101   Max.   :20240909  \n   YEARMODA              YEAR          MONTH             DAY       \n Length:2896        Min.   :2021   Min.   : 1.000   Min.   : 1.00  \n Class :character   1st Qu.:2021   1st Qu.: 4.000   1st Qu.: 8.00  \n Mode  :character   Median :2022   Median : 7.000   Median :16.00  \n                    Mean   :2022   Mean   : 6.523   Mean   :15.71  \n                    3rd Qu.:2023   3rd Qu.:10.000   3rd Qu.:23.00  \n                    Max.   :2024   Max.   :12.000   Max.   :31.00  \n      YDAY             TEMP       TEMP_ATTRIBUTES DEWP_ATTRIBUTES\n Min.   :  1.00   Min.   :-8.50   Min.   : 7.00   Min.   : 7.00  \n 1st Qu.: 92.75   1st Qu.: 6.90   1st Qu.:24.00   1st Qu.:24.00  \n Median :183.00   Median :11.45   Median :24.00   Median :24.00  \n Mean   :183.10   Mean   :11.69   Mean   :23.88   Mean   :23.88  \n 3rd Qu.:274.00   3rd Qu.:16.80   3rd Qu.:24.00   3rd Qu.:24.00  \n Max.   :366.00   Max.   :30.00   Max.   :24.00   Max.   :24.00  \n SLP_ATTRIBUTES     STP_ATTRIBUTES     VISIB_ATTRIBUTES WDSP_ATTRIBUTES\n Min.   : 0.00000   Min.   : 0.00000   Min.   : 7.00    Min.   : 7.00  \n 1st Qu.: 0.00000   1st Qu.: 0.00000   1st Qu.:24.00    1st Qu.:24.00  \n Median : 0.00000   Median : 0.00000   Median :24.00    Median :24.00  \n Mean   : 0.03729   Mean   : 0.03729   Mean   :23.87    Mean   :23.88  \n 3rd Qu.: 0.00000   3rd Qu.: 0.00000   3rd Qu.:24.00    3rd Qu.:24.00  \n Max.   :13.00000   Max.   :13.00000   Max.   :24.00    Max.   :24.00  \n      MAX            I_FOG        I_RAIN_DRIZZLE     I_SNOW_ICE     \n Min.   :-5.00   Min.   :0.0000   Min.   :0.0000   Min.   :0.00000  \n 1st Qu.:10.20   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.00000  \n Median :16.00   Median :0.0000   Median :1.0000   Median :0.00000  \n Mean   :15.94   Mean   :0.1381   Mean   :0.6454   Mean   :0.04385  \n 3rd Qu.:22.00   3rd Qu.:0.0000   3rd Qu.:1.0000   3rd Qu.:0.00000  \n Max.   :39.50   Max.   :1.0000   Max.   :1.0000   Max.   :1.00000  \n     I_HAIL           I_THUNDER       I_TORNADO_FUNNEL       ES       \n Min.   :0.000000   Min.   :0.00000   Min.   :0        Min.   :0.300  \n 1st Qu.:0.000000   1st Qu.:0.00000   1st Qu.:0        1st Qu.:1.000  \n Median :0.000000   Median :0.00000   Median :0        Median :1.350  \n Mean   :0.004489   Mean   :0.07562   Mean   :0        Mean   :1.478  \n 3rd Qu.:0.000000   3rd Qu.:0.00000   3rd Qu.:0        3rd Qu.:1.900  \n Max.   :1.000000   Max.   :1.00000   Max.   :0        Max.   :4.200"
-  },
-  {
-    "objectID": "Session4.html#load-climate-data-from-rdata-format-1",
-    "href": "Session4.html#load-climate-data-from-rdata-format-1",
-    "title": "Introduction to R",
-    "section": "Load climate data from RData format:",
-    "text": "Load climate data from RData format:\n\nYou can assign the loaded data to a new variable\n\n\ndata &lt;- load(\"data/climate_Maas_Eind.Rdata\")"
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r",
-    "href": "Session4.html#loading-other-formats-of-data-in-r",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio is the easiest (click and go) but requires using the menu every time the user runs the code."
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-1",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-1",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio (cont’d)"
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-2",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-2",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio (cont’d)"
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-3",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-3",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio (cont’d)"
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-4",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-4",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nAdvice for option 1:\n\nCopy the command that appears after loading the data from the menus."
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-5",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-5",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nAdvice for option 1 (cont’d):\n\nPaste the command on top of your script.\nThis way, next time you do not need the menu navigation.\n\n\nlibrary(readxl)\nclimate &lt;- read_excel(\"data/climate.xlsx\")\n\n\nYou can view the data by clicking on it in the `Environment’ at the top-right of the workspace."
-  },
-  {
-    "objectID": "Session4.html#general-way-of-importing-and-exporting-of-other-data-formats",
-    "href": "Session4.html#general-way-of-importing-and-exporting-of-other-data-formats",
-    "title": "Introduction to R",
-    "section": "General way of importing and exporting of other data formats",
-    "text": "General way of importing and exporting of other data formats\n\nUsing the correct libraries for different data formats can be tedious.\nR package rio is very convenient for data import and export. It figures out the type of data format from the file name extension, e.g. .csv for CSV, .dta for Stata, or *.sav for SPSS data sets\nFor a complete list of supported formats, see help(rio).\nIt calls an appropriate package to do the actual importing or exporting."
-  },
-  {
-    "objectID": "Session4.html#loading-spss-and-other-file-types",
-    "href": "Session4.html#loading-spss-and-other-file-types",
-    "title": "Introduction to R",
-    "section": "Loading SPSS and other file types",
-    "text": "Loading SPSS and other file types\n\nlibrary('rio')\nimport(\"data/climate.dta\")"
-  },
-  {
-    "objectID": "Session4.html#loading-csv-files",
-    "href": "Session4.html#loading-csv-files",
-    "title": "Introduction to R",
-    "section": "Loading csv files",
-    "text": "Loading csv files\n\nimport(\"data/climate.csv\")"
-  },
-  {
-    "objectID": "Session4.html#outputs",
-    "href": "Session4.html#outputs",
-    "title": "Introduction to R",
-    "section": "Outputs",
-    "text": "Outputs\n\nOutputs work very similarly to the inputs above.\nThe most relevant outputs formats are the R output formats.\nsave() saves objects as an .RData file.\nsave.image() saves a selection of objects as an .RData file."
-  },
-  {
-    "objectID": "Session4.html#exercise-4.1-saving-data",
-    "href": "Session4.html#exercise-4.1-saving-data",
-    "title": "Introduction to R",
-    "section": "Exercise 4.1: Saving data",
-    "text": "Exercise 4.1: Saving data\n\nSave your current workspace using function save.image().\nSave only one variable in the workspace using function save().\nMake a list of two variables from data_short, and save this list using function save."
-  },
-  {
-    "objectID": "Session4.html#r-base-graphics",
-    "href": "Session4.html#r-base-graphics",
-    "title": "Introduction to R",
-    "section": "R Base Graphics",
-    "text": "R Base Graphics\n\nWe will cover R base graphics.\nOther alternatives include `ggplot2’…\n\nTo create plots with R’s standard graphics package, there are high-level and low-level plotting functions.\n\nHigh-level functions generate a new graphic (and open a device).\nLow-level functions add elements to an existing graphic."
-  },
-  {
-    "objectID": "Session4.html#simple-plots",
-    "href": "Session4.html#simple-plots",
-    "title": "Introduction to R",
-    "section": "Simple plots",
-    "text": "Simple plots\n\nplot(data_short$MAX)     ## Plotting a single variable\n\n\n\n\n\n\n\nplot(x = data_short$YEAR, y = data_short$MAX)     ## Scatter plot"
-  },
-  {
-    "objectID": "Session4.html#multiple-plots",
-    "href": "Session4.html#multiple-plots",
-    "title": "Introduction to R",
-    "section": "Multiple plots",
-    "text": "Multiple plots\n\npar(mfrow = c(1,2)) # multiple plots in a row\nplot(data_short$MAX)     ## Plotting a single variable\nplot(x = data_short$YEAR, y = data_short$MAX)     ## Scatter plot"
-  },
-  {
-    "objectID": "Session4.html#functions-calling-methods",
-    "href": "Session4.html#functions-calling-methods",
-    "title": "Introduction to R",
-    "section": "Functions calling methods",
-    "text": "Functions calling methods\nNotice that function plot() calls methods.\nIt will perform different operations depending on the class of the passed object. (We study the lm() function in detail in the next session!)\n\nols_result &lt;- lm(MAX~YEAR, data = data_short)\nplot(ols_result)"
-  },
-  {
-    "objectID": "Session4.html#creating-and-saving-a-graph",
-    "href": "Session4.html#creating-and-saving-a-graph",
-    "title": "Introduction to R",
-    "section": "Creating and saving a graph",
-    "text": "Creating and saving a graph\n\npdf(\"outputs/plot_data_short.pdf\")                  \nhist(data_short$MAX, breaks = 20)\ndev.off()"
-  },
-  {
-    "objectID": "Session4.html#customizing-graphics",
-    "href": "Session4.html#customizing-graphics",
-    "title": "Introduction to R",
-    "section": "Customizing Graphics",
-    "text": "Customizing Graphics\n\nAdding points to an existing plot\nFunction `dev.off()’is called after all the plotting, to save the file and return control to the screen.\n\n\nplot(data_short$MAX, type = \"l\") ## Lines\npoints(data_short$MAX)"
-  },
-  {
-    "objectID": "Session4.html#customizing-graphics-1",
-    "href": "Session4.html#customizing-graphics-1",
-    "title": "Introduction to R",
-    "section": "Customizing Graphics",
-    "text": "Customizing Graphics\n\nThe plot() function takes several many arguments that can change the layout of the plots. See ?par for all graphical options; there are many!\nSome examples:\n\ncol: color of lines / points\nlty, lwd: Line type and thickness\npch: Point type (1-16)\nmain, sub: Title, subtitle\nxlab, ylab: x and y axis labels\nlog, xlog and ylog for logarithmic scales\nxlim, ylim: x and y axis limits (for overriding R’s default choices)\nmfcol, mfrow: Multiple plots in one graphics window (column-wise/row-wise)"
-  },
-  {
-    "objectID": "Session4.html#low-level-graphic-functions",
-    "href": "Session4.html#low-level-graphic-functions",
-    "title": "Introduction to R",
-    "section": "Low-Level Graphic Functions",
-    "text": "Low-Level Graphic Functions\n\nlines: Draw lines\nabline: Quickly add horizontal, vertical lines, and lines using equation \\(y = bx + a\\)\npoints: Add points\narrows: Add arrows"
-  },
-  {
-    "objectID": "Session4.html#exercise-4.2-plot-maximum-temperatures-for-maastricht",
-    "href": "Session4.html#exercise-4.2-plot-maximum-temperatures-for-maastricht",
-    "title": "Introduction to R",
-    "section": "Exercise 4.2: Plot maximum temperatures for Maastricht",
-    "text": "Exercise 4.2: Plot maximum temperatures for Maastricht\nWe want to visualize the daily maximum temperatures in the climate data data_short specifically for Maastricht. First, make a basic plot of variable and MAX then customise the plot in the following ways:\n\nThe title of the X-axis should say ‘Year’, the title of the Y-axis ‘Maximum Temperature’.\nMake the plot a line plot with a blue line. (Hint: specifying the colour literally as \"blue\" works)\nMake the tick marks appear on the inside of the figure rather than the outside.\nCalculate the average temperature.\nAdd a horizontal line with the average maximum temperature\n\nYou will need to consult the help file for this exercise; see this therefrom more as an exercise in how to navigate R’s help system, than an exercise in plotting (which we will cover in more detail later).\nYou may want to ask ChatGPT for help and then try to see if you could also have gotten the same answer yourself; it may not always give you the most straightforward answer though!"
-  },
-  {
-    "objectID": "Session4.html#manually-saving-r-plots",
-    "href": "Session4.html#manually-saving-r-plots",
-    "title": "Introduction to R",
-    "section": "Manually saving R plots",
-    "text": "Manually saving R plots\n\nUse the plot functions without creating a graph.\nUse the `plots’ area to save image manually.\n\n\nplot(x = data_short$YEAR, y = data_short$MAX)"
-  },
-  {
-    "objectID": "Session4.html#different-plot-types",
-    "href": "Session4.html#different-plot-types",
-    "title": "Introduction to R",
-    "section": "Different plot types",
-    "text": "Different plot types\nYou can manually save graphs of several formats.\nBest practice is to save a graph through a device such as pdf or similar:\n\npdf(): Adobe PDF (easily integrated into LaTeX).\nsvg(): Scalable Vector Graphics (commonly used on websites).\npng(), jpeg(), tiff(), bmp(): Various bitmap formats.\n\n\njpeg(\"outputs/plot_data_short.jpeg\")                  \nplot(x = data_short$YEAR, y = data_short$MAX)   \ndev.off()"
-  },
-  {
-    "objectID": "Session4.html#exercise-4.3-use-other-packages-for-plots",
-    "href": "Session4.html#exercise-4.3-use-other-packages-for-plots",
-    "title": "Introduction to R",
-    "section": "Exercise 4.3: Use other packages for plots",
-    "text": "Exercise 4.3: Use other packages for plots\n\nMake the same plot in R using package `ggplot2’\nYou may want to use ChatGBT since the syntax of `ggplot2’ is quite different from what we covered so far."
-  },
-  {
-    "objectID": "Session2.html#objects",
-    "href": "Session2.html#objects",
-    "title": "Introduction to R",
-    "section": "Objects",
-    "text": "Objects\n\nIn R, everything is an object.\nObjects have a name that is assigned with &lt;- (recommended) or =.\nNames have to start with a letter and include only letters, numbers, and characters such as “.” and “_”.\nR is case sensitive: \\(\\Rightarrow Name\\neq name\\)!\nObjects can store vectors, matrices, lists, data frames, functions…\n\n\n# generate object x (no output):\nx &lt;- 5\n# display log(x)\nlog(x)\n\n[1] 1.609438\n\n\n\n# object X is not defined =&gt; error message \nX\n\nError: object 'X' not found"
-  },
-  {
-    "objectID": "Session2.html#vectors",
-    "href": "Session2.html#vectors",
-    "title": "Introduction to R",
-    "section": "Vectors",
-    "text": "Vectors\n\nVectors can store multiple types of information (e.g., numbers or “characters”).\nTo define a 3-dimensional vector named “vec”, use vec&lt;- c(value1,value2,value3).\nOperators and functions can be applied to vectors, which means they are applied to each of the elements individually.\n\n\n# define vector named 'vec'\nvec&lt;-c(1,2,3)\n# take the square root of 'vec' and store the result in 'sqrt_vec'\nsqrt_vec=sqrt(vec)\n# display sqrt_vec\nprint(sqrt_vec)\n\n[1] 1.000000 1.414214 1.732051"
-  },
-  {
-    "objectID": "Session2.html#vectors---some-helpful-shortcuts",
-    "href": "Session2.html#vectors---some-helpful-shortcuts",
-    "title": "Introduction to R",
-    "section": "Vectors - some helpful shortcuts",
-    "text": "Vectors - some helpful shortcuts\n\nR has built-in functions that generate sequences (useful for loops or plots, among other things).\nWe can also repeat elements using rep().\n\n\n# generate sequence 5,6,...,10\n5:10\n\n[1]  5  6  7  8  9 10\n\n# generate sequence from 1 to 10 in steps of 0.5\nseq(from=1,to=5,by=0.5)\n\n[1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0\n\n#generate 4-dimensional vector of ones\nrep(1,4)\n\n[1] 1 1 1 1"
-  },
-  {
-    "objectID": "Session2.html#order-matters",
-    "href": "Session2.html#order-matters",
-    "title": "Introduction to R",
-    "section": "Order matters!",
-    "text": "Order matters!\n\nBe aware of the order of operations!\ncompare the following:\n\n\n1+2:3^2 # '^2' evaluated before ':', only then '+1' is evaluated\n\n[1]  3  4  5  6  7  8  9 10\n\n1+2:3*4 # first ':', then '*4', then '+1'\n\n[1]  9 13\n\n# use brackets to avoid confusion or mistakes\n(1+2):(3*4)\n\n [1]  3  4  5  6  7  8  9 10 11 12"
-  },
-  {
-    "objectID": "Session2.html#summarizing-vectors",
-    "href": "Session2.html#summarizing-vectors",
-    "title": "Introduction to R",
-    "section": "Summarizing vectors",
-    "text": "Summarizing vectors\n\nR has built-in functions to summarize the information stored in vectors.\nRemark: R is very good at generating random numbers!\n\n\n# Example: generate 100 random draws from a normal distribution with mean 1\n# and standard deviation 2\nnorm.vec=rnorm(n=100,mean=1,sd=2)\n# get mean \nmean(norm.vec)\n\n[1] 0.668907\n\n# get standard deviation \nsd(norm.vec)\n\n[1] 2.369886\n\n# get maximum\nmax(norm.vec)\n\n[1] 6.489345"
-  },
-  {
-    "objectID": "Session2.html#exercise-2.1-generating-and-summarizing-vectors",
-    "href": "Session2.html#exercise-2.1-generating-and-summarizing-vectors",
-    "title": "Introduction to R",
-    "section": "Exercise 2.1: generating and summarizing vectors",
-    "text": "Exercise 2.1: generating and summarizing vectors\n\ndraw 50 random numbers from a normal distribution with mean 0 and variance 1. Store your results in the object norm.vec.\ncalculate the mean and standard deviation of norm.vec.\nuse rep() to repeat each element of norm.vec 3 times. Store the result in the object norm.vec.rep.\nIs mean(norm.vec.rep^2) equal to mean(norm.vec.rep)^2?"
-  },
-  {
-    "objectID": "Session2.html#logical-operators",
-    "href": "Session2.html#logical-operators",
-    "title": "Introduction to R",
-    "section": "logical operators",
-    "text": "logical operators\n\nlogical operators can be either TRUE or FALSE.\nExtremely useful for conditional statements, e.g. if(condition is TRUE){do this}else{do that}.\nWe can check if two objects are equal by ==, different by != or compare them with &lt; and &gt;.\nWe can combine logical statements with “AND” & and “OR” |\n\n\n# define  objects \nobj1&lt;-1\nobj2&lt;-2\nobj3&lt;-1 # same value as obj1\nobj1==obj2 # false statement\n\n[1] FALSE\n\nobj1!=obj2 # true statement\n\n[1] TRUE\n\nobj1==obj2 & obj1==obj3 # FALSE AND TRUE =&gt; FALSE\n\n[1] FALSE\n\nobj1==obj2 | obj1==obj3 # FALSE OR TRUE =&gt; TRUE\n\n[1] TRUE"
-  },
-  {
-    "objectID": "Session2.html#characters",
-    "href": "Session2.html#characters",
-    "title": "Introduction to R",
-    "section": "Characters",
-    "text": "Characters\n\nVectors can also store characters.\ncharacters are enclosed in \"\"or ''.\n\n\n# define a vector of 2 cities\ncities&lt;-c('Maastricht', \"Amsterdam\",'Rotterdam')\nprint(cities)\n\n[1] \"Maastricht\" \"Amsterdam\"  \"Rotterdam\""
-  },
-  {
-    "objectID": "Session2.html#exercise-2.2-type-coersion",
-    "href": "Session2.html#exercise-2.2-type-coersion",
-    "title": "Introduction to R",
-    "section": "Exercise 2.2: type coersion",
-    "text": "Exercise 2.2: type coersion\n\nR tries to make objects comparable by coercing one object into the type of another.\nThis can sometimes be handy, but sometimes it leads to unforeseen errors (e.g., when loading new data). To illustrate this, do the following:\n\ncompare the character \"1\" to the numeric 1.\ntry computing the sum of \"1\" and \"2\".\ntry computing the sum of as.numeric(\"1\") and as.numeric(\"2\"). What happened?\ncreate a mixed vector containing the numeric 1 and the character \"2\". Of which type are the elements of the vector?"
-  },
-  {
-    "objectID": "Session2.html#factors",
-    "href": "Session2.html#factors",
-    "title": "Introduction to R",
-    "section": "factors",
-    "text": "factors\n\nMany variables are qualitative rather than quantitative.\nWhile they are often coded using numbers, they don’t have a numerical meaning.\nExamples: gender, nationality…\nCan also be ordinal, i.e., the outcomes can be ranked (e.g., “bad”, “meh”, “great”).\n\n\nx&lt;- c(1,3,3,2,1,3)\nxf&lt;-factor(x,labels=c(\"bad\",\"ok\",\"good\"))# no ranking\nxf\n\n[1] bad  good good ok   bad  good\nLevels: bad ok good\n\n# now with ranking\nxf.ordered&lt;-factor(x,labels=c(\"bad\",\"ok\",\"good\"),ordered=TRUE)\nxf.ordered\n\n[1] bad  good good ok   bad  good\nLevels: bad &lt; ok &lt; good"
-  },
-  {
-    "objectID": "Session2.html#names",
-    "href": "Session2.html#names",
-    "title": "Introduction to R",
-    "section": "Names",
-    "text": "Names\n\nYou can give the elements of your vector names either directly or using the names() command.\nThis is very useful for accessing elements (see nect slide)\n\n\navg_temp&lt;-c(Maastricht=14.2, Amsterdam=13.4,Rotterdam=13.7)\nprint(avg_temp) # names appear on top of elements\n\nMaastricht  Amsterdam  Rotterdam \n      14.2       13.4       13.7 \n\nnames(avg_temp) # returns names of elements\n\n[1] \"Maastricht\" \"Amsterdam\"  \"Rotterdam\" \n\n# Alternatively, we can define data and names separately\ntemp&lt;-c(14.2,13.4,13.7)\nnames(temp)&lt;-cities # recall that we have defined \"cities\" earlier!\nprint(temp)\n\nMaastricht  Amsterdam  Rotterdam \n      14.2       13.4       13.7"
-  },
-  {
-    "objectID": "Session2.html#accessing-elements",
-    "href": "Session2.html#accessing-elements",
-    "title": "Introduction to R",
-    "section": "Accessing elements",
-    "text": "Accessing elements\n\nOne can access the elements of a vector either by name or position.\n\n\n# return the second element of \"avg_temp\" defined before\navg_temp[2] \n\nAmsterdam \n     13.4 \n\n# return the element corresponding to \"Maastricht\"\navg_temp[\"Maastricht\"]\n\nMaastricht \n      14.2 \n\n# trying to access a non-existing element yields \"NA\"\n# ( for \"not available\"), i.e. a missing value\navg_temp[4]\n\n&lt;NA&gt; \n  NA"
-  },
-  {
-    "objectID": "Session2.html#more-on-na-nan-inf",
-    "href": "Session2.html#more-on-na-nan-inf",
-    "title": "Introduction to R",
-    "section": "More on NA, NaN, Inf",
-    "text": "More on NA, NaN, Inf\n\nNA (“not available”) indicates missing values.\nAnything combined with NA yields NA.\nNaN(“not a number”) indicates the result of a mathematically undefined operation.\n\n\n#define another vector\nvec3=c(-1.2,NA,0)\n# combine avg_temp and vec3\nvec4=c(avg_temp,vec3) \n# divide elements by 0; notice the different outcomes\nvec4/0 \n\nMaastricht  Amsterdam  Rotterdam    Tilburg                                  \n       Inf        Inf        Inf        Inf       -Inf         NA        NaN"
-  },
-  {
-    "objectID": "Session2.html#matrices",
-    "href": "Session2.html#matrices",
-    "title": "Introduction to R",
-    "section": "Matrices",
-    "text": "Matrices\n\nWe can create a matrix with m rows directly using matrix(vector,nrow=m).\n\n\n# create matrix with 3 rows; fill numbers by row\nmat1&lt;-matrix(1:12,nrow=3,byrow=TRUE) # by default, R fills matrices by column\nmat1\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12"
-  },
-  {
-    "objectID": "Session2.html#matrix-indexing",
-    "href": "Session2.html#matrix-indexing",
-    "title": "Introduction to R",
-    "section": "Matrix indexing",
-    "text": "Matrix indexing\n\nWe can give the rows and columns names using rownames() and colnames().\n\n\n# assign names to columns\ncolnames(mat1)&lt;-c(\"col1\",\"col2\",\"col3\",\"col4\")\nmat1\n\n     col1 col2 col3 col4\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12\n\n# assign names to rows\nrownames(mat1)&lt;-c(\"row1\",\"row2\",\"row3\")\nmat1\n\n     col1 col2 col3 col4\nrow1    1    2    3    4\nrow2    5    6    7    8\nrow3    9   10   11   12"
-  },
-  {
-    "objectID": "Session2.html#accessing-elements-1",
-    "href": "Session2.html#accessing-elements-1",
-    "title": "Introduction to R",
-    "section": "Accessing elements",
-    "text": "Accessing elements\n\nWe can access single elements by [rownumber,colnumber], the k-th row by [k,] and the k-th column by [,k].\n\n\n# get element in second row in third column\nmat1[2,3]\n\n[1] 7\n\n# get second row\nmat1[2,]\n\ncol1 col2 col3 col4 \n   5    6    7    8 \n\n# get third column\nmat1[,3]\n\nrow1 row2 row3 \n   3    7   11"
-  },
-  {
-    "objectID": "Session2.html#exercise-2.3-creating-matrices-accessing-elements",
-    "href": "Session2.html#exercise-2.3-creating-matrices-accessing-elements",
-    "title": "Introduction to R",
-    "section": "Exercise 2.3: creating matrices, accessing elements",
-    "text": "Exercise 2.3: creating matrices, accessing elements\n\nCreate the 3x3 identity matrix “by hand”. To do so:\n\ncreate 3 vectors of with zeros and ones in the appropriate spots.\nuse rbind() or cbind() to combine them into the identity matrix.\nstore the identity matrix as the object “I_mat”.\nR makes your life easy: type diag(3) in your console.\n\nReplicate the following Excel-matrix:\n\n\n 3. Get the data for April and my by - including only the first and second row - excluding the third row - using the names"
-  },
-  {
-    "objectID": "Session2.html#bonus-matrix-algebra",
-    "href": "Session2.html#bonus-matrix-algebra",
-    "title": "Introduction to R",
-    "section": "Bonus: Matrix algebra",
-    "text": "Bonus: Matrix algebra\n\nR can do matrix “regular” algebra, and even lets you do operations that are not well-defined mathematically.\nt(A) is the transpose of the matrix A.\n\n\n# define matrix containing normal data\ndata.vec=rnorm(9,mean=0,sd=1)\nA=matrix(data.vec,nrow=3) \nA # return A\n\n           [,1]        [,2]       [,3]\n[1,]  0.8807706  0.41372677 -0.1457003\n[2,]  0.4884171  0.06009566 -1.2945056\n[3,] -1.5180278 -0.91082111  0.3670665\n\nt(A) # return the transpose\n\n           [,1]        [,2]       [,3]\n[1,]  0.8807706  0.48841711 -1.5180278\n[2,]  0.4137268  0.06009566 -0.9108211\n[3,] -0.1457003 -1.29450557  0.3670665"
-  },
-  {
-    "objectID": "Session2.html#lists",
-    "href": "Session2.html#lists",
-    "title": "Introduction to R",
-    "section": "Lists",
-    "text": "Lists\n\nA list is a generic collection of objects.\nUnlike vectors, the components can have different types (e.g., numeric and character).\nMany functions output lists, so knowing how to access elements is very useful.\nGenerate a list with mylist&lt;- list(name1=component1, name2=component2,...).\n\n\nmylist=list(num.vec=1:3,city=\"Maastricht\") \nprint(mylist)\n\n$num.vec\n[1] 1 2 3\n\n$city\n[1] \"Maastricht\""
-  },
-  {
-    "objectID": "Session2.html#dataframes",
-    "href": "Session2.html#dataframes",
-    "title": "Introduction to R",
-    "section": "Data frames",
-    "text": "Data frames\n\ndata frames are simply data sets in R terminology.\nSo-called data files can contain multiple data sets.\nWe can create a data frame by data.frame() or transform a matrix mat into a data frame by as.data.frame(mat).\nMany functions (e.g. lm() for regressions) need a data frame as input (see later sessions).\n\n\n# generate a data frame\nID&lt;- 1:4\nhourly_wage&lt;- rnorm(n=4,mean=20,sd=1) # create 4 draws from N(20,1)\ncity&lt;- c(\"Maastricht\",\"Eindhoven\",\"Amsterdam\",NA)\ndats&lt;- data.frame(ID,hourly_wage,city) # add new variable\ndats\n\n  ID hourly_wage       city\n1  1    20.94597 Maastricht\n2  2    20.44233  Eindhoven\n3  3    19.36928  Amsterdam\n4  4    20.13608       &lt;NA&gt;"
-  },
-  {
-    "objectID": "Session2.html#exercise-2.4",
-    "href": "Session2.html#exercise-2.4",
-    "title": "Introduction to R",
-    "section": "Exercise 2.4",
-    "text": "Exercise 2.4\n\nCreate your own data frame:\n\ncreate a vector ID that contains the sequence 1,2,…,100.\ncreate a vector income that contains 100 random draws from N(10,1).\ncreate a dummy female that is 1 for ID=1,...,50 and 0 otherwise. (hint: you can achieve this by using rep() twice and combining two vectors with c())\ncollect the variables in a data frame my_df.\ninspect your data with View(my_df)\nbonus: create a subset sub_my_df that contains only individuals with income larger than 10."
-  },
-  {
-    "objectID": "Session2.html#bonus-teaching-regression-with-r",
-    "href": "Session2.html#bonus-teaching-regression-with-r",
-    "title": "Introduction to R",
-    "section": "Bonus: teaching regression with R",
-    "text": "Bonus: teaching regression with R\n\nTo give students a feeling for the behavior of the least squares estimator, it can be very useful to use simulated data.\nThis allows teachers to visualize the effects of various quantities of interest, e.g., sample size, variation in the observed and unobserved variables, or omitted variables.\n\n\nn&lt;-100 # set the sample size\nX&lt;-rnorm(n,mean=1,sd=2)# define the observed covariate X\nepsilon&lt;-rnorm(n,mean=0,sd=1) # define the model error\nbeta0&lt;-1 # define true intercept\nbeta1&lt;-2 # define true slope\nY=beta0+beta1*X+epsilon # generate Y according to a linear model\n# recall the formula in a bivariate model\nbeta1.hat=cov(X,Y)/var(X)\nbeta0.hat=mean(Y)-beta1.hat*mean(X)\n# print estimators\nbeta0.hat\n\n[1] 1.229584\n\nbeta1.hat\n\n[1] 1.963515"
   }
 ]
