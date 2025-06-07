@@ -221,7 +221,7 @@
     "href": "Session3.html#the-summary-function",
     "title": "Introduction to R",
     "section": "The summary function",
-    "text": "The summary function\n\nWe can illustrate this using the summary() function.\nSummary on vectors:\n\n\nx &lt;- rnorm(100)\nsummary(x)\n\n    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. \n-2.55494 -0.53285  0.04365  0.10235  0.68193  2.55653"
+    "text": "The summary function\n\nWe can illustrate this using the summary() function.\nSummary on vectors:\n\n\nx &lt;- rnorm(100)\nsummary(x)\n\n    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. \n-1.68134 -0.54310  0.11310  0.06116  0.71415  1.99700"
   },
   {
     "objectID": "Session3.html#the-summary-function-1",
