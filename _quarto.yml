@@ -2,8 +2,6 @@ project:
   type: website
 
 format:
-  html: 
-    embed-resources: true
   revealjs:
     theme: [default, theme.scss]
     css: custom.css
@@ -13,6 +11,7 @@ format:
     fontsize: 1.5em
     code-line-numbers: false
     link-external-newwindow: true
+    embed-resources: true
 code-link: true
 execute:
   echo: true
