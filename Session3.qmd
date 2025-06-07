@@ -602,7 +602,7 @@ which can be interpreted as "use the function `function_name()` from the package
 
 - To set the working directory to the folder where your current R script is located, you can simply use:
 ```{r, eval=FALSE}
-setwd(dirname(this.path::this.path()))
+setwd(this.path::here())
 ```
 
 - Can you explain every step in this line?
@@ -708,7 +708,7 @@ install.packages("package-name", dependencies = TRUE)
 
 - Advice for beginners: do not install from source!
 
-## Bonus Exercise 3.7: installing packages from source
+## Bonus Exercise 3.7: Installing packages from source
 
 ::: {.callout-important}
 This exercise should only be completed if you feel up for a challenge and want to get your system ready for installing from source. Please SKIP unless you know what you are doing!

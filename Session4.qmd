@@ -35,15 +35,22 @@ This session has two goals:
   - Another alternative is to work within a 'project' that all paths are visible to the project scripts.
   - If we do not provide any path, R will use the current “working directory” for reading or writing files. It can be obtained by the command 
 
-```{r}
+```{r, eval=FALSE}
   getwd()
 ```
 
 ## Using the correct directory to get input / output of the R session
-  - Navigating through the menus in RStudio is easy, (click and go) but requires using the menu every time the user runs the code. 
-  - In top panel in R layout, `Session -> Set working directory /  choose directory' to navigate to the correct directory.
-  
-  ![](figures/dir1.png)  
+- Navigating through the menus in RStudio is easy, (click and go) but requires using the menu every time the user runs the code.
+- Go to *Session* -> *Set Working Directory*. Two convenient options are:  
+
+  +  *Choose Directory...*: Choose the directory yourself
+
+  + *To Source File Location*: Set the working directory to the directory where your **R** Script (the source file) is saved
+
+![](figures/R-script-5.png)
+  <!-- - In top panel in R layout, `Session -> Set working directory /  choose directory' to navigate to the correct directory. -->
+
+  <!-- ![](figures/dir1.png)   -->
 
 ## Using the correct directory to get input / output of the R session
   - An alternative is to use function setwd() at the beginning of your script. This line then has to be changed when the code runs in another machine.
@@ -56,13 +63,12 @@ This session has two goals:
 - Recall: To set the working directory to the folder where your current R script is located, you can simply use:
 ```{r, eval=FALSE}
 library(this.path)
-setwd(dirname(this.path()))
+setwd(here()))
 ```
 
 - Recall: We could also explicitly make the function call from the library:
 ```{r, eval=FALSE}
-library(this.path)
-setwd(dirname(this.path::this.path()))
+setwd(this.path::here()))
 ```
 
 ## Types of input or data that can be loaded in R
@@ -132,7 +138,7 @@ Advice for option 1 (cont'd):
   - Paste the command on top of your script.
   - This way, next time you do not need the menu navigation.
 
-```{r}
+```{r eval=FALSE}
 library(readxl)
 climate <- read_excel("data/climate.xlsx")
 ```
@@ -146,13 +152,13 @@ climate <- read_excel("data/climate.xlsx")
   - It calls an appropriate package to do the actual importing or exporting. 
   
 ## Loading SPSS and other file types
-```{r}
+```{r eval=FALSE}
 library('rio')
 import("data/climate.dta")
 ```
 
 ## Loading csv files
-```{r}
+```{r eval=FALSE}
 import("data/dataus.csv")
 ```
 
@@ -163,10 +169,10 @@ import("data/dataus.csv")
 - `save()` saves objects as an `.RData` file.
 - `save.image()` saves a selection of objects as an `.RData` file.
 
-## Exercise 4.1: 
-- Save your current workspace using function `save.image()'.
-- Save only one variable in the workspace using function `save()'.
-- Make a list of two variables from `data_short', and save this list using function `save'.
+## Exercise 4.1: Saving data
+- Save your current workspace using function `save.image()`.
+- Save only one variable in the workspace using function `save()`.
+- Make a list of two variables from `data_short`, and save this list using function `save`.
 <!-- save.image('myoutput.Rdata') -->
 <!-- save(climate, 'myclimatedata.Rdata') -->
 <!-- myoutput <- list(data_short$NAME, data_short$LATITUTE) -->
@@ -200,7 +206,7 @@ plot(x = data_short$YEAR, y = data_short$MAX)     ## Scatter plot
 ## Functions calling methods
 Notice that function `plot()` calls methods. 
 
-It will perform different operations depending on the class of the passed object.
+It will perform different operations depending on the class of the passed object. (We study the `lm()` function in detail in the next session!)
 
 ```{r}
 ols_result <- lm(MAX~YEAR, data = data_short)
@@ -209,7 +215,7 @@ plot(ols_result)
 
 ## Creating and saving a graph
 
-```{r}
+```{r, eval=FALSE}
 pdf("outputs/plot_data_short.pdf")                  
 hist(data_short$MAX, breaks = 20)
 dev.off()
@@ -225,25 +231,18 @@ points(data_short$MAX)
 ```
 
 ## Customizing Graphics
-**Overview**: Frequently used arguments in graphic functions. See `?par` for all graphical options
+- The `plot()` function takes several many arguments that can change the layout of the plots. See `?par` for all graphical options; there are many!
 
- - `axes`: Axis specification
- - `bg`: Background color
- - `cex`: Factor for scaling relative to the default
- - `col`: Plot color
- - `log`: `xlog` and `ylog` for logarithmic scales
- - `lty`, `lwd`: Line type and thickness
- - `mai`: 4-vector specifying margins (bottom, left, top, right)
- - `main`, `sub`: Title, subtitle
- - `mar`: Margin
-  
-## Customizing Graphics (cont'd)
+- Some examples:
 
- - `mfcol`, `mfrow`: Multiple plots in one graphics window (column-wise/row-wise)
- - `pch`: Point character (1-16)
- - `usr`: The extreme points for a plot
- - `xlab`, `ylab`: x and y axis labels
- - `xlim`, `ylim`: x and y axis limits
+  + `col`: color of lines / points
+  + `lty`, `lwd`: Line type and thickness
+  + `pch`: Point type (1-16)
+  + `main`, `sub`: Title, subtitle
+  + `xlab`, `ylab`: x and y axis labels
+  + `log`, `xlog` and `ylog` for logarithmic scales
+  + `xlim`, `ylim`: x and y axis limits (for overriding R's default choices)
+  + `mfcol`, `mfrow`: Multiple plots in one graphics window (column-wise/row-wise)
 
 ## Low-Level Graphic Functions
 
@@ -251,16 +250,11 @@ points(data_short$MAX)
  - `abline`: Quickly add horizontal, vertical lines, and lines using equation $y = bx + a$
  - `points`: Add points
  - `arrows`: Add arrows
- - `polygon`: Draw arbitrary polygons
- - `segments`: Draw unfilled polygons
- - `axis`: Customize axes
- - `grid`: Add a grid
-
 ---
 
-## Exercise 4.2: plot maximum temperatures for Maastricht
+## Exercise 4.2: Plot maximum temperatures for Maastricht
 
-We want to visualize the daily maximum temperatures in the climate data 'data_short' specifically for Maastricht. First, make a basic plot of variable and `MAX' then customise the plot in the following ways:
+We want to visualize the daily maximum temperatures in the climate data `data_short` specifically for Maastricht. First, make a basic plot of variable and `MAX` then customise the plot in the following ways:
 
 1. The title of the X-axis should say 'Year', the title of the Y-axis 'Maximum Temperature'.
 
@@ -281,6 +275,52 @@ You may want to ask ChatGPT for help and then try to see if you could also have 
 <!-- plot(data_Maas$MAX, type = 'l', col = 'blue', tck = 0.05) -->
 <!-- mean_max <- mean(data_Maas$MAX) -->
 <!-- abline(h = mean_max) -->
+
+## Manually saving R plots
+
+ - Use the plot functions without creating a graph.
+ - Use the `plots' area to save image manually.
+
+```{r, eval=FALSE}
+plot(x = data_short$YEAR, y = data_short$MAX)     
+``` 
+
+## Different plot types
+
+You can manually save graphs of several formats.
+
+Best practice is to save a graph through a device such as pdf or similar:
+
+- `pdf()`: Adobe PDF (easily integrated into LaTeX). 
+- `svg()`: Scalable Vector Graphics (commonly used on websites). 
+- `png()`, `jpeg()`, `tiff()`, `bmp()`: Various bitmap formats.
+
+```{r, eval=FALSE}
+jpeg("outputs/plot_data_short.jpeg")                  
+plot(x = data_short$YEAR, y = data_short$MAX)   
+dev.off()
+```
+
+<!-- THEY HAVE PROBABLY NOT SEEN LOOPS!!! -->
+<!-- ## Exercise 4.4: Make a continuous plot of maximum temperatures in Maastricht -->
+
+<!-- - In this exercise we want to visualise the data over time as if data are gradually becoming available. -->
+<!-- - Select a starting sample of the data for Maastricht.  -->
+<!-- - Make a for loop to get increasing windows of the data. -->
+<!-- - Expand your plot with new data within the for loop. -->
+
+<!-- # Create plot window -->
+<!-- plot(1:1000, data_Maas$MAX[1:100], xlim = c(1, nrow(data_Maas)), ylim = range(data_Maas$MAX),
+     xlab = "Time", ylab = "Value", main = "Adding Data Over Time", type = 'l') -->
+<!-- # Gradually add points -->
+<!-- ind <- data_short[,3] == "MAASTRICHT" -->
+<!-- data_Maas <- data_short[ind,]  -->
+<!-- for (i in 1001:nrow(data_Maas)) { -->
+<!--   lines(1:i, data_Maas$MAX[1:i], col = "steelblue") -->
+<!--   Sys.sleep(0.05)  # Pause to simulate "gradual" effect -->
+<!-- } -->
+
+# Bonus: Advanved Graphics using ggplot
 
 ## Exercise 4.3: Use other packages for plots
 
@@ -303,46 +343,3 @@ You may want to ask ChatGPT for help and then try to see if you could also have 
 <!--        y = "Max temperature")  -->
 
 
-## Manually saving R plots
-
- - Use the plot functions without creating a graph.
- - Use the `plots' area to save image manually.
-
-```{r, eval=FALSE}
-plot(x = data_short$YEAR, y = data_short$MAX)     
-``` 
-
-## Different plot types
-
-You can manually save graphs of several formats.
-
-Best practice is to save a graph through a device such as pdf or similar:
-
-- `windows()`/`x11()`/`quartz()`: Screen graphics (Windows, Unix, Mac), (default). 
-- `pdf()`: Adobe PDF (easily integrated into LaTeX). 
-- `svg()`: Scalable Vector Graphics (commonly used on websites). 
-- `png()`, `jpeg()`, `tiff()`, `bmp()`: Various bitmap formats.
-
-```{r, eval=FALSE}
-jpeg("outputs/plot_data_short.jpeg")                  
-plot(x = data_short$YEAR, y = data_short$MAX)   
-dev.off()
-```
-
-## Exercise 4.4: Make a continuous plot of maximum temperatures in Maastricht
-
-- In this exercise we want to visualise the data over time as if data are gradually becoming available.
-- Select a starting sample of the data for Maastricht. 
-- Make a for loop to get increasing windows of the data.
-- Expand your plot with new data within the for loop.
-
-<!-- # Create plot window -->
-<!-- plot(1:1000, data_Maas$MAX[1:100], xlim = c(1, nrow(data_Maas)), ylim = range(data_Maas$MAX),
-     xlab = "Time", ylab = "Value", main = "Adding Data Over Time", type = 'l') -->
-<!-- # Gradually add points -->
-<!-- ind <- data_short[,3] == "MAASTRICHT" -->
-<!-- data_Maas <- data_short[ind,]  -->
-<!-- for (i in 1001:nrow(data_Maas)) { -->
-<!--   lines(1:i, data_Maas$MAX[1:i], col = "steelblue") -->
-<!--   Sys.sleep(0.05)  # Pause to simulate "gradual" effect -->
-<!-- } -->
