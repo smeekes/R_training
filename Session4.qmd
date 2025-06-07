@@ -288,6 +288,10 @@ points(data_short$MAX)
  - `abline`: Quickly add horizontal, vertical lines, and lines using equation $y = bx + a$
  - `points`: Add points
  - `arrows`: Add arrows
+ - `title`: Add a title
+ - `legend`: Add a legend
+ - `text`: Add text at $(x,y)$ coordinates
+ - `mtext`: Add text with positional specification like `side=1,...,4`
 ---
 
 ## Exercise 4.2: Plot maximum temperatures for Maastricht
