@@ -1,0 +1,54 @@
+---
+title: "Additional Files"
+format:
+  html:
+    theme: [cosmo, theme.scss]
+    toc: true
+    toc-depth: 4
+    toc-expand: true
+---
+
+### What can you find here?
+
+On this page, you can find additional files that are needed or useful in the five sessions. This includes datasets that are used, as well as (rudimentary) solutions to the exercises.
+
+### Datasets
+Here you can find the data sets that are used in the sessions.
+
+::: {.callout-caution}
+## Where to Store Datasets
+The R code provided in the sessions assumes that datasets are stored in a folder called '*data*' located within your working directory.
+:::
+
+#### Session 1
+No datasets used
+
+#### Session 2
+No datasets used
+
+#### Session 3
+- [courses.RData](data/courses.RData)
+
+#### Session 4
+To follow
+
+#### Session 5
+To follow
+
+### Solutions
+Here we post solutions to the exercises in the sessions. The files are eventually kept very basic, only having the necessary code. The files, therefore, have very little meaning on their own, but might be useful to consult during the sessions.
+
+#### Session 1
+To follow
+
+#### Session 2
+To follow
+
+#### Session 3
+To follow
+
+#### Session 4
+To follow
+
+#### Session 5
+To follow
