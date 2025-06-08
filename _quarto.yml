@@ -19,6 +19,7 @@ execute:
   
 website: 
   title: ""
+  favicon: "figures/favicon.png"
   navbar:
     tools:
     - icon: github
