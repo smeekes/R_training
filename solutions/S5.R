@@ -23,3 +23,30 @@ summary(data_2$Final_Score)
 
 min(data_2$Final_Score)
 max(data_2$Final_Score)
+
+# Exercise 5.3
+my_reg1 <- lm(Final_Score ~ Participation_Grade, data = data_grades)
+summary(my_reg1)
+
+my_reg2 <- lm(Final_Score ~ Participation_Grade + Tutor, data = data_grades)
+summary(my_reg2)
+
+data_grades$Tutor <- relevel(data_grades$Tutor, ref = 'Chang, Steven')
+my_reg3 <- lm(Final_Score ~ Participation_Grade + Tutor, data = data_grades)
+summary(my_reg3)
+
+data_grades$Tutor <- relevel(data_grades$Tutor, ref = 'al-Dawood, Haamida')
+my_reg4 <- lm(Final_Score ~ Participation_Grade*Tutor, data = data_grades)
+summary(my_reg4)
+
+# Exercise 5.4
+my_reg5 <- lm(Exam_Score ~ Participation_Grade*Gender, data = data_grades)
+summary(my_reg5)
+my_tstats <- summary(my_reg5)$coefficients[, 3]; my_tstats
+my_grade_info <- summary(my_reg5)$coefficients[2, ]; round(my_grade_info, 2)
+my_adjR2 <- summary(my_reg5)$adj.r.squared; my_adjR2
+my_resid <- residuals(my_reg5) 
+plot(my_resid, xlab = 'Student index', ylab = 'Residuals', col= 'red')
+my_fitted <- fitted(my_reg5)
+plot(x = data_grades$Exam_Score, y = my_fitted, xlab = 'Exam scores', 
+      ylab = 'Fitted values', main = 'Fitted versus Actual')
