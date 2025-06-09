@@ -281,7 +281,7 @@ summary(reg_6)
 
 1. Estimate the following simple regression model in R: 
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u$$
-Is the variable `Participation_Grade` significant? What is the value of the R^2?
+Is the variable `Participation_Grade` significant? What is the value of the $R^2$?
 
 3. Estimate the multiple regression model: 
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade +
@@ -298,7 +298,7 @@ and inspect the summary output.
 
 
 ## Accessing Regression Results
-Finally, we  discuss how important output of a regression analysis can be directly accessed in R. 
+Finally, we discuss how important output of a regression analysis can be directly accessed in R. 
 
 First, assume you want to access the estimated coefficients of an estimated regression model. This can done using the function `coefficients()`:
 ```{r list27, eval = TRUE}
@@ -316,7 +316,7 @@ reg_2$coefficients
 Note that you can do the same for accessing the fitted values (function `fitted()` or slot `$fitted.values`) or the residuals (function `residuals()`  or slot `$residuals`) of your estimated regression model.
 
 ## Accessing Regression Results
-What if you want to access the $R^2$, or the $t$-stats and $p$-values. Unfortantely, the list object `reg_2`  does not seem to contain this information:
+What if you want to access the $R^2$, or the $t$-stats and $p$-values? Unfortunately, the list object `reg_2`  does not seem to contain this information:
 ```{r list29, eval = TRUE}
 # information stored in lm-object
 names(reg_2)
@@ -376,7 +376,7 @@ Note: The philosophy (and syntax) of [tidyverse](https://www.tidyverse.org/) dif
 
 
 ## Pipes
-An important component of working with data and `dplyr` is the pipe operator `%>%`, included in the `magrittr` package. The goal of this operator (also found in many other languages) is to make function composition more readable in code.
+An important component of working with data and `dplyr` is the pipe operator `%>%. The goal of this operator (also found in many other languages) is to make function composition more readable in code.
 
 Example:
 ```{r example: pipe-operator, eval = FALSE}
