@@ -151,7 +151,7 @@ $$y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_p x_{p,i} + 
  
 
 We will first estimate the following simple regression for the grades data set:
-$$Final\_Score = \beta_0 + \beta_1 Exam\_Score + u,$$
+$$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u,$$
 
 assuming the `Final_Score` variable was added to the grades data set in Exercise 5.2:
 
@@ -165,11 +165,11 @@ R is designed to easily estimate various statistical models. It provides a speci
 
 Our regression model 
 
-$$Final\_Score = \beta_0 + \beta_1 Exam\_Score + u$$
+$$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u$$
 
 can be specified in R as a `formula` like this: 
 
-`Final_Score ~ Exam_Score`
+`Final_Score ~ Participation_Grade`
 
 where 
 `~` is the basis for all models:  `y ~ model` specifies that the dependent variable `y` is modeled using the linear predictors described in `model`.
@@ -177,7 +177,7 @@ where
 The standard function for estimating linear models is `lm()`. Estimating a regression model in R then only requires one line of code!
 ```{r list15, eval = TRUE}
 # example simple regression:
-reg_1 <- lm(Final_Score ~ Exam_Score, data = data_grades)
+reg_1 <- lm(Final_Score ~ Participation_Grade, data = data_grades)
 ```
 
 ## Summary of lm
@@ -191,14 +191,14 @@ summary(reg_1)
 ## From Simple to Multiple Regression
 Going from a simple to a multiple regression model is easy. For example, let us add the variable `GPA` as a second predictor this can easily be done by adjusting the `formula` to:
 
-`Final_Score ~ Exam_Score + GPA`
+`Final_Score ~ Participation_Grade + GPA`
 
 where `+` now separates the different predictors included in the model. 
 
 Estimating the multiple regression model in R can be done as follows:
 ```{r list17, eval = TRUE}
 # example multiple regression:
-reg_2 <- lm(Final_Score ~ Exam_Score + GPA, data = data_grades)
+reg_2 <- lm(Final_Score ~ Participation_Grade + GPA, data = data_grades)
 ```
 
 ## Summary of lm
@@ -210,28 +210,28 @@ summary(reg_2)
 
 ## lm and Variable Transformations
 Imagine you want to estimate a regression model on log-transformed variables, for example:
-$$log(Final\_Score) = \beta_0 + \beta_1 log(Exam\_Score) + u$$
+$$log(Final\_Score) = \beta_0 + \beta_1 log(Participation\_Grade) + u$$
 This can be done by directly using the `log` function in the `lm` function: 
 ```{r list19, eval = TRUE}
 # example log-transformed variables
-reg_3 <- lm(log(Final_Score) ~ log(Exam_Score), data = data_grades)
+reg_3 <- lm(log(Final_Score) ~ log(Participation_Grade), data = data_grades)
 ```
 
 ## lm and Variable Transformations
 What if you want to include square of a predictor? For example:
-$$Final\_Score = \beta_0 + \beta_1 Exam\_Score  + \beta_2 Exam\_Score^2 + u$$
-You CANNOT use  `Final_Score ~ Exam_Score + Exam_Score^2` since the `^2` has a special (different) meaning in a formula object. 
+$$Final\_Score = \beta_0 + \beta_1 Participation\_Grade  + \beta_2 Participation\_Grade^2 + u$$
+You CANNOT use  `Final_Score ~ Participation_Grade + Participation_Grade^2` since the `^2` has a special (different) meaning in a formula object. 
 
 Instead, you should use the function `I()`. More specifically:
 ```{r list20, eval = TRUE}
 # example squared variables
-reg_4 <- lm(Final_Score ~ Exam_Score + I(Exam_Score^2), data = data_grades)
+reg_4 <- lm(Final_Score ~ Participation_Grade + I(Participation_Grade^2), data = data_grades)
 ```
 does the job! Inspect its summary output.
 
 ## lm and Variable Transformations
 Let us now add a dummy variable to the estimated regression model:
-$$Final\_Score = \beta_0 + \beta_1 Exam\_Score  + \beta_2 Male + u$$
+$$Final\_Score = \beta_0 + \beta_1 Participation\_Grade  + \beta_2 Male + u$$
 where `Male` is a dummy variable that takes on the value 1 for male students, and 0 otherwise.
 
 
@@ -242,7 +242,7 @@ data_grades$Gender <- as.factor(data_grades$Gender)
 Factor variables in formulas are then automatically *dummy coded*. 
 ```{r list22, eval = TRUE}
 # example dummy variables
-reg_5 <- lm(Final_Score ~ Exam_Score + Gender, data = data_grades)
+reg_5 <- lm(Final_Score ~ Participation_Grade + Gender, data = data_grades)
 ```
 
 ## Summary of lm
@@ -254,18 +254,18 @@ summary(reg_5)
 
 ## lm and Variable Transformations
 Finally, let us investigate how interaction terms can be included in a regression model. We consider the model:
-$$Final\_Score = \beta_0 + \beta_1 Exam\_Score  + \beta_2 Male  + \beta_3 Male\cdot Exam\_Score + u$$
+$$Final\_Score = \beta_0 + \beta_1 Participation\_Grade  + \beta_2 Male  + \beta_3 Male\cdot Participation\_Grade + u$$
 The regression can be estimated in R via the command:
 ```{r list24, eval = TRUE}
 # example dummy variables
-reg_6 <- lm(Final_Score ~ Exam_Score + Gender + Exam_Score:Gender , data = data_grades)
+reg_6 <- lm(Final_Score ~ Participation_Grade + Gender + Participation_Grade:Gender , data = data_grades)
 ```
 where `:` creates interaction terms between variables.
 
 Or in short:
 ```{r list25, eval = TRUE}
 # example dummy variables
-reg_7 <- lm(Final_Score ~ Exam_Score*Gender, data = data_grades)
+reg_7 <- lm(Final_Score ~ Participation_Grade*Gender, data = data_grades)
 ```
 does the same since `a*b` in the  `Formula` object is equivalent to `a + b + a:b` 
 
@@ -303,7 +303,7 @@ Finally, we discuss how important output of a regression analysis can be directl
 First, assume you want to access the estimated coefficients of an estimated regression model. This can done using the function `coefficients()`:
 ```{r list27, eval = TRUE}
 # accessing coefficients:
-reg_2 <- lm(Final_Score ~ Exam_Score + GPA, data = data_grades)
+reg_2 <- lm(Final_Score ~ Participation_Grade + GPA, data = data_grades)
 coefficients(reg_2)
 ```
 
@@ -335,7 +335,7 @@ sum_reg_2$r.squared         ## R^2 of regression
 sum_reg_2$adj.r.squared     ## adjusted R^2 of regression
 ```
 
-## Task 5.4
+## Exercise 5.4
 Estimate the regression model
 $$Exam\_Score = \beta_0 + \beta_1 Participation\_Grade + \beta_2 Male + \beta_3 Male \cdot Participation\_Grade    + u$$
 
