@@ -298,7 +298,7 @@
     "href": "Session2.html#summarizing-vectors",
     "title": "Introduction to R",
     "section": "Summarizing vectors",
-    "text": "Summarizing vectors\n\nR has built-in functions to summarize the information stored in vectors.\nRemark: R is very good at generating random numbers! (Such functions are studied in more detail in the next session.)\n\n\n# Example: generate 100 random draws from a normal distribution with mean 1\n# and standard deviation 2\nnorm.vec &lt;- rnorm(n = 100, mean = 1, sd = 2)\n# get mean \nmean(norm.vec)\n\n[1] 0.9207584\n\n# get standard deviation \nsd(norm.vec)\n\n[1] 2.090641\n\n# get maximum\nmax(norm.vec)\n\n[1] 6.891551"
+    "text": "Summarizing vectors\n\nR has built-in functions to summarize the information stored in vectors.\nRemark: R is very good at generating random numbers! (Such functions are studied in more detail in the next session.)\n\n\n# Example: generate 100 random draws from a normal distribution with mean 1\n# and standard deviation 2\nnorm.vec &lt;- rnorm(n = 100, mean = 1, sd = 2)\n# get mean \nmean(norm.vec)\n\n[1] 1.194668\n\n# get standard deviation \nsd(norm.vec)\n\n[1] 1.73796\n\n# get maximum\nmax(norm.vec)\n\n[1] 5.087471"
   },
   {
     "objectID": "Session2.html#exercise-2.1-generating-and-summarizing-vectors",
@@ -382,14 +382,14 @@
     "href": "Session2.html#exercise-2.3-creating-matrices-accessing-elements",
     "title": "Introduction to R",
     "section": "Exercise 2.3: creating matrices, accessing elements",
-    "text": "Exercise 2.3: creating matrices, accessing elements\n\nCreate the 3x3 identity matrix “by hand”. To do so:\n\ncreate 3 vectors of with zeros and ones in the appropriate spots.\nuse rbind() or cbind() to combine them into the identity matrix.\nstore the identity matrix as the object “I_mat”.\nR makes your life easy: type diag(3) in your console.\n\nReplicate the following Excel-matrix:\n\n\n 3. Get the data for April and May by - including only the first and second row - excluding the third row - using the names"
+    "text": "Exercise 2.3: creating matrices, accessing elements\n\nCreate the 3x3 identity matrix “by hand”. To do so:\n\ncreate 3 vectors with zeros and ones in the appropriate spots.\nuse rbind() or cbind() to combine them into the identity matrix.\nstore the identity matrix as the object “I_mat”.\nR makes your life easy: type diag(3) in your console.\n\nReplicate the following Excel-matrix:\n\n\n 3. Get the data for April and May by - including only the first and second row - excluding the third row - using the names"
   },
   {
     "objectID": "Session2.html#bonus-matrix-algebra",
     "href": "Session2.html#bonus-matrix-algebra",
     "title": "Introduction to R",
     "section": "Bonus: Matrix algebra",
-    "text": "Bonus: Matrix algebra\n\nR can do matrix “regular” algebra, and even lets you do operations that are not well-defined mathematically.\nt(A) is the transpose of the matrix A.\n\n\n# define matrix containing normal data\ndata.vec &lt;- rnorm(9, mean = 0, sd = 1)\nA &lt;- matrix(data.vec, nrow = 3)\nA # return A\n\n            [,1]      [,2]      [,3]\n[1,] -0.05591393  1.225139  0.861123\n[2,]  0.46446131 -1.520032  1.598841\n[3,] -0.45127582 -1.524329 -0.708289\n\nt(A) # return the transpose\n\n            [,1]       [,2]       [,3]\n[1,] -0.05591393  0.4644613 -0.4512758\n[2,]  1.22513877 -1.5200321 -1.5243287\n[3,]  0.86112298  1.5988407 -0.7082890"
+    "text": "Bonus: Matrix algebra\n\nR can do matrix “regular” algebra, and even lets you do operations that are not well-defined mathematically.\nt(A) is the transpose of the matrix A.\n\n\n# define matrix containing normal data\ndata.vec &lt;- rnorm(9, mean = 0, sd = 1)\nA &lt;- matrix(data.vec, nrow = 3)\nA # return A\n\n           [,1]       [,2]       [,3]\n[1,]  0.5177588 -0.4392612  0.7376628\n[2,]  0.8941922  2.1493070 -1.2461276\n[3,] -0.3867958 -2.0222457 -0.6680265\n\nt(A) # return the transpose\n\n           [,1]       [,2]       [,3]\n[1,]  0.5177588  0.8941922 -0.3867958\n[2,] -0.4392612  2.1493070 -2.0222457\n[3,]  0.7376628 -1.2461276 -0.6680265"
   },
   {
     "objectID": "Session2.html#lists-1",
@@ -403,7 +403,7 @@
     "href": "Session2.html#data-frames",
     "title": "Introduction to R",
     "section": "Data frames",
-    "text": "Data frames\n\ndata frames are simply data sets in R terminology.\nSo-called data files can contain multiple data sets.\nWe can create a data frame by data.frame() or transform a matrix mat into a data frame by as.data.frame(mat).\nMany functions (e.g. lm() for regressions) need a data frame as input (see later sessions).\n\n\n# generate a data frame\nID &lt;- 1:4\nhourly_wage &lt;- rnorm(n = 4, mean = 20, sd = 1) # create 4 draws from N(20,1)\ncity &lt;- c(\"Maastricht\", \"Eindhoven\", \"Amsterdam\", NA)\ndats &lt;- data.frame(ID, hourly_wage, city) # add new variable\ndats\n\n  ID hourly_wage       city\n1  1    17.61483 Maastricht\n2  2    18.71456  Eindhoven\n3  3    20.87518  Amsterdam\n4  4    18.94343       &lt;NA&gt;"
+    "text": "Data frames\n\ndata frames are simply data sets in R terminology.\nSo-called data files can contain multiple data sets.\nWe can create a data frame by data.frame() or transform a matrix mat into a data frame by as.data.frame(mat).\nMany functions (e.g. lm() for regressions) need a data frame as input (see later sessions).\n\n\n# generate a data frame\nID &lt;- 1:4\nhourly_wage &lt;- rnorm(n = 4, mean = 20, sd = 1) # create 4 draws from N(20,1)\ncity &lt;- c(\"Maastricht\", \"Eindhoven\", \"Amsterdam\", NA)\ndats &lt;- data.frame(ID, hourly_wage, city) # add new variable\ndats\n\n  ID hourly_wage       city\n1  1    20.67494 Maastricht\n2  2    22.48329  Eindhoven\n3  3    19.63317  Amsterdam\n4  4    19.73539       &lt;NA&gt;"
   },
   {
     "objectID": "Session2.html#exercise-2.4",
@@ -417,7 +417,7 @@
     "href": "Session2.html#bonus-teaching-regression-with-r",
     "title": "Introduction to R",
     "section": "Bonus: teaching regression with R",
-    "text": "Bonus: teaching regression with R\n\nTo give students a feeling for the behavior of the least squares estimator, it can be very useful to use simulated data.\nThis allows teachers to visualize the effects of various quantities of interest, e.g., sample size, variation in the observed and unobserved variables, or omitted variables.\n\n\nn &lt;- 100 # set the sample size\nX &lt;- rnorm(n, mean = 1, sd = 2)# define the observed covariate X\nepsilon &lt;- rnorm(n, mean = 0, sd = 1) # define the model error\nbeta0 &lt;- 1 # define true intercept\nbeta1 &lt;- 2 # define true slope\nY &lt;- beta0 + beta1 * X + epsilon # generate Y according to a linear model\n# recall the formula in a bivariate model\nbeta1.hat &lt;- cov(X,Y) / var(X)\nbeta0.hat &lt;- mean(Y) - beta1.hat * mean(X)\n# print estimators\nbeta0.hat\n\n[1] 1.017705\n\nbeta1.hat\n\n[1] 2.000397"
+    "text": "Bonus: teaching regression with R\n\nTo give students a feeling for the behavior of the least squares estimator, it can be very useful to use simulated data.\nThis allows teachers to visualize the effects of various quantities of interest, e.g., sample size, variation in the observed and unobserved variables, or omitted variables.\n\n\nn &lt;- 100 # set the sample size\nX &lt;- rnorm(n, mean = 1, sd = 2)# define the observed covariate X\nepsilon &lt;- rnorm(n, mean = 0, sd = 1) # define the model error\nbeta0 &lt;- 1 # define true intercept\nbeta1 &lt;- 2 # define true slope\nY &lt;- beta0 + beta1 * X + epsilon # generate Y according to a linear model\n# recall the formula in a bivariate model\nbeta1.hat &lt;- cov(X,Y) / var(X)\nbeta0.hat &lt;- mean(Y) - beta1.hat * mean(X)\n# print estimators\nbeta0.hat\n\n[1] 1.011738\n\nbeta1.hat\n\n[1] 1.936223"
   },
   {
     "objectID": "Session5.html#data-manipulation",
