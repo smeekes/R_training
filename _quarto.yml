@@ -43,5 +43,8 @@ website:
           - text: "Session 1"
             href: Session1.qmd
             target: _blank
+          - text: "Session 2"
+            href: Session2.qmd
+            target: _blank
       - href: files.qmd
         text: "Files"

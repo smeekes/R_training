@@ -236,7 +236,7 @@ xf.ordered
 
 ## Names
 - You can give the elements of your vector names either directly or using the `names()` command.
-- This is very useful for accessing elements (see nect slide)
+- This is very useful for accessing elements (see next slide)
 ```{r, eval=TRUE,error=TRUE}
 avg_temp <- c(Maastricht = 14.2, Amsterdam = 13.4, Rotterdam = 13.7)
 print(avg_temp) # names appear on top of elements
@@ -254,7 +254,7 @@ avg_temp[2]
 # return the element corresponding to "Maastricht"
 avg_temp["Maastricht"]
 # trying to access a non-existing element yields "NA"
-# ( for "not available"), i.e. a missing value
+# ( for "not available"), i.e., a missing value
 avg_temp[4]
 ```
 
