@@ -93,7 +93,7 @@ diagram:
 ## Using the correct directory to get input / output of the R session
   - An alternative is to use function setwd() at the beginning of your script. This line then has to be changed when the code runs in another machine.
 ```{r, eval=FALSE}
- setwd("~/ownCloud (2)/Teaching/Rprogramming_UM/Rprogramming_UM")
+ setwd("~/R_training")
 ```
 
 ## Using the correct directory to get input / output of the R session
@@ -101,12 +101,12 @@ diagram:
 - Recall: To set the working directory to the folder where your current R script is located, you can simply use:
 ```{r, eval=FALSE}
 library(this.path)
-setwd(here()))
+setwd(here())
 ```
 
 - Recall: We could also explicitly make the function call from the library:
 ```{r, eval=FALSE}
-setwd(this.path::here()))
+setwd(this.path::here())
 ```
 
 ## Types of input or data that can be loaded in R
@@ -130,16 +130,22 @@ R interacts with files in several ways.
   - load function is used to load data in Rdata format.
   - load function loads all objects in the input Rdata file.
 
-```{r}
-load("data/climate_Maas_Eind.Rdata")
-print(summary(data_short))
-```
-  
-## Load climate data from RData format:
-  - You can assign the loaded data to a new variable
+## Example data: average temperatures for Maastricht and Eindhoven during 2024, every 2nd day of the month
 
 ```{r}
-data <- load("data/climate_Maas_Eind.Rdata")
+load("data/climate_long.Rdata")
+print(long_data)
+```
+## Notice the data are loaded as a dataframe:
+```{r}
+is.data.frame(long_data)
+typeof(long_data)
+```
+
+## There is a distinction between a long and wide dataframe:
+```{r}
+load("data/climate_wide.Rdata")
+print(wide_data)
 ```
 
 ## Loading other formats of data in R
@@ -176,9 +182,9 @@ Advice for option 1 (cont'd):
   - Paste the command on top of your script.
   - This way, next time you do not need the menu navigation.
 
-```{r eval=FALSE}
+```{r}
 library(readxl)
-climate <- read_excel("data/climate.xlsx")
+climate <- read_excel("data/climate_wide.xlsx")
 ```
   - You can view the data by clicking on it in the `Environment' at the top-right of the workspace. 
 
@@ -192,7 +198,7 @@ climate <- read_excel("data/climate.xlsx")
 ## Loading SPSS and other file types
 ```{r eval=FALSE}
 library('rio')
-import("data/climate.dta")
+import("data/climate_wide.dta")
 ```
 
 ## Loading csv files
@@ -208,9 +214,10 @@ import("data/climate.csv")
 - `save.image()` saves a selection of objects as an `.RData` file.
 
 ## Exercise 4.1: Saving data
+
 - Save your current workspace using function `save.image()`.
 - Save only one variable in the workspace using function `save()`.
-- Make a list of two variables from `data_short`, and save this list using function `save`.
+- Make a list of two variables from `long_data`, and save this list using function `save`.
 <!-- save.image('myoutput.Rdata') -->
 <!-- save(climate, 'myclimatedata.Rdata') -->
 <!-- myoutput <- list(data_short$NAME, data_short$LATITUTE) -->
@@ -229,16 +236,16 @@ To create plots with R's standard `graphics` package, there are *high-level* and
 ## Simple plots
 
 ```{r}
-plot(data_short$MAX)     ## Plotting a single variable
-plot(x = data_short$YEAR, y = data_short$MAX)     ## Scatter plot
+plot(long_data$TEMP)     ## Plotting a single variable
+plot(x = long_data$MONTH, y = long_data$TEMP)     ## Scatter plot wrt month
 ```
 
 ## Multiple plots
 
 ```{r}
 par(mfrow = c(1,2)) # multiple plots in a row
-plot(data_short$MAX)     ## Plotting a single variable
-plot(x = data_short$YEAR, y = data_short$MAX)     ## Scatter plot
+plot(long_data$TEMP)     ## Plotting a single variable
+plot(x = long_data$MONTH, y = long_data$TEMP)     ## Scatter plot wrt month
 ```
 
 ## Functions calling methods
@@ -247,15 +254,15 @@ Notice that function `plot()` calls methods.
 It will perform different operations depending on the class of the passed object. (We study the `lm()` function in detail in the next session!)
 
 ```{r}
-ols_result <- lm(MAX~YEAR, data = data_short)
+ols_result <- lm(TEMP~MONTH, data = long_data)
 plot(ols_result)
 ```
 
 ## Creating and saving a graph
 
 ```{r, eval=FALSE}
-pdf("outputs/plot_data_short.pdf")                  
-hist(data_short$MAX, breaks = 20)
+pdf("figures/plot_data_short.pdf")
+hist(wide_data$MAASTRICHT, breaks = 20)
 dev.off()
 ```
 ## Customizing Graphics
@@ -263,9 +270,9 @@ dev.off()
 - Adding points to an existing plot
 - Function `dev.off()'is called after all the plotting, to save the file and return control to the screen.
 
-```{r, eval=FALSE}
-plot(data_short$MAX, type = "l") ## Lines
-points(data_short$MAX)
+```{r}
+plot(wide_data$MAASTRICHT) # temperatures in Maastricht
+lines(wide_data$EINDHOVEN) # temperatures in Eindhoven in lines
 ```
 
 ## Customizing Graphics
@@ -292,13 +299,12 @@ points(data_short$MAX)
  - `legend`: Add a legend
  - `text`: Add text at $(x,y)$ coordinates
  - `mtext`: Add text with positional specification like `side=1,...,4`
----
 
 ## Exercise 4.2: Plot maximum temperatures for Maastricht
 
-We want to visualize the daily maximum temperatures in the climate data `data_short` specifically for Maastricht. First, make a basic plot of variable and `MAX` then customise the plot in the following ways:
+We want to visualize the daily maximum temperatures in the climate data specifically for Maastricht. First, make a basic plot of temperatures in Maastricht then customise the plot in the following ways:
 
-1. The title of the X-axis should say 'Year', the title of the Y-axis 'Maximum Temperature'.
+1. The title of the X-axis should say 'Month', the title of the Y-axis 'Average Temperature'.
 
 2. Make the plot a line plot with a blue line. (Hint: specifying the colour literally as `"blue"` works)
 
@@ -323,9 +329,6 @@ You may want to ask ChatGPT for help and then try to see if you could also have 
  - Use the plot functions without creating a graph.
  - Use the `plots' area to save image manually.
 
-```{r, eval=FALSE}
-plot(x = data_short$YEAR, y = data_short$MAX)     
-``` 
 
 ## Different plot types
 
@@ -338,8 +341,8 @@ Best practice is to save a graph through a device such as pdf or similar:
 - `png()`, `jpeg()`, `tiff()`, `bmp()`: Various bitmap formats.
 
 ```{r, eval=FALSE}
-jpeg("outputs/plot_data_short.jpeg")                  
-plot(x = data_short$YEAR, y = data_short$MAX)   
+jpeg("figures/MaasTemperature.jpeg")
+plot(x = wide_data$MAASTICHT, y = wide_data$MONTH)
 dev.off()
 ```
 
