@@ -13,5 +13,6 @@ Welcome to the homepage of the SBE R training! Here you will find the slides for
 
 ### Sessions
 - [Session 1](Session1.qmd){target="_blank"}
+- [Session 2](Session2.qmd){target="_blank"}
 
 Further sessions will follow later.

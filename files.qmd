@@ -39,10 +39,10 @@ To follow
 Here we post solutions to the exercises in the sessions. The files are eventually kept very basic, only having the necessary code. The files, therefore, have very little meaning on their own, but might be useful to consult during the sessions.
 
 #### Session 1
-To follow
+No solutions
 
 #### Session 2
-To follow
+- [Solutions Session 2](solutions/S2.R)
 
 #### Session 3
 To follow
