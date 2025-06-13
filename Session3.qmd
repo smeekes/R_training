@@ -188,7 +188,7 @@ Note that R  searches for an **exact**! match and will only open the R Help page
 ?log
 ```
 
-R should open the help page for the function with name `log`. No need to go over the help page in detail, we explore this in detail
+R should open the help page for the function with name `log`. No need to go over the help page in detail, we explore this in detail soon.
 
 - Execute the following code:
 ```{r, eval=FALSE}
@@ -204,7 +204,7 @@ R should tell you that no documentation for the requested function exists. It di
 
 R performs a full-text search of the help system for all documentation that mentions the term `logarithm`.
 
-While the search with the command <em>?</em> is thus useful to directly access the help page of an R function you know exists, the broader help search with the command <em>??</em> is useful if you are not sure about the exact name of a function.
+While the search with the command `?` is useful to directly access the help page of an R function you know exists, the broader help search with the command <em>??</em> is useful if you are not sure about the exact name of a function.
 
 
 ## Understanding the log function
@@ -255,7 +255,7 @@ Execute the command `?log`. It gives something like this:
 
 ![](figures/help_log6.png)
 
-## input and output of the log function
+## Input and output of the log function
 
 - Note how the `log` function preserves the object type of the input:
 ```{r}
@@ -721,7 +721,7 @@ install.packages("package-name", dependencies = TRUE)
 
 - In RStudio, make sure that the box "Install dependencies" is checked.
 
-## Exercise 3.6: Package information & installation
+## Bonus Exercise 3.6: Package information & installation
 
 1. Find out who the maintainer is of the package `bigtime`.
 
@@ -733,7 +733,7 @@ install.packages("package-name", dependencies = TRUE)
 
 5. You will get an error message. Fix the error and repeat the steps above to produce a plot of the missing values.
 
-## Installing packages from (other) source(s)
+## Bonus: Installing packages from (other) source(s)
 
 - Sometimes you might find a package not available on CRAN, but hosted on different platforms, such as GitHub.
 
