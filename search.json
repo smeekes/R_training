@@ -984,7 +984,7 @@
     "href": "Session3.html#today",
     "title": "Introduction to R",
     "section": "Today",
-    "text": "Today\nStephan Smeekes\n\n\n\n\n\nProfessor of Econometrics at QE\nResearch interests: econometrics, time series, high-dimensional statisics, bootstrap, macro- and climate econometrics\nWebsite\nSessions 2, 3 and 4\n\n\nInes Wilms\n\n\n\n\n\nAssociate Professor at QE\nResearch interests: econometrics, time series, high-dimensional statisics, forecasting, outlier robustness\nWebsite\nSessions 1, 3 and 5"
+    "text": "Today\nStephan Smeekes\n\n\n\n\n\nProfessor of Econometrics at QE\nResearch interests: econometrics, time series, high-dimensional statistics, bootstrap, macro- and climate econometrics\nWebsite\nSessions 2, 3 and 4\n\n\nInes Wilms\n\n\n\n\n\nAssociate Professor at QE\nResearch interests: econometrics, time series, high-dimensional statistics, forecasting, outlier robustness\nWebsite\nSessions 1, 3 and 5"
   },
   {
     "objectID": "Session3.html#functions-1",
@@ -1201,7 +1201,7 @@
     "href": "Session3.html#the-summary-function",
     "title": "Introduction to R",
     "section": "The summary function",
-    "text": "The summary function\n\nWe can illustrate this using the summary() function.\nSummary on vectors:\n\n\nx &lt;- rnorm(100)\nsummary(x)\n\n    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. \n-2.92732 -0.78779 -0.00778 -0.01843  0.84974  2.03598"
+    "text": "The summary function\n\nWe can illustrate this using the summary() function.\nSummary on vectors:\n\n\nx &lt;- rnorm(100)\nsummary(x)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n-3.2108 -0.9701 -0.4267 -0.1984  0.6760  2.5243"
   },
   {
     "objectID": "Session3.html#the-summary-function-1",
