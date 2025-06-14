@@ -57,7 +57,7 @@ diagram:
 
 ::: {.column width="60%"}
 - Professor of Econometrics at QE
-- Research interests: econometrics, time series, high-dimensional statisics, bootstrap, macro- and climate econometrics 
+- Research interests: econometrics, time series, high-dimensional statistics, bootstrap, macro- and climate econometrics 
 - [Website](https://stephansmeekes.com)
 - Sessions 2, 3 and 4
 :::
