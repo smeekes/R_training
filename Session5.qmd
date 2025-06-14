@@ -23,6 +23,44 @@ diagram:
 2.  [Regression Analysis](#reg1)
 3.	[Bonus: Tidyverse](#dataman2)
 
+## Today 
+
+#### Nalan Bastürk
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/nalan.jpg){width=50%}
+:::
+
+::: {.column width="60%"}
+- Associate Professor at QE
+- Research interests: econometrics, Bayesian statisics, financial econometrics
+- [Website](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk)
+- Sessions 4 and 5
+:::
+
+::::
+
+#### Ines Wilms
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](figures/ines.jpg){width=50%}
+
+:::
+
+::: {.column width="60%"}
+- Associate Professor at QE
+- Research interests: econometrics, time series, high-dimensional statisics, forecasting,  outlier robustness
+- [Website](https://sites.google.com/view/iwilms)
+- Sessions 1, 3 and 5
+:::
+
+::::
+
+
 # Basics of Data Manipulation {#dataman1}
 
 ## Data Manipulation
