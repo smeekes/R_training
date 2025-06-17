@@ -1425,7 +1425,7 @@
     "href": "Session4.html#exercise-4.3-plot-temperatures-for-maastricht",
     "title": "Introduction to R",
     "section": "Exercise 4.3: Plot temperatures for Maastricht",
-    "text": "Exercise 4.3: Plot temperatures for Maastricht\nWe want to visualize the daily temperatures in the climate data specifically for Maastricht. First, make a basic plot of temperatures in Maastricht then customise the plot in the following ways:\n\nThe title of the X-axis should say ‘Month’, the title of the Y-axis ‘Average Temperature’.\nMake the plot a line plot with a blue line. (Hint: specifying the colour literally as \"blue\" works)\nMake the tick marks appear on the inside of the figure rather than the outside.\nCalculate the average temperature.\nAdd a horizontal line with the average maximum temperature\n\nYou will need to consult the help file for this exercise; see this therefrom more as an exercise in how to navigate R’s help system, than an exercise in plotting (which we will cover in more detail later).\nYou may want to ask ChatGPT for help."
+    "text": "Exercise 4.3: Plot temperatures for Maastricht\nWe want to visualize the daily temperatures in the climate data specifically for Maastricht. First, make a basic plot of temperatures in Maastricht then customise the plot in the following ways:\n\nThe title of the X-axis should say ‘Month’, the title of the Y-axis ‘Average Temperature’.\nMake the plot a line plot with a blue line. (Hint: specifying the colour literally as \"blue\" works)\nMake the tick marks appear on the inside of the figure rather than the outside.\nCalculate the average temperature.\nAdd a horizontal line with the average maximum temperature\n\nYou will need to consult the help file for this exercise; see this therefore more as an exercise in how to navigate R’s help system, than an exercise in plotting (which we will cover in more detail later).\nYou may want to ask ChatGPT for help."
   },
   {
     "objectID": "Session4.html#manually-saving-r-plots",
@@ -1494,8 +1494,8 @@
     "objectID": "Session4.html#example-possible-confusion-with-aesthetics",
     "href": "Session4.html#example-possible-confusion-with-aesthetics",
     "title": "Introduction to R",
-    "section": "Example: Possible confusion with aesthetics\n",
-    "text": "Example: Possible confusion with aesthetics\n\n\nA point that is easy to make a mistake: mapping variables in aesthetics.\nSee color is defined in aes below compared to the earlier slide.\nCheck the weird legend that appears in the plot, and the line is still red.\nSee the help file for ggplot2::geom_line.\n\n\nload(\"data/climate_wide.Rdata\") # load data\nwide_data$index &lt;- 1:nrow(wide_data) # create data frame\nggplot(wide_data, aes(x = index, y = MAASTRICHT, color = \"blue\")) +\n  geom_line(linewidth = 1) # adds lines #"
+    "section": "Example: Possible confusion with aesthetics",
+    "text": "Example: Possible confusion with aesthetics\n\nA point that is easy to make a mistake: mapping variables in aesthetics.\nSee color is defined in aes below compared to the earlier slide.\nCheck the weird legend that appears in the plot, and the line is still red.\nSee the help file for ggplot2::geom_line.\nThere is a lot of information in the help file as a result of flexibility, but the proper use is explained.\n\n\nload(\"data/climate_wide.Rdata\") # load data\nwide_data$index &lt;- 1:nrow(wide_data) # create data frame\nggplot(wide_data, aes(x = index, y = MAASTRICHT, color = \"blue\")) +\n  geom_line(linewidth = 1) # adds lines #"
   },
   {
     "objectID": "Session4.html#example-adding-additional-geometrics-and-aesthetics",
@@ -1509,7 +1509,7 @@
     "href": "Session4.html#example-adding-more-layers",
     "title": "Introduction to R",
     "section": "Example: Adding more layers",
-    "text": "Example: Adding more layers\n\nload(\"data/climate_wide.Rdata\") # load data\nwide_data$index &lt;- 1:nrow(wide_data) # create data frame\nggplot(wide_data, aes(x = index, y = MAASTRICHT)) +\n  geom_line(color = \"blue\", size = 1, linewidth = 2) +\n  geom_line(aes(x = index, y = EINDHOVEN), linewidth = 0.3) # Adds Eindhoven data to the last plot\n\n  labs(\n    x = \"X Axis\", y = \"Y Axis\", color = \"Legend Title\",   # Axis labels and legend title\n    title = \"Line Plot with Two Variables\"\n  ) +\n  scale_color_manual(values = c(\"blue\", \"red\")) +  # Custom colors\n  theme_minimal()  # Minimal theme for a clean look\n\nNULL"
+    "text": "Example: Adding more layers\n\nAdding more layers for labels and legends\n\n\nload(\"data/climate_wide.Rdata\") # load data\nwide_data$index &lt;- 1:nrow(wide_data) # create data frame\nggplot(wide_data, aes(x = index, y = MAASTRICHT)) +\n  geom_line(color = \"blue\", size = 1, linewidth = 2) +\n  geom_line(aes(x = index, y = EINDHOVEN), linewidth = 0.3) + # Adds Eindhoven data to the last plot\n  labs(\n    x = \"X Axis\", y = \"Y Axis\", color = \"Legend Title\",   # Axis labels and legend title\n    title = \"Line Plot with Two Variables\"\n  ) +\n  scale_color_manual(values = c(\"blue\", \"red\")) +  # Custom colors\n  theme_minimal()  # Minimal theme for a clean look"
   },
   {
     "objectID": "Session4.html#example-ggplot-color-points-for-maastricht-and-eindhoven-temperatures",
