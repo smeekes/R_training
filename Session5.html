@@ -1181,13 +1181,13 @@ margin-right: 0; }
 <p>Use the grades data set.</p>
 <ol type="1">
 <li><p>Generate a data set that contains information about the student ID, student name, their tutorial group, participation grade and their exam score.</p></li>
-<li><p>Reduce the data set to only display information of students in tutorial group 4</p></li>
-<li><p>Further reduce the data set to only display information of students in tutorial group 4 with an exam score of more than 80. How many such students are there? Hint: You can use a logical operator when subsetting!</p></li>
+<li><p>Further reduce the data set obtained under 1 to only display information of students in tutorial group 4.</p></li>
+<li><p>Further reduce the data set obtained under 2 to only display information of students with an exam score of more than 80. How many such students are there?</p></li>
 </ol>
 </section>
 <section id="transforming-variables" class="slide level2">
 <h2>Transforming Variables</h2>
-<p>Let us continue with further data manipulations. The variable tutorial is currently an integer:</p>
+<p>Let us continue with further data manipulations. The variable <code>Tutorial</code> is currently an integer:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(data_grades<span class="sc">$</span>Tutorial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1247,7 +1247,7 @@ Levels: 1 2 3 4</code></pre>
 <li><p>What is the class of the variable Tutor? Transform it into a factor. How many tutors are there?</p></li>
 <li><p>Add a new variable to compute the final score of each student, which is the weighted average of their participation grade (20%) and their exam score (80%)</p></li>
 <li><p>Retrieve the final score of the students in tutorial group 2. Obtain summary statistics of their final scores.</p></li>
-<li><p>What is the lowest and the highest score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function.</p></li>
+<li><p>What is the lowest and the highest final score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function.</p></li>
 </ol>
 </section></section>
 <section>
@@ -1357,7 +1357,7 @@ F-statistic:  88.8 on 2 and 39 DF,  p-value: 3.021e-15</code></pre>
 </section>
 <section id="lm-and-variable-transformations-1" class="slide level2">
 <h2>lm and Variable Transformations</h2>
-<p>What if you want to include square of a predictor? For example: <span class="math display">\[Final\_Score = \beta_0 + \beta_1 Participation\_Grade  + \beta_2 Participation\_Grade^2 + u\]</span> You CANNOT use <code>Final_Score ~ Participation_Grade + Participation_Grade^2</code> since the <code>^2</code> has a special (different) meaning in a formula object.</p>
+<p>What if you want to include the square of a predictor? For example: <span class="math display">\[Final\_Score = \beta_0 + \beta_1 Participation\_Grade  + \beta_2 Participation\_Grade^2 + u\]</span> You CANNOT use <code>Final_Score ~ Participation_Grade + Participation_Grade^2</code> since the <code>^2</code> has a special (different) meaning in a formula object.</p>
 <p>Instead, you should use the function <code>I()</code>. More specifically:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># example squared variables</span></span>
@@ -1456,7 +1456,8 @@ F-statistic: 39.05 on 3 and 38 DF,  p-value: 1.083e-11</code></pre>
 <section id="exercise-5.3" class="slide level2">
 <h2>Exercise 5.3</h2>
 <ol type="1">
-<li><p>Estimate the following simple regression model in R: <span class="math display">\[Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u\]</span> Is the variable <code>Participation_Grade</code> significant? What is the value of the <span class="math inline">\(R^2\)</span>?</p></li>
+<li><p>Estimate the following simple regression model in R: <span class="math display">\[Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u\]</span> Save your regression model in the object <code>my_reg1</code>, and inspect the regression output.</p></li>
+<li><p>Make a scatterplot of <code>Final_Score</code> (y-axis) against <code>Participation_Grade</code> (x-axis). Verify that adding the line of code <code>abline(my_reg1)</code> after you created your scatter plot, adds the regression line to your scatterplot!</p></li>
 <li><p>Estimate the multiple regression model: <span class="math display">\[Final\_Score = \beta_0 + \beta_1 Participation\_Grade +
 \beta_2 Chang + u\]</span> where <code>Chang</code> is a dummy variable taking the value 1 for students having tutor “Chang, Stevens” and 0 otherwise. Is the dummy variable significant?</p></li>
 <li><p>Imagine you want to include the tutor “Chang, Stevens” as the baseline level. Re-estimate the regression model after you have re-specified your factor variable <code>Tutor</code> thereby explicitly defining “Chang, Stevens” as the baseline level. Hint: use the function <code>relevel</code> to this end.</p></li>

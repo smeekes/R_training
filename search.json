@@ -578,14 +578,14 @@
     "href": "Session5.html#exercise-5.1",
     "title": "Introduction to R",
     "section": "Exercise 5.1",
-    "text": "Exercise 5.1\nUse the grades data set.\n\nGenerate a data set that contains information about the student ID, student name, their tutorial group, participation grade and their exam score.\nReduce the data set to only display information of students in tutorial group 4\nFurther reduce the data set to only display information of students in tutorial group 4 with an exam score of more than 80. How many such students are there? Hint: You can use a logical operator when subsetting!"
+    "text": "Exercise 5.1\nUse the grades data set.\n\nGenerate a data set that contains information about the student ID, student name, their tutorial group, participation grade and their exam score.\nFurther reduce the data set obtained under 1 to only display information of students in tutorial group 4.\nFurther reduce the data set obtained under 2 to only display information of students with an exam score of more than 80. How many such students are there?"
   },
   {
     "objectID": "Session5.html#transforming-variables",
     "href": "Session5.html#transforming-variables",
     "title": "Introduction to R",
     "section": "Transforming Variables",
-    "text": "Transforming Variables\nLet us continue with further data manipulations. The variable tutorial is currently an integer:\n\nclass(data_grades$Tutorial)\n\n[1] \"integer\"\n\n\nbut it should be a factor (a categorical variable). This can be easily changed in R:\n\ndata_grades$Tutorial &lt;- as.factor(data_grades$Tutorial)\n\nafter which you can inspect its new class:\n\nclass(data_grades$Tutorial)\n\n[1] \"factor\""
+    "text": "Transforming Variables\nLet us continue with further data manipulations. The variable Tutorial is currently an integer:\n\nclass(data_grades$Tutorial)\n\n[1] \"integer\"\n\n\nbut it should be a factor (a categorical variable). This can be easily changed in R:\n\ndata_grades$Tutorial &lt;- as.factor(data_grades$Tutorial)\n\nafter which you can inspect its new class:\n\nclass(data_grades$Tutorial)\n\n[1] \"factor\""
   },
   {
     "objectID": "Session5.html#transforming-variables-1",
@@ -606,7 +606,7 @@
     "href": "Session5.html#exercise-5.2",
     "title": "Introduction to R",
     "section": "Exercise 5.2",
-    "text": "Exercise 5.2\n\nWhat is the class of the variable Tutor? Transform it into a factor. How many tutors are there?\nAdd a new variable to compute the final score of each student, which is the weighted average of their participation grade (20%) and their exam score (80%)\nRetrieve the final score of the students in tutorial group 2. Obtain summary statistics of their final scores.\nWhat is the lowest and the highest score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function."
+    "text": "Exercise 5.2\n\nWhat is the class of the variable Tutor? Transform it into a factor. How many tutors are there?\nAdd a new variable to compute the final score of each student, which is the weighted average of their participation grade (20%) and their exam score (80%)\nRetrieve the final score of the students in tutorial group 2. Obtain summary statistics of their final scores.\nWhat is the lowest and the highest final score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function."
   },
   {
     "objectID": "Session5.html#general-information",
@@ -655,7 +655,7 @@
     "href": "Session5.html#lm-and-variable-transformations-1",
     "title": "Introduction to R",
     "section": "lm and Variable Transformations",
-    "text": "lm and Variable Transformations\nWhat if you want to include square of a predictor? For example: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade  + \\beta_2 Participation\\_Grade^2 + u\\] You CANNOT use Final_Score ~ Participation_Grade + Participation_Grade^2 since the ^2 has a special (different) meaning in a formula object.\nInstead, you should use the function I(). More specifically:\n\n# example squared variables\nreg_4 &lt;- lm(Final_Score ~ Participation_Grade + I(Participation_Grade^2), data = data_grades)\n\ndoes the job! Inspect its summary output."
+    "text": "lm and Variable Transformations\nWhat if you want to include the square of a predictor? For example: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade  + \\beta_2 Participation\\_Grade^2 + u\\] You CANNOT use Final_Score ~ Participation_Grade + Participation_Grade^2 since the ^2 has a special (different) meaning in a formula object.\nInstead, you should use the function I(). More specifically:\n\n# example squared variables\nreg_4 &lt;- lm(Final_Score ~ Participation_Grade + I(Participation_Grade^2), data = data_grades)\n\ndoes the job! Inspect its summary output."
   },
   {
     "objectID": "Session5.html#lm-and-variable-transformations-2",
@@ -690,7 +690,7 @@
     "href": "Session5.html#exercise-5.3",
     "title": "Introduction to R",
     "section": "Exercise 5.3",
-    "text": "Exercise 5.3\n\nEstimate the following simple regression model in R: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade + u\\] Is the variable Participation_Grade significant? What is the value of the \\(R^2\\)?\nEstimate the multiple regression model: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade +\n\\beta_2 Chang + u\\] where Chang is a dummy variable taking the value 1 for students having tutor “Chang, Stevens” and 0 otherwise. Is the dummy variable significant?\nImagine you want to include the tutor “Chang, Stevens” as the baseline level. Re-estimate the regression model after you have re-specified your factor variable Tutor thereby explicitly defining “Chang, Stevens” as the baseline level. Hint: use the function relevel to this end.\nFinally, estimate the regression model: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade +\n\\beta_2 Chang + \\beta_3 Participation\\_Grade \\cdot Chang + u\\] and inspect the summary output."
+    "text": "Exercise 5.3\n\nEstimate the following simple regression model in R: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade + u\\] Save your regression model in the object my_reg1, and inspect the regression output.\nMake a scatterplot of Final_Score (y-axis) against Participation_Grade (x-axis). Verify that adding the line of code abline(my_reg1) after you created your scatter plot, adds the regression line to your scatterplot!\nEstimate the multiple regression model: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade +\n\\beta_2 Chang + u\\] where Chang is a dummy variable taking the value 1 for students having tutor “Chang, Stevens” and 0 otherwise. Is the dummy variable significant?\nImagine you want to include the tutor “Chang, Stevens” as the baseline level. Re-estimate the regression model after you have re-specified your factor variable Tutor thereby explicitly defining “Chang, Stevens” as the baseline level. Hint: use the function relevel to this end.\nFinally, estimate the regression model: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade +\n\\beta_2 Chang + \\beta_3 Participation\\_Grade \\cdot Chang + u\\] and inspect the summary output."
   },
   {
     "objectID": "Session5.html#accessing-regression-results",
