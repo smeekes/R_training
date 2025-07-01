@@ -27,7 +27,7 @@ wide_data$index <- 1:nrow(wide_data)
 ggplot(wide_data, aes(x = index, y = MAASTRICHT)) + 
 geom_line(color = "steelblue", size = 1) +
 geom_point(color = "steelblue") +
-geom_hline(yintercept = mean_max, color = "red", linetype = "dashed", size = 1) 
+geom_hline(yintercept = mean_max, color = "red", linetype = "dashed", size = 1) +
 labs(title = "Max temp. in Maastricht",
      x = "Observation Index",
      y = "Max temperature") 
