@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smeekes.github.io/R_training/Session1.html</loc>
-    <lastmod>2025-08-28T13:07:20.151Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smeekes.github.io/R_training/index.html</loc>
-    <lastmod>2025-08-28T13:07:20.507Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smeekes.github.io/R_training/about-team.html</loc>
-    <lastmod>2025-08-28T13:07:20.226Z</lastmod>
-  </url>
-  <url>
     <loc>https://smeekes.github.io/R_training/Session5.html</loc>
-    <lastmod>2025-08-28T13:07:20.151Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smeekes.github.io/R_training/files.html</loc>
-    <lastmod>2025-08-28T13:07:20.507Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smeekes.github.io/R_training/Session2.html</loc>
-    <lastmod>2025-08-28T13:07:20.151Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smeekes.github.io/R_training/Session4.html</loc>
-    <lastmod>2025-08-28T13:07:20.151Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smeekes.github.io/R_training/about.html</loc>
-    <lastmod>2025-08-28T13:07:20.226Z</lastmod>
+    <lastmod>2025-08-28T13:04:18.386Z</lastmod>
   </url>
   <url>
     <loc>https://smeekes.github.io/R_training/Session3.html</loc>
-    <lastmod>2025-08-28T13:07:20.151Z</lastmod>
+    <lastmod>2025-08-28T13:01:05.437Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smeekes.github.io/R_training/Session1.html</loc>
+    <lastmod>2025-08-28T12:59:15.069Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smeekes.github.io/R_training/files.html</loc>
+    <lastmod>2025-06-19T11:01:14.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smeekes.github.io/R_training/about-team.html</loc>
+    <lastmod>2025-06-19T11:01:14.039Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smeekes.github.io/R_training/about.html</loc>
+    <lastmod>2025-06-12T08:11:04.446Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smeekes.github.io/R_training/index.html</loc>
+    <lastmod>2025-06-19T11:01:39.491Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smeekes.github.io/R_training/Session2.html</loc>
+    <lastmod>2025-08-28T13:00:11.064Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smeekes.github.io/R_training/Session4.html</loc>
+    <lastmod>2025-08-28T13:02:33.592Z</lastmod>
   </url>
 </urlset>
