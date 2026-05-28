@@ -24,8 +24,10 @@ editor:
 
 1.  [Basics of Data Manipulation](#dataman1)
 2.  [Regression Analysis](#reg1)
-3.  [Bonus: Tidyverse](#dataman2)
-4.  [Concluding Remarks](#conclude)
+3.  [Bonus: Creating your own functions](#ownfunc)
+4.  [Bonus: Flow Control](#flowcontrol)
+5.  [Bonus: Tidyverse](#dataman2)
+6.  [Concluding Remarks](#conclude)
 
 <!-- ## Today  -->
 
@@ -566,7 +568,7 @@ $$Exam\_Score = \beta_0 + \beta_1 Participation\_Grade + \beta_2 Male + \beta_3 
     as 'Fitted values', and give the plot the title 'Fitted versus
     Actual'.
     
-# Bonus: Creating your own functions
+# Bonus: Creating your own functions {#ownfunc}
 
 ## Why create your own functions?
 
