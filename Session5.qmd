@@ -15,14 +15,17 @@ diagram:
         - '\definecolor{UMorangered}{RGB}{232,78,16}'
         - '\definecolor{UMorange}{RGB}{243,148,37}'
         - '\definecolor{UMred}{RGB}{174,11,18}'
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 # Session Overview
 
 1.  [Basics of Data Manipulation](#dataman1)
 2.  [Regression Analysis](#reg1)
-3.	[Bonus: Tidyverse](#dataman2)
-4.	[Concluding Remarks](#conclude)
+3.  [Bonus: Tidyverse](#dataman2)
+4.  [Concluding Remarks](#conclude)
 
 <!-- ## Today  -->
 
@@ -31,14 +34,21 @@ diagram:
 <!-- :::: {.columns} -->
 
 <!-- ::: {.column width="40%"} -->
+
 <!-- ![](figures/nalan.jpg){width=50%} -->
+
 <!-- ::: -->
 
 <!-- ::: {.column width="60%"} -->
+
 <!-- - Associate Professor at QE -->
+
 <!-- - Research interests: econometrics, Bayesian statistics, financial econometrics -->
+
 <!-- - [Website](https://www.maastrichtuniversity.nl/n-bast%C3%BCrk) -->
+
 <!-- - Sessions 4 and 5 -->
+
 <!-- ::: -->
 
 <!-- :::: -->
@@ -48,32 +58,41 @@ diagram:
 <!-- :::: {.columns} -->
 
 <!-- ::: {.column width="40%"} -->
+
 <!-- ![](figures/ines.jpg){width=50%} -->
 
 <!-- ::: -->
 
 <!-- ::: {.column width="60%"} -->
+
 <!-- - Associate Professor at QE -->
+
 <!-- - Research interests: econometrics, time series, high-dimensional statistics, forecasting,  outlier robustness -->
+
 <!-- - [Website](https://sites.google.com/view/iwilms) -->
+
 <!-- - Sessions 1, 3 and 5 -->
+
 <!-- ::: -->
 
 <!-- :::: -->
 
-
 # Basics of Data Manipulation {#dataman1}
 
 ## Data Manipulation
-In the last session, we learned how to load data of various sources into R. 
 
-Today's first part will be about how to manipulate data in R. Importantly, we will learn how to
+In the last session, we learned how to load data of various sources into
+R.
 
-- select certain variables from a data 
-- subset a data set
-- recode and rename certain variables
+Today's first part will be about how to manipulate data in R.
+Importantly, we will learn how to
 
-We will work with fictive data set of student grades. Let us start by loading the data:
+-   select certain variables from a data
+-   subset a data set
+-   recode and rename certain variables
+
+We will work with fictive data set of student grades. Let us start by
+loading the data:
 
 ```{r list1, eval = TRUE}
 data_grades <- read.table("data/grades.csv", 
@@ -81,9 +100,14 @@ data_grades <- read.table("data/grades.csv",
 ```
 
 ## Selecting Variables
-We begin with selecting interesting variables from a data set. For our grades data set, we want to preserve information about `ID`, `Name`, and `Exam_Score`, and drop all other information. 
 
-Variables can be selected by name, after which we inspect the first and last three rows in the data set:
+We begin with selecting interesting variables from a data set. For our
+grades data set, we want to preserve information about `ID`, `Name`, and
+`Exam_Score`, and drop all other information.
+
+Variables can be selected by name, after which we inspect the first and
+last three rows in the data set:
+
 ```{r list2, eval = TRUE}
 data <- data_grades[, c("ID", "Name", "Exam_Score")] 
 head(data, 3)
@@ -91,33 +115,47 @@ tail(data, 3)
 ```
 
 ## Selecting Variables
+
 Or by variable indexes
+
 ```{r list3, eval = TRUE}
 data1 <- data_grades[, c(1, 2, 7)] 
 ```
-though this is not that convenient unless you know the column numbers of the variables you want to select.
+
+though this is not that convenient unless you know the column numbers of
+the variables you want to select.
 
 A more convenient alternative is to use the following function:
+
 ```{r list4, eval = TRUE}
 data2 <- subset(data_grades, select = c(ID, Name, Exam_Score))
 ```
 
-The objects data, data1 and data2 are all identical so you can use your preferred way of working!
+The objects data, data1 and data2 are all identical so you can use your
+preferred way of working!
 
 ## Subsetting Rows
-Next, we want to subset the data set, i.e. preserve interesting rows while removing the others. 
 
-For the grades data set, we might be interested in information about students in tutorial group 1: 
+Next, we want to subset the data set, i.e. preserve interesting rows
+while removing the others.
+
+For the grades data set, we might be interested in information about
+students in tutorial group 1:
+
 ```{r list5, eval = TRUE}
 # select tutorial 1 students only
 data_tutorial1 <- data_grades[data_grades$Tutorial == 1, ]
 ```
+
 or alternatively:
+
 ```{r list6, eval = TRUE}
 data_tutorial1 <- subset(data_grades, Tutorial == 1)
 ```
 
-Subsetting also works using characters. For instance, to retrieve only information for females:
+Subsetting also works using characters. For instance, to retrieve only
+information for females:
+
 ```{r list7, eval = TRUE}
 # select female students only
 data_females <- data_grades[data_grades$Gender == 'Female', ]
@@ -129,41 +167,61 @@ Inspect your new data sets!
 
 Use the grades data set.
 
-1. Generate a data set that contains information about the student ID, student name,  their tutorial group, participation grade and their exam score.
+1.  Generate a data set that contains information about the student ID,
+    student name, their tutorial group, participation grade and their
+    exam score.
 
-2. Further reduce the data set obtained under 1 to only display information of students in tutorial group 4.
+2.  Further reduce the data set obtained under 1 to only display
+    information of students in tutorial group 4.
 
-3. Further reduce the data set obtained under 2 to only display information of students with an exam score of more than 80. How many such students are there? 
+3.  Further reduce the data set obtained under 2 to only display
+    information of students with an exam score of more than 80. How many
+    such students are there?
 
+## Transforming Variables
 
-## Transforming Variables 
-Let us continue with further data manipulations. The variable `Tutorial` is currently an integer:
+Let us continue with further data manipulations. The variable `Tutorial`
+is currently an integer:
+
 ```{r list8, eval = TRUE}
 class(data_grades$Tutorial)
 ```
-but it should be a factor (a categorical variable). This can be easily changed in R:
+
+but it should be a factor (a categorical variable). This can be easily
+changed in R:
+
 ```{r list9, eval = TRUE}
 data_grades$Tutorial <- as.factor(data_grades$Tutorial)
 ```
+
 after which you can inspect its new class:
+
 ```{r list10, eval = TRUE}
 class(data_grades$Tutorial)
 ```
 
-## Transforming Variables 
-When inspecting the variable itself, R now mentions the different levels of the factors:
+## Transforming Variables
+
+When inspecting the variable itself, R now mentions the different levels
+of the factors:
+
 ```{r list11, eval = TRUE}
 data_grades$Tutorial
 ```
+
 which you can also directly retreive via:
+
 ```{r list12, eval = TRUE}
 levels(data_grades$Tutorial)
 ```
 
 ## Adding Variables
-Sometimes we want to add a variable to an existing data set. 
 
-For instance, we want to add the exam score on 10 instead of 100. To add a new variable, use the `$` operator and specify a new variable name:
+Sometimes we want to add a variable to an existing data set.
+
+For instance, we want to add the exam score on 10 instead of 100. To add
+a new variable, use the `$` operator and specify a new variable name:
+
 ```{r list13, eval = TRUE}
 data_grades$Exam_Score_10 <- data_grades$Exam_Score/10 
 
@@ -172,13 +230,19 @@ head(data_grades[, c("Exam_Score", "Exam_Score_10")], 3)
 
 ## Exercise 5.2
 
-1. What is the class of the variable Tutor? Transform it into a factor. How many tutors are there?
+1.  What is the class of the variable Tutor? Transform it into a factor.
+    How many tutors are there?
 
-2. Add a new variable to compute the final score of each student, which is the weighted average of their participation grade (20%) and their exam score (80%)
+2.  Add a new variable to compute the final score of each student, which
+    is the weighted average of their participation grade (20%) and their
+    exam score (80%)
 
-3. Retrieve the final score of the students in tutorial group 2. Obtain summary statistics of their final scores.
+3.  Retrieve the final score of the students in tutorial group 2. Obtain
+    summary statistics of their final scores.
 
-4. What is the lowest and the highest final score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function.
+4.  What is the lowest and the highest final score in tutorial group 2?
+    Retrieve this information from the summary statistics as well as by
+    using a dedicated function.
 
 # Regression Analysis {#reg1}
 
@@ -187,12 +251,12 @@ head(data_grades[, c("Exam_Score", "Exam_Score_10")], 3)
 In what follows, we consider the **linear regression model**
 
 $$y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_p x_{p,i} + u_i,\ i=1,\dots,n.$$
- 
 
-We will first estimate the following simple regression for the grades data set:
-$$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u,$$
+We will first estimate the following simple regression for the grades
+data set: $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u,$$
 
-assuming the `Final_Score` variable was added to the grades data set in Exercise 5.2:
+assuming the `Final_Score` variable was added to the grades data set in
+Exercise 5.2:
 
 ```{r list14, eval = TRUE}
 data_grades$Final_Score <- 0.2*data_grades$Participation_Grade + 0.08*data_grades$Exam_Score
@@ -200,174 +264,267 @@ data_grades$Final_Score <- 0.2*data_grades$Participation_Grade + 0.08*data_grade
 
 ## Formula Objects and the lm Function
 
-R is designed to easily estimate various statistical models. It provides a specific object class to symbolically describe statistical models, called `formula` objects. See `?formula` for more details.
+R is designed to easily estimate various statistical models. It provides
+a specific object class to symbolically describe statistical models,
+called `formula` objects. See `?formula` for more details.
 
-Our regression model 
+Our regression model
 
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u$$
 
-can be specified in R as a `formula` like this: 
+can be specified in R as a `formula` like this:
 
 `Final_Score ~ Participation_Grade`
 
-where 
-`~` is the basis for all models:  `y ~ model` specifies that the dependent variable `y` is modeled using the linear predictors described in `model`.
+where `~` is the basis for all models: `y ~ model` specifies that the
+dependent variable `y` is modeled using the linear predictors described
+in `model`.
 
-The standard function for estimating linear models is `lm()`. Estimating a regression model in R then only requires one line of code!
+The standard function for estimating linear models is `lm()`. Estimating
+a regression model in R then only requires one line of code!
+
 ```{r list15, eval = TRUE}
 # example simple regression:
 reg_1 <- lm(Final_Score ~ Participation_Grade, data = data_grades)
 ```
 
 ## Summary of lm
+
 Let us now inspect the summary output of our estimated regression model:
+
 ```{r list16, eval = TRUE}
 # regression summary output:
 summary(reg_1)
 ```
 
-
 ## From Simple to Multiple Regression
-Going from a simple to a multiple regression model is easy. For example, let us add the variable `GPA` as a second predictor this can easily be done by adjusting the `formula` to:
+
+Going from a simple to a multiple regression model is easy. For example,
+let us add the variable `GPA` as a second predictor this can easily be
+done by adjusting the `formula` to:
 
 `Final_Score ~ Participation_Grade + GPA`
 
-where `+` now separates the different predictors included in the model. 
+where `+` now separates the different predictors included in the model.
 
 Estimating the multiple regression model in R can be done as follows:
+
 ```{r list17, eval = TRUE}
 # example multiple regression:
 reg_2 <- lm(Final_Score ~ Participation_Grade + GPA, data = data_grades)
 ```
 
 ## Summary of lm
+
 The summary output of our newly estimated regression model:
+
 ```{r list18, eval = TRUE}
 # regression summary output:
 summary(reg_2)
 ```
 
 ## lm and Variable Transformations
-Imagine you want to estimate a regression model on log-transformed variables, for example:
+
+Imagine you want to estimate a regression model on log-transformed
+variables, for example:
 $$log(Final\_Score) = \beta_0 + \beta_1 log(Participation\_Grade) + u$$
-This can be done by directly using the `log` function in the `lm` function: 
+This can be done by directly using the `log` function in the `lm`
+function:
+
 ```{r list19, eval = TRUE}
 # example log-transformed variables
 reg_3 <- lm(log(Final_Score) ~ log(Participation_Grade), data = data_grades)
 ```
 
 ## lm and Variable Transformations
+
 What if you want to include the square of a predictor? For example:
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade  + \beta_2 Participation\_Grade^2 + u$$
-You CANNOT use  `Final_Score ~ Participation_Grade + Participation_Grade^2` since the `^2` has a special (different) meaning in a formula object. 
+You CANNOT use
+`Final_Score ~ Participation_Grade + Participation_Grade^2` since the
+`^2` has a special (different) meaning in a formula object.
 
 Instead, you should use the function `I()`. More specifically:
+
 ```{r list20, eval = TRUE}
 # example squared variables
 reg_4 <- lm(Final_Score ~ Participation_Grade + I(Participation_Grade^2), data = data_grades)
 ```
+
 does the job! Inspect its summary output.
 
 ## lm and Variable Transformations
+
 Let us now add a dummy variable to the estimated regression model:
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade  + \beta_2 Male + u$$
-where `Male` is a dummy variable that takes on the value 1 for male students, and 0 otherwise.
-
+where `Male` is a dummy variable that takes on the value 1 for male
+students, and 0 otherwise.
 
 Let us start by transforming the variable `Gender` to a factor:
+
 ```{r list21, eval = TRUE}
 data_grades$Gender <- as.factor(data_grades$Gender)
 ```
-Factor variables in formulas are then automatically *dummy coded*. 
+
+Factor variables in formulas are then automatically *dummy coded*.
+
 ```{r list22, eval = TRUE}
 # example dummy variables
 reg_5 <- lm(Final_Score ~ Participation_Grade + Gender, data = data_grades)
 ```
 
 ## Summary of lm
-Inspect the summary output of the regression model with a continuous predictor and a dummy variable; you will notice that R has estimated the regression model with female students as the baseline: 
+
+Inspect the summary output of the regression model with a continuous
+predictor and a dummy variable; you will notice that R has estimated the
+regression model with female students as the baseline:
+
 ```{r list23, eval = TRUE}
 # example dummy variables
 summary(reg_5)
 ```
 
 ## lm and Variable Transformations
-Finally, let us investigate how interaction terms can be included in a regression model. We consider the model:
+
+Finally, let us investigate how interaction terms can be included in a
+regression model. We consider the model:
 $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade  + \beta_2 Male  + \beta_3 Male\cdot Participation\_Grade + u$$
 The regression can be estimated in R via the command:
+
 ```{r list24, eval = TRUE}
 # example dummy variables
 reg_6 <- lm(Final_Score ~ Participation_Grade + Gender + Participation_Grade:Gender , data = data_grades)
 ```
+
 where `:` creates interaction terms between variables.
 
 Or in short:
+
 ```{r list25, eval = TRUE}
 # example dummy variables
 reg_7 <- lm(Final_Score ~ Participation_Grade*Gender, data = data_grades)
 ```
-does the same since `a*b` in the  `Formula` object is equivalent to `a + b + a:b` 
 
+does the same since `a*b` in the `Formula` object is equivalent to
+`a + b + a:b`
 
 ## Summary of lm
-Inspect the summary output of the estimated regression model with interaction terms:
+
+Inspect the summary output of the estimated regression model with
+interaction terms:
+
 ```{r list26, eval = TRUE}
 # example dummy variables
 summary(reg_6)
 ```
 
+## Confidence intervals
+
+To obtain a confidence interval for a coefficient in a regression output, one 
+can use the `confint` function
+
+```{r list261, eval = TRUE}
+# example confidence interval
+confint(reg_6, "Participation_Grade", level = 0.95)
+# increasing alpha to 10%
+confint(reg_6, "Participation_Grade", level = 0.90)
+```
+
+## Exporting regression results: stargazer
+
+Regression results can be exported directly to typesetting programs, e.g. LaTeX.  
+Handy packages are `stargazer` and `xtable`
+
+```{r list262, eval = TRUE}
+library(stargazer)
+stargazer(reg_6, type = "latex", title = "Regression results")
+```
+
+## Exporting regression results: xtable
+
+Regression results can be exported directly to typesetting programs, e.g. LaTeX.  
+Handy packages are `stargazer` and `xtable`
+
+```{r list263, eval = TRUE}
+library(xtable)
+xtable(reg_6)
+```
+
+
 ## Exercise 5.3
 
-1. Estimate the following simple regression model in R: 
-$$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u$$
-Save your regression model in the object `my_reg1`, and inspect the summary output. 
+1.  Estimate the following simple regression model in R:
+    $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u$$ Save
+    your regression model in the object `my_reg1`, and inspect the
+    summary output.
 
-2. Make a scatterplot of `Final_Score` (y-axis) against `Participation_Grade` (x-axis). 
-Verify that adding the line of code `abline(my_reg1)` after you created your scatter plot, adds the regression line to your scatterplot!
+2.  Make a scatterplot of `Final_Score` (y-axis) against
+    `Participation_Grade` (x-axis). Verify that adding the line of code
+    `abline(my_reg1)` after you created your scatter plot, adds the
+    regression line to your scatterplot!
 
-3. Estimate the multiple regression model: 
-$$Final\_Score = \beta_0 + \beta_1 Participation\_Grade +
-\beta_2 Chang + u$$
-where `Chang` is a dummy variable taking the value 1 for students having tutor "Chang, Stevens" and 0 otherwise. Is the dummy variable  significant?
+3.  Estimate the multiple regression model:
+    $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade +
+    \beta_2 Chang + u$$ where `Chang` is a dummy variable taking the
+    value 1 for students having tutor "Chang, Stevens" and 0 otherwise.
+    Is the dummy variable significant?
 
-4. Imagine you want to include the tutor "Chang, Stevens" as the baseline level. 
-Re-estimate the regression model after you have re-specified your factor variable `Tutor` thereby explicitly defining  "Chang, Stevens"  as the baseline level. Hint: use the function `relevel` to this end.
+4.  Imagine you want to include the tutor "Chang, Stevens" as the
+    baseline level. Re-estimate the regression model after you have
+    re-specified your factor variable `Tutor` thereby explicitly
+    defining "Chang, Stevens" as the baseline level. Hint: use the
+    function `relevel` to this end.
 
-5. Finally, estimate the following regression model and inspect the summary output:
-$$Final\_Score = \beta_0 + \beta_1 Participation\_Grade +
-\beta_2 Chang + \beta_3 Participation\_Grade \cdot Chang + u.$$
-
-
+5.  Finally, estimate the following regression model and inspect the
+    summary output:
+    $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade +
+    \beta_2 Chang + \beta_3 Participation\_Grade \cdot Chang + u.$$
 
 ## Accessing Regression Results
-Finally, we discuss how important output of a regression analysis can be directly accessed in R. 
 
-First, assume you want to access the estimated coefficients of an estimated regression model. This can done using the function `coefficients()`:
+Finally, we discuss how important output of a regression analysis can be
+directly accessed in R.
+
+First, assume you want to access the estimated coefficients of an
+estimated regression model. This can done using the function
+`coefficients()`:
+
 ```{r list27, eval = TRUE}
 # accessing coefficients:
 reg_2 <- lm(Final_Score ~ Participation_Grade + GPA, data = data_grades)
 coefficients(reg_2)
 ```
 
-Alternatively, you can directly access the coefficients in the list of the `lm` object `reg_2` :
+Alternatively, you can directly access the coefficients in the list of
+the `lm` object `reg_2` :
+
 ```{r list28, eval = TRUE}
 # accessing coefficients:
 reg_2$coefficients 
 ```
 
-Note that you can do the same for accessing the fitted values (function `fitted()` or slot `$fitted.values`) or the residuals (function `residuals()`  or slot `$residuals`) of your estimated regression model.
+Note that you can do the same for accessing the fitted values (function
+`fitted()` or slot `$fitted.values`) or the residuals (function
+`residuals()` or slot `$residuals`) of your estimated regression model.
 
 ## Accessing Regression Results
-What if you want to access the $R^2$, or the $t$-stats and $p$-values? Unfortunately, the list object `reg_2`  does not seem to contain this information:
+
+What if you want to access the $R^2$, or the $t$-stats and $p$-values?
+Unfortunately, the list object `reg_2` does not seem to contain this
+information:
+
 ```{r list29, eval = TRUE}
 # information stored in lm-object
 names(reg_2)
 ```
 
-This does not mean that you cannot access it. Instead this information can be accessed via the slots in the list object of `summary(reg_2)`! 
+This does not mean that you cannot access it. Instead this information
+can be accessed via the slots in the list object of `summary(reg_2)`!
 
 ## Accessing Regression Results
-In particular: 
+
+In particular:
+
 ```{r list30, eval = TRUE}
 # summary object contains additional information:
 sum_reg_2 <- summary(reg_2)
@@ -378,49 +535,285 @@ sum_reg_2$adj.r.squared     ## adjusted R^2 of regression
 ```
 
 ## Exercise 5.4
+
 Estimate the regression model
 $$Exam\_Score = \beta_0 + \beta_1 Participation\_Grade + \beta_2 Male + \beta_3 Male \cdot Participation\_Grade    + u$$
 
 1.  Is the dummy `Male` significant?
 
-2.  What are the values of the $t$-stats for the 3 predictors? Retrieve this information from the summary output but also saved their values in a new variable called `my_tstats`. Note: save ONLY the values of the t-stats!
+2.  What are the values of the $t$-stats for the 3 predictors? Retrieve
+    this information from the summary output but also saved their values
+    in a new variable called `my_tstats`. Note: save ONLY the values of
+    the t-stats!
 
-3.  What is the estimated coefficient, standard error, $t-$value and $p-$value of the predictor $Participation\_Grade$? Save this (and ONLY this) information in new variable called `my_grade_info` and display the information thereby rounding to two digits.
+3.  What is the estimated coefficient, standard error, $t-$value and
+    $p-$value of the predictor $Participation\_Grade$? Save this (and
+    ONLY this) information in new variable called `my_grade_info` and
+    display the information thereby rounding to two digits.
 
-4. What is the value of the adjusted $R^2$ ? Retrieve this information from the summary output but also saved its value in a new variable called `my_adjR2`.
+4.  What is the value of the adjusted $R^2$ ? Retrieve this information
+    from the summary output but also saved its value in a new variable
+    called `my_adjR2`.
 
-5. Store the residuals in a new variable called `my_resid`. Make a scatter plot of the residuals, thereby labeling the x-axis as 'Student index', the y-axis as 'Residuals' and displaying the dots in red.
+5.  Store the residuals in a new variable called `my_resid`. Make a
+    scatter plot of the residuals, thereby labeling the x-axis as
+    'Student index', the y-axis as 'Residuals' and displaying the dots
+    in red.
 
-6. Store the fitted values in a new variable called `my_fitted`. Make a scatter plot of the actual exam scores on the x-axis and the fitted values on the y-axis. Label the x-axis as 'Exam scores', the y-axis as 'Fitted values', and give the plot the title 'Fitted versus Actual'.
+6.  Store the fitted values in a new variable called `my_fitted`. Make a
+    scatter plot of the actual exam scores on the x-axis and the fitted
+    values on the y-axis. Label the x-axis as 'Exam scores', the y-axis
+    as 'Fitted values', and give the plot the title 'Fitted versus
+    Actual'.
+    
+# Bonus: Creating your own functions
+
+## Why create your own functions?
+
+- You can perfectly get around R without ever creating your own functions.
+
+- But there are good reasons to do so:
+
+  + Easy if you need the same code repetitively;
+  
+  + Decreases the probability of making mistakes, as you only need to write that piece of code once;
+  
+  + You can use your functions in different script later on.
+  
+- Creating functions is a basic skill well worth investing in.
+
+- Note: make sure to first execute the lines containing your function before you use it (and execute again after an update to the code).
+
+## Exercise 5.5: Create your own function
+
+1. Load the `courses` data frame, which contains information about several courses at a school of business and economics. If the file is located in a folder called "data" within your working directory, you can load it as
+```{r echo=TRUE}
+load("data/courses.RData")
+```
+
+2. Create a function that takes as input the `courses` data frame. The function output should be the total number of courses that use student tutors.
+  + There are many ways to count the number of courses that require student tutors. Probably the easiest is to directly do calculations with the logical values: `TRUE` is treated as 1, `FALSE` as 0:
+```{r}
+c(TRUE + FALSE, TRUE + TRUE, TRUE * FALSE)
+```
+
+## Exercise 5.5: Create your own function
+
+3. We now want to extend the function to give a second output. This output should contain a data frame with two columns: the first is the course code, the second is the number of tutorials for each course.
+  + The number of tutorials should be calculated as the number of students divided by the number of students per tutorial group, and then rounded up.
+  + The number of students per tutorial group should be a second argument of the function, with a default value of 15.
+  + To round up, we can use the function `ceiling()`.
+
+# Bonus: Flow Control {#flowcontrol}
+
+## Flow Control
+
+- Often, expressions (calculations, estimations, simulations, plots...) should only be executed under certain conditions and/or repeated multiple times.
+
+- In such cases, we need:
+
+  + Conditional execution (`if`, `else`)
+  
+  + Loops (`for`, `while`)
+
+## Conditional Execution
+
+- The general syntax is as follows:
+```{r ifelse, eval = FALSE}
+if ( expr ) {
+  ## some code evaluated if expr == TRUE
+} else {
+  ## some other code
+}
+```
+
+- A simple example:
+```{r ifelse_example}
+x <- 5
+if (x > 0) {
+  y <- 1       ## if x is positive, y should get value 1
+} else {
+  y <- -1
+}
+print(y)
+```
+
+## Conditional Execution
+
+- Be careful with vector-valued expressions:
+
+```{r ifelse_vector, error=TRUE}
+y <- c(5, 3, 2)
+
+if (y > 4) {
+	print("All elements of y a larger than 4")
+}
+```
+
+If you want to check whether all elements of a vector satisfy a certain property, the quantifiers `any()` and `all()` are useful:
+
+```{r ifelse_quantor}
+if (all(y > 4) ) {        ## all() is "TRUE" if the argument is a vector of all TRUE values
+    print("All y values are greater than 4")
+} else {
+    print("At least one element of y is less than or equal to 4!")
+}
+```
+
+## Conditional Execution with Multipe Options
+
+- There may be more than two cases to consider, for example:
+$$y = \cases{0 \text{ for  } x \leq 0\\
+                4 \text{ for  } 0< x \leq 5\\
+                6 \text{ otherwise.}}$$
+
+```{r ifelse_more, eval = FALSE}
+if ( x <= 0 ) {
+  y <- 0
+} else if (x <= 5 ) {
+  y <- 4
+} else {
+  y <- 6
+}
+```
+
+## Conditional Execution per Element
+
+- Sometimes we want to check vectors and return a separate value for each entry. For this, we use the `ifelse()` function:
+```{r ifelse_vectorized}
+x <- c(3, NA, 2)
+## is.na() checks if the i put is a missing value
+ifelse( is.na(x), "Missing", "Not Missing")
+
+## an elaborate way to calculate absolute values!
+x <- c(-3, 5, -8, 2)
+ifelse( x < 0, -x, x)
+```
+
+## Exercise 5.6: Conditional Execution
+
+- Write a function `if_test` that takes two objects, `x` and `y`, and checks whether `x` is numeric and `y` is of type character.
+
+- If both conditions are met, the function should print "Super"; otherwise, it should indicate which of the two objects `x` or `y` does not meet the required condition.
+
+- Test your function with:
+```{r ex_5.1_test, eval = FALSE}
+if_test(5, "char")
+
+if_test("abc", 2)
+
+if_test(list(1,2), matrix("a", 3, 3))
+```
+
+- Hint: Use `is.character()` and `is.numeric()`.
+
+## Loops
+
+Frequently, small code blocks need to be executed multiple times. Loops help with this. In R, there are multiple types of loops:
+
+- `while( Condition) { Code }`: The code `Code` executes as long as `Condition` is `TRUE`.
+
+- `for (counter in values) { Code }`: The code `Code` runs once for each element in the vector `values`. The variable `counter` takes on the value of each element during each iteration.
+
+
+## Loops: Examples
+
+- Some examples
+```{r example_loops}
+vec <- c("One", "Two", "Three")
+for (v in vec) {
+	print(v)
+}
+
+for (i in 1:5) {
+  print(i + 2)
+}
+```
+
+## Combining for and if
+
+- The combination of loops and conditional execution makes for a simple yet very powerful programming interface.
+
+- The major advantage is that it allows to automate certain repetitive operations.
+
+- This code checks for every column of a matrix (or data frame) `dataset` whether it is skewed to the right, and if so, applies a log transformation. (Which statistically is not the brightest idea...)
+
+- We use the `moments` package for calculating the skewness.
+```{r eval=FALSE}
+library(moments)
+n_col <- ncol(dataset)      # check how many columns there are
+transformed_data <- dataset # copy the data into a new matrix holding the transformed data
+for (i in 1:n_col) {        # loop over all columns
+	skew <- skewness(dataset[, i])  # compute the skewness
+	if (skew > 1) {
+		transformed_data[, i] <- log(dataset[, i]) # log-transform the data
+	}
+}
+```
+
+## Exercise 5.7: Impute Missing Values
+
+- Write a function that checks for every element of a vector whether it is a missing value.  If a missing value is found, it is to be imputed as the average of the value before it and the value after it.
+
+- If the first value in the vector is missing, it should get the value of the second element. If the last value is missing, it should get the value of the preceding element.
+
+- To keep things simple, we assume that there are never two consecutive missing values, such that only the rules above have to be programmed.
+
+- Although there are many ways to create such a function, we focus on using a `for` loop and `if` statements.
+
+- Test your function on the following vector:
+```{r eval=FALSE}
+c(NA, 2, 3, NA, 5, NA)
+```
+
+
 
 # Bonus: Tidyverse {#dataman2}
 
 ## Consistent Work with Data: tidyverse
 
-Next, we will (superficially) cover the package [dplyr](https://dplyr.tidyverse.org/). This package is part of the [tidyverse](https://www.tidyverse.org/), a collection of R packages designed to provide a consistent approach to working with data. The following packages belong to the [tidyverse](https://www.tidyverse.org/):
+Next, we will (superficially) cover the package
+[dplyr](https://dplyr.tidyverse.org/). This package is part of the
+[tidyverse](https://www.tidyverse.org/), a collection of R packages
+designed to provide a consistent approach to working with data. The
+following packages belong to the
+[tidyverse](https://www.tidyverse.org/):
 
- - [dplyr](https://dplyr.tidyverse.org/): "Grammar of Data Manipulation"
+-   [dplyr](https://dplyr.tidyverse.org/): "Grammar of Data
+    Manipulation"
 
- - [ggplot2](https://ggplot2.tidyverse.org/): "Grammar of Graphics"
+-   [ggplot2](https://ggplot2.tidyverse.org/): "Grammar of Graphics"
 
- - [readr](https://readr.tidyverse.org/): "Fast and friendly way to read rectangular data"
+-   [readr](https://readr.tidyverse.org/): "Fast and friendly way to
+    read rectangular data"
 
- - [tibble](https://tibble.tidyverse.org/): "A tibble, or tbl_df, is a modern reimagining of the data.frame"
+-   [tibble](https://tibble.tidyverse.org/): "A tibble, or tbl_df, is a
+    modern reimagining of the data.frame"
 
- - [tidyr](https://tidyr.tidyverse.org/): "Create tidy data. Tidy data is data where:
-      1. Every column is a variable.
-      2. Every row is an observation.
-      3. Every cell is a single value."
+-   [tidyr](https://tidyr.tidyverse.org/): "Create tidy data. Tidy data
+    is data where:
 
- - [purrr](https://purrr.tidyverse.org/): "Enhance R’s functional programming toolkit"
+    1.  Every column is a variable.
+    2.  Every row is an observation.
+    3.  Every cell is a single value."
 
-Note: The philosophy (and syntax) of [tidyverse](https://www.tidyverse.org/) differs completely from base-R and is somewhat similar to Python's `pandas`. Some argue tidyverse code is more readable and intuitive, others find it rather unhandy. R code written by AI models typically utilizes packages from the tidyverse.
+-   [purrr](https://purrr.tidyverse.org/): "Enhance R’s functional
+    programming toolkit"
 
+Note: The philosophy (and syntax) of
+[tidyverse](https://www.tidyverse.org/) differs completely from base-R
+and is somewhat similar to Python's `pandas`. Some argue tidyverse code
+is more readable and intuitive, others find it rather unhandy. R code
+written by AI models typically utilizes packages from the tidyverse.
 
 ## Pipes
-An important component of working with data and `dplyr` is the pipe operator `%>%. The goal of this operator (also found in many other languages) is to make function composition more readable in code.
+
+An important component of working with data and `dplyr` is the pipe
+operator \`%\>%. The goal of this operator (also found in many other
+languages) is to make function composition more readable in code.
 
 Example:
+
 ```{r example: pipe-operator, eval = FALSE}
 library(dplyr)
 
@@ -435,7 +828,9 @@ a %>% g() %>% f()
 ```
 
 ## Pipes
+
 You can use **dplyr** with `%>%` to select variables, or subset rows:
+
 ```{r pipe-example, eval = FALSE}
 # Select Student ID, Name and Exam_Score
 data_grades %>% dplyr::select(ID, Name, Exam_Score)
@@ -457,13 +852,17 @@ data_grades <- data_grades %>% mutate(Exam_Score_10 = Exam_Score/10)
 
 Some key functions of `dplyr` are:
 
-- [`mutate()`](https://dplyr.tidyverse.org/reference/mutate.html): Add new variables to a dataset
+-   [`mutate()`](https://dplyr.tidyverse.org/reference/mutate.html): Add
+    new variables to a dataset
 
-- [`select()`](https://dplyr.tidyverse.org/reference/select.html): Select variables (columns)
+-   [`select()`](https://dplyr.tidyverse.org/reference/select.html):
+    Select variables (columns)
 
-- [`filter()`](https://dplyr.tidyverse.org/reference/filter.html): Select observations (rows)
+-   [`filter()`](https://dplyr.tidyverse.org/reference/filter.html):
+    Select observations (rows)
 
-You can revisit some of the earlier exercises and now try to execute them using `dplyr`!
+You can revisit some of the earlier exercises and now try to execute
+them using `dplyr`!
 
 # Concluding Remarks {#conclude}
 
@@ -471,13 +870,16 @@ You can revisit some of the earlier exercises and now try to execute them using 
 
 Additional resources:
 
--   Wickham, H.,  Çetinkaya-Rundel, M. and  Grolemund, G. (2023), [R for Data Science (2e)](https://r4ds.hadley.nz/)
+-   Wickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023), [R for
+    Data Science (2e)](https://r4ds.hadley.nz/)
 
-- Heiss, F. (2020) [Using R for Introductory Econometrics (2e)](https://www.urfie.net/)
+-   Heiss, F. (2020) [Using R for Introductory Econometrics
+    (2e)](https://www.urfie.net/)
 
--  Hanck, C.,  Arnold, M.,   Gerber, A., and  Schmelzer, M. (2024) [Introduction to Econometrics with R](https://www.econometrics-with-r.org/)
+-   Hanck, C., Arnold, M., Gerber, A., and Schmelzer, M. (2024)
+    [Introduction to Econometrics with
+    R](https://www.econometrics-with-r.org/)
 
 Many more resources are available online.
 
 <!-- Finally, thank you for attending the R training! We are happy to receive your feedback on this training through the following [survey](https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_bf1HzbJMvvBzPaS). -->
-
