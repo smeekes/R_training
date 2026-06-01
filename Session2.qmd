@@ -222,15 +222,12 @@ mix + 1
 - Many variables are qualitative rather than quantitative.
 - While they are often coded using numbers, they don't have a numerical meaning.
 - Examples: gender, nationality...
-- Can also be ordinal, i.e., the outcomes can be ranked (e.g., "bad", "meh", "great").
+
 
 ```{r, eval=TRUE}
 x <- c(1, 3, 3, 2, 1, 3)
 xf <- factor(x, labels = c("bad", "ok", "good"))# no ranking
 xf
-# now with ranking
-xf.ordered <- factor(x, labels = c("bad", "ok", "good"), ordered = TRUE)
-xf.ordered
 ```
 
 
