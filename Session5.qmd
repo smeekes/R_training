@@ -79,179 +79,19 @@ editor:
 
 <!-- :::: -->
 
-# Basics of Data Manipulation {#dataman1}
-
-## Data Manipulation
-
-In the last session, we learned how to load data of various sources into
-R.
-
-Today's first part will be about how to manipulate data in R.
-Importantly, we will learn how to
-
--   select certain variables from a data
--   subset a data set
--   recode and rename certain variables
-
-We will work with fictive data set of student grades. Let us start by
-loading the data:
-
-```{r list1, eval = TRUE}
-data_grades <- read.table("data/grades.csv", 
-                       header = TRUE, sep = ",", stringsAsFactors = FALSE)
-```
-
-## Selecting Variables
-
-We begin with selecting interesting variables from a data set. For our
-grades data set, we want to preserve information about `ID`, `Name`, and
-`Exam_Score`, and drop all other information.
-
-Variables can be selected by name, after which we inspect the first and
-last three rows in the data set:
-
-```{r list2, eval = TRUE}
-data <- data_grades[, c("ID", "Name", "Exam_Score")] 
-head(data, 3)
-tail(data, 3)
-```
-
-## Selecting Variables
-
-Or by variable indexes
-
-```{r list3, eval = TRUE}
-data1 <- data_grades[, c(1, 2, 7)] 
-```
-
-though this is not that convenient unless you know the column numbers of
-the variables you want to select.
-
-A more convenient alternative is to use the following function:
-
-```{r list4, eval = TRUE}
-data2 <- subset(data_grades, select = c(ID, Name, Exam_Score))
-```
-
-The objects data, data1 and data2 are all identical so you can use your
-preferred way of working!
-
-## Subsetting Rows
-
-Next, we want to subset the data set, i.e. preserve interesting rows
-while removing the others.
-
-For the grades data set, we might be interested in information about
-students in tutorial group 1:
-
-```{r list5, eval = TRUE}
-# select tutorial 1 students only
-data_tutorial1 <- data_grades[data_grades$Tutorial == 1, ]
-```
-
-or alternatively:
-
-```{r list6, eval = TRUE}
-data_tutorial1 <- subset(data_grades, Tutorial == 1)
-```
-
-Subsetting also works using characters. For instance, to retrieve only
-information for females:
-
-```{r list7, eval = TRUE}
-# select female students only
-data_females <- data_grades[data_grades$Gender == 'Female', ]
-```
-
-Inspect your new data sets!
-
-## Exercise 5.1
-
-Use the grades data set.
-
-1.  Generate a data set that contains information about the student ID,
-    student name, their tutorial group, participation grade and their
-    exam score.
-
-2.  Further reduce the data set obtained under 1 to only display
-    information of students in tutorial group 4.
-
-3.  Further reduce the data set obtained under 2 to only display
-    information of students with an exam score of more than 80. How many
-    such students are there?
-
-## Transforming Variables
-
-Let us continue with further data manipulations. The variable `Tutorial`
-is currently an integer:
-
-```{r list8, eval = TRUE}
-class(data_grades$Tutorial)
-```
-
-but it should be a factor (a categorical variable). This can be easily
-changed in R:
-
-```{r list9, eval = TRUE}
-data_grades$Tutorial <- as.factor(data_grades$Tutorial)
-```
-
-after which you can inspect its new class:
-
-```{r list10, eval = TRUE}
-class(data_grades$Tutorial)
-```
-
-## Transforming Variables
-
-When inspecting the variable itself, R now mentions the different levels
-of the factors:
-
-```{r list11, eval = TRUE}
-data_grades$Tutorial
-```
-
-which you can also directly retreive via:
-
-```{r list12, eval = TRUE}
-levels(data_grades$Tutorial)
-```
-
-## Adding Variables
-
-Sometimes we want to add a variable to an existing data set.
-
-For instance, we want to add the exam score on 10 instead of 100. To add
-a new variable, use the `$` operator and specify a new variable name:
-
-```{r list13, eval = TRUE}
-data_grades$Exam_Score_10 <- data_grades$Exam_Score/10 
-
-head(data_grades[, c("Exam_Score", "Exam_Score_10")], 3)
-```
-
-## Exercise 5.2
-
-1.  What is the class of the variable Tutor? Transform it into a factor.
-    How many tutors are there?
-
-2.  Add a new variable to compute the final score of each student, which
-    is the weighted average of their participation grade (20%) and their
-    exam score (80%)
-
-3.  Retrieve the final score of the students in tutorial group 2. Obtain
-    summary statistics of their final scores.
-
-4.  What is the lowest and the highest final score in tutorial group 2?
-    Retrieve this information from the summary statistics as well as by
-    using a dedicated function.
 
 # Regression Analysis {#reg1}
 
 ## General Information
 
-In what follows, we consider the **linear regression model**
+We will work with fictive data set of student grades. Let us start by
+loading the data:
 
+```{r list1, eval = TRUE}
+data_grades <- read.table("data/grades.csv",
+                       header = TRUE, sep = ",", stringsAsFactors = FALSE)
+```
+In what follows, we consider the **linear regression model**
 $$y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_p x_{p,i} + u_i,\ i=1,\dots,n.$$
 
 We will first estimate the following simple regression for the grades
