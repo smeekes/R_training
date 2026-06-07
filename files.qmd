@@ -47,7 +47,7 @@ No datasets used
 Here we post solutions to the exercises in the sessions. The files are eventually kept very basic, only having the necessary code. The files, therefore, have very little meaning on their own, but might be useful to consult during the sessions.
 
 #### Session 1
-- [Solutions Session 2](solutions/S1.R)
+- [Solutions Session 1](solutions/S1.R)
 
 #### Session 2
 - [Solutions Session 2](solutions/S2.R)
