@@ -944,9 +944,13 @@ margin-right: 0; }
 <strong>R</strong> package <code>rio</code> is very convenient for data import and export. It figures out the type of data format from the file name extension, e.g. <em>.csv for CSV, </em>.dta for Stata, or *.sav for SPSS data sets</li>
 <li>It calls an appropriate package to do the actual importing or exporting.</li>
 </ul></section><section id="exercise-1.7" class="slide level2"><h2>Exercise 1.7</h2>
-<p>Download the file climate_wide.dta from the training website. Save it in your data folder. Install the <strong>R</strong> package rio. Use the import function from the package rio to import the climate_wide.dta file. Inspect the data.</p>
-<p>Download the file climate.csv from the training website. Save it in your data folder. Use the import function from the package <code>rio</code> to import the climate.csv file. Inspect the data.</p>
-</section><section id="loading-data-from-apis" class="slide level2"><h2>Loading data from APIs</h2>
+<ul>
+<li>Download the file climate.csv from the training website.</li>
+<li>Save it in your data folder.</li>
+<li>Install the <strong>R</strong> package <code>rio</code>.</li>
+<li>Use the import function from the package <code>rio</code> to import the climate.csv file.</li>
+<li>Inspect the data.</li>
+</ul></section><section id="loading-data-from-apis" class="slide level2"><h2>Loading data from APIs</h2>
 <ul>
 <li>It is possible to automatically load data from a web source using APIs.</li>
 <li>An API (Application Programming Interface) acts as a bridge between your <strong>R</strong> code and an external data source: a website, database, or an online platform with permissions.</li>
@@ -2126,6 +2130,41 @@ window.QuartoSupport = function () {
           RevealZoom
         ]
       });
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+    
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+    
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+    
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+    
+      })();
     </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
