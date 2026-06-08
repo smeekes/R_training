@@ -539,9 +539,12 @@ climate <- read_excel("data/climate_wide.xlsx")
   
 ## Exercise 1.7
 
-Download the file climate_wide.dta from the training website. Save it in your data folder. Install the **R** package rio. Use the import function from the package rio to import the climate_wide.dta file. Inspect the data.
+- Download the file climate.csv from the training website. 
+- Save it in your data folder. 
+- Install the **R** package `rio`. 
+- Use the import function from the package `rio` to import the climate.csv file. 
+- Inspect the data.
 
-Download the file climate.csv from the training website. Save it in your data folder. Use the import function from the package `rio` to import the climate.csv file. Inspect the data.
 
 ## Loading data from APIs
  - It is possible to automatically load data from a web source using APIs.
