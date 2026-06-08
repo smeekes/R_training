@@ -2,10 +2,11 @@
 
 # Exercise 1.7
 library(rio)
-import("data/climate.csv")
+my_data <- import("data/climate.csv")
+View(my_data)
 
 # Exercise 1.8
-save.image() # this saves your current workspace
+save.image() # this saves your current workspace in your working directory
 
 library(quantmod)
 # Get Apple Inc. (AAPL) stock data from Yahoo Finance
