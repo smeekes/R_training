@@ -23,7 +23,6 @@ The R code provided in the sessions assumes that datasets are stored in a folder
 #### Session 1
 - [climate_long.Rdata](data/climate_long.Rdata)
 - [climate_wide.xlsx](data/climate_wide.xlsx)
-- [climate_wide.dta](data/climate_wide.dta)
 - [climate.csv](data/climate.csv)
 
 #### Session 2
