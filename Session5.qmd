@@ -22,12 +22,11 @@ editor:
 
 # Session Overview
 
-1.  [Basics of Data Manipulation](#dataman1)
-2.  [Regression Analysis](#reg1)
-3.  [Bonus: Creating your own functions](#ownfunc)
-4.  [Bonus: Flow Control](#flowcontrol)
-5.  [Bonus: Tidyverse](#dataman2)
-6.  [Concluding Remarks](#conclude)
+1.  [Regression Analysis](#reg1)
+2.  [Bonus: Creating your own functions](#ownfunc)
+3.  [Bonus: Flow Control](#flowcontrol)
+4.  [Bonus: Tidyverse](#dataman2)
+5.  [Concluding Remarks](#conclude)
 
 <!-- ## Today  -->
 
@@ -88,6 +87,8 @@ We will work with fictive data set of student grades. Let us start by
 loading the data:
 
 ```{r list1, eval = TRUE}
+library(this.path)
+setwd(here())
 data_grades <- read.table("data/grades.csv",
                        header = TRUE, sep = ",", stringsAsFactors = FALSE)
 ```
@@ -97,8 +98,7 @@ $$y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_p x_{p,i} + 
 We will first estimate the following simple regression for the grades
 data set: $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u,$$
 
-assuming the `Final_Score` variable was added to the grades data set in
-Exercise 5.2:
+assuming the `Final_Score` variable was added to the grades data set:
 
 ```{r list14, eval = TRUE}
 data_grades$Final_Score <- 0.2*data_grades$Participation_Grade + 0.08*data_grades$Exam_Score
@@ -293,7 +293,7 @@ xtable(reg_6)
 ```
 
 
-## Exercise 5.3
+## Exercise 5.1
 
 1.  Estimate the following simple regression model in R:
     $$Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u$$ Save
@@ -376,7 +376,7 @@ sum_reg_2$r.squared         ## R^2 of regression
 sum_reg_2$adj.r.squared     ## adjusted R^2 of regression
 ```
 
-## Exercise 5.4
+## Exercise 5.2
 
 Estimate the regression model
 $$Exam\_Score = \beta_0 + \beta_1 Participation\_Grade + \beta_2 Male + \beta_3 Male \cdot Participation\_Grade    + u$$
@@ -426,7 +426,7 @@ $$Exam\_Score = \beta_0 + \beta_1 Participation\_Grade + \beta_2 Male + \beta_3 
 
 - Note: make sure to first execute the lines containing your function before you use it (and execute again after an update to the code).
 
-## Exercise 5.5: Create your own function
+## Exercise 5.3: Create your own function
 
 1. Load the `courses` data frame, which contains information about several courses at a school of business and economics. If the file is located in a folder called "data" within your working directory, you can load it as
 ```{r echo=TRUE}
@@ -439,7 +439,7 @@ load("data/courses.RData")
 c(TRUE + FALSE, TRUE + TRUE, TRUE * FALSE)
 ```
 
-## Exercise 5.5: Create your own function
+## Exercise 5.4: Create your own function
 
 3. We now want to extend the function to give a second output. This output should contain a data frame with two columns: the first is the course code, the second is the number of tutorials for each course.
   + The number of tutorials should be calculated as the number of students divided by the number of students per tutorial group, and then rounded up.
@@ -532,7 +532,7 @@ x <- c(-3, 5, -8, 2)
 ifelse( x < 0, -x, x)
 ```
 
-## Exercise 5.6: Conditional Execution
+## Exercise 5.4: Conditional Execution
 
 - Write a function `if_test` that takes two objects, `x` and `y`, and checks whether `x` is numeric and `y` is of type character.
 
@@ -593,7 +593,7 @@ for (i in 1:n_col) {        # loop over all columns
 }
 ```
 
-## Exercise 5.7: Impute Missing Values
+## Exercise 5.5: Impute Missing Values
 
 - Write a function that checks for every element of a vector whether it is a missing value.  If a missing value is found, it is to be imputed as the average of the value before it and the value after it.
 
