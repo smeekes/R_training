@@ -20,7 +20,6 @@ diagram:
 ## Session Overview
 
 1. [Data manipulation](#data)
-2. [Inputs and Outputs](#io)
 2.	[Graphics](#graphics)
 3.  [Graphics: Advanced Graphics with ggplot](#ggplot)
 
@@ -62,66 +61,6 @@ diagram:
 
 <!-- :::: -->
 
-## Inputs and outputs of your R session
-  - Common inputs / outputs of an R session are datasets or R scripts.
-  - For this meeting we focus on datasets as inputs to the R session, loading data and saving data.
-  - The file format (csv, RData, xls, stata ...) and directory of the files are important keep in mind.
-  - We will go over a few options, potential issues, and how to avoid the need to type in a long directory name when managing the input and output of the R session.
-  
-## Working directories and R projects
-  - Whenever we provide R with a file name, it can include the full path on the computer.
-  - An alternative is to work on a specified directory.
-  - Another alternative is to work within a 'project' that all paths are visible to the project scripts.
-  - If we do not provide any path, R will use the current “working directory” for reading or writing files. It can be obtained by the command 
-
-```{r, eval=FALSE}
-  getwd()
-```
-
-## Using the correct directory to get input / output of the R session
-- Navigating through the menus in RStudio is easy, (click and go) but requires using the menu every time the user runs the code.
-- Go to *Session* -> *Set Working Directory*. Two convenient options are:  
-
-  +  *Choose Directory...*: Choose the directory yourself
-
-  + *To Source File Location*: Set the working directory to the directory where your **R** Script (the source file) is saved
-
-![](figures/R-script-5.png)
-  <!-- - In top panel in R layout, `Session -> Set working directory /  choose directory' to navigate to the correct directory. -->
-
-  <!-- ![](figures/dir1.png)   -->
-
-## Using the correct directory to get input / output of the R session
-  - An alternative is to use function setwd() at the beginning of your script. This line then has to be changed when the code runs in another machine.
-```{r, eval=FALSE}
- setwd("~/R_training")
-```
-
-## Using the correct directory to get input / output of the R session
-
-- Recall: To set the working directory to the folder where your current R script is located, you can simply use:
-```{r, eval=FALSE}
-library(this.path)
-setwd(here())
-```
-
-- Recall: We could also explicitly make the function call from the library:
-```{r, eval=FALSE}
-setwd(this.path::here())
-```
-
-## Types of input or data that can be loaded in R
-R interacts with files in several ways.
-
-  - You can load, save, import, or export a data file. 
-  - You can save a generated figure as a graphics file or store regression tables as text, spreadsheet, or LATEX tables.
-  - You can load, save the full workspace (environment) you are working with to follow up another time.
-  
-  Datasets can come in different formats.
-  
-  - RData files: Files that can directly 
-  - Other file formats (SPSS csv, xls, ...) are also possible to load in R. This often requires the use of packages
-
 # Basics of Data Manipulation {#dataman1}
 
 ## Data Manipulation
@@ -136,10 +75,11 @@ Importantly, we will learn how to
 -   subset a data set
 -   recode and rename certain variables
 
-We will work with fictive data set of student grades. Let us start by
-loading the data:
+We will work with fictive data set of student grades. We start by downloading the grades.csv file from the training website, setting our working directory and loading the data:
 
 ```{r list1, eval = TRUE}
+library(this.path)
+setwd(here())
 data_grades <- read.table("data/grades.csv",
                        header = TRUE, sep = ",", stringsAsFactors = FALSE)
 ```
@@ -208,7 +148,7 @@ data_females <- data_grades[data_grades$Gender == 'Female', ]
 
 Inspect your new data sets!
 
-## Exercise 5.1
+## Exercise 4.1
 
 Use the grades data set.
 
@@ -273,7 +213,7 @@ data_grades$Exam_Score_10 <- data_grades$Exam_Score/10
 head(data_grades[, c("Exam_Score", "Exam_Score_10")], 3)
 ```
 
-## Exercise 5.2
+## Exercise 4.2
 
 1.  What is the class of the variable Tutor? Transform it into a factor.
     How many tutors are there?
@@ -290,135 +230,6 @@ head(data_grades[, c("Exam_Score", "Exam_Score_10")], 3)
     using a dedicated function.
 
 
-## Loading RData files
-  - RData files are specific to R file formats. 
-  - They can store a single object or several objects. 
-  - These files are the easiest to manage as input or output in R, since they don't require library calls.
-
-## Load climate data from RData format:
-  - load function is used to load data in RData format.
-  - load function loads all objects in the input RData file.
-
-## Example data: average temperatures for Maastricht and Eindhoven during 2024, every 2nd day of the month
-
-```{r}
-load("data/climate_long.Rdata")
-print(long_data)
-```
-## Notice the data are loaded as a dataframe:
-```{r}
-is.data.frame(long_data)
-typeof(long_data)
-```
-
-## There is a distinction between a long and wide dataframe:
-```{r}
-load("data/climate_wide.Rdata")
-print(wide_data)
-```
-
-## Loading other formats of data in R
-Option 1: Using menus within RStudio is the easiest (click and go) but requires using the menu every time the user runs the code.
-  
-![](figures/load1.png)  
-  
-## Loading other formats of data in R
-Option 1: Using menus within RStudio (cont'd)
-  
-![](figures/load2.png)  
-  
-## Loading other formats of data in R
-Option 1: Using menus within RStudio (cont'd)
-  
-![](figures/load3.png)  
-
-## Loading other formats of data in R
-Option 1: Using menus within RStudio (cont'd)
-![](figures/load4.png)  
-
-## Loading other formats of data in R
-
-Advice for option 1: 
-
-  - Copy the command that appears after loading the data from the menus. 
-
-![](figures/load5.png)  
-
-## Loading other formats of data in R
-
-Advice for option 1 (cont'd): 
-
-  - Paste the command on top of your script.
-  - This way, next time you do not need the menu navigation.
-
-```{r}
-library(readxl)
-climate <- read_excel("data/climate_wide.xlsx")
-```
-  - You can view the data by clicking on it in the `Environment' at the top-right of the workspace. 
-
-## General way of importing and exporting of other data formats
-
-  - Using the correct libraries for different data formats can be tedious.
-  - R package rio is very convenient for data import and export. It figures out the type of data format from the file name extension, e.g. *.csv for CSV, *.dta for Stata, or *.sav for SPSS data sets
-  - For a complete list of supported formats, see help(rio). 
-  - It calls an appropriate package to do the actual importing or exporting. 
-  
-## Loading SPSS and other file types
-```{r eval=FALSE}
-library('rio')
-import("data/climate_wide.dta")
-```
-
-## Loading csv files
-```{r eval=FALSE}
-import("data/climate.csv")
-```
-
-## Loading data from APIs
- - It is possible to automatically load data from a web source using APIs.
- - An API (Application Programming Interface) acts as a bridge between your R code and an external data source: a website, database, or an online platform with permissions.
- - Advantages: Automation, efficiency and real-time access.
- - Disadvantages: No offline access to data (can be important for replication), dependency on external services (API can go down).
- - Suggestion: Save the downloaded data in RData format to mitigate disadvantages.
-
-## Example: AAPL daily prices from Yahoo Finance
-- As an example we will download AAPL daily prices from Yahoo Finance.
-- Convert loaded data to a vector.
-- Save the data as an RData file for future offline access.
-```{r, eval=FALSE}
-library(quantmod)
-# Get Apple Inc. (AAPL) stock data from Yahoo Finance
-getSymbols("AAPL", src = "yahoo", from = "2024-01-01", to = "2025-06-13")
-# Save data as RData file
-save.image("data/AAPL.RData")
-```
-## Example: AAPL daily prices from Yahoo Finance (cont'd)
-- View and plot data.
-```{r, echo=FALSE}
-library(quantmod)
-load("data/AAPL.RData")
-```
-
-```{r}
-# View the first few rows
-head(AAPL)
-```
-
-## Outputs
-
-- Outputs work very similarly to the inputs above.
-- The most relevant outputs formats are the R output formats.
-- `save()` saves objects as an `.RData` file.
-- `save.image()` saves a selection of objects as an `.RData` file.
-
-## Exercise 4.1: Saving data
-
-- Save your current workspace using function `save.image()`.
-- Save only one variable in the workspace using function `save()`.
-- Make a list of two variables from `long_data`, and save this list using function `save`.
-<!-- see solution file -->
-
 ## R Base Graphics
 
 -   We will cover R base graphics.
@@ -432,6 +243,7 @@ To create plots with R's standard `graphics` package, there are *high-level* and
 ## Simple plots
 
 ```{r}
+load('data/climate_long.Rdata')
 plot(long_data$TEMP)     ## Plotting a single variable
 ```
 ## Simple plots
@@ -457,7 +269,15 @@ It will perform different operations depending on the class of the passed object
 ols_result <- lm(TEMP~MONTH, data = long_data)
 plot(ols_result)
 ```
-## Exercise 4.2: Load data from Yahoo Finance, and see how plot function behaves.
+
+## Exercise 4.3: Load data from Yahoo Finance, and see how plot function behaves.
+- Retrieve the AAPL series from Yahoo Finance from January first 2024 until today (see Session 1). You can use 
+
+```{r, eval=FALSE}
+library(quantmod)
+getSymbols("AAPL", src = "yahoo", from = "2024-01-01", to = Sys.Date())
+```
+
 - Plot the whole dataset
 - Plot a selected column, for example closing prices `AAPL$AAPL.Close`
 - Comment on the x axis of the data and how it is different from the plots we considered earlier.
@@ -509,7 +329,7 @@ lines(wide_data$EINDHOVEN) # temperatures in Eindhoven in lines
  - `text`: Add text at $(x,y)$ coordinates
  - `mtext`: Add text with positional specification like `side=1,...,4`
 
-## Exercise 4.3: Plot temperatures for Maastricht
+## Exercise 4.4: Plot temperatures for Maastricht
 
 We want to visualize the daily temperatures in the climate data specifically for Maastricht. First, make a basic plot of temperatures in Maastricht then customise the plot in the following ways:
 
@@ -565,18 +385,20 @@ for (i in 4:nrow(wide_data)) {
      xlab = "Time", ylab = "Value", main = "Adding Data Over Time", type = 'l')
 }
 ```
-Exercise 4.4 Make a continuous plot of temperatures
+
+## Exercise 4.5 Make a continuous plot of temperatures
 - Use the last loop example to plot temperatures gradually.
 - Start with an initial number of 3 observations, as in the example.
 - Make sure that the range of the x and y axes match with the whole dataset in the first plot.
 - Within the for loop, add lines to the first plot, instead of plotting the data again.
 - Pause the program within the for loop to simulate "gradual" effect.
-- You can use ChatGBT or help functions for `?ylim`, `?Sys.sleep`
+- You can use ChatGPT or help functions for `?ylim`, `?Sys.sleep`
 
 <!-- See solution file -->
 
-# Advanced Graphics using ggplot
+# Advanced Graphics with ggplot
 
+## Advanced graphics in R
 - R has several advanced graphics packages such as `ggplot2` (see [book](https://ggplot2-book.org/) by Hadley Wickham), `plotly`, `Rgnuplot`,...
 - We will focus on ggplot2 as this is widely used.
 - The ggplot2 package in R enables to build complex plots from data in a structured and layered manner.
@@ -620,6 +442,7 @@ Exercise 4.4 Make a continuous plot of temperatures
 ?ggplot # a bit complicated help file
 help(package = "ggplot2") # a nicer list of all layer functions, see 'geom_line'
 ```
+
 ## Example: Histogram of temperatures in Maastricht
 - Notice the syntax difference in parentheses and use of `+` for layers
 - Notice the data `wide_data` is a data frame with an index
@@ -630,8 +453,9 @@ wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = MAASTRICHT)) +
   geom_histogram(bandwidth = 200)
 ```
+
 ## Example: Plot of temperatures in Maastricht
-- We will make a similar plot to exercise 4.3: a plot of temperatures in Maastricht
+- We will make a similar plot to exercise 4.4: a plot of temperatures in Maastricht
 - Aesthetics are defined with line width, color.
 - Geometrics is defined by the function `geom_line` (line plot)
 ```{r}
@@ -640,6 +464,7 @@ wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
   geom_line(color = "blue", linewidth = 1) # adds lines #
 ```
+
 ## Example: Possible confusion with aesthetics
 - A point that is easy to make a mistake: mapping variables in aesthetics.
 - See `color` is defined in `aes` below compared to the earlier slide.
@@ -652,6 +477,7 @@ wide_data$index <- 1:nrow(wide_data) # create data frame
 ggplot(wide_data, aes(x = index, y = MAASTRICHT, color = "blue")) +
   geom_line(linewidth = 1) # adds lines #
 ```
+
 ## Example: Adding additional geometrics and aesthetics
 - Adding layers, such as a new set of points is simple:
 ```{r}
@@ -661,6 +487,7 @@ ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
   geom_line(color = "blue", size = 1, linewidth = 2) +
   geom_line(aes(x = index, y = EINDHOVEN), linewidth = 0.3) # Adds Eindhoven data to the last plot
 ```
+
 ## Example: Adding more layers
 - Adding more layers for labels and legends
 ```{r}
@@ -676,6 +503,7 @@ ggplot(wide_data, aes(x = index, y = MAASTRICHT)) +
   scale_color_manual(values = c("blue", "red")) +  # Custom colors
   theme_minimal()  # Minimal theme for a clean look
 ```
+
 ## Example ggplot: Color points for Maastricht and Eindhoven temperatures
 - For this example, we will use the long dataframe since we will plot values for both cities.
 - This is a more complex graph where aesthetics defined in geometrics create point colors according to a variable in the data frame.
@@ -686,17 +514,19 @@ long_data$index <- 1:nrow(long_data) # create data frame
 ggplot(data = long_data) +
   geom_point(aes(x = index, y = TEMP, color = NAME))
 ```
-## Further references for ggplot2
-[R for data science](https://nt246.github.io/NTRES-6100-data-science/lesson6-ggplot-part1.html#Preparing_to_create_our_first_ggplot2_graph)
 
-[Collaborative and Reproducible Data Science in R](https://nt246.github.io/NTRES-6100-data-science/lesson6-ggplot-part1.html#Preparing_to_create_our_first_ggplot2_graph)
+## Further references for ggplot2
+- [R for data science](https://nt246.github.io/NTRES-6100-data-science/lesson6-ggplot-part1.html#Preparing_to_create_our_first_ggplot2_graph)
+
+- [Collaborative and Reproducible Data Science in R](https://nt246.github.io/NTRES-6100-data-science/lesson6-ggplot-part1.html#Preparing_to_create_our_first_ggplot2_graph)
+
 
 ## Exercise 4.5: Use ggplot2 for more flexible and advanced plots
 
-- Make the same plot as in Exercise 4.3 using package `ggplot2'
+- Make the same plot as in Exercise 4.4 using package `ggplot2'
 - We suggest to use the wide data
 - Use help functions for `geom_point`, `geom_hline`, `labs`.
-- You can give it a try to use ChatGBT, but the outcome is difficult to understand if you don't have familiarity with ggplot to begin with.
+- You can give it a try to use ChatGPT, but the outcome is difficult to understand if you don't have familiarity with ggplot to begin with.
 
 <!-- see solution file -->
 
