@@ -724,4 +724,6 @@ Additional resources:
 
 Many more resources are available online.
 
-<!-- Finally, thank you for attending the R training! We are happy to receive your feedback on this training through the following [survey](https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_bf1HzbJMvvBzPaS). -->
+## Feedback
+
+Finally, thank you for attending the R training! We are happy to receive your feedback on this training through the following [survey](https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_3vMSSSD1ouZvwTY)
