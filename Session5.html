@@ -628,7 +628,6 @@ margin-right: 0; }
 
 </section><section id="session-overview" class="title-slide slide level1 center"><h1>Session Overview</h1>
 <ol type="1">
-<li><a href="#/dataman1">Basics of Data Manipulation</a></li>
 <li><a href="#/reg1">Regression Analysis</a></li>
 <li><a href="#/ownfunc">Bonus: Creating your own functions</a></li>
 <li><a href="#/flowcontrol">Bonus: Flow Control</a></li>
@@ -640,12 +639,14 @@ margin-right: 0; }
 </section><section id="general-information" class="slide level2"><h2>General Information</h2>
 <p>We will work with fictive data set of student grades. Let us start by loading the data:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_grades</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span><span class="st">&quot;data/grades.csv&quot;</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ArcadeAntics/this.path">this.path</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/this.path/man/here.html">here</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">data_grades</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span><span class="st">&quot;data/grades.csv&quot;</span>,</span>
 <span>                       header <span class="op">=</span> <span class="cn">TRUE</span>, sep <span class="op">=</span> <span class="st">&quot;,&quot;</span>, stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In what follows, we consider the <strong>linear regression model</strong> <span class="math display">\[y_i = \beta_0 + \beta_1 x_{1,i} + \beta_2 x_{2,i} + \dots + \beta_p x_{p,i} + u_i,\ i=1,\dots,n.\]</span></p>
 <p>We will first estimate the following simple regression for the grades data set: <span class="math display">\[Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u,\]</span></p>
-<p>assuming the <code>Final_Score</code> variable was added to the grades data set in Exercise 5.2:</p>
+<p>assuming the <code>Final_Score</code> variable was added to the grades data set:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_grades</span><span class="op">$</span><span class="va">Final_Score</span> <span class="op">&lt;-</span> <span class="fl">0.2</span><span class="op">*</span><span class="va">data_grades</span><span class="op">$</span><span class="va">Participation_Grade</span> <span class="op">+</span> <span class="fl">0.08</span><span class="op">*</span><span class="va">data_grades</span><span class="op">$</span><span class="va">Exam_Score</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -838,11 +839,11 @@ Participation_Grade 0.794617 1.329465</code></pre>
 Handy packages are <code>stargazer</code> and <code>xtable</code></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">stargazer</span><span class="op">)</span></span>
-<span><span class="fu">stargazer</span><span class="op">(</span><span class="va">reg_6</span>, type <span class="op">=</span> <span class="st">&quot;latex&quot;</span>, title <span class="op">=</span> <span class="st">&quot;Regression results&quot;</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/stargazer/man/stargazer.html">stargazer</a></span><span class="op">(</span><span class="va">reg_6</span>, type <span class="op">=</span> <span class="st">&quot;latex&quot;</span>, title <span class="op">=</span> <span class="st">&quot;Regression results&quot;</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% Date and time: Fri, Jun 05, 2026 - 02:31:21 PM
+% Date and time: Sat, Jun 13, 2026 - 08:46:38
 \begin{table}[!htbp] \centering 
   \caption{Regression results} 
   \label{} 
@@ -885,8 +886,8 @@ Handy packages are <code>stargazer</code> and <code>xtable</code></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://xtable.r-forge.r-project.org/">xtable</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/xtable/man/xtable.html">xtable</a></span><span class="op">(</span><span class="va">reg_6</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>% latex table generated in R 4.6.0 by xtable 1.8-8 package
-% Fri Jun  5 14:31:21 2026
+<pre><code>% latex table generated in R 4.5.2 by xtable 1.8-8 package
+% Sat Jun 13 08:46:38 2026
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -902,7 +903,7 @@ Handy packages are <code>stargazer</code> and <code>xtable</code></p>
 \end{table}</code></pre>
 </div>
 </div>
-</section><section id="exercise-5.3" class="slide level2"><h2>Exercise 5.3</h2>
+</section><section id="exercise-5.1" class="slide level2"><h2>Exercise 5.1</h2>
 <ol type="1">
 <li><p>Estimate the following simple regression model in R: <span class="math display">\[Final\_Score = \beta_0 + \beta_1 Participation\_Grade + u\]</span> Save your regression model in the object <code>my_reg1</code>, and inspect the summary output.</p></li>
 <li><p>Make a scatterplot of <code>Final_Score</code> (y-axis) against <code>Participation_Grade</code> (x-axis). Verify that adding the line of code <code>abline(my_reg1)</code> after you created your scatter plot, adds the regression line to your scatterplot!</p></li>
@@ -970,7 +971,7 @@ GPA                  0.4015845  0.1055576  3.804411 4.891059e-04</code></pre>
 <pre><code>[1] 0.8107167</code></pre>
 </div>
 </div>
-</section><section id="exercise-5.4" class="slide level2"><h2>Exercise 5.4</h2>
+</section><section id="exercise-5.2" class="slide level2"><h2>Exercise 5.2</h2>
 <p>Estimate the regression model <span class="math display">\[Exam\_Score = \beta_0 + \beta_1 Participation\_Grade + \beta_2 Male + \beta_3 Male \cdot Participation\_Grade    + u\]</span></p>
 <ol type="1">
 <li><p>Is the dummy <code>Male</code> significant?</p></li>
@@ -994,7 +995,7 @@ GPA                  0.4015845  0.1055576  3.804411 4.891059e-04</code></pre>
 </li>
 <li><p>Creating functions is a basic skill well worth investing in.</p></li>
 <li><p>Note: make sure to first execute the lines containing your function before you use it (and execute again after an update to the code).</p></li>
-</ul></section><section id="exercise-5.5-create-your-own-function" class="slide level2"><h2>Exercise 5.5: Create your own function</h2>
+</ul></section><section id="exercise-5.3-create-your-own-function" class="slide level2"><h2>Exercise 5.3: Create your own function</h2>
 <ol type="1">
 <li>Load the <code>courses</code> data frame, which contains information about several courses at a school of business and economics. If the file is located in a folder called “data” within your working directory, you can load it as</li>
 </ol>
@@ -1013,7 +1014,7 @@ GPA                  0.4015845  0.1055576  3.804411 4.891059e-04</code></pre>
 <pre><code>[1] 1 2 0</code></pre>
 </div>
 </div>
-</section><section id="exercise-5.5-create-your-own-function-1" class="slide level2"><h2>Exercise 5.5: Create your own function</h2>
+</section><section id="exercise-5.4-create-your-own-function" class="slide level2"><h2>Exercise 5.4: Create your own function</h2>
 <ol start="3" type="1">
 <li>We now want to extend the function to give a second output. This output should contain a data frame with two columns: the first is the course code, the second is the number of tutorials for each course.</li>
 </ol>
@@ -1119,7 +1120,7 @@ GPA                  0.4015845  0.1055576  3.804411 4.891059e-04</code></pre>
 <pre><code>[1] 3 5 8 2</code></pre>
 </div>
 </div>
-</section><section id="exercise-5.6-conditional-execution" class="slide level2"><h2>Exercise 5.6: Conditional Execution</h2>
+</section><section id="exercise-5.4-conditional-execution" class="slide level2"><h2>Exercise 5.4: Conditional Execution</h2>
 <ul>
 <li><p>Write a function <code>if_test</code> that takes two objects, <code>x</code> and <code>y</code>, and checks whether <code>x</code> is numeric and <code>y</code> is of type character.</p></li>
 <li><p>If both conditions are met, the function should print “Super”; otherwise, it should indicate which of the two objects <code>x</code> or <code>y</code> does not meet the required condition.</p></li>
@@ -1182,7 +1183,7 @@ GPA                  0.4015845  0.1055576  3.804411 4.891059e-04</code></pre>
 <span>    <span class="op">}</span></span>
 <span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="exercise-5.7-impute-missing-values" class="slide level2"><h2>Exercise 5.7: Impute Missing Values</h2>
+</section><section id="exercise-5.5-impute-missing-values" class="slide level2"><h2>Exercise 5.5: Impute Missing Values</h2>
 <ul>
 <li><p>Write a function that checks for every element of a vector whether it is a missing value. If a missing value is found, it is to be imputed as the average of the value before it and the value after it.</p></li>
 <li><p>If the first value in the vector is missing, it should get the value of the second element. If the last value is missing, it should get the value of the preceding element.</p></li>

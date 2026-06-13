@@ -4,7 +4,7 @@
     "href": "Session5.html#general-information",
     "title": "Introduction to R",
     "section": "General Information",
-    "text": "General Information\nWe will work with fictive data set of student grades. Let us start by loading the data:\n\ndata_grades &lt;- read.table(\"data/grades.csv\",\n                       header = TRUE, sep = \",\", stringsAsFactors = FALSE)\n\nIn what follows, we consider the linear regression model \\[y_i = \\beta_0 + \\beta_1 x_{1,i} + \\beta_2 x_{2,i} + \\dots + \\beta_p x_{p,i} + u_i,\\ i=1,\\dots,n.\\]\nWe will first estimate the following simple regression for the grades data set: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade + u,\\]\nassuming the Final_Score variable was added to the grades data set in Exercise 5.2:\n\ndata_grades$Final_Score &lt;- 0.2*data_grades$Participation_Grade + 0.08*data_grades$Exam_Score"
+    "text": "General Information\nWe will work with fictive data set of student grades. Let us start by loading the data:\n\nlibrary(this.path)\nsetwd(here())\ndata_grades &lt;- read.table(\"data/grades.csv\",\n                       header = TRUE, sep = \",\", stringsAsFactors = FALSE)\n\nIn what follows, we consider the linear regression model \\[y_i = \\beta_0 + \\beta_1 x_{1,i} + \\beta_2 x_{2,i} + \\dots + \\beta_p x_{p,i} + u_i,\\ i=1,\\dots,n.\\]\nWe will first estimate the following simple regression for the grades data set: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade + u,\\]\nassuming the Final_Score variable was added to the grades data set:\n\ndata_grades$Final_Score &lt;- 0.2*data_grades$Participation_Grade + 0.08*data_grades$Exam_Score"
   },
   {
     "objectID": "Session5.html#formula-objects-and-the-lm-function",
@@ -88,21 +88,21 @@
     "href": "Session5.html#exporting-regression-results-stargazer",
     "title": "Introduction to R",
     "section": "Exporting regression results: stargazer",
-    "text": "Exporting regression results: stargazer\nRegression results can be exported directly to typesetting programs, e.g. LaTeX.\nHandy packages are stargazer and xtable\n\nlibrary(stargazer)\nstargazer(reg_6, type = \"latex\", title = \"Regression results\")\n\n\n% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com\n% Date and time: Fri, Jun 05, 2026 - 02:31:21 PM\n\\begin{table}[!htbp] \\centering \n  \\caption{Regression results} \n  \\label{} \n\\begin{tabular}{@{\\extracolsep{5pt}}lc} \n\\\\[-1.8ex]\\hline \n\\hline \\\\[-1.8ex] \n & \\multicolumn{1}{c}{\\textit{Dependent variable:}} \\\\ \n\\cline{2-2} \n\\\\[-1.8ex] & Final\\_Score \\\\ \n\\hline \\\\[-1.8ex] \n Participation\\_Grade & 1.062$^{***}$ \\\\ \n  & (0.159) \\\\ \n  & \\\\ \n GenderMale & 0.703 \\\\ \n  & (1.283) \\\\ \n  & \\\\ \n Participation\\_Grade:GenderMale & $-$0.105 \\\\ \n  & (0.195) \\\\ \n  & \\\\ \n Constant & $-$0.327 \\\\ \n  & (1.045) \\\\ \n  & \\\\ \n\\hline \\\\[-1.8ex] \nObservations & 42 \\\\ \nR$^{2}$ & 0.755 \\\\ \nAdjusted R$^{2}$ & 0.736 \\\\ \nResidual Std. Error & 0.785 (df = 38) \\\\ \nF Statistic & 39.048$^{***}$ (df = 3; 38) \\\\ \n\\hline \n\\hline \\\\[-1.8ex] \n\\textit{Note:}  & \\multicolumn{1}{r}{$^{*}$p$&lt;$0.1; $^{**}$p$&lt;$0.05; $^{***}$p$&lt;$0.01} \\\\ \n\\end{tabular} \n\\end{table}"
+    "text": "Exporting regression results: stargazer\nRegression results can be exported directly to typesetting programs, e.g. LaTeX.\nHandy packages are stargazer and xtable\n\nlibrary(stargazer)\nstargazer(reg_6, type = \"latex\", title = \"Regression results\")\n\n\n% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com\n% Date and time: Sat, Jun 13, 2026 - 08:46:38\n\\begin{table}[!htbp] \\centering \n  \\caption{Regression results} \n  \\label{} \n\\begin{tabular}{@{\\extracolsep{5pt}}lc} \n\\\\[-1.8ex]\\hline \n\\hline \\\\[-1.8ex] \n & \\multicolumn{1}{c}{\\textit{Dependent variable:}} \\\\ \n\\cline{2-2} \n\\\\[-1.8ex] & Final\\_Score \\\\ \n\\hline \\\\[-1.8ex] \n Participation\\_Grade & 1.062$^{***}$ \\\\ \n  & (0.159) \\\\ \n  & \\\\ \n GenderMale & 0.703 \\\\ \n  & (1.283) \\\\ \n  & \\\\ \n Participation\\_Grade:GenderMale & $-$0.105 \\\\ \n  & (0.195) \\\\ \n  & \\\\ \n Constant & $-$0.327 \\\\ \n  & (1.045) \\\\ \n  & \\\\ \n\\hline \\\\[-1.8ex] \nObservations & 42 \\\\ \nR$^{2}$ & 0.755 \\\\ \nAdjusted R$^{2}$ & 0.736 \\\\ \nResidual Std. Error & 0.785 (df = 38) \\\\ \nF Statistic & 39.048$^{***}$ (df = 3; 38) \\\\ \n\\hline \n\\hline \\\\[-1.8ex] \n\\textit{Note:}  & \\multicolumn{1}{r}{$^{*}$p$&lt;$0.1; $^{**}$p$&lt;$0.05; $^{***}$p$&lt;$0.01} \\\\ \n\\end{tabular} \n\\end{table}"
   },
   {
     "objectID": "Session5.html#exporting-regression-results-xtable",
     "href": "Session5.html#exporting-regression-results-xtable",
     "title": "Introduction to R",
     "section": "Exporting regression results: xtable",
-    "text": "Exporting regression results: xtable\nRegression results can be exported directly to typesetting programs, e.g. LaTeX.\nHandy packages are stargazer and xtable\n\nlibrary(xtable)\nxtable(reg_6)\n\n% latex table generated in R 4.6.0 by xtable 1.8-8 package\n% Fri Jun  5 14:31:21 2026\n\\begin{table}[ht]\n\\centering\n\\begin{tabular}{rrrrr}\n  \\hline\n & Estimate & Std. Error & t value & Pr($&gt;$$|$t$|$) \\\\ \n  \\hline\n(Intercept) & -0.3271 & 1.0452 & -0.31 & 0.7560 \\\\ \n  Participation\\_Grade & 1.0620 & 0.1586 & 6.70 & 0.0000 \\\\ \n  GenderMale & 0.7025 & 1.2827 & 0.55 & 0.5871 \\\\ \n  Participation\\_Grade:GenderMale & -0.1050 & 0.1945 & -0.54 & 0.5923 \\\\ \n   \\hline\n\\end{tabular}\n\\end{table}"
+    "text": "Exporting regression results: xtable\nRegression results can be exported directly to typesetting programs, e.g. LaTeX.\nHandy packages are stargazer and xtable\n\nlibrary(xtable)\nxtable(reg_6)\n\n% latex table generated in R 4.5.2 by xtable 1.8-8 package\n% Sat Jun 13 08:46:38 2026\n\\begin{table}[ht]\n\\centering\n\\begin{tabular}{rrrrr}\n  \\hline\n & Estimate & Std. Error & t value & Pr($&gt;$$|$t$|$) \\\\ \n  \\hline\n(Intercept) & -0.3271 & 1.0452 & -0.31 & 0.7560 \\\\ \n  Participation\\_Grade & 1.0620 & 0.1586 & 6.70 & 0.0000 \\\\ \n  GenderMale & 0.7025 & 1.2827 & 0.55 & 0.5871 \\\\ \n  Participation\\_Grade:GenderMale & -0.1050 & 0.1945 & -0.54 & 0.5923 \\\\ \n   \\hline\n\\end{tabular}\n\\end{table}"
   },
   {
-    "objectID": "Session5.html#exercise-5.3",
-    "href": "Session5.html#exercise-5.3",
+    "objectID": "Session5.html#exercise-5.1",
+    "href": "Session5.html#exercise-5.1",
     "title": "Introduction to R",
-    "section": "Exercise 5.3",
-    "text": "Exercise 5.3\n\nEstimate the following simple regression model in R: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade + u\\] Save your regression model in the object my_reg1, and inspect the summary output.\nMake a scatterplot of Final_Score (y-axis) against Participation_Grade (x-axis). Verify that adding the line of code abline(my_reg1) after you created your scatter plot, adds the regression line to your scatterplot!\nEstimate the multiple regression model: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade +\n\\beta_2 Chang + u\\] where Chang is a dummy variable taking the value 1 for students having tutor “Chang, Stevens” and 0 otherwise. Is the dummy variable significant?\nImagine you want to include the tutor “Chang, Stevens” as the baseline level. Re-estimate the regression model after you have re-specified your factor variable Tutor thereby explicitly defining “Chang, Stevens” as the baseline level. Hint: use the function relevel to this end.\nFinally, estimate the following regression model and inspect the summary output: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade +\n\\beta_2 Chang + \\beta_3 Participation\\_Grade \\cdot Chang + u.\\]"
+    "section": "Exercise 5.1",
+    "text": "Exercise 5.1\n\nEstimate the following simple regression model in R: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade + u\\] Save your regression model in the object my_reg1, and inspect the summary output.\nMake a scatterplot of Final_Score (y-axis) against Participation_Grade (x-axis). Verify that adding the line of code abline(my_reg1) after you created your scatter plot, adds the regression line to your scatterplot!\nEstimate the multiple regression model: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade +\n\\beta_2 Chang + u\\] where Chang is a dummy variable taking the value 1 for students having tutor “Chang, Stevens” and 0 otherwise. Is the dummy variable significant?\nImagine you want to include the tutor “Chang, Stevens” as the baseline level. Re-estimate the regression model after you have re-specified your factor variable Tutor thereby explicitly defining “Chang, Stevens” as the baseline level. Hint: use the function relevel to this end.\nFinally, estimate the following regression model and inspect the summary output: \\[Final\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade +\n\\beta_2 Chang + \\beta_3 Participation\\_Grade \\cdot Chang + u.\\]"
   },
   {
     "objectID": "Session5.html#accessing-regression-results",
@@ -126,11 +126,11 @@
     "text": "Accessing Regression Results\nIn particular:\n\n# summary object contains additional information:\nsum_reg_2 &lt;- summary(reg_2)\nsum_reg_2$coefficients      ## matrix with estimates, standard errors, t-stat, p-value\n\n                      Estimate Std. Error   t value     Pr(&gt;|t|)\n(Intercept)         -0.7780420  0.5663404 -1.373806 1.773473e-01\nParticipation_Grade  0.7196242  0.1056222  6.813193 3.872012e-08\nGPA                  0.4015845  0.1055576  3.804411 4.891059e-04\n\nsum_reg_2$sigma             ## residual standard error estimate\n\n[1] 0.6644583\n\nsum_reg_2$r.squared         ## R^2 of regression\n\n[1] 0.8199501\n\nsum_reg_2$adj.r.squared     ## adjusted R^2 of regression\n\n[1] 0.8107167"
   },
   {
-    "objectID": "Session5.html#exercise-5.4",
-    "href": "Session5.html#exercise-5.4",
+    "objectID": "Session5.html#exercise-5.2",
+    "href": "Session5.html#exercise-5.2",
     "title": "Introduction to R",
-    "section": "Exercise 5.4",
-    "text": "Exercise 5.4\nEstimate the regression model \\[Exam\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade + \\beta_2 Male + \\beta_3 Male \\cdot Participation\\_Grade    + u\\]\n\nIs the dummy Male significant?\nWhat are the values of the \\(t\\)-stats for the 3 predictors? Retrieve this information from the summary output but also saved their values in a new variable called my_tstats. Note: save ONLY the values of the t-stats!\nWhat is the estimated coefficient, standard error, \\(t-\\)value and \\(p-\\)value of the predictor \\(Participation\\_Grade\\)? Save this (and ONLY this) information in new variable called my_grade_info and display the information thereby rounding to two digits.\nWhat is the value of the adjusted \\(R^2\\) ? Retrieve this information from the summary output but also saved its value in a new variable called my_adjR2.\nStore the residuals in a new variable called my_resid. Make a scatter plot of the residuals, thereby labeling the x-axis as ‘Student index’, the y-axis as ‘Residuals’ and displaying the dots in red.\nStore the fitted values in a new variable called my_fitted. Make a scatter plot of the actual exam scores on the x-axis and the fitted values on the y-axis. Label the x-axis as ‘Exam scores’, the y-axis as ‘Fitted values’, and give the plot the title ‘Fitted versus Actual’."
+    "section": "Exercise 5.2",
+    "text": "Exercise 5.2\nEstimate the regression model \\[Exam\\_Score = \\beta_0 + \\beta_1 Participation\\_Grade + \\beta_2 Male + \\beta_3 Male \\cdot Participation\\_Grade    + u\\]\n\nIs the dummy Male significant?\nWhat are the values of the \\(t\\)-stats for the 3 predictors? Retrieve this information from the summary output but also saved their values in a new variable called my_tstats. Note: save ONLY the values of the t-stats!\nWhat is the estimated coefficient, standard error, \\(t-\\)value and \\(p-\\)value of the predictor \\(Participation\\_Grade\\)? Save this (and ONLY this) information in new variable called my_grade_info and display the information thereby rounding to two digits.\nWhat is the value of the adjusted \\(R^2\\) ? Retrieve this information from the summary output but also saved its value in a new variable called my_adjR2.\nStore the residuals in a new variable called my_resid. Make a scatter plot of the residuals, thereby labeling the x-axis as ‘Student index’, the y-axis as ‘Residuals’ and displaying the dots in red.\nStore the fitted values in a new variable called my_fitted. Make a scatter plot of the actual exam scores on the x-axis and the fitted values on the y-axis. Label the x-axis as ‘Exam scores’, the y-axis as ‘Fitted values’, and give the plot the title ‘Fitted versus Actual’."
   },
   {
     "objectID": "Session5.html#why-create-your-own-functions",
@@ -140,18 +140,18 @@
     "text": "Why create your own functions?\n\nYou can perfectly get around R without ever creating your own functions.\n\nBut there are good reasons to do so:\n\nEasy if you need the same code repetitively;\nDecreases the probability of making mistakes, as you only need to write that piece of code once;\nYou can use your functions in different script later on.\n\n\nCreating functions is a basic skill well worth investing in.\nNote: make sure to first execute the lines containing your function before you use it (and execute again after an update to the code)."
   },
   {
-    "objectID": "Session5.html#exercise-5.5-create-your-own-function",
-    "href": "Session5.html#exercise-5.5-create-your-own-function",
+    "objectID": "Session5.html#exercise-5.3-create-your-own-function",
+    "href": "Session5.html#exercise-5.3-create-your-own-function",
     "title": "Introduction to R",
-    "section": "Exercise 5.5: Create your own function",
-    "text": "Exercise 5.5: Create your own function\n\nLoad the courses data frame, which contains information about several courses at a school of business and economics. If the file is located in a folder called “data” within your working directory, you can load it as\n\n\nload(\"data/courses.RData\")\n\n\nCreate a function that takes as input the courses data frame. The function output should be the total number of courses that use student tutors.\n\n\nThere are many ways to count the number of courses that require student tutors. Probably the easiest is to directly do calculations with the logical values: TRUE is treated as 1, FALSE as 0:\n\n\nc(TRUE + FALSE, TRUE + TRUE, TRUE * FALSE)\n\n[1] 1 2 0"
+    "section": "Exercise 5.3: Create your own function",
+    "text": "Exercise 5.3: Create your own function\n\nLoad the courses data frame, which contains information about several courses at a school of business and economics. If the file is located in a folder called “data” within your working directory, you can load it as\n\n\nload(\"data/courses.RData\")\n\n\nCreate a function that takes as input the courses data frame. The function output should be the total number of courses that use student tutors.\n\n\nThere are many ways to count the number of courses that require student tutors. Probably the easiest is to directly do calculations with the logical values: TRUE is treated as 1, FALSE as 0:\n\n\nc(TRUE + FALSE, TRUE + TRUE, TRUE * FALSE)\n\n[1] 1 2 0"
   },
   {
-    "objectID": "Session5.html#exercise-5.5-create-your-own-function-1",
-    "href": "Session5.html#exercise-5.5-create-your-own-function-1",
+    "objectID": "Session5.html#exercise-5.4-create-your-own-function",
+    "href": "Session5.html#exercise-5.4-create-your-own-function",
     "title": "Introduction to R",
-    "section": "Exercise 5.5: Create your own function",
-    "text": "Exercise 5.5: Create your own function\n\nWe now want to extend the function to give a second output. This output should contain a data frame with two columns: the first is the course code, the second is the number of tutorials for each course.\n\n\nThe number of tutorials should be calculated as the number of students divided by the number of students per tutorial group, and then rounded up.\nThe number of students per tutorial group should be a second argument of the function, with a default value of 15.\nTo round up, we can use the function ceiling()."
+    "section": "Exercise 5.4: Create your own function",
+    "text": "Exercise 5.4: Create your own function\n\nWe now want to extend the function to give a second output. This output should contain a data frame with two columns: the first is the course code, the second is the number of tutorials for each course.\n\n\nThe number of tutorials should be calculated as the number of students divided by the number of students per tutorial group, and then rounded up.\nThe number of students per tutorial group should be a second argument of the function, with a default value of 15.\nTo round up, we can use the function ceiling()."
   },
   {
     "objectID": "Session5.html#flow-control",
@@ -189,11 +189,11 @@
     "text": "Conditional Execution per Element\n\nSometimes we want to check vectors and return a separate value for each entry. For this, we use the ifelse() function:\n\n\nx &lt;- c(3, NA, 2)\n## is.na() checks if the i put is a missing value\nifelse( is.na(x), \"Missing\", \"Not Missing\")\n\n[1] \"Not Missing\" \"Missing\"     \"Not Missing\"\n\n## an elaborate way to calculate absolute values!\nx &lt;- c(-3, 5, -8, 2)\nifelse( x &lt; 0, -x, x)\n\n[1] 3 5 8 2"
   },
   {
-    "objectID": "Session5.html#exercise-5.6-conditional-execution",
-    "href": "Session5.html#exercise-5.6-conditional-execution",
+    "objectID": "Session5.html#exercise-5.4-conditional-execution",
+    "href": "Session5.html#exercise-5.4-conditional-execution",
     "title": "Introduction to R",
-    "section": "Exercise 5.6: Conditional Execution",
-    "text": "Exercise 5.6: Conditional Execution\n\nWrite a function if_test that takes two objects, x and y, and checks whether x is numeric and y is of type character.\nIf both conditions are met, the function should print “Super”; otherwise, it should indicate which of the two objects x or y does not meet the required condition.\nTest your function with:\n\n\nif_test(5, \"char\")\n\nif_test(\"abc\", 2)\n\nif_test(list(1,2), matrix(\"a\", 3, 3))\n\n\nHint: Use is.character() and is.numeric()."
+    "section": "Exercise 5.4: Conditional Execution",
+    "text": "Exercise 5.4: Conditional Execution\n\nWrite a function if_test that takes two objects, x and y, and checks whether x is numeric and y is of type character.\nIf both conditions are met, the function should print “Super”; otherwise, it should indicate which of the two objects x or y does not meet the required condition.\nTest your function with:\n\n\nif_test(5, \"char\")\n\nif_test(\"abc\", 2)\n\nif_test(list(1,2), matrix(\"a\", 3, 3))\n\n\nHint: Use is.character() and is.numeric()."
   },
   {
     "objectID": "Session5.html#loops",
@@ -217,11 +217,11 @@
     "text": "Combining for and if\n\nThe combination of loops and conditional execution makes for a simple yet very powerful programming interface.\nThe major advantage is that it allows to automate certain repetitive operations.\nThis code checks for every column of a matrix (or data frame) dataset whether it is skewed to the right, and if so, applies a log transformation. (Which statistically is not the brightest idea…)\nWe use the moments package for calculating the skewness.\n\n\nlibrary(moments)\nn_col &lt;- ncol(dataset)      # check how many columns there are\ntransformed_data &lt;- dataset # copy the data into a new matrix holding the transformed data\nfor (i in 1:n_col) {        # loop over all columns\n    skew &lt;- skewness(dataset[, i])  # compute the skewness\n    if (skew &gt; 1) {\n        transformed_data[, i] &lt;- log(dataset[, i]) # log-transform the data\n    }\n}"
   },
   {
-    "objectID": "Session5.html#exercise-5.7-impute-missing-values",
-    "href": "Session5.html#exercise-5.7-impute-missing-values",
+    "objectID": "Session5.html#exercise-5.5-impute-missing-values",
+    "href": "Session5.html#exercise-5.5-impute-missing-values",
     "title": "Introduction to R",
-    "section": "Exercise 5.7: Impute Missing Values",
-    "text": "Exercise 5.7: Impute Missing Values\n\nWrite a function that checks for every element of a vector whether it is a missing value. If a missing value is found, it is to be imputed as the average of the value before it and the value after it.\nIf the first value in the vector is missing, it should get the value of the second element. If the last value is missing, it should get the value of the preceding element.\nTo keep things simple, we assume that there are never two consecutive missing values, such that only the rules above have to be programmed.\nAlthough there are many ways to create such a function, we focus on using a for loop and if statements.\nTest your function on the following vector:\n\n\nc(NA, 2, 3, NA, 5, NA)"
+    "section": "Exercise 5.5: Impute Missing Values",
+    "text": "Exercise 5.5: Impute Missing Values\n\nWrite a function that checks for every element of a vector whether it is a missing value. If a missing value is found, it is to be imputed as the average of the value before it and the value after it.\nIf the first value in the vector is missing, it should get the value of the second element. If the last value is missing, it should get the value of the preceding element.\nTo keep things simple, we assume that there are never two consecutive missing values, such that only the rules above have to be programmed.\nAlthough there are many ways to create such a function, we focus on using a for loop and if statements.\nTest your function on the following vector:\n\n\nc(NA, 2, 3, NA, 5, NA)"
   },
   {
     "objectID": "Session5.html#consistent-work-with-data-tidyverse",
@@ -1047,7 +1047,7 @@
     "href": "files.html",
     "title": "Additional Files",
     "section": "",
-    "text": "What can you find here?\nOn this page, you can find additional files that are needed or useful in the five sessions. This includes datasets that are used, as well as (rudimentary) solutions to the exercises.\n\n\nDatasets\nHere you can find the data sets that are used in the sessions.\n\n\n\n\n\n\nImportantWhere to Store Datasets\n\n\n\nThe R code provided in the sessions assumes that datasets are stored in a folder called ‘data’ located within your working directory.\n\n\n\nSession 1\n\nclimate_long.Rdata\nclimate_wide.xlsx\nclimate.csv\n\n\n\nSession 2\nNo datasets used\n\n\nSession 3\n\ncourses.RData\n\n\n\nSession 4\n\nclimate_long.Rdata\nclimate_wide.Rdata\nclimate_wide.xlsx\nclimate_wide.dta\nclimate.csv\n\n\n\nSession 5\n\ngrades.csv\n\n\n\n\nSolutions\nHere we post solutions to the exercises in the sessions. The files are eventually kept very basic, only having the necessary code. The files, therefore, have very little meaning on their own, but might be useful to consult during the sessions.\n\nSession 1\n\nSolutions Session 1\n\n\n\nSession 2\n\nSolutions Session 2\n\n\n\nSession 3\n\nSolutions Session 3\n\n\n\nSession 4\n\nSolutions Session 4\n\n\n\nSession 5\n\nSolutions Session 5"
+    "text": "What can you find here?\nOn this page, you can find additional files that are needed or useful in the five sessions. This includes datasets that are used, as well as (rudimentary) solutions to the exercises.\n\n\nDatasets\nHere you can find the data sets that are used in the sessions.\n\n\n\n\n\n\nImportantWhere to Store Datasets\n\n\n\nThe R code provided in the sessions assumes that datasets are stored in a folder called ‘data’ located within your working directory.\n\n\n\nSession 1\n\nclimate_long.Rdata\nclimate_wide.xlsx\nclimate.csv\n\n\n\nSession 2\nNo datasets used\n\n\nSession 3\n\ncourses.RData\n\n\n\nSession 4\n\ngrades.csv\nclimate_long.Rdata\nclimate_wide.Rdata\n\n\n\nSession 5\n\ngrades.csv\n\n\n\n\nSolutions\nHere we post solutions to the exercises in the sessions. The files are eventually kept very basic, only having the necessary code. The files, therefore, have very little meaning on their own, but might be useful to consult during the sessions.\n\nSession 1\n\nSolutions Session 1\n\n\n\nSession 2\n\nSolutions Session 2\n\n\n\nSession 3\n\nSolutions Session 3\n\n\n\nSession 4\n\nSolutions Session 4\n\n\n\nSession 5\n\nSolutions Session 5"
   },
   {
     "objectID": "Session0.html#what-is-r",
@@ -1313,56 +1313,14 @@
     "href": "Session4.html#session-overview",
     "title": "Introduction to R",
     "section": "Session Overview",
-    "text": "Session Overview\n\nData manipulation\nInputs and Outputs\nGraphics\nGraphics: Advanced Graphics with ggplot"
-  },
-  {
-    "objectID": "Session4.html#inputs-and-outputs-of-your-r-session",
-    "href": "Session4.html#inputs-and-outputs-of-your-r-session",
-    "title": "Introduction to R",
-    "section": "Inputs and outputs of your R session",
-    "text": "Inputs and outputs of your R session\n\nCommon inputs / outputs of an R session are datasets or R scripts.\nFor this meeting we focus on datasets as inputs to the R session, loading data and saving data.\nThe file format (csv, RData, xls, stata …) and directory of the files are important keep in mind.\nWe will go over a few options, potential issues, and how to avoid the need to type in a long directory name when managing the input and output of the R session."
-  },
-  {
-    "objectID": "Session4.html#working-directories-and-r-projects",
-    "href": "Session4.html#working-directories-and-r-projects",
-    "title": "Introduction to R",
-    "section": "Working directories and R projects",
-    "text": "Working directories and R projects\n\nWhenever we provide R with a file name, it can include the full path on the computer.\nAn alternative is to work on a specified directory.\nAnother alternative is to work within a ‘project’ that all paths are visible to the project scripts.\nIf we do not provide any path, R will use the current “working directory” for reading or writing files. It can be obtained by the command\n\n\n  getwd()"
-  },
-  {
-    "objectID": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session",
-    "href": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session",
-    "title": "Introduction to R",
-    "section": "Using the correct directory to get input / output of the R session",
-    "text": "Using the correct directory to get input / output of the R session\n\nNavigating through the menus in RStudio is easy, (click and go) but requires using the menu every time the user runs the code.\n\nGo to Session -&gt; Set Working Directory. Two convenient options are:\n\nChoose Directory…: Choose the directory yourself\nTo Source File Location: Set the working directory to the directory where your R Script (the source file) is saved"
-  },
-  {
-    "objectID": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-1",
-    "href": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-1",
-    "title": "Introduction to R",
-    "section": "Using the correct directory to get input / output of the R session",
-    "text": "Using the correct directory to get input / output of the R session\n\nAn alternative is to use function setwd() at the beginning of your script. This line then has to be changed when the code runs in another machine.\n\n\n setwd(\"~/R_training\")"
-  },
-  {
-    "objectID": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-2",
-    "href": "Session4.html#using-the-correct-directory-to-get-input-output-of-the-r-session-2",
-    "title": "Introduction to R",
-    "section": "Using the correct directory to get input / output of the R session",
-    "text": "Using the correct directory to get input / output of the R session\n\nRecall: To set the working directory to the folder where your current R script is located, you can simply use:\n\n\nlibrary(this.path)\nsetwd(here())\n\n\nRecall: We could also explicitly make the function call from the library:\n\n\nsetwd(this.path::here())"
-  },
-  {
-    "objectID": "Session4.html#types-of-input-or-data-that-can-be-loaded-in-r",
-    "href": "Session4.html#types-of-input-or-data-that-can-be-loaded-in-r",
-    "title": "Introduction to R",
-    "section": "Types of input or data that can be loaded in R",
-    "text": "Types of input or data that can be loaded in R\nR interacts with files in several ways.\n\nYou can load, save, import, or export a data file.\nYou can save a generated figure as a graphics file or store regression tables as text, spreadsheet, or LATEX tables.\nYou can load, save the full workspace (environment) you are working with to follow up another time.\n\nDatasets can come in different formats.\n\nRData files: Files that can directly\nOther file formats (SPSS csv, xls, …) are also possible to load in R. This often requires the use of packages"
+    "text": "Session Overview\n\nData manipulation\nGraphics\nGraphics: Advanced Graphics with ggplot"
   },
   {
     "objectID": "Session4.html#data-manipulation",
     "href": "Session4.html#data-manipulation",
     "title": "Introduction to R",
     "section": "Data Manipulation",
-    "text": "Data Manipulation\nIn the last session, we learned how to load data of various sources into R.\nToday’s first part will be about how to manipulate data in R. Importantly, we will learn how to\n\nselect certain variables from a data\nsubset a data set\nrecode and rename certain variables\n\nWe will work with fictive data set of student grades. Let us start by loading the data:\n\ndata_grades &lt;- read.table(\"data/grades.csv\",\n                       header = TRUE, sep = \",\", stringsAsFactors = FALSE)"
+    "text": "Data Manipulation\nIn the last session, we learned how to load data of various sources into R.\nToday’s first part will be about how to manipulate data in R. Importantly, we will learn how to\n\nselect certain variables from a data\nsubset a data set\nrecode and rename certain variables\n\nWe will work with fictive data set of student grades. We start by downloading the grades.csv file from the training website, setting our working directory and loading the data:\n\nlibrary(this.path)\nsetwd(here())\ndata_grades &lt;- read.table(\"data/grades.csv\",\n                       header = TRUE, sep = \",\", stringsAsFactors = FALSE)"
   },
   {
     "objectID": "Session4.html#selecting-variables",
@@ -1386,11 +1344,11 @@
     "text": "Subsetting Rows\nNext, we want to subset the data set, i.e. preserve interesting rows while removing the others.\nFor the grades data set, we might be interested in information about students in tutorial group 1:\n\n# select tutorial 1 students only\ndata_tutorial1 &lt;- data_grades[data_grades$Tutorial == 1, ]\n\nor alternatively:\n\ndata_tutorial1 &lt;- subset(data_grades, Tutorial == 1)\n\nSubsetting also works using characters. For instance, to retrieve only information for females:\n\n# select female students only\ndata_females &lt;- data_grades[data_grades$Gender == 'Female', ]\n\nInspect your new data sets!"
   },
   {
-    "objectID": "Session4.html#exercise-5.1",
-    "href": "Session4.html#exercise-5.1",
+    "objectID": "Session4.html#exercise-4.1",
+    "href": "Session4.html#exercise-4.1",
     "title": "Introduction to R",
-    "section": "Exercise 5.1",
-    "text": "Exercise 5.1\nUse the grades data set.\n\nGenerate a data set that contains information about the student ID, student name, their tutorial group, participation grade and their exam score.\nFurther reduce the data set obtained under 1 to only display information of students in tutorial group 4.\nFurther reduce the data set obtained under 2 to only display information of students with an exam score of more than 80. How many such students are there?"
+    "section": "Exercise 4.1",
+    "text": "Exercise 4.1\nUse the grades data set.\n\nGenerate a data set that contains information about the student ID, student name, their tutorial group, participation grade and their exam score.\nFurther reduce the data set obtained under 1 to only display information of students in tutorial group 4.\nFurther reduce the data set obtained under 2 to only display information of students with an exam score of more than 80. How many such students are there?"
   },
   {
     "objectID": "Session4.html#transforming-variables",
@@ -1414,144 +1372,11 @@
     "text": "Adding Variables\nSometimes we want to add a variable to an existing data set.\nFor instance, we want to add the exam score on 10 instead of 100. To add a new variable, use the $ operator and specify a new variable name:\n\ndata_grades$Exam_Score_10 &lt;- data_grades$Exam_Score/10\n\nhead(data_grades[, c(\"Exam_Score\", \"Exam_Score_10\")], 3)\n\n  Exam_Score Exam_Score_10\n1         55           5.5\n2         82           8.2\n3         52           5.2"
   },
   {
-    "objectID": "Session4.html#exercise-5.2",
-    "href": "Session4.html#exercise-5.2",
+    "objectID": "Session4.html#exercise-4.2",
+    "href": "Session4.html#exercise-4.2",
     "title": "Introduction to R",
-    "section": "Exercise 5.2",
-    "text": "Exercise 5.2\n\nWhat is the class of the variable Tutor? Transform it into a factor. How many tutors are there?\nAdd a new variable to compute the final score of each student, which is the weighted average of their participation grade (20%) and their exam score (80%)\nRetrieve the final score of the students in tutorial group 2. Obtain summary statistics of their final scores.\nWhat is the lowest and the highest final score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function."
-  },
-  {
-    "objectID": "Session4.html#loading-rdata-files",
-    "href": "Session4.html#loading-rdata-files",
-    "title": "Introduction to R",
-    "section": "Loading RData files",
-    "text": "Loading RData files\n\nRData files are specific to R file formats.\nThey can store a single object or several objects.\nThese files are the easiest to manage as input or output in R, since they don’t require library calls."
-  },
-  {
-    "objectID": "Session4.html#load-climate-data-from-rdata-format",
-    "href": "Session4.html#load-climate-data-from-rdata-format",
-    "title": "Introduction to R",
-    "section": "Load climate data from RData format:",
-    "text": "Load climate data from RData format:\n\nload function is used to load data in RData format.\nload function loads all objects in the input RData file."
-  },
-  {
-    "objectID": "Session4.html#example-data-average-temperatures-for-maastricht-and-eindhoven-during-2024-every-2nd-day-of-the-month",
-    "href": "Session4.html#example-data-average-temperatures-for-maastricht-and-eindhoven-during-2024-every-2nd-day-of-the-month",
-    "title": "Introduction to R",
-    "section": "Example data: average temperatures for Maastricht and Eindhoven during 2024, every 2nd day of the month",
-    "text": "Example data: average temperatures for Maastricht and Eindhoven during 2024, every 2nd day of the month\n\nload(\"data/climate_long.Rdata\")\nprint(long_data)\n\n             NAME MONTH TEMP\n99091   EINDHOVEN     1 10.6\n99122   EINDHOVEN     2  7.1\n99151   EINDHOVEN     3 10.2\n99178   EINDHOVEN     4  8.9\n99207   EINDHOVEN     5 18.5\n99238   EINDHOVEN     6 15.0\n99268   EINDHOVEN     7 15.0\n99299   EINDHOVEN     8 20.7\n99329   EINDHOVEN     9 22.6\n99359   EINDHOVEN    10 10.0\n99390   EINDHOVEN    11 10.5\n99415   EINDHOVEN    12  9.7\n99801  MAASTRICHT     1  9.7\n99832  MAASTRICHT     2  5.9\n99861  MAASTRICHT     3  9.9\n99888  MAASTRICHT     4  9.0\n99917  MAASTRICHT     5 15.7\n99948  MAASTRICHT     6 14.1\n99978  MAASTRICHT     7 14.9\n100009 MAASTRICHT     8 20.5\n100039 MAASTRICHT     9 21.6\n100069 MAASTRICHT    10 10.3\n100100 MAASTRICHT    11 10.2\n100125 MAASTRICHT    12  9.2"
-  },
-  {
-    "objectID": "Session4.html#notice-the-data-are-loaded-as-a-dataframe",
-    "href": "Session4.html#notice-the-data-are-loaded-as-a-dataframe",
-    "title": "Introduction to R",
-    "section": "Notice the data are loaded as a dataframe:",
-    "text": "Notice the data are loaded as a dataframe:\n\nis.data.frame(long_data)\n\n[1] TRUE\n\ntypeof(long_data)\n\n[1] \"list\""
-  },
-  {
-    "objectID": "Session4.html#there-is-a-distinction-between-a-long-and-wide-dataframe",
-    "href": "Session4.html#there-is-a-distinction-between-a-long-and-wide-dataframe",
-    "title": "Introduction to R",
-    "section": "There is a distinction between a long and wide dataframe:",
-    "text": "There is a distinction between a long and wide dataframe:\n\nload(\"data/climate_wide.Rdata\")\nprint(wide_data)\n\n   MONTH EINDHOVEN MAASTRICHT\n1      1      10.6        9.7\n2      2       7.1        5.9\n3      3      10.2        9.9\n4      4       8.9        9.0\n5      5      18.5       15.7\n6      6      15.0       14.1\n7      7      15.0       14.9\n8      8      20.7       20.5\n9      9      22.6       21.6\n10    10      10.0       10.3\n11    11      10.5       10.2\n12    12       9.7        9.2"
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r",
-    "href": "Session4.html#loading-other-formats-of-data-in-r",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio is the easiest (click and go) but requires using the menu every time the user runs the code."
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-1",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-1",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio (cont’d)"
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-2",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-2",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio (cont’d)"
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-3",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-3",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nOption 1: Using menus within RStudio (cont’d)"
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-4",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-4",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nAdvice for option 1:\n\nCopy the command that appears after loading the data from the menus."
-  },
-  {
-    "objectID": "Session4.html#loading-other-formats-of-data-in-r-5",
-    "href": "Session4.html#loading-other-formats-of-data-in-r-5",
-    "title": "Introduction to R",
-    "section": "Loading other formats of data in R",
-    "text": "Loading other formats of data in R\nAdvice for option 1 (cont’d):\n\nPaste the command on top of your script.\nThis way, next time you do not need the menu navigation.\n\n\nlibrary(readxl)\nclimate &lt;- read_excel(\"data/climate_wide.xlsx\")\n\n\nYou can view the data by clicking on it in the `Environment’ at the top-right of the workspace."
-  },
-  {
-    "objectID": "Session4.html#general-way-of-importing-and-exporting-of-other-data-formats",
-    "href": "Session4.html#general-way-of-importing-and-exporting-of-other-data-formats",
-    "title": "Introduction to R",
-    "section": "General way of importing and exporting of other data formats",
-    "text": "General way of importing and exporting of other data formats\n\nUsing the correct libraries for different data formats can be tedious.\nR package rio is very convenient for data import and export. It figures out the type of data format from the file name extension, e.g. .csv for CSV, .dta for Stata, or *.sav for SPSS data sets\nFor a complete list of supported formats, see help(rio).\nIt calls an appropriate package to do the actual importing or exporting."
-  },
-  {
-    "objectID": "Session4.html#loading-spss-and-other-file-types",
-    "href": "Session4.html#loading-spss-and-other-file-types",
-    "title": "Introduction to R",
-    "section": "Loading SPSS and other file types",
-    "text": "Loading SPSS and other file types\n\nlibrary('rio')\nimport(\"data/climate_wide.dta\")"
-  },
-  {
-    "objectID": "Session4.html#loading-csv-files",
-    "href": "Session4.html#loading-csv-files",
-    "title": "Introduction to R",
-    "section": "Loading csv files",
-    "text": "Loading csv files\n\nimport(\"data/climate.csv\")"
-  },
-  {
-    "objectID": "Session4.html#loading-data-from-apis",
-    "href": "Session4.html#loading-data-from-apis",
-    "title": "Introduction to R",
-    "section": "Loading data from APIs",
-    "text": "Loading data from APIs\n\nIt is possible to automatically load data from a web source using APIs.\nAn API (Application Programming Interface) acts as a bridge between your R code and an external data source: a website, database, or an online platform with permissions.\nAdvantages: Automation, efficiency and real-time access.\nDisadvantages: No offline access to data (can be important for replication), dependency on external services (API can go down).\nSuggestion: Save the downloaded data in RData format to mitigate disadvantages."
-  },
-  {
-    "objectID": "Session4.html#example-aapl-daily-prices-from-yahoo-finance",
-    "href": "Session4.html#example-aapl-daily-prices-from-yahoo-finance",
-    "title": "Introduction to R",
-    "section": "Example: AAPL daily prices from Yahoo Finance",
-    "text": "Example: AAPL daily prices from Yahoo Finance\n\nAs an example we will download AAPL daily prices from Yahoo Finance.\nConvert loaded data to a vector.\nSave the data as an RData file for future offline access.\n\n\nlibrary(quantmod)\n# Get Apple Inc. (AAPL) stock data from Yahoo Finance\ngetSymbols(\"AAPL\", src = \"yahoo\", from = \"2024-01-01\", to = \"2025-06-13\")\n# Save data as RData file\nsave.image(\"data/AAPL.RData\")"
-  },
-  {
-    "objectID": "Session4.html#example-aapl-daily-prices-from-yahoo-finance-contd",
-    "href": "Session4.html#example-aapl-daily-prices-from-yahoo-finance-contd",
-    "title": "Introduction to R",
-    "section": "Example: AAPL daily prices from Yahoo Finance (cont’d)",
-    "text": "Example: AAPL daily prices from Yahoo Finance (cont’d)\n\nView and plot data.\n\n\n# View the first few rows\nhead(AAPL)\n\n           AAPL.Open AAPL.High AAPL.Low AAPL.Close AAPL.Volume AAPL.Adjusted\n2024-01-02    187.15    188.44   183.89     185.64    82488700      184.2904\n2024-01-03    184.22    185.88   183.43     184.25    58414500      182.9105\n2024-01-04    182.15    183.09   180.88     181.91    71983600      180.5876\n2024-01-05    181.99    182.76   180.17     181.18    62303300      179.8628\n2024-01-08    182.09    185.60   181.50     185.56    59144500      184.2110\n2024-01-09    183.92    185.15   182.73     185.14    42841800      183.7941"
-  },
-  {
-    "objectID": "Session4.html#outputs",
-    "href": "Session4.html#outputs",
-    "title": "Introduction to R",
-    "section": "Outputs",
-    "text": "Outputs\n\nOutputs work very similarly to the inputs above.\nThe most relevant outputs formats are the R output formats.\n\nsave() saves objects as an .RData file.\n\nsave.image() saves a selection of objects as an .RData file."
-  },
-  {
-    "objectID": "Session4.html#exercise-4.1-saving-data",
-    "href": "Session4.html#exercise-4.1-saving-data",
-    "title": "Introduction to R",
-    "section": "Exercise 4.1: Saving data",
-    "text": "Exercise 4.1: Saving data\n\nSave your current workspace using function save.image().\nSave only one variable in the workspace using function save().\nMake a list of two variables from long_data, and save this list using function save."
+    "section": "Exercise 4.2",
+    "text": "Exercise 4.2\n\nWhat is the class of the variable Tutor? Transform it into a factor. How many tutors are there?\nAdd a new variable to compute the final score of each student, which is the weighted average of their participation grade (20%) and their exam score (80%)\nRetrieve the final score of the students in tutorial group 2. Obtain summary statistics of their final scores.\nWhat is the lowest and the highest final score in tutorial group 2? Retrieve this information from the summary statistics as well as by using a dedicated function."
   },
   {
     "objectID": "Session4.html#r-base-graphics",
@@ -1565,7 +1390,7 @@
     "href": "Session4.html#simple-plots",
     "title": "Introduction to R",
     "section": "Simple plots",
-    "text": "Simple plots\n\nplot(long_data$TEMP)     ## Plotting a single variable"
+    "text": "Simple plots\n\nload('data/climate_long.Rdata')\nplot(long_data$TEMP)     ## Plotting a single variable"
   },
   {
     "objectID": "Session4.html#simple-plots-1",
@@ -1589,11 +1414,11 @@
     "text": "Functions calling methods\nNotice that function plot() calls methods.\nIt will perform different operations depending on the class of the passed object. (We study the lm() function in detail in the next session!)\n\nols_result &lt;- lm(TEMP~MONTH, data = long_data)\nplot(ols_result)"
   },
   {
-    "objectID": "Session4.html#exercise-4.2-load-data-from-yahoo-finance-and-see-how-plot-function-behaves.",
-    "href": "Session4.html#exercise-4.2-load-data-from-yahoo-finance-and-see-how-plot-function-behaves.",
+    "objectID": "Session4.html#exercise-4.3-load-data-from-yahoo-finance-and-see-how-plot-function-behaves.",
+    "href": "Session4.html#exercise-4.3-load-data-from-yahoo-finance-and-see-how-plot-function-behaves.",
     "title": "Introduction to R",
-    "section": "Exercise 4.2: Load data from Yahoo Finance, and see how plot function behaves.",
-    "text": "Exercise 4.2: Load data from Yahoo Finance, and see how plot function behaves.\n\nPlot the whole dataset\nPlot a selected column, for example closing prices AAPL$AAPL.Close\n\nComment on the x axis of the data and how it is different from the plots we considered earlier.\nThe difference is due to the quantmod package."
+    "section": "Exercise 4.3: Load data from Yahoo Finance, and see how plot function behaves.",
+    "text": "Exercise 4.3: Load data from Yahoo Finance, and see how plot function behaves.\n\nRetrieve the AAPL series from Yahoo Finance from January first 2024 until today (see Session 1). You can use\n\n\nlibrary(quantmod)\ngetSymbols(\"AAPL\", src = \"yahoo\", from = \"2024-01-01\", to = Sys.Date())\n\n\nPlot the whole dataset\nPlot a selected column, for example closing prices AAPL$AAPL.Close\n\nComment on the x axis of the data and how it is different from the plots we considered earlier.\nThe difference is due to the quantmod package."
   },
   {
     "objectID": "Session4.html#creating-and-saving-a-graph",
@@ -1624,11 +1449,11 @@
     "text": "Low-Level Graphic Functions\n\n\nlines: Draw lines\n\nabline: Quickly add horizontal, vertical lines, and lines using equation \\(y = bx + a\\)\n\n\npoints: Add points\n\narrows: Add arrows\n\ntitle: Add a title\n\nlegend: Add a legend\n\ntext: Add text at \\((x,y)\\) coordinates\n\nmtext: Add text with positional specification like side=1,...,4"
   },
   {
-    "objectID": "Session4.html#exercise-4.3-plot-temperatures-for-maastricht",
-    "href": "Session4.html#exercise-4.3-plot-temperatures-for-maastricht",
+    "objectID": "Session4.html#exercise-4.4-plot-temperatures-for-maastricht",
+    "href": "Session4.html#exercise-4.4-plot-temperatures-for-maastricht",
     "title": "Introduction to R",
-    "section": "Exercise 4.3: Plot temperatures for Maastricht",
-    "text": "Exercise 4.3: Plot temperatures for Maastricht\nWe want to visualize the daily temperatures in the climate data specifically for Maastricht. First, make a basic plot of temperatures in Maastricht then customise the plot in the following ways:\n\nThe title of the X-axis should say ‘Month’, the title of the Y-axis ‘Average Temperature’.\nMake the plot a line plot with a blue line. (Hint: specifying the colour literally as \"blue\" works)\nMake the tick marks appear on the inside of the figure rather than the outside.\nCalculate the average temperature.\nAdd a horizontal line with the average maximum temperature\n\nYou will need to consult the help file for this exercise; see this therefore more as an exercise in how to navigate R’s help system, than an exercise in plotting (which we will cover in more detail later).\nYou may want to ask ChatGPT for help."
+    "section": "Exercise 4.4: Plot temperatures for Maastricht",
+    "text": "Exercise 4.4: Plot temperatures for Maastricht\nWe want to visualize the daily temperatures in the climate data specifically for Maastricht. First, make a basic plot of temperatures in Maastricht then customise the plot in the following ways:\n\nThe title of the X-axis should say ‘Month’, the title of the Y-axis ‘Average Temperature’.\nMake the plot a line plot with a blue line. (Hint: specifying the colour literally as \"blue\" works)\nMake the tick marks appear on the inside of the figure rather than the outside.\nCalculate the average temperature.\nAdd a horizontal line with the average maximum temperature\n\nYou will need to consult the help file for this exercise; see this therefore more as an exercise in how to navigate R’s help system, than an exercise in plotting (which we will cover in more detail later).\nYou may want to ask ChatGPT for help."
   },
   {
     "objectID": "Session4.html#manually-saving-r-plots",
@@ -1649,7 +1474,21 @@
     "href": "Session4.html#a-more-complex-example-for-plotting-data-over-time-gradually",
     "title": "Introduction to R",
     "section": "A more complex example for plotting data over time gradually",
-    "text": "A more complex example for plotting data over time gradually\n\nEspecially when data is large, a gradual illustration of data over time can be handy.\nIn this exercise, we plot the temperatures in Maastricht as if the data are becoming available gradually.\nFor this, we will use a loop that iterates over time points (months).\nThe concept of a loop was only mentioned in Session 2.\n\n\nwide_data$MAASTRICHT\n     xlab = \"Time\", ylab = \"Value\", main = \"Adding Data Over Time\", type = 'l')\n\n# Gradually plot more and more of the data using a `for loop`\nfor (i in 4:nrow(wide_data)) {\n  plot(1:i, wide_data$MAASTRICHT[1:i], # notice index i is increasing the number of plotted points\n     xlab = \"Time\", ylab = \"Value\", main = \"Adding Data Over Time\", type = 'l')\n}\n\nExercise 4.4 Make a continuous plot of temperatures - Use the last loop example to plot temperatures gradually. - Start with an initial number of 3 observations, as in the example. - Make sure that the range of the x and y axes match with the whole dataset in the first plot. - Within the for loop, add lines to the first plot, instead of plotting the data again. - Pause the program within the for loop to simulate “gradual” effect. - You can use ChatGBT or help functions for ?ylim, ?Sys.sleep"
+    "text": "A more complex example for plotting data over time gradually\n\nEspecially when data is large, a gradual illustration of data over time can be handy.\nIn this exercise, we plot the temperatures in Maastricht as if the data are becoming available gradually.\nFor this, we will use a loop that iterates over time points (months).\nThe concept of a loop was only mentioned in Session 2.\n\n\nwide_data$MAASTRICHT\n     xlab = \"Time\", ylab = \"Value\", main = \"Adding Data Over Time\", type = 'l')\n\n# Gradually plot more and more of the data using a `for loop`\nfor (i in 4:nrow(wide_data)) {\n  plot(1:i, wide_data$MAASTRICHT[1:i], # notice index i is increasing the number of plotted points\n     xlab = \"Time\", ylab = \"Value\", main = \"Adding Data Over Time\", type = 'l')\n}"
+  },
+  {
+    "objectID": "Session4.html#exercise-4.5-make-a-continuous-plot-of-temperatures",
+    "href": "Session4.html#exercise-4.5-make-a-continuous-plot-of-temperatures",
+    "title": "Introduction to R",
+    "section": "Exercise 4.5 Make a continuous plot of temperatures",
+    "text": "Exercise 4.5 Make a continuous plot of temperatures\n\nUse the last loop example to plot temperatures gradually.\nStart with an initial number of 3 observations, as in the example.\nMake sure that the range of the x and y axes match with the whole dataset in the first plot.\nWithin the for loop, add lines to the first plot, instead of plotting the data again.\nPause the program within the for loop to simulate “gradual” effect.\nYou can use ChatGPT or help functions for ?ylim, ?Sys.sleep"
+  },
+  {
+    "objectID": "Session4.html#advanced-graphics-in-r",
+    "href": "Session4.html#advanced-graphics-in-r",
+    "title": "Introduction to R",
+    "section": "Advanced graphics in R",
+    "text": "Advanced graphics in R\n\nR has several advanced graphics packages such as ggplot2 (see book by Hadley Wickham), plotly, Rgnuplot,…\nWe will focus on ggplot2 as this is widely used.\nThe ggplot2 package in R enables to build complex plots from data in a structured and layered manner.\nThe plot is based on a specified data frame, aesthetic mappings (like x and y axes), and layers such as points, lines, or bars (geom_* functions).\nAdvantages: flexible, consistent syntax, and fancy graphics.\nDisadvantages: Very different syntax e.g. compared to functions."
   },
   {
     "objectID": "Session4.html#typical-ggplot-help-function-sections",
@@ -1691,7 +1530,7 @@
     "href": "Session4.html#example-plot-of-temperatures-in-maastricht",
     "title": "Introduction to R",
     "section": "Example: Plot of temperatures in Maastricht",
-    "text": "Example: Plot of temperatures in Maastricht\n\nWe will make a similar plot to exercise 4.3: a plot of temperatures in Maastricht\nAesthetics are defined with line width, color.\nGeometrics is defined by the function geom_line (line plot)\n\n\nload(\"data/climate_wide.Rdata\") # load data\nwide_data$index &lt;- 1:nrow(wide_data) # create data frame\nggplot(wide_data, aes(x = index, y = MAASTRICHT)) +\n  geom_line(color = \"blue\", linewidth = 1) # adds lines #"
+    "text": "Example: Plot of temperatures in Maastricht\n\nWe will make a similar plot to exercise 4.4: a plot of temperatures in Maastricht\nAesthetics are defined with line width, color.\nGeometrics is defined by the function geom_line (line plot)\n\n\nload(\"data/climate_wide.Rdata\") # load data\nwide_data$index &lt;- 1:nrow(wide_data) # create data frame\nggplot(wide_data, aes(x = index, y = MAASTRICHT)) +\n  geom_line(color = \"blue\", linewidth = 1) # adds lines #"
   },
   {
     "objectID": "Session4.html#example-possible-confusion-with-aesthetics",
@@ -1726,13 +1565,13 @@
     "href": "Session4.html#further-references-for-ggplot2",
     "title": "Introduction to R",
     "section": "Further references for ggplot2",
-    "text": "Further references for ggplot2\nR for data science\nCollaborative and Reproducible Data Science in R"
+    "text": "Further references for ggplot2\n\nR for data science\nCollaborative and Reproducible Data Science in R"
   },
   {
     "objectID": "Session4.html#exercise-4.5-use-ggplot2-for-more-flexible-and-advanced-plots",
     "href": "Session4.html#exercise-4.5-use-ggplot2-for-more-flexible-and-advanced-plots",
     "title": "Introduction to R",
     "section": "Exercise 4.5: Use ggplot2 for more flexible and advanced plots",
-    "text": "Exercise 4.5: Use ggplot2 for more flexible and advanced plots\n\nMake the same plot as in Exercise 4.3 using package `ggplot2’\nWe suggest to use the wide data\nUse help functions for geom_point, geom_hline, labs.\nYou can give it a try to use ChatGBT, but the outcome is difficult to understand if you don’t have familiarity with ggplot to begin with."
+    "text": "Exercise 4.5: Use ggplot2 for more flexible and advanced plots\n\nMake the same plot as in Exercise 4.4 using package `ggplot2’\nWe suggest to use the wide data\nUse help functions for geom_point, geom_hline, labs.\nYou can give it a try to use ChatGPT, but the outcome is difficult to understand if you don’t have familiarity with ggplot to begin with."
   }
 ]
