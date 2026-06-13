@@ -16,15 +16,14 @@ sd(x1, na.rm = TRUE)
 sd(x1, na_rm = TRUE)
 mean(x1, na_rm = TRUE)
 
-
-
-# Exercise 3.4
+# Exercise 3.3
 plot(x1)
 x1ts <- ts(x1)
 plot(x1ts)
+load("data/courses.RData")
 plot(courses$Period)
 
-# Exercise 3.6
+# Exercise 3.5
 library(bootUR)
 plot_missing_values(MacroTS)
 

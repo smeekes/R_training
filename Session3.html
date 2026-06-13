@@ -790,10 +790,7 @@ margin-right: 0; }
 <li><p>Set the 10th value of <code>x1</code> to <code>NA</code>. Calculate the mean and standard deviation again. What do you observe? Learn from the help function how we can fix this.</p></li>
 </ol></section><section id="the-argument" class="slide level2"><h2>The … argument</h2>
 <ul>
-<li>If you opened the help function of <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> before, you saw the last argument is</li>
-</ul>
-<p>“<code>...</code>      further arguments passed to or from other methods”</p>
-<ul>
+<li><p>If you opened the help function of <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> before, you saw the last argument is “<code>...</code>      further arguments passed to or from other methods”</p></li>
 <li><p><code>...</code> is a special argument: it allows you to put in different arguments that are then passed on to an <em>other</em> function internally.</p></li>
 <li><p>To know how to put them correctly, you may need to look at the <em>other function</em>; not always easy!</p></li>
 <li><p>Since the function accepts any arguments in <code>...</code>, an error message will typically be given at a ‘deeper level’, which can be very confusing. Or you even may not get an error message at all.</p></li>
@@ -1000,7 +997,7 @@ $m
 </li>
 <li><p>Creating functions is a basic skill well worth investing in.</p></li>
 <li><p>Note: make sure to first execute the lines containing your function before you use it (and execute again after an update to the code).</p></li>
-<li><p>To start creating your own functions, try the exercises in the Bonus Material!</p></li>
+<li><p>To start creating your own functions, try the exercises in the Bonus Material of Session 5!</p></li>
 </ul></section></section><section><section id="objects" class="title-slide slide level1 center"><h1>Objects revisited</h1>
 
 </section><section id="objects-and-their-labels" class="slide level2"><h2>Objects and Their Labels</h2>
@@ -1021,7 +1018,7 @@ $m
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
--2.27892 -0.73195 -0.12862 -0.06709  0.51089  2.28454 </code></pre>
+-2.34728 -0.66889 -0.03433  0.06310  0.80528  2.36619 </code></pre>
 </div>
 </div>
 </section><section id="the-summary-function-1" class="slide level2"><h2>The summary function</h2>
@@ -1075,13 +1072,13 @@ $m
 <ol type="1">
 <li><p>Help files and documentation may differ depending on classes.</p></li>
 <li><p>Applying it to an object for which the class function has not been defined (<em>“Why does <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> not work on my object X?”</em>).</p></li>
-</ol></section><section id="exercise-3.4-using-the-plot-function-for-different-objects" class="slide level2"><h2>Exercise 3.4: Using the plot function for different objects</h2>
+</ol></section><section id="exercise-3.3-using-the-plot-function-for-different-objects" class="slide level2"><h2>Exercise 3.3: Using the plot function for different objects</h2>
 <ol type="1">
 <li><p>Remember your vector <code>x1</code> of normally distributed random variables created in Exercise 3.2.</p></li>
 <li><p>Make a basic plot of this vector using the simple command <code>plot(x1)</code>.</p></li>
 <li><p>Now transform your vector <code>x1</code> into a time series object using the function <code><a href="https://rdrr.io/r/stats/ts.html">ts()</a></code>. Save it as <code>x1ts</code>.</p></li>
 <li><p>Make a plot of this new object using the command <code>plot(x1ts)</code>. Why does it look different from before?</p></li>
-<li><p>Make a plot of the variable <code>Period</code> from the <code>courses</code> data frame (see Exercise 3.3). Explain why this looks yet again different.</p></li>
+<li><p>Make a plot of the variable <code>Period</code> from the <code>courses</code> data frame. Explain why this looks yet again different.</p></li>
 </ol></section></section><section><section id="packages" class="title-slide slide level1 center"><h1>Packages</h1>
 
 </section><section id="r-packages" class="slide level2"><h2>R packages</h2>
@@ -1134,7 +1131,7 @@ $m
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">package_name</span><span class="fu">::</span><span class="fu">function_name</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>which can be interpreted as “use the function <code>function_name()</code> from the package <code>package_name</code>.”</p>
-</section><section id="exercise-3.5-r-package" class="slide level2"><h2>Exercise 3.5: R package</h2>
+</section><section id="exercise-3.4-r-package" class="slide level2"><h2>Exercise 3.4: R package</h2>
 <ul>
 <li><p>If you have not yet done, so, install the <code>this.path</code> package.</p></li>
 <li><p>Why did we install the <code>this.path</code> package? Because it offers functionality to set your working directory, as an alternative to the menu-based approach we did before.</p></li>
@@ -1208,7 +1205,7 @@ $m
 </div>
 <ul>
 <li>In RStudio, make sure that the box “Install dependencies” is checked.</li>
-</ul></section><section id="bonus-exercise-3.6-package-information-installation" class="slide level2"><h2>Bonus Exercise 3.6: Package information &amp; installation</h2>
+</ul></section><section id="bonus-exercise-3.5-package-information-installation" class="slide level2"><h2>Bonus Exercise 3.5: Package information &amp; installation</h2>
 <ol type="1">
 <li><p>Find out who the maintainer is of the package <code>bigtime</code>.</p></li>
 <li><p>Check if you have the suggested packages for <code>bootUR</code> installed. If you have <code>ggplot2</code> installed, remove it from your installation. (This can be done by clicking at the right spot in RStudio’s Packages tab.)</p></li>
@@ -1222,7 +1219,7 @@ $m
 <li><p>Occasionally, CRAN may also ask you if you want to install a package from source, if a newer version is available than the standard binary package.</p></li>
 <li><p>Installing from source is problematic on Windows and Mac, as it requires the installation of additional software for packages that are built on C/C++/Fortran code that needs compilation (see e.g. <code><a href="https://rdrr.io/r/utils/install.packages.html">?install.packages</a></code> for details).</p></li>
 <li><p>Advice for beginners: do not install from source!</p></li>
-</ul></section><section id="bonus-exercise-3.7-installing-packages-from-source" class="slide level2"><h2>Bonus Exercise 3.7: Installing packages from source</h2>
+</ul></section><section id="bonus-exercise-3.6-installing-packages-from-source" class="slide level2"><h2>Bonus Exercise 3.6: Installing packages from source</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
