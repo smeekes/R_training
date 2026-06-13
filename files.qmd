@@ -32,11 +32,9 @@ No datasets used
 - [courses.RData](data/courses.RData)
 
 #### Session 4
+- [grades.csv](data/grades.csv)
 - [climate_long.Rdata](data/climate_long.Rdata)
 - [climate_wide.Rdata](data/climate_wide.Rdata)
-- [climate_wide.xlsx](data/climate_wide.xlsx)
-- [climate_wide.dta](data/climate_wide.dta)
-- [climate.csv](data/climate.csv)
 
 
 #### Session 5
