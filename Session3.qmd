@@ -431,7 +431,7 @@ miles_to_metric(60)
 
 - Note: make sure to first execute the lines containing your function before you use it (and execute again after an update to the code).
 
-- To start creating your own functions, try the exercises in the Bonus Material!
+- To start creating your own functions, try the exercises in the Bonus Material of Session 5!
 
 
 # Objects revisited {#objects}
@@ -539,7 +539,7 @@ In terms of content, this is just a (named) vector.
 
 2. Applying it to an object for which the class function has not been defined (*"Why does `summary()` not work on my object X?"*).
 
-## Exercise 3.4: Using the plot function for different objects
+## Exercise 3.3: Using the plot function for different objects
 
 1. Remember your vector `x1` of normally distributed random variables created in Exercise 3.2.
 
@@ -549,7 +549,7 @@ In terms of content, this is just a (named) vector.
 
 4. Make a plot of this new object using the command `plot(x1ts)`. Why does it look different from before?
 
-5. Make a plot of the variable `Period` from the `courses` data frame (see Exercise 3.3). Explain why this looks yet again different.
+5. Make a plot of the variable `Period` from the `courses` data frame. Explain why this looks yet again different.
 
 # Packages {#packages}
 
@@ -614,7 +614,7 @@ package_name::function_name()
 ```
 which can be interpreted as "use the function `function_name()` from the package `package_name`."
 
-## Exercise 3.5: R package
+## Exercise 3.4: R package
 
 - If you have not yet done, so, install the `this.path` package.
 
@@ -704,7 +704,7 @@ install.packages("package-name", dependencies = TRUE)
 
 - In RStudio, make sure that the box "Install dependencies" is checked.
 
-## Bonus Exercise 3.6: Package information & installation
+## Bonus Exercise 3.5: Package information & installation
 
 1. Find out who the maintainer is of the package `bigtime`.
 
@@ -728,7 +728,7 @@ install.packages("package-name", dependencies = TRUE)
 
 - Advice for beginners: do not install from source!
 
-## Bonus Exercise 3.7: Installing packages from source
+## Bonus Exercise 3.6: Installing packages from source
 
 ::: {.callout-important}
 This exercise should only be completed if you feel up for a challenge and want to get your system ready for installing from source. Please SKIP unless you know what you are doing!
