@@ -439,7 +439,7 @@ load("data/courses.RData")
 c(TRUE + FALSE, TRUE + TRUE, TRUE * FALSE)
 ```
 
-## Exercise 5.4: Create your own function
+## Exercise 5.3: Create your own function
 
 3. We now want to extend the function to give a second output. This output should contain a data frame with two columns: the first is the course code, the second is the number of tutorials for each course.
   + The number of tutorials should be calculated as the number of students divided by the number of students per tutorial group, and then rounded up.
