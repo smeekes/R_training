@@ -44,6 +44,33 @@ mean_max <- mean(wide_data$MAASTRICHT)
 abline(h = mean_max)
 
 # Exercise 4.5
+#Set initial number of observations
+load("data/climate_wide.Rdata")
+start_n <- 3
+
+# Make sure axes cover the FULL dataset
+x_range <- 1:nrow(wide_data)
+y_range <- range(wide_data$MAASTRICHT, na.rm = TRUE)
+
+# Initial plot with first 3 observations
+plot(x_range[1:start_n],
+     wide_data$MAASTRICHT[1:start_n],
+     xlim = range(x_range),
+     ylim = y_range,
+     xlab = "Time",
+     ylab = "Temperature",
+     main = "Adding Data Over Time",
+     type = "l")
+
+# Gradually add more points
+for (i in (start_n+1):nrow(wide_data)){
+  # add a line from previous point to current point
+  lines(x_range[(i-1):i],
+        wide_data$MAASTRICHT[(i-1):i])
+  
+  # pause to create animation effect
+  Sys.sleep(0.2)
+}
 
 # Exercise 4.6
 library(ggplot2) 
