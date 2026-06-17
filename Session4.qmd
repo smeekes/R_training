@@ -521,7 +521,7 @@ ggplot(data = long_data) +
 - [Collaborative and Reproducible Data Science in R](https://nt246.github.io/NTRES-6100-data-science/lesson6-ggplot-part1.html#Preparing_to_create_our_first_ggplot2_graph)
 
 
-## Exercise 4.5: Use ggplot2 for more flexible and advanced plots
+## Exercise 4.6: Use ggplot2 for more flexible and advanced plots
 
 - Make the same plot as in Exercise 4.4 using package `ggplot2'
 - We suggest to use the wide data
